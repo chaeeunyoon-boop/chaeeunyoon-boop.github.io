@@ -194,9 +194,14 @@
       body.appendChild(ul);
     } else if (state.step === 1) {
       body.appendChild(el("p", "stepbody__lead", t(c.rules.lead)));
+      // 두 줄로 균등 분할(7칸 → 4+3). 줄 끝 칸은 화살표를 숨깁니다.
+      var cols = Math.ceil(c.rules.flow.length / 2);
       var flow = el("div", "flow");
-      c.rules.flow.forEach(function (f) {
-        var node = el("div", "node" + (f.gate ? " node--gate" : ""));
+      flow.style.setProperty("--cols", cols);
+      c.rules.flow.forEach(function (f, i) {
+        var end = (i + 1) % cols === 0;
+        var node = el("div", "node" + (f.gate ? " node--gate" : "") + (end ? " node--rowend" : ""));
+        node.appendChild(el("span", "node__no mono", (i < 9 ? "0" : "") + (i + 1)));
         node.appendChild(el("span", "node__label", t(f.label)));
         node.appendChild(el("span", "node__sub", t(f.sub)));
         flow.appendChild(node);
@@ -390,14 +395,7 @@
     var grid = el("div", "sim");
 
     var colA = el("div", "sim__col");
-    var headA = el("div", "sim__head");
-    headA.appendChild(el("h4", "demo__h", t(S.extractHead)));
-    var sum = el("div", "sim__counts");
-    sum.appendChild(tonePill("pass", t(S.status.pass) + " " + counts.pass));
-    sum.appendChild(tonePill("warn", t(S.status.warn) + " " + counts.warn));
-    sum.appendChild(tonePill("halt", t(S.status.halt) + " " + counts.halt));
-    headA.appendChild(sum);
-    colA.appendChild(headA);
+    colA.appendChild(el("h4", "demo__h", t(S.extractHead)));
 
     var dl = el("dl", "extract");
     S.fields.forEach(function (f, i) {
@@ -411,22 +409,52 @@
     grid.appendChild(colA);
 
     var colB = el("div", "sim__col");
-    colB.appendChild(el("h4", "demo__h", t(S.rulesHead)));
-    var list = el("ul", "rules");
+    var headB = el("div", "sim__head");
+    headB.appendChild(el("h4", "demo__h", t(S.rulesHead)));
+    var sum = el("div", "sim__counts");
+    sum.appendChild(tonePill("pass", t(S.status.pass) + " " + counts.pass));
+    sum.appendChild(tonePill("warn", t(S.status.warn) + " " + counts.warn));
+    sum.appendChild(tonePill("halt", t(S.status.halt) + " " + counts.halt));
+    headB.appendChild(sum);
+    colB.appendChild(headB);
+
+    // 걸린 규칙(정지 → 경고)은 사유와 함께 위에, 통과한 규칙은 아래에 작게 모읍니다.
+    var flagged = [];
+    var passed = [];
     S.rules.forEach(function (r, i) {
-      var st = p.rules[i];
-      var li = el("li", "rule rule--" + st);
-      var main = el("div", "rule__main");
-      var top = el("div", "rule__top");
-      top.appendChild(el("span", "rule__id mono", r.id));
-      top.appendChild(el("span", "rule__name", t(r.name)));
-      main.appendChild(top);
-      if (p.notes[i]) main.appendChild(el("span", "rule__note", t(p.notes[i])));
-      li.appendChild(main);
-      li.appendChild(tonePill(st, t(S.status[st])));
-      list.appendChild(li);
+      (p.rules[i] === "pass" ? passed : flagged).push(i);
     });
-    colB.appendChild(list);
+    flagged.sort(function (a, b) {
+      return (p.rules[a] === "halt" ? 0 : 1) - (p.rules[b] === "halt" ? 0 : 1) || a - b;
+    });
+
+    if (flagged.length) {
+      var list = el("ul", "rules");
+      flagged.forEach(function (i) {
+        var r = S.rules[i];
+        var st = p.rules[i];
+        var li = el("li", "rule rule--" + st);
+        var main = el("div", "rule__main");
+        var top = el("div", "rule__top");
+        top.appendChild(el("span", "rule__id mono", r.id));
+        top.appendChild(el("span", "rule__name", t(r.name)));
+        main.appendChild(top);
+        if (p.notes[i]) main.appendChild(el("span", "rule__note", t(p.notes[i])));
+        li.appendChild(main);
+        li.appendChild(tonePill(st, t(S.status[st])));
+        list.appendChild(li);
+      });
+      colB.appendChild(list);
+    }
+
+    var passList = el("ul", "passrules");
+    passed.forEach(function (i) {
+      var li = el("li", "passrule");
+      li.appendChild(el("span", "rule__id mono", S.rules[i].id));
+      li.appendChild(el("span", null, t(S.rules[i].name)));
+      passList.appendChild(li);
+    });
+    colB.appendChild(passList);
     grid.appendChild(colB);
     host.appendChild(grid);
 
@@ -634,6 +662,12 @@
 
     var left = el("div", "outreach__col");
     left.appendChild(el("h4", "demo__h", t(S.partnerHead)));
+    // 진행 막대 5칸이 어떤 단계인지 보여 주는 범례
+    var key = el("ol", "stagekey");
+    S.stages.forEach(function (s) {
+      key.appendChild(el("li", null, t(s.label)));
+    });
+    left.appendChild(key);
     var plist = el("div", "partners");
     S.partners.forEach(function (p, i) {
       var si = stageIndex[p.stage];
