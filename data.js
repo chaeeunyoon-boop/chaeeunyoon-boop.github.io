@@ -17,16 +17,16 @@ const SITE = {
   ui: {
     title: {
       ko: "윤채은 — AI 업무 개선(AX) 포트폴리오",
-      en: "Chaeeun Yun — AX Builder / Problem Solver",
-      zh: "Chaeeun Yun — AX 构建者 / 问题解决者",
+      en: "Chaeeun Yun — AI work improvement (AX) portfolio",
+      zh: "Chaeeun Yun — AI 工作改进（AX）作品集",
     },
     desc: {
       ko: "반복해서 막히는 일을 찾아 판단 기준을 규칙으로 정리하고, 실제로 돌아가는 AI 업무 방식으로 바꿔 온 윤채은의 포트폴리오.",
-      en: "The portfolio of Chaeeun Yun, an AX builder who finds recurring bottlenecks, turns them into rules, and ships AI workflows that run.",
-      zh: "AX 构建者 Chaeeun Yun 的作品集：找出反复出现的瓶颈，把它写成规则，再用能跑起来的 AI 工作流解决。",
+      en: "Chaeeun Yun's portfolio: finding the work that keeps getting stuck, writing the judgment behind it into rules, and turning it into AI-assisted work that actually runs.",
+      zh: "Chaeeun Yun 的作品集：找出反复卡住的工作，把判断标准写成规则，再变成真正能运行的 AI 辅助工作方式。",
     },
     skip: { ko: "본문으로 건너뛰기", en: "Skip to content", zh: "跳到正文" },
-    brandRole: { ko: "AI 업무 개선 · 문제 해결", en: "AX Builder · Problem Solver", zh: "AX 构建者 · 问题解决者" },
+    brandRole: { ko: "AI 업무 개선 · 문제 해결", en: "AI work improvement · Problem solving", zh: "AI 工作改进 · 问题解决" },
     navCases: { ko: "케이스", en: "Cases", zh: "案例" },
     navDemos: { ko: "라이브 데모", en: "Live demos", zh: "实时演示" },
     demosTitle: {
@@ -36,13 +36,13 @@ const SITE = {
     },
     demosLead: {
       ko: "아래 케이스에서 설명한 방식을 직접 눌러 볼 수 있는 화면으로 옮겼습니다. 데이터는 모두 지어낸 예시라 마음껏 눌러 보셔도 됩니다.",
-      en: "The structures described in the cases, rebuilt as screens you can operate right here. What I built so the same judgment never has to be repeated three times.",
-      zh: "把案例里说的结构搬成了界面，现在就能上手。这些是我为了不再把同一个判断重复三遍而做的东西。",
+      en: "The approach from the cases, turned into screens you can click. All data is made up, so click around freely.",
+      zh: "把案例里讲的方法做成了可以亲手点击的界面。数据全是虚构的示例，可以随意点。",
     },
     demosFootnote: {
       ko: "모든 브랜드·크리에이터·금액·파트너명은 가상이며, 실제 회사·캠페인·광고 금액과 무관합니다. 서버 호출·저장·실제 발송은 없습니다.",
-      en: "Every brand, creator, amount and partner name is fictional — unrelated to any real company, campaign or rate. No server calls, no storage, nothing actually sent.",
-      zh: "所有品牌、创作者、金额和合作方名称均为虚构，与真实公司、广告活动和报价无关。不调用服务器、不保存、也不会真正发送。",
+      en: "Every brand, creator, amount and partner name is fictional — unrelated to any real company, campaign or ad budget. No server calls, no storage, nothing actually sent.",
+      zh: "所有品牌、创作者、金额和合作方名称均为虚构，与真实公司、广告活动和广告金额无关。不调用服务器、不保存、也不会真正发送。",
     },
     navPrinciples: { ko: "원칙", en: "Principles", zh: "原则" },
     navCareer: { ko: "경력", en: "Career", zh: "履历" },
@@ -50,41 +50,41 @@ const SITE = {
 
     heroStatus: {
       ko: "지금은 온더룩 MCN팀(크리에이터 매니지먼트)에서 일하며, 그 업무를 돕는 AI 도구를 직접 만듭니다",
-      en: "Currently on the MCN team at Onthelook, building AI workflows beside the work",
-      zh: "目前在 Onthelook 的 MCN 团队工作，同时在旁边搭建 AI 工作流",
+      en: "Currently on the MCN (creator management) team at Onthelook, building AI tools that help with that work",
+      zh: "目前在 Onthelook 的 MCN 团队（创作者经纪）工作，并亲手打造辅助这份工作的 AI 工具",
     },
-    heroLine1: { ko: "매번 막히는 일을 찾아", en: "Find the bottleneck that keeps coming back.", zh: "找出反复卡住的瓶颈" },
-    heroLine2: { ko: "판단 기준을 규칙으로 만들고", en: "Turn it into a rule.", zh: "把它写成规则" },
+    heroLine1: { ko: "매번 막히는 일을 찾아", en: "Find the work that keeps getting stuck.", zh: "找出总是卡住的工作" },
+    heroLine2: { ko: "판단 기준을 규칙으로 만들고", en: "Write the judgment behind it into rules.", zh: "把判断标准写成规则" },
     heroLine3: {
       ko: "AI와 함께 돌아가는 업무로 바꿉니다.",
-      en: "Then solve it with a workflow that actually runs.",
-      zh: "再用能跑起来的工作流解决。",
+      en: "Turn it into work that runs with AI.",
+      zh: "变成与 AI 一起运转的工作方式。",
     },
     heroSub: {
       ko: "4년 넘게 크리에이터 마케팅 실무를 했고, 그 과정에서 반복해서 막히던 일을 직접 AI 도구로 만들어 풀어 왔습니다. 아이디어나 기획서에서 멈추지 않고, 실제로 매일 쓰이고 다른 사람이 이어받을 수 있는 상태까지 만듭니다.",
-      en: "I spent more than four years running creator marketing on the ground, and built the AI agents and pipelines for whatever got stuck there. I don't stop at a proposal — I take it to something that runs and that someone else can take over.",
-      zh: "我在创作者营销一线做了四年多运营，也亲手把现场卡住的事做成 AI 智能体和数据管道。不止停在方案，而是一路做到真正运行、别人也能接手。",
+      en: "I spent over four years doing hands-on creator marketing, and along the way built my own AI tools for the work that kept getting stuck. I don't stop at an idea or a proposal — I take it to the point where it's used every day and someone else can take it over.",
+      zh: "我做了四年多的创作者营销实务，过程中亲手用 AI 工具解决那些反复卡住的工作。不停在想法或方案上，而是做到每天真正在用、别人也能接手的程度。",
     },
     heroCta1: { ko: "케이스 4건 보기", en: "See the four cases", zh: "查看 4 个案例" },
     heroCta2: { ko: "연락하기", en: "Get in touch", zh: "联系我" },
 
-    metricHead: { ko: "성과 · 바꾸기 전 → 후", en: "IMPACT · BEFORE / AFTER", zh: "IMPACT · 之前 / 之后" },
-    metricBadge: { ko: "실제 업무 결과", en: "In production", zh: "实战应用" },
+    metricHead: { ko: "성과 · 바꾸기 전 → 후", en: "Results · before → after", zh: "成果 · 之前 → 之后" },
+    metricBadge: { ko: "실제 업무 결과", en: "Real work results", zh: "真实工作成果" },
     metricFoot: {
       ko: "* 모두 실제 업무에서 운영한 결과입니다.",
       en: "* Every figure comes from work actually run in production.",
       zh: "* 全部来自实际工作中的运营结果。",
     },
 
-    casesTitle: { ko: "문제 → 해결 방법 → 결과", en: "Problem → Rules → Impact", zh: "问题 → 规则 → 效果" },
+    casesTitle: { ko: "문제 → 해결 방법 → 결과", en: "Problem → Solution → Result", zh: "问题 → 解决方法 → 结果" },
     casesLead: {
       ko: "모든 케이스를 같은 순서로 정리했습니다. 무엇이 막혀 있었는지, 어떻게 풀었는지, 그래서 무엇이 달라졌는지.",
-      en: "Each case reads in the same order: what was stuck, which judgments became rules, and what changed because of it.",
-      zh: "每个案例都按同一顺序读：哪里卡住了，哪些判断被写成规则，因此什么发生了变化。",
+      en: "Every case follows the same order: what was stuck, how it was solved, and what changed as a result.",
+      zh: "所有案例都按同一顺序整理：哪里卡住了、怎么解决的、结果有什么变化。",
     },
-    step1: { ko: "01 · 문제 (바꾸기 전)", en: "01 · Problem (BEFORE)", zh: "01 · 问题（BEFORE）" },
-    step2: { ko: "02 · 해결 방법", en: "02 · Rules & Architecture", zh: "02 · 规则与架构" },
-    step3: { ko: "03 · 결과 (바꾼 후)", en: "03 · Impact (AFTER)", zh: "03 · 效果（AFTER）" },
+    step1: { ko: "01 · 문제 (바꾸기 전)", en: "01 · Problem (before)", zh: "01 · 问题（之前）" },
+    step2: { ko: "02 · 해결 방법", en: "02 · Solution", zh: "02 · 解决方法" },
+    step3: { ko: "03 · 결과 (바꾼 후)", en: "03 · Result (after)", zh: "03 · 结果（之后）" },
 
     principlesTitle: {
       ko: "AI에게 맡길 것과 맡기지 않을 것을 먼저 나눕니다.",
@@ -93,8 +93,8 @@ const SITE = {
     },
     principlesLead: {
       ko: "AI가 할 일, 규칙으로 정해 둘 일, 사람이 직접 확인할 일. 이 셋을 나누는 데서 모든 작업을 시작합니다.",
-      en: "Splitting judgment into three layers is where every one of my workflows starts.",
-      zh: "把判断分成三层，是我所有工作流的起点。",
+      en: "What AI does, what gets fixed as a rule, what a person checks directly. Every piece of my work starts by separating these three.",
+      zh: "AI 做什么、哪些定成规则、哪些由人直接确认。我的所有工作都从分清这三者开始。",
     },
     stackTitle: { ko: "Stack", en: "Stack", zh: "Stack" },
     stackNote: {
@@ -110,8 +110,8 @@ const SITE = {
     },
     careerLead: {
       ko: "총 경력 4년 4개월 · 크리에이터 마케팅 실무에서 출발해 AI 업무 설계로",
-      en: "4 years 4 months · from creator marketing operations to AI workflow design",
-      zh: "总经历 4 年 4 个月 · 从创作者营销运营到 AI 工作流设计",
+      en: "4 years 4 months · from hands-on creator marketing to designing AI-assisted work",
+      zh: "总经历 4 年 4 个月 · 从创作者营销实务出发，走向 AI 工作设计",
     },
 
     contactTitle: {
@@ -121,8 +121,8 @@ const SITE = {
     },
     contactLead: {
       ko: "반복되는 일은 규칙과 AI에 맡기고, 사람이 꼭 확인해야 할 순간은 남겨 두는 일. 이런 업무 방식을 함께 만들 팀을 찾고 있습니다.",
-      en: "Moving repeated work into rules while keeping the points a human must approve. I'm looking for people to build that structure with.",
-      zh: "把反复发生的事写成规则，同时保留必须由人审批的节点。我在找愿意一起做这件事的人。",
+      en: "Leaving repeated work to rules and AI, while keeping the moments a person must check. I'm looking for a team to build this way of working with.",
+      zh: "把重复的工作交给规则和 AI，同时保留必须由人确认的时刻。我在寻找愿意一起打造这种工作方式的团队。",
     },
     footerNote: { ko: "정적 HTML/CSS/JS · 빌드 없음", en: "Static HTML/CSS/JS · no build step", zh: "静态 HTML/CSS/JS · 无需构建" },
     footerMeta: {
@@ -137,17 +137,17 @@ const SITE = {
     {
       before: { ko: "1시간", en: "1 hr", zh: "1 小时" },
       after: { ko: "3~5분", en: "3–5 min", zh: "3~5 分钟" },
-      label: { ko: "광고 제안서 초안", en: "Campaign proposal draft", zh: "广告提案初稿" },
+      label: { ko: "광고 제안서 초안", en: "Ad proposal draft", zh: "广告提案初稿" },
     },
     {
       before: { ko: "2주", en: "2 weeks", zh: "2 周" },
       after: { ko: "2일", en: "2 days", zh: "2 天" },
-      label: { ko: "유튜브 채널 성장 분석", en: "Channel growth analysis", zh: "频道增长分析" },
+      label: { ko: "유튜브 채널 성장 분석", en: "YouTube channel growth analysis", zh: "YouTube 频道增长分析" },
     },
     {
       before: { ko: "4주", en: "4 weeks", zh: "4 周" },
       after: { ko: "2일", en: "2 days", zh: "2 天" },
-      label: { ko: "AI 더빙 · 해외 채널 개설", en: "AI lipsync · global launch", zh: "AI 对口型 · 全球上线" },
+      label: { ko: "AI 더빙 · 해외 채널 개설", en: "AI dubbing · new overseas channel", zh: "AI 配音 · 开设海外频道" },
     },
   ],
 
@@ -158,27 +158,27 @@ const SITE = {
       no: "01",
       tag: {
         ko: "업무 자동화 · 사람이 최종 확인",
-        en: "Workflow automation · Human-in-the-loop",
-        zh: "工作流自动化 · 人工介入",
+        en: "Work automation · a person makes the final check",
+        zh: "工作自动化 · 由人最终确认",
       },
       title: {
         ko: "제각각인 광고 문의를 정리해 주는 AI 업무 도우미",
-        en: "An AI work agent for unstructured requests",
-        zh: "处理非结构化请求的 AI 工作智能体",
+        en: "An AI work assistant that sorts out ad inquiries in every shape",
+        zh: "整理各种形式广告咨询的 AI 工作助手",
       },
       org: { ko: "온더룩 · MCN팀", en: "Onthelook · MCN Team", zh: "Onthelook · MCN 团队" },
       role: { ko: "설계 · 구축 · 검증 (단독)", en: "Design, build, validation (solo)", zh: "设计 · 搭建 · 验证（独立完成）" },
       period: { ko: "2026.02 – 현재", en: "Feb 2026 – Present", zh: "2026.02 – 至今" },
       oneLiner: {
         ko: "광고 문의를 받아 제안서 초안을 쓰는 데 1건에 1시간이 걸렸습니다. 제 머릿속에만 있던 판단 기준 12가지를 규칙으로 적어 AI에 맡기고, 저는 3~5분 동안 확인만 하도록 바꿨습니다.",
-        en: "I split ad-hoc requests into eight functions and turned the twelve judgments that only lived in my head into rules — cutting a one-hour task to a three-to-five minute review.",
-        zh: "我把形态各异的请求拆成 8 个功能，把只存在于我脑中的 12 条判断写成规则，让一件要 1 小时的事变成 3~5 分钟的审阅。",
+        en: "Drafting a proposal for each ad inquiry took an hour. I wrote the twelve judgment criteria that lived only in my head into rules and handed them to AI, so now I spend three to five minutes just checking.",
+        zh: "每收到一条广告咨询，写提案初稿要 1 小时。我把只存在于脑中的 12 条判断标准写成规则交给 AI，现在我只需花 3~5 分钟检查。",
       },
       problem: {
         lead: {
           ko: "뷰티·패션 크리에이터(유튜버·인플루언서) 최대 30팀을 혼자 맡고 있었습니다. 광고 문의는 매번 형식이 달랐고, 어떻게 판단해야 하는지는 어디에도 적혀 있지 않았습니다.",
-          en: "I ran up to 30 beauty and fashion creator teams on my own. Every request arrived in a different shape, and the criteria for handling it were written down nowhere.",
-          zh: "我独自运营最多 30 个美妆、时尚创作者团队。每次请求的形态都不一样，而判断标准没有任何地方写下来。",
+          en: "I was handling up to 30 beauty and fashion creator teams (YouTubers, influencers) on my own. Ad inquiries arrived in a different format every time, and how to judge them was written down nowhere.",
+          zh: "我独自负责最多 30 个美妆、时尚创作者团队（YouTuber、网红）。广告咨询每次格式都不一样，而该如何判断，没有任何地方写下来。",
         },
         bullets: [
           {
@@ -188,13 +188,13 @@ const SITE = {
           },
           {
             ko: "광고 제안서 한 건의 초안을 쓰는 데 1시간, 그 뒤 고치는 데 또 한 번",
-            en: "One campaign proposal took an hour to draft, then another pass to fix",
-            zh: "一份广告提案初稿要写 1 小时，之后还要再改一遍",
+            en: "Drafting one ad proposal took an hour, then another pass to fix it",
+            zh: "写一份广告提案初稿要 1 小时，之后还要再改一遍",
           },
           {
             ko: "AI에 그냥 맡기면 늘 같은 곳에서 틀림 — 판단 기준을 알려 준 적이 없었기 때문",
-            en: "Handed straight to an AI, it failed at the same spots — because the criteria existed nowhere",
-            zh: "直接交给 AI，它总在同样的地方出错——因为没有标准",
+            en: "Left to AI as-is, it failed at the same spots — because no one had ever told it the criteria",
+            zh: "直接交给 AI，总在同样的地方出错——因为从没告诉过它判断标准",
           },
           {
             ko: "일이 한 사람의 기억에 묶여 있어 다른 팀원이 대신하기 어려움",
@@ -206,8 +206,8 @@ const SITE = {
       rules: {
         lead: {
           ko: "들어오는 요청을 8가지 업무로 나누고, 판단을 'AI가 할 일 · 규칙으로 정할 일 · 사람이 확인할 일' 세 가지로 나눴습니다.",
-          en: "I cut the work into functional units, then split judgment into three layers and put each layer somewhere different.",
-          zh: "我把请求拆成功能单元，再把判断分成三层，分别放在不同的地方。",
+          en: "I sorted incoming requests into eight kinds of work, then split judgment three ways: what AI does, what a rule decides, and what a person checks.",
+          zh: "我把收到的请求分成 8 类工作，再把判断分成三部分：AI 做的、规则决定的、人来确认的。",
         },
         flow: [
           {
@@ -215,53 +215,53 @@ const SITE = {
             sub: { ko: "메신저 · 메일 · 시트", en: "Messenger, mail, sheets", zh: "消息 · 邮件 · 表格" },
           },
           {
-            label: { ko: "8가지 업무로 분류", en: "8 functions", zh: "8 个功能分类" },
-            sub: { ko: "제안서 · 대금 정산 · 섭외 · 리포트", en: "Proposal, billing, casting, report", zh: "提案 · 结算 · 邀约 · 报告" },
+            label: { ko: "8가지 업무로 분류", en: "Sort into 8 kinds of work", zh: "分成 8 类工作" },
+            sub: { ko: "제안서 · 대금 정산 · 섭외 · 리포트", en: "Proposal, payments, casting, report", zh: "提案 · 款项结算 · 邀约 · 报告" },
           },
           {
             label: { ko: "판단 규칙 12개", en: "12 rules", zh: "12 条判断规则" },
-            sub: { ko: "문서와 코드로 정리", en: "Document + code", zh: "文档 + 代码" },
+            sub: { ko: "문서와 코드로 정리", en: "Written in docs and code", zh: "写进文档和代码" },
           },
           {
-            label: { ko: "자동 실행 5개", en: "5 schedules", zh: "5 个定时任务" },
+            label: { ko: "자동 실행 5개", en: "5 automatic runs", zh: "5 个自动任务" },
             sub: { ko: "정해진 시간마다 반복", en: "Repeat at fixed times", zh: "按固定时间反复执行" },
           },
           {
-            label: { ko: "AI가 초안 작성", en: "Drafting", zh: "生成初稿" },
-            sub: { ko: "AI 판단", en: "Model judgment", zh: "模型判断" },
+            label: { ko: "AI가 초안 작성", en: "AI writes the draft", zh: "AI 撰写初稿" },
+            sub: { ko: "AI 판단", en: "AI judgment", zh: "AI 判断" },
           },
           {
-            label: { ko: "사람 최종 확인", en: "Human gate", zh: "人工审批关卡" },
-            sub: { ko: "돈 · 외부 발송은 꼭", en: "Money, outbound", zh: "金额 · 对外发送" },
+            label: { ko: "사람 최종 확인", en: "Final human check", zh: "人工最终确认" },
+            sub: { ko: "돈 · 외부 발송은 꼭", en: "Always for money and outbound", zh: "金额 · 对外发送必经" },
             gate: true,
           },
           {
             label: { ko: "발송 · 기록", en: "Send & log", zh: "发送 · 记录" },
-            sub: { ko: "기록이 자동으로 쌓임", en: "Automatic history", zh: "自动积累历史" },
+            sub: { ko: "기록이 자동으로 쌓임", en: "Records pile up automatically", zh: "记录自动累积" },
           },
         ],
         notes: [
-          { ko: "업무를 8가지로 나눔", en: "Broken into 8 functions", zh: "拆成 8 个功能单元" },
-          { ko: "판단 기준 12개를 문서로 정리", en: "12 judgment rules documented", zh: "12 条判断规则文档化" },
-          { ko: "5개 작업을 정해진 시간에 자동 실행", en: "5 scheduled runs", zh: "5 个定时任务自动执行" },
+          { ko: "업무를 8가지로 나눔", en: "Work split into 8 kinds", zh: "工作分成 8 类" },
+          { ko: "판단 기준 12개를 문서로 정리", en: "12 judgment criteria written down", zh: "12 条判断标准写成文档" },
+          { ko: "5개 작업을 정해진 시간에 자동 실행", en: "5 tasks run automatically on schedule", zh: "5 个任务按时自动执行" },
           {
             ko: "AI 판단 / 고정 규칙 / 사람 확인 세 단계로 분리",
-            en: "Model / rules / human split",
-            zh: "模型判断 / 规则固化 / 人工审批 三层分离",
+            en: "Split into AI judgment / fixed rules / human check",
+            zh: "分成 AI 判断 / 固定规则 / 人工确认三步",
           },
           {
             ko: "돈이 걸린 일은 사람이 확인하는 단계를 제안·설계",
-            en: "Human approval gate for money — proposed and designed",
-            zh: "提出并设计金额类人工审批关卡",
+            en: "Proposed and designed a human check for anything involving money",
+            zh: "提出并设计：涉及金额的事必须由人确认",
           },
-          { ko: "제가 직접 쓴 최종본과 4번 비교 검증", en: "Validated against my own final drafts 4 times", zh: "与我的最终版本对照验证 4 次" },
+          { ko: "제가 직접 쓴 최종본과 4번 비교 검증", en: "Compared against my own final drafts 4 times", zh: "与我亲手写的最终版对比验证 4 次" },
         ],
       },
       impact: {
         lead: {
           ko: "세 번째로 만든 초안은 고치지 않고 그대로 실제 광고주에게 보냈습니다. 지금은 팀 전체가 쓰는 방식이 되어, 다른 담당자도 같은 기준으로 일합니다.",
-          en: "The third draft went to a real advertiser without edits. It has since been handed over as a shared team workflow, so other owners work in the same structure.",
-          zh: "第三版初稿未经修改就发给了真实广告主。现在它已成为团队共用的工作流，其他负责人也按同一结构工作。",
+          en: "The third draft went to a real advertiser as-is, with no edits. It is now how the whole team works, so other owners follow the same criteria.",
+          zh: "第三版初稿未经修改，直接发给了真实广告主。现在它已成为整个团队的工作方式，其他负责人也按同一标准工作。",
         },
         metrics: [
           {
@@ -272,18 +272,18 @@ const SITE = {
           {
             before: { ko: "개인 업무", en: "Personal", zh: "个人工作" },
             after: { ko: "팀 공용", en: "Team-wide", zh: "团队共用" },
-            label: { ko: "누가 쓰는가", en: "Workflow ownership", zh: "工作流归属" },
+            label: { ko: "누가 쓰는가", en: "Who uses it", zh: "谁在用" },
           },
           {
-            before: { ko: "한 사람의 기억", en: "In my head", zh: "负责人记忆" },
+            before: { ko: "한 사람의 기억", en: "One person's memory", zh: "一个人的记忆" },
             after: { ko: "문서 · 규칙", en: "Documented rules", zh: "文档 · 规则" },
-            label: { ko: "판단 기준은 어디에", en: "Where the criteria live", zh: "判断标准所在" },
+            label: { ko: "판단 기준은 어디에", en: "Where the criteria live", zh: "判断标准在哪里" },
           },
         ],
         note: {
           ko: "아직 도입 초기라, 사람이 만든 결과와 계속 비교하며 얼마나 정확한지 확인하고 있습니다.",
-          en: "Still early in operation, so accuracy is being judged against human-made output side by side.",
-          zh: "目前仍在早期运营阶段，持续与人工产出对照来判断准确度。",
+          en: "It's still early, so I keep comparing it with human-made results to see how accurate it is.",
+          zh: "目前仍处于导入初期，正持续与人工结果对比，确认它有多准确。",
         },
       },
     },
@@ -291,11 +291,11 @@ const SITE = {
     {
       id: "channel-pipeline",
       no: "02",
-      tag: { ko: "데이터 자동 수집 · AI 분석", en: "Data pipeline · LLM analysis", zh: "数据管道 · LLM 分析" },
+      tag: { ko: "데이터 자동 수집 · AI 분석", en: "Automatic data collection · AI analysis", zh: "数据自动采集 · AI 分析" },
       title: {
         ko: "유튜브 채널 성장 분석 자동화 (YouTube 데이터 + AI)",
-        en: "YouTube Data API + LLM channel growth pipeline",
-        zh: "YouTube Data API + LLM 频道增长分析管道",
+        en: "Automating YouTube channel growth analysis (YouTube data + AI)",
+        zh: "YouTube 频道增长分析自动化（YouTube 数据 + AI）",
       },
       org: {
         ko: "아이스크리에이티브 · 크리에이터광고사업팀",
@@ -306,20 +306,20 @@ const SITE = {
       period: { ko: "2024.11 – 2026.01", en: "Nov 2024 – Jan 2026", zh: "2024.11 – 2026.01" },
       oneLiner: {
         ko: "영상별 조회수 같은 숫자를 손으로 모아 해석하느라 2주 걸리던 채널 분석을, 데이터 자동 수집과 AI 해석을 연결해 2일로 줄였습니다. 구독자 70만 규모 채널의 성장 전략에 쓰였습니다.",
-        en: "A two-week channel analysis that meant collecting metrics by hand became a two-day pipeline of API collection plus LLM interpretation, used for growth strategy on a channel with 700K subscribers.",
-        zh: "原本要花两周、靠手工汇总指标并解读的频道分析，我把 API 采集和 LLM 解读接在一起，缩短到两天。这套结果用在了 70 万订阅规模频道的增长策略上。",
+        en: "Channel analysis took two weeks of gathering and reading numbers like per-video views by hand. Linking automatic data collection with AI interpretation cut it to two days. It was used for the growth strategy of a channel with around 700K subscribers.",
+        zh: "频道分析原本要花两周手工收集、解读每条视频的播放量等数字。把数据自动采集和 AI 解读连起来后，缩短到两天。这套结果用于一个约 70 万订阅频道的增长策略。",
       },
       problem: {
         lead: {
           ko: "채널 분석이 너무 느려서 결정에 제때 쓰이지 못했습니다.",
-          en: "Channel analysis could not keep up with the speed of decisions.",
-          zh: "频道分析跟不上决策的速度。",
+          en: "Channel analysis was so slow it couldn't be used for decisions in time.",
+          zh: "频道分析太慢，没法及时用于决策。",
         },
         bullets: [
           {
             ko: "영상마다 조회수·노출 수·시청 시간을 손으로 옮겨 적는 데만 2주",
-            en: "Two weeks just moving per-video views, impressions and retention by hand",
-            zh: "仅是把每条视频的播放、曝光、留存指标手工搬运合并就要两周",
+            en: "Two weeks just copying each video's views, impressions and watch time by hand",
+            zh: "仅是手工抄录每条视频的播放量、曝光量和观看时长就要两周",
           },
           {
             ko: "분석이 끝날 때면 이미 다음 기획이 진행된 뒤 — 인사이트가 늦게 도착",
@@ -333,48 +333,48 @@ const SITE = {
           },
           {
             ko: "어떤 영상이 왜 잘됐는지(주제·첫 장면·길이)가 숫자로 남지 않음",
-            en: "What worked — topic, hook, length — was never recorded as numbers",
-            zh: "什么内容有效（主题、开场钩子、时长）没有留下数字",
+            en: "Why a video did well — topic, opening, length — was never recorded as numbers",
+            zh: "哪条视频为什么表现好（主题、开头、时长）没有留下数字",
           },
         ],
       },
       rules: {
         lead: {
           ko: "데이터 모으기는 자동 수집 도구(API)에, 해석은 AI에, 판단 기준은 미리 정한 분류 규칙에 맡겼습니다.",
-          en: "Collection went to the API, interpretation to the LLM, and the criteria to fixed classification rules.",
-          zh: "采集交给 API，解读交给 LLM，判断标准交给固定的分类规则。",
+          en: "Collecting data went to an automatic tool (API), interpretation to AI, and the criteria to classification rules set in advance.",
+          zh: "数据采集交给自动工具（API），解读交给 AI，判断标准交给事先定好的分类规则。",
         },
         flow: [
           {
-            label: { ko: "YouTube 데이터 자동 수집", en: "YouTube Data API v3", zh: "YouTube Data API v3" },
-            sub: { ko: "공식 API로 채널·영상 숫자", en: "Channels, videos, metrics", zh: "采集频道 · 视频 · 指标" },
+            label: { ko: "YouTube 데이터 자동 수집", en: "Automatic YouTube data collection", zh: "YouTube 数据自动采集" },
+            sub: { ko: "공식 API로 채널·영상 숫자", en: "Channel and video numbers via the official API", zh: "通过官方 API 获取频道 · 视频数字" },
           },
           {
-            label: { ko: "숫자 정리", en: "Normalize", zh: "标准化 · 汇总" },
-            sub: { ko: "서로 비교할 수 있게", en: "Comparable shape", zh: "变成可比较的形式" },
+            label: { ko: "숫자 정리", en: "Tidy the numbers", zh: "整理数字" },
+            sub: { ko: "서로 비교할 수 있게", en: "So they can be compared", zh: "便于相互比较" },
           },
           {
-            label: { ko: "AI 해석", en: "LLM reading", zh: "LLM 解读" },
-            sub: { ko: "주제 · 첫 장면 · 길이별 성과", en: "Topic, hook, length", zh: "按主题 · 钩子 · 时长看表现" },
+            label: { ko: "AI 해석", en: "AI interpretation", zh: "AI 解读" },
+            sub: { ko: "주제 · 첫 장면 · 길이별 성과", en: "Results by topic, opening, length", zh: "按主题 · 开头 · 时长看表现" },
           },
           {
             label: { ko: "성장 전략 리포트", en: "Growth report", zh: "增长策略报告" },
             sub: { ko: "다음 기획안으로 연결", en: "Into the next plan", zh: "接到下一个企划" },
           },
           {
-            label: { ko: "다음 영상에 반영", en: "Apply", zh: "落到企划" },
-            sub: { ko: "다음 콘텐츠 기획", en: "Next content cycle", zh: "下一个内容周期" },
+            label: { ko: "다음 영상에 반영", en: "Apply to the next video", zh: "用到下一条视频" },
+            sub: { ko: "다음 콘텐츠 기획", en: "Next content plan", zh: "下一个内容企划" },
           },
         ],
         notes: [
-          { ko: "YouTube 공식 API로 자동 수집", en: "YouTube Data API v3 collection", zh: "YouTube Data API v3 采集" },
-          { ko: "숫자를 맞춰 정리하는 스크립트", en: "Metric normalization script", zh: "指标标准化脚本" },
+          { ko: "YouTube 공식 API로 자동 수집", en: "Automatic collection via the official YouTube API", zh: "通过 YouTube 官方 API 自动采集" },
+          { ko: "숫자를 맞춰 정리하는 스크립트", en: "Script that tidies the numbers into one format", zh: "把数字整理成统一格式的脚本" },
           {
             ko: "영상 유형 분류 기준 통일",
-            en: "Fixed content-type classification",
-            zh: "内容类型分类标准固定",
+            en: "One shared way to classify video types",
+            zh: "统一视频类型分类标准",
           },
-          { ko: "리포트 양식 통일", en: "Standard report template", zh: "报告模板标准化" },
+          { ko: "리포트 양식 통일", en: "One shared report format", zh: "统一报告格式" },
         ],
       },
       impact: {
@@ -387,23 +387,23 @@ const SITE = {
           {
             before: { ko: "2주", en: "2 weeks", zh: "2 周" },
             after: { ko: "2일", en: "2 days", zh: "2 天" },
-            label: { ko: "분석 한 번", en: "One analysis cycle", zh: "一个分析周期" },
+            label: { ko: "분석 한 번", en: "One analysis", zh: "一次分析" },
           },
           {
-            before: { ko: "손으로 정리", en: "Manual", zh: "手工整理" },
-            after: { ko: "자동 수집", en: "Automated pipeline", zh: "自动管道" },
-            label: { ko: "데이터 모으기", en: "Collect & aggregate", zh: "采集 · 汇总" },
+            before: { ko: "손으로 정리", en: "By hand", zh: "手工整理" },
+            after: { ko: "자동 수집", en: "Automatic collection", zh: "自动采集" },
+            label: { ko: "데이터 모으기", en: "Gathering data", zh: "收集数据" },
           },
           {
             before: { ko: "감", en: "Gut feel", zh: "凭感觉" },
-            after: { ko: "숫자 근거", en: "Metric evidence", zh: "指标依据" },
+            after: { ko: "숫자 근거", en: "Numbers as evidence", zh: "以数字为依据" },
             label: { ko: "기획 판단", en: "Planning decision", zh: "企划判断" },
           },
         ],
         note: {
           ko: "이 리포트는 구독자 70만 규모 채널의 성장 전략을 세우는 데 쓰였습니다.",
-          en: "These reports fed the growth strategy for a channel in the 700K-subscriber range.",
-          zh: "这些报告被用于 70 万订阅规模频道的增长策略制定。",
+          en: "These reports were used to set the growth strategy for a channel with around 700K subscribers.",
+          zh: "这些报告被用于制定约 70 万订阅频道的增长策略。",
         },
       },
     },
@@ -411,11 +411,11 @@ const SITE = {
     {
       id: "lipsync-launch",
       no: "03",
-      tag: { ko: "프로젝트 총괄 · 해외 채널 개설", en: "Project lead · Global launch", zh: "项目负责 · 全球上线" },
+      tag: { ko: "프로젝트 총괄 · 해외 채널 개설", en: "Project lead · new overseas channel", zh: "项目统筹 · 开设海外频道" },
       title: {
         ko: "AI 더빙 영어 채널 개설 — 3개 회사 협업 총괄(PM)",
-        en: "Launch PM for a three-party AI lipsync subchannel",
-        zh: "三方协作的 AI 对口型全球子频道上线 PM",
+        en: "Opening an AI-dubbed English channel — leading a three-company collaboration (PM)",
+        zh: "开设 AI 配音英文频道 — 统筹三家公司协作（PM）",
       },
       org: {
         ko: "아이스크리에이티브 · 크리에이터광고사업팀",
@@ -424,14 +424,14 @@ const SITE = {
       },
       role: {
         ko: "PM · 크리에이터 · 광고주 · AI 기술 회사 사이 조율",
-        en: "PM · creator, advertiser, AI vendor",
-        zh: "PM · 协调创作者、广告主与 AI 方案商",
+        en: "PM · coordinating creator, advertiser and AI tech company",
+        zh: "PM · 协调创作者、广告主与 AI 技术公司",
       },
       period: { ko: "2025.10", en: "Oct 2025", zh: "2025.10" },
       oneLiner: {
         ko: "크리에이터, 광고주, AI 기술 회사 세 곳이 함께 만드는 AI 더빙 영상(입 모양까지 맞춘 다국어 버전)을, '무엇을 합격으로 볼지' 먼저 정하는 방식으로 4주에서 2일로 줄였습니다.",
-        en: "Lipsync work spanning a creator, an advertiser and an AI vendor — shortened from four weeks to two days by defining the review criteria first.",
-        zh: "涉及创作者、广告主和 AI 方案商三方的多语种对口型制作，我用先定验收标准的方式，把四周压缩到两天。",
+        en: "AI-dubbed videos (multilingual versions with matched lip movement) made jointly by a creator, an advertiser and an AI tech company — cut from four weeks to two days by first agreeing on what counts as a pass.",
+        zh: "由创作者、广告主和 AI 技术公司三方共同制作的 AI 配音视频（连口型都对上的多语种版本），通过先确定“什么算合格”，从四周缩短到两天。",
       },
       problem: {
         lead: {
@@ -442,13 +442,13 @@ const SITE = {
         bullets: [
           {
             ko: "다국어 더빙과 입 모양 맞추기는 보통 4주 — 합격 기준이 없어 수정이 반복",
-            en: "Multilingual dubbing and lipsync usually take four weeks — with no review standard, revisions repeat",
-            zh: "多语种配音与对口型通常要四周——没有验收标准，修改反复",
+            en: "Multilingual dubbing and lip matching usually take four weeks — with no pass criteria, revisions repeat",
+            zh: "多语种配音和口型匹配通常要四周——没有合格标准，修改反复",
           },
           {
             ko: "입 모양이 잘 맞는지를 '느낌'으로 판단해 사람마다 결론이 다름",
-            en: "Quality judged by feel meant two reviewers reached two conclusions",
-            zh: "对口型质量靠“感觉”判断，两个人看会得出两个结论",
+            en: "Whether the lips matched was judged by feel, so every reviewer reached a different conclusion",
+            zh: "口型是否对上靠“感觉”判断，每个人结论都不同",
           },
           {
             ko: "역할·산출물·마감이 구두로만 오가 일정이 흔들림",
@@ -457,74 +457,74 @@ const SITE = {
           },
           {
             ko: "해외 채널은 첫인상이 중요해 기준 없이 많이 찍어낼 수 없음",
-            en: "A global channel is judged on first impressions, so nothing could be mass-produced without a standard",
-            zh: "全球频道第一印象决定一切，没有标准不能批量生产",
+            en: "An overseas channel lives on first impressions, so videos couldn't be churned out without a standard",
+            zh: "海外频道很看重第一印象，没有标准就不能大量制作",
           },
         ],
       },
       rules: {
         lead: {
           ko: "만들기 전에 '무엇을 합격으로 볼지'를 세 회사가 같은 문장으로 합의했습니다.",
-          en: "Before producing anything, all three companies agreed in the same words on what counts as a pass.",
-          zh: "在开始制作之前，三家公司先用同一句话确认“什么算通过”。",
+          en: "Before making anything, all three companies agreed in the same words on what counts as a pass.",
+          zh: "在开始制作之前，三家公司用同一句话确认了“什么算合格”。",
         },
         flow: [
           {
-            label: { ko: "세 회사 역할 정하기", en: "Define roles", zh: "定义三方角色" },
-            sub: { ko: "크리에이터 · 광고주 · AI 기술 회사", en: "Creator, advertiser, vendor", zh: "创作者 · 广告主 · 方案商" },
+            label: { ko: "세 회사 역할 정하기", en: "Set the three roles", zh: "确定三方角色" },
+            sub: { ko: "크리에이터 · 광고주 · AI 기술 회사", en: "Creator, advertiser, AI tech company", zh: "创作者 · 广告主 · AI 技术公司" },
           },
           {
-            label: { ko: "합격 기준 정하기", en: "Review criteria", zh: "设定验收标准" },
-            sub: { ko: "입 모양 · 표정 · 자막 말투", en: "Lip sync, expression, tone", zh: "口型 · 表情 · 字幕语气" },
+            label: { ko: "합격 기준 정하기", en: "Set pass criteria", zh: "确定合格标准" },
+            sub: { ko: "입 모양 · 표정 · 자막 말투", en: "Lips, expression, subtitle tone", zh: "口型 · 表情 · 字幕语气" },
           },
           {
-            label: { ko: "샘플 먼저 확인", en: "Sample pass", zh: "样片预验收" },
-            sub: { ko: "1편으로 기준 맞추기", en: "Agree on one clip", zh: "用一条片子达成共识" },
+            label: { ko: "샘플 먼저 확인", en: "Check a sample first", zh: "先确认样片" },
+            sub: { ko: "1편으로 기준 맞추기", en: "Align on one clip", zh: "用一条片子对齐标准" },
           },
           {
-            label: { ko: "본 제작", en: "Produce", zh: "批量制作" },
+            label: { ko: "본 제작", en: "Full production", zh: "正式制作" },
             sub: { ko: "같은 기준으로 반복", en: "Repeat on one standard", zh: "按同一标准重复" },
           },
           {
-            label: { ko: "품질 확인 · 승인", en: "QC & sign-off", zh: "QC · 签核" },
-            sub: { ko: "기준과 비교", en: "Check against criteria", zh: "对照标准确认" },
+            label: { ko: "품질 확인 · 승인", en: "Quality check & approval", zh: "质量检查 · 审批" },
+            sub: { ko: "기준과 비교", en: "Compare to criteria", zh: "对照标准" },
           },
           {
-            label: { ko: "해외 채널 업로드", en: "Global upload", zh: "全球上传" },
+            label: { ko: "해외 채널 업로드", en: "Upload to the overseas channel", zh: "上传到海外频道" },
             sub: { ko: "@haenibeautyEN", en: "@haenibeautyEN", zh: "@haenibeautyEN" },
           },
         ],
         notes: [
-          { ko: "역할 · 결과물 · 마감일을 문서로", en: "Roles, deliverables, dates in writing", zh: "角色 · 交付物 · 截止时间文档化" },
+          { ko: "역할 · 결과물 · 마감일을 문서로", en: "Roles, deliverables, deadlines in writing", zh: "角色 · 交付物 · 截止日期写成文档" },
           {
             ko: "입 모양 · 자막 · 말투 확인 체크리스트",
-            en: "Lipsync, subtitle, tone checklist",
-            zh: "对口型 · 字幕 · 语气验收清单",
+            en: "Checklist for lips, subtitles, tone",
+            zh: "口型 · 字幕 · 语气检查清单",
           },
-          { ko: "샘플 확인 후 본 제작", en: "Sample first, then volume", zh: "样片先验收再量产" },
-          { ko: "공개일부터 거꾸로 세 회사 마감일 확정", en: "Dates fixed backwards from launch", zh: "从上线日倒排，固定三方节点" },
+          { ko: "샘플 확인 후 본 제작", en: "Check a sample, then full production", zh: "先确认样片再正式制作" },
+          { ko: "공개일부터 거꾸로 세 회사 마감일 확정", en: "Deadlines for all three set backwards from the release date", zh: "从上线日倒推，确定三方截止日期" },
         ],
       },
       impact: {
         lead: {
           ko: "2025년 10월, 영어 버전 채널 @haenibeautyEN을 열고 첫 시즌을 시작했습니다.",
-          en: "In October 2025 the English subchannel @haenibeautyEN opened and its first season began.",
-          zh: "2025 年 10 月开设英文子频道 @haenibeautyEN，并开始第一个季度的运营。",
+          en: "In October 2025 the English channel @haenibeautyEN opened and its first season began.",
+          zh: "2025 年 10 月，英文版频道 @haenibeautyEN 开通，第一季正式开始。",
         },
         metrics: [
           {
             before: { ko: "4주", en: "4 weeks", zh: "4 周" },
             after: { ko: "2일", en: "2 days", zh: "2 天" },
-            label: { ko: "제작부터 공개까지", en: "Production to launch", zh: "从制作到上线" },
+            label: { ko: "제작부터 공개까지", en: "From production to release", zh: "从制作到上线" },
           },
           {
-            before: { ko: "말로 조율", en: "Verbal", zh: "口头协调" },
+            before: { ko: "말로 조율", en: "Agreed verbally", zh: "口头协调" },
             after: { ko: "문서로 된 기준", en: "Written criteria", zh: "书面标准" },
-            label: { ko: "세 회사 소통", en: "Cross-company comms", zh: "三方沟通" },
+            label: { ko: "세 회사 소통", en: "Communication across three companies", zh: "三方沟通" },
           },
           {
             before: { ko: "국내 채널", en: "Domestic", zh: "国内频道" },
-            after: { ko: "영어 채널 추가", en: "English subchannel", zh: "英文子频道" },
+            after: { ko: "영어 채널 추가", en: "Added an English channel", zh: "新增英文频道" },
             label: { ko: "채널 확장", en: "Channel footprint", zh: "频道拓展" },
           },
         ],
@@ -539,29 +539,29 @@ const SITE = {
     {
       id: "news-video",
       no: "04",
-      tag: { ko: "영상 제작 자동화 · 팀 교육", en: "Content automation · Enablement", zh: "内容自动化 · 赋能" },
+      tag: { ko: "영상 제작 자동화 · 팀 교육", en: "Video production automation · team training", zh: "视频制作自动化 · 团队培训" },
       title: {
         ko: "서울경제신문 AI 뉴스 영상 제작 자동화 & 5명에게 인수인계",
-        en: "AI news-video production automation & five-person handover",
-        zh: "首尔经济新闻 AI 视频制作自动化与 5 人交接",
+        en: "Automating AI news-video production for Seoul Economic Daily & handing it over to five people",
+        zh: "首尔经济新闻 AI 新闻视频制作自动化与交接给 5 人",
       },
       org: { ko: "올투원 · 프리랜서", en: "Alltoone · Freelance", zh: "Alltoone · 自由职业" },
       role: {
         ko: "제작 방식 구축 · 운영 인수인계",
-        en: "Build the system, hand over operations",
-        zh: "搭建制作体系 · 移交运营",
+        en: "Built the production method · handed over operations",
+        zh: "搭建制作方法 · 移交运营",
       },
       period: { ko: "2024.06 – 2024.11", en: "Jun 2024 – Nov 2024", zh: "2024.06 – 2024.11" },
       oneLiner: {
         ko: "기사 한 건을 영상으로 만드는 과정을 템플릿과 체크리스트로 정리해, 하루 1편이던 제작을 30분에 1편으로 바꾸고 그 방식을 5명이 이어받게 했습니다.",
-        en: "I fixed the article-to-video process into templates and checklists — one video a day became one every 30 minutes, and five people took the system over.",
-        zh: "我把“一篇报道变成一条视频”的过程固化成模板和清单，让一天一条变成 30 分钟一条，并交给 5 个人接手。",
+        en: "I organized the article-to-video process into templates and checklists — production went from one video a day to one every 30 minutes, and five people took the method over.",
+        zh: "我把“一篇报道做成一条视频”的过程整理成模板和清单，让一天一条变成 30 分钟一条，并由 5 个人接手了这套方法。",
       },
       problem: {
         lead: {
           ko: "매번 사람이 처음부터 만들어야 하는 방식으로는 양을 늘릴 수 없었습니다.",
-          en: "A process that needs hands every time cannot scale.",
-          zh: "每次都靠人工的制作方式，没法扩大。",
+          en: "As long as a person had to build every video from scratch, volume couldn't grow.",
+          zh: "只要每条视频都得由人从头制作，产量就无法提升。",
         },
         bullets: [
           {
@@ -571,8 +571,8 @@ const SITE = {
           },
           {
             ko: "일주일에 1편 정도만 올라가고, 월 조회수는 1~3만에 머묾",
-            en: "About one publish a week, stuck at 10–30K monthly views",
-            zh: "一周一条左右的发布量，月播放量停在 1~3 万",
+            en: "Only about one video a week went up, and monthly views stayed at 10–30K",
+            zh: "一周只能发一条左右，月播放量停在 1~3 万",
           },
           {
             ko: "제작자가 바뀌면 품질과 소요 시간이 매번 달라짐",
@@ -589,45 +589,45 @@ const SITE = {
       rules: {
         lead: {
           ko: "기사를 받아 영상을 올리기까지의 단계를 나누고, 단계마다 무엇을 만들어야 하고 어떻게 되면 통과인지 문서로 남겼습니다.",
-          en: "I split the path from article to publish, then fixed the output and pass criteria of each step in writing.",
-          zh: "我把从报道到发布的步骤拆开，把每一步的产出和通过标准写进文档。",
+          en: "I split the path from receiving an article to uploading the video into steps, and wrote down what each step must produce and what counts as passing.",
+          zh: "我把从拿到报道到上传视频的过程拆成步骤，并写下每一步要产出什么、怎样才算通过。",
         },
         flow: [
           {
-            label: { ko: "기사 고르기", en: "Article in", zh: "报道输入" },
+            label: { ko: "기사 고르기", en: "Pick the article", zh: "挑选报道" },
             sub: { ko: "주제 · 사실 확인", en: "Topic, facts", zh: "选题 · 事实核对" },
           },
           {
             label: { ko: "대본", en: "Script", zh: "脚本" },
-            sub: { ko: "AI 지시문(프롬프트) 양식", en: "Prompt template", zh: "提示词模板" },
+            sub: { ko: "AI 지시문(프롬프트) 양식", en: "AI instruction (prompt) template", zh: "AI 指令（提示词）模板" },
           },
           {
             label: { ko: "장면 구성", en: "Scene plan", zh: "分镜" },
             sub: { ko: "이미지 · 자막 규칙", en: "Image, caption rules", zh: "图像 · 字幕规则" },
           },
           {
-            label: { ko: "음성 · 영상 합치기", en: "Voice & render", zh: "配音 · 渲染" },
-            sub: { ko: "AI 음성 · 편집", en: "TTS, timeline", zh: "TTS · 时间轴" },
+            label: { ko: "음성 · 영상 합치기", en: "Voice & video assembly", zh: "配音 · 合成视频" },
+            sub: { ko: "AI 음성 · 편집", en: "AI voice, editing", zh: "AI 配音 · 剪辑" },
           },
           {
-            label: { ko: "저작권 확인", en: "Rights check", zh: "版权检查" },
-            sub: { ko: "사용 기준표", en: "Guideline", zh: "指南" },
+            label: { ko: "저작권 확인", en: "Rights check", zh: "版权确认" },
+            sub: { ko: "사용 기준표", en: "Usage standards", zh: "使用标准表" },
             gate: true,
           },
           {
-            label: { ko: "최종 확인 · 업로드", en: "Review & publish", zh: "审核 · 发布" },
+            label: { ko: "최종 확인 · 업로드", en: "Final check & upload", zh: "最终确认 · 上传" },
             sub: { ko: "체크리스트", en: "Checklist", zh: "清单" },
           },
           {
-            label: { ko: "5명에게 인수인계", en: "Handover ×5", zh: "交接 5 人" },
+            label: { ko: "5명에게 인수인계", en: "Handover to 5 people", zh: "交接给 5 人" },
             sub: { ko: "교육 · 문서", en: "Training, docs", zh: "培训 · 文档" },
           },
         ],
         notes: [
-          { ko: "AI 지시문 · 장면 양식", en: "Prompt and scene templates", zh: "提示词 · 分镜模板" },
-          { ko: "저작권 기준 마련", en: "Rights guideline", zh: "制定版权指南" },
-          { ko: "최종 확인 체크리스트", en: "Review checklist", zh: "审核清单" },
-          { ko: "5명 교육 · 인수인계 문서", en: "Training and handover docs", zh: "5 人培训与交接文档" },
+          { ko: "AI 지시문 · 장면 양식", en: "AI instruction and scene templates", zh: "AI 指令 · 分镜模板" },
+          { ko: "저작권 기준 마련", en: "Set copyright standards", zh: "制定版权标准" },
+          { ko: "최종 확인 체크리스트", en: "Final-check checklist", zh: "最终确认清单" },
+          { ko: "5명 교육 · 인수인계 문서", en: "Training and handover docs for 5", zh: "5 人培训与交接文档" },
         ],
       },
       impact: {
@@ -645,7 +645,7 @@ const SITE = {
           {
             before: { ko: "주 1편", en: "1 per week", zh: "一周一条" },
             after: { ko: "하루 5편", en: "5 per day", zh: "一天五条" },
-            label: { ko: "올리는 양", en: "Publishing volume", zh: "发布量" },
+            label: { ko: "올리는 양", en: "Videos published", zh: "发布量" },
           },
           {
             before: { ko: "월 1~3만", en: "10–30K", zh: "月 1~3 万" },
@@ -655,8 +655,8 @@ const SITE = {
         ],
         note: {
           ko: "인수인계 뒤에도 같은 기준으로 운영되도록 저작권 기준과 체크리스트를 함께 넘겼습니다.",
-          en: "The rights guideline and checklist went with the handover so operations kept the same standard.",
-          zh: "交接时一并交付了版权指南和检查清单，让运营维持同一标准。",
+          en: "The copyright standards and checklist went with the handover so operations kept the same standard.",
+          zh: "交接时一并交付了版权标准和检查清单，让运营维持同一标准。",
         },
       },
     },
@@ -677,22 +677,22 @@ const SITE = {
       focus: {
         ko: "금액이 2,000만원을 넘자 AI가 초안을 확정하지 않고 '멈춤'을 띄웁니다. 사람이 확인해야 다음 단계로 갑니다.",
         en: "Once the amount passes ₩20M, the AI stops instead of finalizing the draft. It moves on only after a person checks it.",
-        zh: "金额一超过 2,000 万韩元，AI 就不再定稿，而是显示“卡住”。只有人工确认后才进入下一步。",
+        zh: "金额一超过 2,000 万韩元，AI 就不再定稿，而是显示“暂停”。只有人工确认后才进入下一步。",
       },
       title: {
         ko: "광고 문의 → 12가지 기준 확인 → 제안서 초안",
-        en: "Unstructured request → 12 rule checks → proposal draft",
-        zh: "非结构化需求 → 12 条规则判定 → 提案初稿",
+        en: "Ad inquiry → 12 criteria checks → proposal draft",
+        zh: "广告咨询 → 12 项标准检查 → 提案初稿",
       },
       lead: {
         ko: "광고주가 보낸 문의에서 조건을 뽑아 12가지 기준으로 확인하고, 제안서 초안까지 만듭니다. 큰 금액이 걸리면 자동으로 진행하지 않고 사람에게 넘깁니다. 아래 예시 3개를 눌러 보세요.",
-        en: "Terms are pulled out of a raw advertiser message, twelve rules judge it, and a draft comes out. When money is involved it stops instead of auto-committing.",
-        zh: "从广告主的原始消息里抽出条件，用 12 条规则判定，再生成初稿。涉及金额时不自动定案，而是停下来。",
+        en: "It pulls the terms out of an advertiser's inquiry, checks them against 12 criteria, and writes a proposal draft. When a large amount is involved it doesn't proceed on its own — it hands off to a person. Try the three examples below.",
+        zh: "从广告主发来的咨询中抽出条件，用 12 项标准检查，再写出提案初稿。涉及大额时不会自动推进，而是交给人。点一下下面的 3 个示例试试。",
       },
-      presetsLabel: { ko: "예시 문의", en: "Request presets", zh: "需求预设" },
-      requestHead: { ko: "광고주가 보낸 문의", en: "Advertiser request, as received", zh: "广告主原始需求" },
-      extractHead: { ko: "01 · 문의에서 뽑은 조건", en: "01 · Extracted terms", zh: "01 · 条件抽取" },
-      rulesHead: { ko: "02 · 12가지 기준 확인", en: "02 · Twelve rule checks", zh: "02 · 12 条规则判定" },
+      presetsLabel: { ko: "예시 문의", en: "Example inquiries", zh: "示例咨询" },
+      requestHead: { ko: "광고주가 보낸 문의", en: "Inquiry from the advertiser", zh: "广告主发来的咨询" },
+      extractHead: { ko: "01 · 문의에서 뽑은 조건", en: "01 · Terms found in the inquiry", zh: "01 · 从咨询中抽出的条件" },
+      rulesHead: { ko: "02 · 12가지 기준 확인", en: "02 · 12 criteria checks", zh: "02 · 12 项标准检查" },
       draftHead: { ko: "03 · 제안서 초안", en: "03 · Proposal draft", zh: "03 · 提案初稿" },
       fields: [
         { label: { ko: "카테고리", en: "Category", zh: "品类" } },
@@ -703,31 +703,31 @@ const SITE = {
       status: {
         pass: { ko: "통과", en: "Pass", zh: "通过" },
         warn: { ko: "경고", en: "Warn", zh: "警告" },
-        halt: { ko: "멈춤", en: "Stop", zh: "卡住" },
+        halt: { ko: "멈춤", en: "Stop", zh: "暂停" },
       },
       draftStatus: {
         ok: { ko: "검토 후 발송", en: "Ready to review", zh: "待审后发送" },
         fix: { ko: "수정 필요", en: "Needs fixing", zh: "需要修改" },
-        hold: { ko: "멈춤 · 사람 확인 필요", en: "Stopped · human approval", zh: "卡住 · 需人工审批" },
+        hold: { ko: "멈춤 · 사람 확인 필요", en: "Stopped · needs a human check", zh: "暂停 · 需人工确认" },
       },
       gateNote: {
         ko: "금액과 대금 지급 조건은 AI가 자동으로 확정하지 않습니다. 사람이 확인하고 승인해야만 다음 단계로 넘어갑니다.",
-        en: "Amounts and settlement terms are never auto-committed. They move on only after a person clears the approval gate.",
-        zh: "金额和结算条件从不自动定案。只有人工通过审批关卡后才进入下一步。",
+        en: "AI never finalizes amounts or payment terms on its own. They move to the next step only after a person checks and approves them.",
+        zh: "金额和付款条件，AI 从不自动定案。只有人确认并批准后才进入下一步。",
       },
       rules: [
         { id: "R01", name: { ko: "카테고리 적합성", en: "Category fit", zh: "品类匹配" } },
         { id: "R02", name: { ko: "예산 범위", en: "Budget range", zh: "预算范围" } },
-        { id: "R03", name: { ko: "최소 금액", en: "Minimum rate", zh: "最低报价" } },
-        { id: "R04", name: { ko: "타깃 시청자", en: "Target audience", zh: "目标受众" } },
-        { id: "R05", name: { ko: "경쟁 브랜드 겹침", en: "Brand conflict", zh: "竞品露出" } },
+        { id: "R03", name: { ko: "최소 금액", en: "Minimum amount", zh: "最低金额" } },
+        { id: "R04", name: { ko: "타깃 시청자", en: "Target viewers", zh: "目标观众" } },
+        { id: "R05", name: { ko: "경쟁 브랜드 겹침", en: "Competing brand overlap", zh: "竞品重叠" } },
         { id: "R06", name: { ko: "콘텐츠 포맷", en: "Content format", zh: "内容形式" } },
-        { id: "R07", name: { ko: "준비 기간", en: "Lead time", zh: "交付周期" } },
-        { id: "R08", name: { ko: "영상 재사용 기간", en: "Usage rights", zh: "二次使用范围" } },
-        { id: "R09", name: { ko: "광고 표시", en: "Disclosure", zh: "赞助标注" } },
-        { id: "R10", name: { ko: "대금 지급 조건", en: "Settlement terms", zh: "结算条件" } },
+        { id: "R07", name: { ko: "준비 기간", en: "Prep time", zh: "准备时间" } },
+        { id: "R08", name: { ko: "영상 재사용 기간", en: "Video reuse period", zh: "视频再利用期限" } },
+        { id: "R09", name: { ko: "광고 표시", en: "Ad disclosure", zh: "广告标注" } },
+        { id: "R10", name: { ko: "대금 지급 조건", en: "Payment terms", zh: "付款条件" } },
         { id: "R11", name: { ko: "초상권·동의", en: "Consent", zh: "肖像权与同意" } },
-        { id: "R12", name: { ko: "고액 승인", en: "Amount gate", zh: "金额审批关卡" } },
+        { id: "R12", name: { ko: "고액 승인", en: "Large-amount approval", zh: "大额审批" } },
       ],
       presets: [
         {
@@ -754,8 +754,8 @@ const SITE = {
               { k: { ko: "기간", en: "Period", zh: "周期" }, v: { ko: "3.2 – 3.29 · 4주", en: "Mar 2 – Mar 29 · 4 weeks", zh: "3.2 – 3.29 · 4 周" } },
               { k: { ko: "크리에이터", en: "Creators", zh: "创作者" }, v: { ko: "서하윤 · 민지아 · 루나킴", en: "Seo Hayun · Min Jia · Luna Kim", zh: "徐河允 · 闵智雅 · Luna Kim" } },
               { k: { ko: "예산 배분", en: "Budget split", zh: "预算分配" }, v: { ko: "1,800만원 (크리에이터 1,500 / 제작 200 / 운영 100)", en: "₩18M (creators 15M / production 2M / ops 1M)", zh: "1,800 万（创作者 1,500 / 制作 200 / 运营 100）" } },
-              { k: { ko: "만들 콘텐츠", en: "Deliverables", zh: "交付物" }, v: { ko: "짧은 영상(릴스) 3편 · 게시물 1편 (1인당)", en: "3 reels + 1 feed post per creator", zh: "每人 3 条 Reels + 1 条图文" } },
-              { k: { ko: "추가 조건", en: "Terms", zh: "特别条款" }, v: { ko: "영상 재사용 3개월 · 대금은 다음 달 15일 지급", en: "3-month usage · paid by the 15th of the next month", zh: "二次使用 3 个月 · 次月 15 日结算" } },
+              { k: { ko: "만들 콘텐츠", en: "What to create", zh: "要制作的内容" }, v: { ko: "짧은 영상(릴스) 3편 · 게시물 1편 (1인당)", en: "3 short videos (Reels) + 1 post per creator", zh: "每人 3 条短视频（Reels）+ 1 条帖子" } },
+              { k: { ko: "추가 조건", en: "Extra terms", zh: "附加条件" }, v: { ko: "영상 재사용 3개월 · 대금은 다음 달 15일 지급", en: "3-month video reuse · paid on the 15th of the next month", zh: "视频再利用 3 个月 · 次月 15 日付款" } },
             ],
           },
         },
@@ -776,14 +776,14 @@ const SITE = {
           warnFields: [0, 1, 3],
           rules: ["warn", "warn", "pass", "pass", "pass", "pass", "warn", "warn", "pass", "pass", "pass", "pass"],
           notes: [
-            { ko: "생활용품 브랜드에 뷰티 크리에이터 요청: 맞는 팀은 1팀뿐", en: "Living brand vs. beauty pool: one overlap", zh: "家居品牌与美妆池：仅 1 位重合" },
+            { ko: "생활용품 브랜드에 뷰티 크리에이터 요청: 맞는 팀은 1팀뿐", en: "A home-goods brand asking for beauty creators: only one team fits", zh: "生活用品品牌却要美妆创作者：只有 1 个团队合适" },
             { ko: "요청 400만원 / 최소 900만원", en: "Requested ₩4M vs. ₩9M minimum", zh: "需求 400 万 / 最低 900 万" },
             null,
             null,
             null,
             null,
-            { ko: "요청 기간 1주 < 필요한 준비 기간 2주", en: "1-week deadline vs. 2-week lead time", zh: "交期 1 周 < 交付周期 2 周" },
-            { ko: "영상 무기한 재사용 요청 → 12개월로 제안", en: "Unlimited usage → propose 12 months", zh: "无限期使用 → 建议 12 个月" },
+            { ko: "요청 기간 1주 < 필요한 준비 기간 2주", en: "1-week request < 2 weeks of prep needed", zh: "要求 1 周 < 所需准备时间 2 周" },
+            { ko: "영상 무기한 재사용 요청 → 12개월로 제안", en: "Asks for unlimited video reuse → propose 12 months", zh: "要求视频无限期再利用 → 建议 12 个月" },
             null,
             null,
             null,
@@ -795,15 +795,15 @@ const SITE = {
             lines: [
               { k: { ko: "기간", en: "Period", zh: "周期" }, v: { ko: "요청 1주 → 제안 2주", en: "Requested 1 week → propose 2 weeks", zh: "要求 1 周 → 建议 2 周" } },
               { k: { ko: "크리에이터", en: "Creators", zh: "创作者" }, v: { ko: "민지아 · 하리안 · 유하린 (교집합 1팀)", en: "Min Jia · Han Harian · Yoo Harin (one overlap)", zh: "闵智雅 · 河莉安 · 柳河潾（重合 1 位）" } },
-              { k: { ko: "예산", en: "Budget", zh: "预算" }, v: { ko: "요청 400만원 → 최소 900만원으로 다시 제안", en: "Requested ₩4M → counter at ₩9M minimum", zh: "需求 400 万 → 反提案最低 900 万" } },
-              { k: { ko: "추가 조건", en: "Terms", zh: "特别条款" }, v: { ko: "무기한 재사용 → 12개월로 조정 제안", en: "Unlimited usage → propose 12 months", zh: "无限期使用 → 建议改为 12 个月" } },
+              { k: { ko: "예산", en: "Budget", zh: "预算" }, v: { ko: "요청 400만원 → 최소 900만원으로 다시 제안", en: "Asked ₩4M → re-propose at the ₩9M minimum", zh: "需求 400 万 → 按最低 900 万重新提案" } },
+              { k: { ko: "추가 조건", en: "Extra terms", zh: "附加条件" }, v: { ko: "무기한 재사용 → 12개월로 조정 제안", en: "Unlimited reuse → propose adjusting to 12 months", zh: "无限期再利用 → 建议调整为 12 个月" } },
               { k: { ko: "보완 항목", en: "To fix", zh: "待补充" }, v: { ko: "카테고리 · 예산 · 납기 · 활용 범위 4건", en: "Category, budget, deadline, usage — four items", zh: "品类 · 预算 · 交期 · 使用范围 四项" } },
             ],
           },
         },
         {
-          name: { ko: "고액 승인", en: "Amount approval gate", zh: "金额审批关卡" },
-          hint: { ko: "멈춤 2건 · 사람 확인 필요", en: "2 stops · human approval", zh: "2 条卡住 · 需人工审批" },
+          name: { ko: "고액 승인", en: "Large-amount approval", zh: "大额审批" },
+          hint: { ko: "멈춤 2건 · 사람 확인 필요", en: "2 stops · needs a human check", zh: "2 项暂停 · 需人工确认" },
           request: {
             ko: "“Yeoul Color 색조 라인 런칭인데 크리에이터 4명, 6주로 진행하고 싶어요. 예산은 2,400만원이고 선정산 30% + 성과형(CPA)으로 정산하겠습니다. 계약금은 다음 주까지 확정 부탁드려요.”",
             en: "“Yeoul Color is launching a color makeup line: four creators over six weeks. Budget is ₩24M, settled as 30% advance plus performance (CPA). Please confirm the contract amount by next week.”",
@@ -811,7 +811,7 @@ const SITE = {
           },
           extracted: [
             { ko: "뷰티 · 색조", en: "Beauty · Color makeup", zh: "美妆 · 彩妆" },
-            { ko: "2,400만원 · 성과 연동", en: "₩24,000,000 · performance-based", zh: "2,400 万韩元 · 效果型" },
+            { ko: "2,400만원 · 성과 연동", en: "₩24,000,000 · tied to performance", zh: "2,400 万韩元 · 与效果挂钩" },
             { ko: "20대 여성", en: "Women in their 20s", zh: "20 多岁女性" },
             { ko: "6주", en: "6 weeks", zh: "6 周" },
           ],
@@ -825,11 +825,11 @@ const SITE = {
             null,
             null,
             null,
-            { ko: "영상 재사용 6개월 요청 → 12개월로 협의", en: "6-month ask → negotiating 12 months", zh: "要求 6 个月 → 协商 12 个月" },
+            { ko: "영상 재사용 6개월 요청 → 12개월로 협의", en: "Asked for 6 months of video reuse → negotiating 12", zh: "要求视频再利用 6 个月 → 协商 12 个月" },
             null,
-            { ko: "선금 30% + 성과에 따른 지급(CPA) — 자동 확정 불가", en: "30% advance + CPA — cannot auto-commit", zh: "30% 预付 + CPA — 不能自动定案" },
+            { ko: "선금 30% + 성과에 따른 지급(CPA) — 자동 확정 불가", en: "30% upfront + pay by performance (CPA) — can't be finalized automatically", zh: "预付 30% + 按效果付款（CPA）— 不能自动定案" },
             null,
-            { ko: "2,400만원 ≥ 사람 확인 기준 2,000만원", en: "₩24M ≥ ₩20M gate threshold", zh: "2,400 万 ≥ 2,000 万阈值" },
+            { ko: "2,400만원 ≥ 사람 확인 기준 2,000만원", en: "₩24M ≥ ₩20M human-check threshold", zh: "2,400 万 ≥ 人工确认标准 2,000 万" },
           ],
           draft: {
             status: "hold",
@@ -837,9 +837,9 @@ const SITE = {
             lines: [
               { k: { ko: "기간", en: "Period", zh: "周期" }, v: { ko: "6주", en: "6 weeks", zh: "6 周" } },
               { k: { ko: "크리에이터", en: "Creators", zh: "创作者" }, v: { ko: "루나킴 · 이소민 · 김단아 · 서하윤", en: "Luna Kim · Lee Somin · Kim Dana · Seo Hayun", zh: "Luna Kim · 李昭旻 · 金丹雅 · 徐河允" } },
-              { k: { ko: "예산", en: "Budget", zh: "预算" }, v: { ko: "2,400만원 · 선금 30% + 성과 연동", en: "₩24M · 30% advance + CPA", zh: "2,400 万 · 30% 预付 + CPA" } },
-              { k: { ko: "추가 조건", en: "Terms", zh: "特别条款" }, v: { ko: "영상 재사용 12개월 · 성과 측정 링크 4종", en: "12-month usage · four tracking links", zh: "二次使用 12 个月 · 4 个效果链接" } },
-              { k: { ko: "승인 필요", en: "Needs approval", zh: "需审批" }, v: { ko: "2,000만원 초과 금액 · 성과 연동 지급", en: "Amount gate (over ₩20M) · performance settlement", zh: "金额关卡（超 2,000 万）· 效果型结算" } },
+              { k: { ko: "예산", en: "Budget", zh: "预算" }, v: { ko: "2,400만원 · 선금 30% + 성과 연동", en: "₩24M · 30% upfront + performance-based", zh: "2,400 万 · 预付 30% + 与效果挂钩" } },
+              { k: { ko: "추가 조건", en: "Extra terms", zh: "附加条件" }, v: { ko: "영상 재사용 12개월 · 성과 측정 링크 4종", en: "12-month video reuse · four tracking links", zh: "视频再利用 12 个月 · 4 个效果追踪链接" } },
+              { k: { ko: "승인 필요", en: "Needs approval", zh: "需审批" }, v: { ko: "2,000만원 초과 금액 · 성과 연동 지급", en: "Amount over ₩20M · performance-based payment", zh: "超过 2,000 万的金额 · 按效果付款" } },
             ],
           },
         },
@@ -855,25 +855,25 @@ const SITE = {
       },
       title: {
         ko: "광고 건별 진행 현황판",
-        en: "Live advertiser-response tracking board",
-        zh: "广告主跟进实时看板",
+        en: "Per-campaign status board",
+        zh: "各广告进度看板",
       },
       lead: {
         ko: "광고 7건이 지금 어느 단계인지 한눈에 봅니다. 단계 버튼으로 걸러 보고, 건을 누르면 요약과 다음 할 일이 열립니다.",
-        en: "Filter by stage and the list re-sorts immediately; open a row to see its summary and next action.",
-        zh: "点状态按钮就立刻筛选，点一行就展开该活动的摘要和下一步。",
+        en: "See at a glance where each of the seven campaigns stands. Filter with the stage buttons; click a campaign to open its summary and next step.",
+        zh: "一眼看清 7 个广告各自走到哪一步。用阶段按钮筛选，点一个广告就能打开摘要和下一步。",
       },
       filterAll: { ko: "전체", en: "All", zh: "全部" },
       kpiTotal: { ko: "전체 캠페인", en: "Campaigns", zh: "全部活动" },
-      kpiApprove: { ko: "사람 확인 대기", en: "Awaiting approval", zh: "待人工审批" },
-      kpiSoon: { ko: "3일 안에 마감", en: "Due within 3 days", zh: "3 天内到期" },
+      kpiApprove: { ko: "사람 확인 대기", en: "Awaiting human check", zh: "待人工确认" },
+      kpiSoon: { ko: "3일 안에 마감", en: "Due in 3 days", zh: "3 天内截止" },
       listHead: { ko: "캠페인", en: "Campaigns", zh: "活动" },
       selectHint: {
         ko: "건을 누르면 요약과 다음 할 일이 여기에 열립니다.",
-        en: "Open a row to see its summary and next action here.",
-        zh: "点开一行，摘要和下一步会显示在这里。",
+        en: "Click a campaign to open its summary and next step here.",
+        zh: "点一个广告，摘要和下一步会显示在这里。",
       },
-      nextLabel: { ko: "다음 할 일", en: "Next action", zh: "下一步" },
+      nextLabel: { ko: "다음 할 일", en: "Next step", zh: "下一步" },
       historyLabel: { ko: "최근 기록", en: "Recent history", zh: "最近记录" },
       amountLabel: { ko: "금액", en: "Amount", zh: "金额" },
       dueLabel: { ko: "마감", en: "Due", zh: "截止" },
@@ -881,11 +881,11 @@ const SITE = {
       dueNone: { ko: "종료", en: "Closed", zh: "已结束" },
       statuses: [
         { id: "new", tone: "info", label: { ko: "신규 문의", en: "New inquiry", zh: "新咨询" } },
-        { id: "rate", tone: "warn", label: { ko: "금액 협의", en: "Rate talk", zh: "报价协商" } },
-        { id: "fit", tone: "info", label: { ko: "맞는지 검토", en: "Fit review", zh: "适配审查" } },
+        { id: "rate", tone: "warn", label: { ko: "금액 협의", en: "Amount talks", zh: "金额协商" } },
+        { id: "fit", tone: "info", label: { ko: "맞는지 검토", en: "Fit check", zh: "确认是否合适" } },
         { id: "approve", tone: "halt", label: { ko: "승인 대기", en: "Awaiting approval", zh: "待审批" } },
         { id: "contract", tone: "pass", label: { ko: "계약 진행", en: "Contracting", zh: "签约中" } },
-        { id: "settle", tone: "warn", label: { ko: "대금 지급 대기", en: "Awaiting payment", zh: "待结算" } },
+        { id: "settle", tone: "warn", label: { ko: "대금 지급 대기", en: "Awaiting payment", zh: "待付款" } },
         { id: "done", tone: "mute", label: { ko: "완료", en: "Closed", zh: "已完成" } },
       ],
       campaigns: [
@@ -894,10 +894,10 @@ const SITE = {
           status: "new", dday: 1,
           amount: { ko: "1,800만원", en: "₩18,000,000", zh: "1,800 万韩元" },
           summary: { ko: "세럼 런칭 · 뷰티 3팀 · 4주", en: "Serum launch · 3 beauty creators · 4 weeks", zh: "精华上市 · 3 位美妆创作者 · 4 周" },
-          next: { ko: "문의에서 조건 뽑기 → 초안 1차 검토", en: "Extract terms from the message → review draft v1", zh: "从原始需求抽取条件 → 审阅初稿 v1" },
+          next: { ko: "문의에서 조건 뽑기 → 초안 1차 검토", en: "Pull terms from the inquiry → first review of the draft", zh: "从咨询中抽取条件 → 初稿第一次审阅" },
           history: [
             { ko: "11.21 요청 메일 수신", en: "11.21 request received", zh: "11.21 收到需求邮件" },
-            { ko: "11.21 자동 확인: 12개 통과", en: "11.21 auto-check: 12 pass", zh: "11.21 自动判定：12 条通过" },
+            { ko: "11.21 자동 확인: 12개 통과", en: "11.21 auto-check: 12 pass", zh: "11.21 自动检查：12 项通过" },
             { ko: "11.21 초안 v1 생성", en: "11.21 draft v1 generated", zh: "11.21 生成初稿 v1" },
           ],
         },
@@ -905,35 +905,35 @@ const SITE = {
           id: "c2", brand: "Bamkkot Living", creator: { ko: "민지아", en: "Min Jia", zh: "闵智雅" },
           status: "rate", dday: 2,
           amount: { ko: "400만원", en: "₩4,000,000", zh: "400 万韩元" },
-          summary: { ko: "방향제 · 예산 부족 · 경고 4건", en: "Home fragrance · under budget · 4 warnings", zh: "家居香氛 · 预算不足 · 4 条警告" },
-          next: { ko: "최소 금액 기준으로 다시 제안해 회신", en: "Reply with a counter-offer at the minimum rate", zh: "按最低报价回复反提案" },
+          summary: { ko: "방향제 · 예산 부족 · 경고 4건", en: "Air freshener · budget too low · 4 warnings", zh: "香氛 · 预算不足 · 4 条警告" },
+          next: { ko: "최소 금액 기준으로 다시 제안해 회신", en: "Reply with a new offer based on the minimum amount", zh: "按最低金额重新提案并回复" },
           history: [
             { ko: "11.20 요청 수신", en: "11.20 request received", zh: "11.20 收到需求" },
-            { ko: "11.20 예산 부족 등 경고 4건", en: "11.20 four budget warnings raised", zh: "11.20 提出 4 条预算警告" },
-            { ko: "11.21 다시 제안할 초안 작성 중", en: "11.21 counter-offer draft in progress", zh: "11.21 反提案初稿编写中" },
+            { ko: "11.20 예산 부족 등 경고 4건", en: "11.20 four warnings, incl. budget too low", zh: "11.20 预算不足等 4 条警告" },
+            { ko: "11.21 다시 제안할 초안 작성 중", en: "11.21 writing the re-proposal draft", zh: "11.21 正在撰写重新提案的初稿" },
           ],
         },
         {
           id: "c3", brand: "Yeoul Color", creator: { ko: "루나킴", en: "Luna Kim", zh: "Luna Kim" },
           status: "fit", dday: 3,
           amount: { ko: "2,400만원", en: "₩24,000,000", zh: "2,400 万韩元" },
-          summary: { ko: "색조 화장품 · 4팀 · 6주 · 성과 연동", en: "Color line · 4 creators · 6 weeks · CPA", zh: "彩妆线 · 4 位创作者 · 6 周 · CPA" },
-          next: { ko: "최근 90일 안에 경쟁 브랜드 광고를 했는지 확인", en: "Check competing-brand exposure in the last 90 days", zh: "核查近 90 天竞品露出" },
+          summary: { ko: "색조 화장품 · 4팀 · 6주 · 성과 연동", en: "Color makeup · 4 creators · 6 weeks · performance-based", zh: "彩妆 · 4 位创作者 · 6 周 · 与效果挂钩" },
+          next: { ko: "최근 90일 안에 경쟁 브랜드 광고를 했는지 확인", en: "Check whether they advertised a competing brand in the last 90 days", zh: "确认近 90 天内是否为竞品做过广告" },
           history: [
             { ko: "11.19 요청 수신", en: "11.19 request received", zh: "11.19 收到需求" },
             { ko: "11.19 후보 6팀 추림", en: "11.19 shortlisted 6 creators", zh: "11.19 筛出 6 位候选" },
-            { ko: "11.20 경쟁 브랜드 광고 이력 확인 중", en: "11.20 cross-checking exposure history", zh: "11.20 正在核对露出记录" },
+            { ko: "11.20 경쟁 브랜드 광고 이력 확인 중", en: "11.20 checking competing-brand ad history", zh: "11.20 正在核对竞品广告记录" },
           ],
         },
         {
           id: "c4", brand: "Saeum Body", creator: { ko: "하리안", en: "Han Harian", zh: "河莉安" },
           status: "approve", dday: 1,
           amount: { ko: "950만원", en: "₩9,500,000", zh: "950 万韩元" },
-          summary: { ko: "바디케어 · 2팀 · 추가 조건 1건", en: "Body care · 2 creators · 1 special term", zh: "身体护理 · 2 位创作者 · 1 项特约" },
-          next: { ko: "금액이 커서 사람 승인을 받은 뒤 발송", en: "Amount gate — request human approval, then send", zh: "金额关卡 — 请人工审批后发送" },
+          summary: { ko: "바디케어 · 2팀 · 추가 조건 1건", en: "Body care · 2 creators · 1 extra term", zh: "身体护理 · 2 位创作者 · 1 项附加条件" },
+          next: { ko: "금액이 커서 사람 승인을 받은 뒤 발송", en: "Large amount — send only after human approval", zh: "金额较大 — 经人工批准后再发送" },
           history: [
             { ko: "11.18 초안 v2 확정", en: "11.18 draft v2 finalized", zh: "11.18 初稿 v2 定稿" },
-            { ko: "11.19 고액이라 사람 확인으로 넘어감", en: "11.19 amount gate triggered", zh: "11.19 触发金额关卡" },
+            { ko: "11.19 고액이라 사람 확인으로 넘어감", en: "11.19 large amount, passed to a human check", zh: "11.19 金额较大，转为人工确认" },
             { ko: "11.20 승인자 지정", en: "11.20 approver assigned", zh: "11.20 指定审批人" },
           ],
         },
@@ -942,23 +942,23 @@ const SITE = {
           status: "contract", dday: 4,
           amount: { ko: "1,200만원", en: "₩12,000,000", zh: "1,200 万韩元" },
           summary: { ko: "액세서리 · 1팀 · 5주", en: "Accessories · 1 creator · 5 weeks", zh: "配饰 · 1 位创作者 · 5 周" },
-          next: { ko: "영상 재사용 6개월 조건 확정", en: "Confirm the 6-month usage clause", zh: "确认 6 个月二次使用条款" },
+          next: { ko: "영상 재사용 6개월 조건 확정", en: "Confirm the 6-month video reuse term", zh: "确认视频再利用 6 个月的条件" },
           history: [
             { ko: "11.15 조건 합의", en: "11.15 terms agreed", zh: "11.15 条件达成一致" },
             { ko: "11.17 계약서 초안 발송", en: "11.17 contract draft sent", zh: "11.17 发出合同初稿" },
-            { ko: "11.20 추가 조건 1건 조정", en: "11.20 one clause adjusted", zh: "11.20 调整 1 项条款" },
+            { ko: "11.20 추가 조건 1건 조정", en: "11.20 one extra term adjusted", zh: "11.20 调整 1 项附加条件" },
           ],
         },
         {
           id: "c6", brand: "Garam Lab", creator: { ko: "이소민", en: "Lee Somin", zh: "李昭旻" },
           status: "settle", dday: 6,
           amount: { ko: "780만원", en: "₩7,800,000", zh: "780 万韩元" },
-          summary: { ko: "스킨케어 · 1팀 · 종료 후 대금 지급", en: "Skincare · 1 creator · settlement after wrap", zh: "护肤 · 1 位创作者 · 结束后结算" },
-          next: { ko: "세금계산서와 지급 내역 대조", en: "Reconcile the invoice and the settlement statement", zh: "核对发票与结算明细" },
+          summary: { ko: "스킨케어 · 1팀 · 종료 후 대금 지급", en: "Skincare · 1 creator · paid after wrap", zh: "护肤 · 1 位创作者 · 结束后付款" },
+          next: { ko: "세금계산서와 지급 내역 대조", en: "Match the tax invoice against the payment record", zh: "核对税务发票与付款明细" },
           history: [
             { ko: "11.08 캠페인 종료", en: "11.08 campaign wrapped", zh: "11.08 活动结束" },
             { ko: "11.12 결과 리포트 제출", en: "11.12 results report delivered", zh: "11.12 提交结果报告" },
-            { ko: "11.20 지급 내역 받음", en: "11.20 settlement statement received", zh: "11.20 收到结算明细" },
+            { ko: "11.20 지급 내역 받음", en: "11.20 payment record received", zh: "11.20 收到付款明细" },
           ],
         },
         {
@@ -966,7 +966,7 @@ const SITE = {
           status: "done", dday: null,
           amount: { ko: "620만원", en: "₩6,200,000", zh: "620 万韩元" },
           summary: { ko: "플라워 · 1팀 · 3주", en: "Flowers · 1 creator · 3 weeks", zh: "花艺 · 1 位创作者 · 3 周" },
-          next: { ko: "결과 보고서 보관 후 종료", en: "Archive the results report and close", zh: "归档结果报告并关闭" },
+          next: { ko: "결과 보고서 보관 후 종료", en: "Archive the results report and close", zh: "归档结果报告并结束" },
           history: [
             { ko: "10.30 캠페인 종료", en: "10.30 campaign wrapped", zh: "10.30 活动结束" },
             { ko: "11.04 보고서 보관", en: "11.04 report archived", zh: "11.04 报告归档" },
@@ -985,16 +985,16 @@ const SITE = {
       },
       title: {
         ko: "해외 협업 제안 메일 관리판",
-        en: "Global partner outreach & mail automation tracker",
-        zh: "海外合作方外联与邮件自动化跟踪",
+        en: "Overseas partnership mail board",
+        zh: "海外合作提案邮件看板",
       },
       lead: {
         ko: "해외 파트너 5곳에 보낸 협업 제안 메일이 각각 어디까지 왔는지 보고, 같은 메일이 한국어·영어·중국어로 어떻게 나가는지 바꿔 볼 수 있습니다.",
-        en: "Five partners and where each mail stands, plus the same outreach mail switched between KO, EN and ZH.",
-        zh: "一屏看清 5 家合作方目前走到哪一步，并可在 KO / EN / ZH 之间切换同一封外联邮件。",
+        en: "See how far the partnership mail to each of five overseas partners has come, and switch the same mail between Korean, English and Chinese.",
+        zh: "查看发给 5 家海外合作方的合作提案邮件各自走到哪一步，并可在韩语、英语、中文之间切换同一封邮件。",
       },
-      partnerHead: { ko: "파트너별 진행 상황", en: "Partner status", zh: "合作方发送状态" },
-      templateHead: { ko: "제안 메일 미리보기", en: "Outreach template preview", zh: "外联模板预览" },
+      partnerHead: { ko: "파트너별 진행 상황", en: "Progress by partner", zh: "各合作方进度" },
+      templateHead: { ko: "제안 메일 미리보기", en: "Partnership mail preview", zh: "合作提案邮件预览" },
       templateNote: {
         ko: "언어를 바꾸면 같은 메일이 그 언어로 어떻게 나가는지 그대로 보입니다.",
         en: "Switch the language to see exactly how this same mail goes out.",
@@ -1005,12 +1005,12 @@ const SITE = {
       kpiMeeting: { ko: "미팅 조율", en: "Meeting set", zh: "约会议中" },
       regionLabel: { ko: "지역", en: "Region", zh: "地区" },
       stageLabel: { ko: "단계", en: "Stage", zh: "阶段" },
-      nextLabel: { ko: "다음 할 일", en: "Next action", zh: "下一步" },
+      nextLabel: { ko: "다음 할 일", en: "Next step", zh: "下一步" },
       subjectLabel: { ko: "제목", en: "Subject", zh: "主题" },
       stages: [
         { id: "idle", label: { ko: "미발송", en: "Not sent", zh: "未发送" } },
-        { id: "sent", label: { ko: "첫 메일 발송", en: "First mail sent", zh: "首封已发" } },
-        { id: "followup", label: { ko: "후속 메일 대기", en: "Follow-up queued", zh: "待跟进" } },
+        { id: "sent", label: { ko: "첫 메일 발송", en: "First mail sent", zh: "已发首封邮件" } },
+        { id: "followup", label: { ko: "후속 메일 대기", en: "Waiting for follow-up mail", zh: "待发跟进邮件" } },
         { id: "replied", label: { ko: "회신 수신", en: "Reply received", zh: "已回复" } },
         { id: "meeting", label: { ko: "미팅 조율", en: "Scheduling a call", zh: "约会议" } },
       ],
@@ -1018,7 +1018,7 @@ const SITE = {
         {
           id: "p1", name: "Northlight Creators", stage: "replied",
           region: { ko: "미국 · 북미 뷰티 40팀", en: "US · 40 beauty creators", zh: "美国 · 40 位美妆创作者" },
-          next: { ko: "12월 시범 프로젝트 1건 조건 회신", en: "Reply with terms for one December pilot", zh: "回复 12 月 1 个试点项目的条件" },
+          next: { ko: "12월 시범 프로젝트 1건 조건 회신", en: "Reply with terms for one December trial project", zh: "回复 12 月 1 个试点项目的条件" },
         },
         {
           id: "p2", name: "Halcyon Loop Media", stage: "meeting",
@@ -1027,18 +1027,18 @@ const SITE = {
         },
         {
           id: "p3", name: "Tidewater Talents", stage: "followup",
-          region: { ko: "싱가포르 · 아시아 크리에이터 다수 보유", en: "Singapore · Asia creator pool", zh: "新加坡 · 亚洲创作者池" },
-          next: { ko: "첫 메일 후 5일 지남 · 후속 메일 발송", en: "Five days since first mail · send follow-up", zh: "首封已过 5 天 · 发送跟进" },
+          region: { ko: "싱가포르 · 아시아 크리에이터 다수 보유", en: "Singapore · many Asian creators on the roster", zh: "新加坡 · 拥有众多亚洲创作者" },
+          next: { ko: "첫 메일 후 5일 지남 · 후속 메일 발송", en: "5 days since the first mail · send a follow-up", zh: "首封邮件已过 5 天 · 发送跟进邮件" },
         },
         {
           id: "p4", name: "Maple Quill Studio", stage: "sent",
           region: { ko: "캐나다 · 라이프스타일 제작사", en: "Canada · lifestyle studio", zh: "加拿大 · 生活方式制作公司" },
-          next: { ko: "첫 메일 보냄 · 3일 뒤 후속 메일 예약", en: "First mail sent · follow-up in three days", zh: "首封已发 · 3 天后跟进" },
+          next: { ko: "첫 메일 보냄 · 3일 뒤 후속 메일 예약", en: "First mail sent · follow-up scheduled in 3 days", zh: "已发首封邮件 · 3 天后发送跟进邮件" },
         },
         {
           id: "p5", name: "Orchid Brick Agency", stage: "idle",
-          region: { ko: "대만 · 뷰티 온라인 쇼핑몰", en: "Taiwan · beauty commerce", zh: "台湾 · 美妆电商" },
-          next: { ko: "담당자 확인 후 중국어 메일로 발송", en: "Confirm the contact, then send the ZH template", zh: "确认对接人后用中文模板发送" },
+          region: { ko: "대만 · 뷰티 온라인 쇼핑몰", en: "Taiwan · beauty online store", zh: "台湾 · 美妆网店" },
+          next: { ko: "담당자 확인 후 중국어 메일로 발송", en: "Confirm the contact, then send the Chinese mail", zh: "确认对接人后发送中文邮件" },
         },
       ],
       templates: {
@@ -1060,36 +1060,36 @@ const SITE = {
     evidence: {
       title: {
         ko: "실제로 측정한 숫자: 별도 테스트 기록",
-        en: "Records from a separate evaluation demo on the same idea",
-        zh: "另一个同思路评测演示的记录",
+        en: "Numbers actually measured: a separate test record",
+        zh: "实际测量的数字：单独的测试记录",
       },
       lead: {
         ko: "위 화면은 흐름을 보여 주기 위한 것이고, 성능은 따로 측정했습니다. 아래는 가상 대화 10건으로 AI 도우미를 테스트해 실제로 나온 결과입니다.",
-        en: "The screens show the flow; the numbers are measured separately. These come from an agent evaluation demo built on ten fictional conversations.",
-        zh: "界面演示流程，数字另行测量。下面是在 10 段虚构对话构成的智能体评测演示中实测的值。",
+        en: "The screens above show the flow; performance was measured separately. Below are real results from testing the AI assistant on ten fictional conversations.",
+        zh: "上面的界面用来展示流程，性能另行测量。下面是用 10 段虚构对话测试 AI 助手得到的实际结果。",
       },
       stats: [
         {
           value: "9/10",
-          label: { ko: "세 가지를 모두 맞힘", en: "All three fields correct", zh: "三项同时正确" },
-          sub: { ko: "누구 차례인지 · 언제까지인지 · 사람 판단이 필요한지", en: "Whose turn · due date · needs judgment", zh: "轮到谁 · 截止时间 · 需判断" },
+          label: { ko: "세 가지를 모두 맞힘", en: "Got all three right", zh: "三项全部答对" },
+          sub: { ko: "누구 차례인지 · 언제까지인지 · 사람 판단이 필요한지", en: "Whose turn it is · by when · whether a person must judge", zh: "轮到谁 · 截止何时 · 是否需要人来判断" },
         },
         {
           value: "3/3",
           human: true,
           label: { ko: "멈춰야 할 때 멈춤", en: "Stopped when it should", zh: "该停时停下" },
-          sub: { ko: "멈추지 않아도 될 때 멈춘 경우 0/1", en: "False stops 0/1", zh: "误停 0/1" },
+          sub: { ko: "멈추지 않아도 될 때 멈춘 경우 0/1", en: "Stopped when it didn't need to: 0/1", zh: "不必停却停了：0/1" },
         },
         {
           value: "8–10",
-          label: { ko: "같은 조건으로 두 번 돌린 점수 범위", en: "Spread across two runs", zh: "同设置两次运行的波动" },
-          sub: { ko: "10점 만점 · 매번 조금씩 달라짐", en: "Out of 10 · it moves", zh: "满分 10 · 会晃动" },
+          label: { ko: "같은 조건으로 두 번 돌린 점수 범위", en: "Score range across two runs with the same settings", zh: "同条件运行两次的得分范围" },
+          sub: { ko: "10점 만점 · 매번 조금씩 달라짐", en: "Out of 10 · varies a little each time", zh: "满分 10 · 每次略有不同" },
         },
       ],
       note: {
         ko: "한 번 측정한 결과는 대략적인 방향만 알려 줍니다. '멈출지 말지'는 여섯 번 측정에서 모두 3/3이었지만, 정확도는 매번 조금씩 달라지므로 범위로 봐야 한다고 기록해 두었습니다.",
-        en: "A single comparison only points a direction. The stop decision held at 3/3 across six measurements, but accuracy has to be read with its spread.",
-        zh: "只跑一次的比较只能指方向。因此“该不该停”六次测量都是 3/3，而准确度必须连同波动一起读。",
+        en: "A single measurement only points a rough direction. The 'stop or not' call was 3/3 in all six measurements, but accuracy varies a little each time, so I noted that it should be read as a range.",
+        zh: "只测一次的结果只能指出大致方向。“该不该停”在六次测量中都是 3/3，但准确度每次略有不同，所以我记录下来：应当按范围来看。",
       },
     },
   },
@@ -1098,16 +1098,16 @@ const SITE = {
   layers: [
     {
       tag: "01 · MODEL",
-      title: { ko: "AI가 판단", en: "The model judges", zh: "模型判断" },
+      title: { ko: "AI가 판단", en: "AI judges", zh: "AI 判断" },
       desc: {
         ko: "규칙으로 다 적을 수 없는 일. 형식이 제각각인 글을 읽고, 초안을 쓰고, 애매한 것을 분류합니다.",
-        en: "What cannot be fully written as rules: reading unstructured text, drafting, classifying the ambiguous.",
-        zh: "无法完全写成规则的领域：读懂非结构化文本、生成初稿、对模糊的内容分类。",
+        en: "The work rules can't fully capture: reading text in every format, writing drafts, sorting out what's ambiguous.",
+        zh: "规则无法完全写下的工作：读懂格式各异的文字、写初稿、给模糊的内容分类。",
       },
       example: {
         ko: "문의 의도 파악 · 초안 작성 · 숫자 해석",
-        en: "Intent reading · drafting · metric interpretation",
-        zh: "理解需求意图 · 撰写初稿 · 解读指标",
+        en: "Reading the inquiry's intent · drafting · interpreting numbers",
+        zh: "理解咨询意图 · 撰写初稿 · 解读数字",
       },
     },
     {
@@ -1120,8 +1120,8 @@ const SITE = {
       },
       example: {
         ko: "판단 기준 12개 · 확인 체크리스트 · 금지 사항 자동 검사",
-        en: "12 rules · review checklists · guard checks",
-        zh: "12 条判断规则 · 验收清单 · 底线检查器",
+        en: "12 criteria · checklists · automatic checks for what's off-limits",
+        zh: "12 条判断标准 · 确认清单 · 禁止事项自动检查",
       },
     },
     {
@@ -1129,8 +1129,8 @@ const SITE = {
       title: { ko: "사람이 승인", en: "A human approves", zh: "人来审批" },
       desc: {
         ko: "돈, 사람, 회사 밖으로 나가는 일은 자동으로 확정하지 않습니다. 사람이 확인하도록 멈추는 지점을 처음부터 넣어 둡니다.",
-        en: "Money, people and anything leaving the building never auto-commits. The stop is part of the design.",
-        zh: "涉及钱、人和对外的事不自动定案。把“停下来”的点写进设计里。",
+        en: "Money, people and anything leaving the company are never finalized automatically. Stopping points for a human check are built in from the start.",
+        zh: "涉及钱、人和对外的事不会自动定案。从一开始就设好由人确认的暂停点。",
       },
       example: {
         ko: "금액 확정 · 외부 발송 · 계약 종료",
@@ -1147,8 +1147,8 @@ const SITE = {
       title: { ko: "판단을 세 층으로 나눈다", en: "Split judgment into three layers", zh: "把判断分成三层" },
       body: {
         ko: "AI가 할 일, 규칙으로 정해 둘 일, 사람이 승인할 일을 처음부터 나눠 둡니다. 그래야 틀렸을 때 어디를 고쳐야 하는지 분명합니다.",
-        en: "Model work, fixed rules and human approval are separated in the structure itself, so when something is wrong it is obvious where to fix it.",
-        zh: "把模型要做的、规则要固化的、人要审批的分在结构里。这样出问题时，改哪里一目了然。",
+        en: "What AI does, what becomes a rule and what a person approves are separated from the start, so when something goes wrong it's clear where to fix it.",
+        zh: "AI 要做的、定成规则的、由人审批的，从一开始就分开。这样出错时，改哪里一清二楚。",
       },
     },
     {
@@ -1169,8 +1169,8 @@ const SITE = {
       title: { ko: "입력을 늘리지 않는다", en: "Do not add input fields", zh: "不增加新的输入" },
       body: {
         ko: "새로 입력할 칸을 늘리는 자동화는 결국 아무도 쓰지 않습니다. 사람들이 이미 쓰는 메일·메신저·시트에서 읽어 오고, 입력이 새 업무가 되지 않게 만듭니다.",
-        en: "Automation that demands a new field goes unused. Read from the flow people already use, and keep writing from becoming the job.",
-        zh: "要求人填新字段的自动化没人会用。从人们本来就在用的流程里读取，别让填写本身变成工作。",
+        en: "Automation that adds new fields to fill in ends up unused. It reads from the mail, messenger and sheets people already use, so entering data never becomes a new job.",
+        zh: "增加填写栏位的自动化最终没人会用。从大家本来就在用的邮件、聊天工具和表格中读取，不让填写变成新的工作。",
       },
     },
     {
@@ -1182,8 +1182,8 @@ const SITE = {
       },
       body: {
         ko: "하면 안 되는 것과 예외는 문서와 자동 검사로 옮깁니다. 담당자가 바뀌어도 기준은 그대로 남습니다.",
-        en: "Prohibitions and exceptions move into documents and guards, so the standard stays put when the owner changes.",
-        zh: "底线和例外移进文档和检查器。换人之后标准仍留在原地。",
+        en: "What's off-limits and the exceptions move into documents and automatic checks, so the standard stays when the owner changes.",
+        zh: "禁止事项和例外写进文档和自动检查。换了负责人，标准依然留在原地。",
       },
     },
     {
@@ -1245,8 +1245,8 @@ const SITE = {
         },
         {
           ko: "제각각인 광고 문의를 처리하는 AI 업무 도우미 설계·운영, 판단 기준 12개 문서화, 팀 전체로 확대",
-          en: "Designing and running a work AI agent for unstructured requests; 12 rules documented and handed to the team",
-          zh: "设计并运营处理非结构化请求的 AI 工作智能体，12 条判断规则文档化并移交团队共用",
+          en: "Designed and ran an AI work assistant for ad inquiries in every shape; 12 criteria documented and rolled out to the whole team",
+          zh: "设计并运营处理各种广告咨询的 AI 工作助手，12 条判断标准文档化并推广到整个团队",
         },
       ],
     },
@@ -1257,13 +1257,13 @@ const SITE = {
       bullets: [
         {
           ko: "유튜브 데이터 자동 수집 + AI 해석으로 채널 성장 분석 자동화 (2주 → 2일)",
-          en: "Built a YouTube Data API + LLM channel growth pipeline (2 weeks to 2 days)",
-          zh: "搭建 YouTube Data API + LLM 频道增长分析管道（两周 → 两天）",
+          en: "Automated channel growth analysis with automatic YouTube data collection + AI interpretation (2 weeks to 2 days)",
+          zh: "用 YouTube 数据自动采集 + AI 解读实现频道增长分析自动化（两周 → 两天）",
         },
         {
           ko: "3개 회사 협업으로 AI 더빙 영어 채널 @haenibeautyEN 개설 총괄 (4주 → 2일)",
-          en: "Launch PM for the 3-party AI lipsync subchannel @haenibeautyEN (4 weeks to 2 days)",
-          zh: "三方协作的 AI 对口型全球子频道 @haenibeautyEN 上线 PM（四周 → 两天）",
+          en: "Led the three-company launch of the AI-dubbed English channel @haenibeautyEN (4 weeks to 2 days)",
+          zh: "统筹三家公司协作，开设 AI 配音英文频道 @haenibeautyEN（四周 → 两天）",
         },
       ],
     },
@@ -1274,13 +1274,13 @@ const SITE = {
       bullets: [
         {
           ko: "서울경제신문 AI 뉴스 영상 제작 자동화 — 하루 1편 → 30분에 1편, 5명에게 인수인계",
-          en: "AI video production automation for Seoul Economic Daily — 1 a day to 1 per 30 min, handed to 5 people",
-          zh: "首尔经济新闻 AI 视频制作自动化——一天一条 → 30 分钟一条，交接给 5 位团队成员",
+          en: "AI news-video production automation for Seoul Economic Daily — 1 a day to 1 every 30 min, handed over to 5 people",
+          zh: "首尔经济新闻 AI 新闻视频制作自动化——一天一条 → 30 分钟一条，交接给 5 人",
         },
         {
           ko: "저작권 기준과 최종 확인 체크리스트 마련",
-          en: "Set rights guidelines and a review checklist",
-          zh: "制定版权指南与审核清单",
+          en: "Set copyright standards and a final-check checklist",
+          zh: "制定版权标准与最终确认清单",
         },
       ],
     },
@@ -1296,8 +1296,8 @@ const SITE = {
         },
         {
           ko: "현장에서 반복해서 막히는 일을 처음으로 숫자로 보기 시작한 시기",
-          en: "Where I first started measuring the bottlenecks that repeat on the ground",
-          zh: "第一次开始用数字去看现场反复出现的瓶颈——我的起点",
+          en: "Where I first started looking at the work that kept getting stuck in numbers",
+          zh: "第一次开始用数字去看现场反复卡住的工作——我的起点",
         },
       ],
     },
