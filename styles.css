@@ -510,6 +510,7 @@ html[data-theme="light"] .section--demos {
 .pill--mute { color: var(--tone-mute); background: var(--tone-mute-bg); border-color: var(--tone-mute-line); }
 
 .demos { display: grid; gap: 18px; }
+.section, .demo { scroll-margin-top: 82px; }
 .demo {
   border: 1px solid var(--line); border-radius: var(--radius);
   background: var(--surface); box-shadow: var(--shadow); overflow: hidden;

@@ -137,7 +137,7 @@ python3 -m http.server 8000
 
 - Settings → Pages → Source: **Deploy from a branch**, Branch: `main` / `/ (root)`
 - `main`에 푸시하면 1~2분 뒤 https://chaeeunyoon-boop.github.io/ 에 반영됩니다.
-- GitHub Pages는 CSS·JS를 약 10분간 캐시합니다. 수정이 바로 안 보이면 `index.html`의 `?v=6`을 `?v=7`처럼 올려 푸시하세요(브라우저 캐시를 건너뛰는 가장 확실한 방법).
+- GitHub Pages는 CSS·JS를 약 10분간 캐시합니다. 수정이 바로 안 보이면 `index.html`의 `?v=7`을 `?v=8`처럼 올려 푸시하세요(브라우저 캐시를 건너뛰는 가장 확실한 방법).
 
 ---
 
