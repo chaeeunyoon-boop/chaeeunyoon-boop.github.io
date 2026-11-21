@@ -42,7 +42,7 @@ const SITE = {
     heroLine3: {
       ko: "작동하는 워크플로우로 풉니다.",
       en: "Then solve it with a workflow that actually runs.",
-      zh: "再用能跑起来的工作流解决",
+      zh: "再用能跑起来的工作流解决。",
     },
     heroSub: {
       ko: "마케터로 4년 넘게 현장을 운영해 왔고, 그 현장에서 막히던 일을 직접 AI 에이전트와 파이프라인으로 만들어 왔습니다. 기획서로 끝내지 않고, 실제로 돌아가고 남이 이어받을 수 있는 형태까지 갑니다.",
