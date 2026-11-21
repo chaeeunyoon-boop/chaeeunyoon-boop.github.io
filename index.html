@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>윤채은 — AX Builder / Problem Solver</title>
+<meta name="description" content="현업의 반복 병목을 찾아, 규칙화하고, 작동하는 AI 워크플로우로 푸는 AX 빌더 윤채은의 포트폴리오." />
+<meta property="og:title" content="윤채은 — AX Builder / Problem Solver" />
+<meta property="og:description" content="현업의 반복 병목을 찾아, 규칙화하고, 작동하는 AI 워크플로우로 풉니다." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0e14'/%3E%3Ctext x='32' y='43' font-family='monospace' font-size='30' fill='%233ddc97' text-anchor='middle'%3ECY%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">본문으로 건너뛰기</a>
+
+<header class="topbar">
+  <div class="wrap topbar__inner">
+    <a class="brand" href="#top">
+      <span class="brand__mark">CY</span>
+      <span class="brand__text">
+        <strong>Chaeeun Yun</strong>
+        <em data-i18n="brandRole">AX Builder · Problem Solver</em>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Sections">
+      <a href="#cases" data-i18n="navCases">케이스</a>
+      <a href="#principles" data-i18n="navPrinciples">원칙</a>
+      <a href="#career" data-i18n="navCareer">경력</a>
+      <a href="#contact" data-i18n="navContact">연락</a>
+    </nav>
+
+    <div class="toggles">
+      <div class="seg" role="group" aria-label="Language">
+        <button type="button" class="seg__btn is-active" data-lang="ko" aria-pressed="true">KO</button>
+        <button type="button" class="seg__btn" data-lang="en" aria-pressed="false">EN</button>
+        <button type="button" class="seg__btn" data-lang="zh" aria-pressed="false">ZH</button>
+      </div>
+      <button type="button" id="themeToggle" class="iconbtn" aria-label="Toggle theme" title="Theme">
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero__grid" aria-hidden="true"></div>
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="wrap hero__inner">
+      <div class="hero__left">
+        <p class="chip chip--live">
+          <span class="dot"></span>
+          <span data-i18n="heroStatus">현재 온더룩 MCN팀에서 일하며, 그 옆에서 AI 워크플로우를 만듭니다</span>
+        </p>
+
+        <h1 class="hero__title">
+          <span data-i18n="heroLine1">반복되는 병목을 찾아</span>
+          <span class="hero__accent" data-i18n="heroLine2">규칙으로 바꾸고</span>
+          <span data-i18n="heroLine3">작동하는 워크플로우로 풉니다.</span>
+        </h1>
+
+        <p class="hero__sub" data-i18n="heroSub">
+          마케터로 4년 넘게 현장을 운영해 왔고, 그 현장에서 막히던 일을 직접 AI 에이전트와 파이프라인으로 만들어 왔습니다.
+          기획서로 끝내지 않고, 실제로 돌아가고 남이 이어받을 수 있는 형태까지 갑니다.
+        </p>
+
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#cases">
+            <span data-i18n="heroCta1">케이스 4건 보기</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn" href="mailto:chaeeunyoon@gmail.com">
+            <span data-i18n="heroCta2">연락하기</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__right">
+        <div class="panel panel--metrics">
+          <div class="panel__head">
+            <span class="mono" data-i18n="metricHead">IMPACT / BEFORE → AFTER</span>
+            <span class="badge" data-i18n="metricBadge">실무 적용</span>
+          </div>
+          <ul class="metrics" id="heroMetrics"></ul>
+          <p class="panel__foot mono" data-i18n="metricFoot">* 모두 실제 업무에서 운영한 결과입니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASES -->
+  <section class="section" id="cases">
+    <div class="wrap">
+      <header class="section__head">
+        <p class="eyebrow mono"><span>01</span> CASE STUDIES</p>
+        <h2 data-i18n="casesTitle">문제 → 규칙 → 임팩트</h2>
+        <p class="section__lead" data-i18n="casesLead">
+          각 케이스는 같은 순서로 읽힙니다. 무엇이 막혔는지, 어떤 판단을 규칙으로 옮겼는지, 그래서 무엇이 달라졌는지.
+        </p>
+      </header>
+
+      <div class="cases" id="casesApp">
+        <aside class="cases__rail" role="tablist" aria-label="Case studies" id="caseRail"></aside>
+        <div class="cases__panel" id="casePanel"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRINCIPLES -->
+  <section class="section section--alt" id="principles">
+    <div class="wrap">
+      <header class="section__head">
+        <p class="eyebrow mono"><span>02</span> BUILDER PRINCIPLES &amp; STACK</p>
+        <h2 data-i18n="principlesTitle">AI에게 맡길 것과 맡기지 않을 것을 먼저 나눕니다.</h2>
+        <p class="section__lead" data-i18n="principlesLead">
+          판단을 세 층으로 분리하는 것이 제 모든 워크플로우의 출발점입니다.
+        </p>
+      </header>
+
+      <div class="layers" id="layers"></div>
+
+      <div class="principles" id="principles"></div>
+
+      <div class="stackblock">
+        <div class="stackblock__head">
+          <h3 data-i18n="stackTitle">Stack</h3>
+          <p class="mono" data-i18n="stackNote">실제로 업무에 쓰고 있는 것들</p>
+        </div>
+        <div class="stack" id="stack"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAREER -->
+  <section class="section" id="career">
+    <div class="wrap">
+      <header class="section__head">
+        <p class="eyebrow mono"><span>03</span> CAREER</p>
+        <h2 data-i18n="careerTitle">현장에서 배운 것을, 다음 현장의 구조로.</h2>
+        <p class="section__lead" data-i18n="careerLead">총 경력 4년 4개월 · 크리에이터 마케팅 운영 → AI 워크플로우 설계</p>
+      </header>
+      <ol class="timeline" id="timeline"></ol>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section section--contact" id="contact">
+    <div class="wrap">
+      <div class="contact">
+        <div class="contact__main">
+          <p class="eyebrow mono"><span>04</span> CONTACT</p>
+          <h2 data-i18n="contactTitle">막힌 현장이 있다면, 그 이야기부터 듣고 싶습니다.</h2>
+          <p class="contact__lead" data-i18n="contactLead">
+            반복되는 일을 규칙으로 옮기고, 사람이 승인해야 할 지점을 남겨 두는 일. 그 구조를 같이 만들 사람을 찾고 있습니다.
+          </p>
+        </div>
+        <div class="contact__links" id="contactLinks"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <p class="mono">© <span id="year">2026</span> Chaeeun Yun · <span data-i18n="footerNote">정적 HTML/CSS/JS · 빌드 없음</span></p>
+    <p class="mono footer__meta" data-i18n="footerMeta">모든 수치는 실제 업무 기록 기준이며, 회사 내부 자료·비공개 데이터는 포함하지 않았습니다.</p>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
