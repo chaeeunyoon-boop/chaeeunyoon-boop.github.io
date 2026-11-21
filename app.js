@@ -184,8 +184,6 @@
 
     var body = el("div", "stepbody");
     body.setAttribute("role", "tabpanel");
-    var head = el("h4", null, t(labels[state.step]));
-    body.appendChild(head);
 
     if (state.step === 0) {
       body.appendChild(el("p", "stepbody__lead", t(c.problem.lead)));
@@ -244,7 +242,7 @@
   }
 
   function renderPrinciples() {
-    var host = document.getElementById("principles");
+    var host = document.getElementById("principlesGrid");
     host.textContent = "";
     SITE.principles.forEach(function (p) {
       var card = el("article", "principle");
