@@ -485,8 +485,10 @@ html[data-theme="light"] .iconbtn .i-sun { display: none; }
   .cases { grid-template-columns: 1fr; gap: 14px; }
   .cases__rail {
     position: static; flex-direction: row; gap: 8px;
-    overflow-x: auto; padding-bottom: 6px; scrollbar-width: thin;
+    overflow-x: auto; padding-bottom: 6px;
+    scrollbar-width: none; -ms-overflow-style: none;
   }
+  .cases__rail::-webkit-scrollbar { display: none; }
   .railbtn { flex: 0 0 auto; max-width: 220px; padding: 10px 12px; border-color: var(--line); }
   .railbtn__title { font-size: 12px; }
   .cases__panel { padding: 24px 20px 26px; min-height: 0; }
