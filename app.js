@@ -306,13 +306,435 @@
     });
   }
 
+  /* ---------------- live demos (100% fictional data) ---------------- */
+  var demoState = { d1: 0, d2: "all", d2sel: null, d3: 0, d3lang: null };
+
+  function tonePill(tone, label) {
+    return el("span", "pill pill--" + tone, label);
+  }
+
+  function renderDemos() {
+    var host = document.getElementById("demosApp");
+    if (!host) return;
+    var D = SITE.demos;
+    var defs = [
+      { key: "simulator", no: "01" },
+      { key: "dashboard", no: "02" },
+      { key: "outreach", no: "03" },
+    ];
+    host.textContent = "";
+    defs.forEach(function (d) {
+      var card = el("section", "demo");
+      card.id = "demo-" + d.no;
+      card.setAttribute("aria-labelledby", "demoTitle-" + d.no);
+
+      var head = el("header", "demo__head");
+      var tags = el("div", "demo__tags");
+      tags.appendChild(el("span", "demo__no", "DEMO " + d.no));
+      tags.appendChild(el("span", "demo__fict", t(D.fictitious)));
+      head.appendChild(tags);
+      var h3 = el("h3", "demo__title", t(D[d.key].title));
+      h3.id = "demoTitle-" + d.no;
+      head.appendChild(h3);
+      head.appendChild(el("p", "demo__lead", t(D[d.key].lead)));
+      card.appendChild(head);
+
+      var body = el("div", "demo__body");
+      body.id = "demoBody-" + d.no;
+      card.appendChild(body);
+      host.appendChild(card);
+    });
+
+    renderSimulator();
+    renderBoard();
+    renderOutreach();
+    renderEvidence();
+  }
+
+  function renderSimulator() {
+    var host = document.getElementById("demoBody-01");
+    if (!host) return;
+    var S = SITE.demos.simulator;
+    host.textContent = "";
+
+    var tabs = el("div", "presets");
+    tabs.setAttribute("role", "group");
+    S.presets.forEach(function (p, i) {
+      var on = demoState.d1 === i;
+      var b = el("button", "preset" + (on ? " is-active" : ""));
+      b.type = "button";
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+      b.appendChild(el("span", "preset__no mono", "0" + (i + 1)));
+      b.appendChild(el("span", "preset__name", t(p.name)));
+      b.appendChild(el("span", "preset__hint", t(p.hint)));
+      b.addEventListener("click", function () {
+        demoState.d1 = i;
+        renderSimulator();
+      });
+      tabs.appendChild(b);
+    });
+    host.appendChild(tabs);
+
+    var p = S.presets[demoState.d1];
+
+    var req = el("div", "reqmsg");
+    req.appendChild(el("span", "reqmsg__head mono", t(S.requestHead)));
+    req.appendChild(el("p", "reqmsg__text", t(p.request)));
+    host.appendChild(req);
+
+    var counts = { pass: 0, warn: 0, halt: 0 };
+    p.rules.forEach(function (s) {
+      counts[s] = (counts[s] || 0) + 1;
+    });
+
+    var grid = el("div", "sim");
+
+    var colA = el("div", "sim__col");
+    var headA = el("div", "sim__head");
+    headA.appendChild(el("h4", "demo__h", t(S.extractHead)));
+    var sum = el("div", "sim__counts");
+    sum.appendChild(tonePill("pass", t(S.status.pass) + " " + counts.pass));
+    sum.appendChild(tonePill("warn", t(S.status.warn) + " " + counts.warn));
+    sum.appendChild(tonePill("halt", t(S.status.halt) + " " + counts.halt));
+    headA.appendChild(sum);
+    colA.appendChild(headA);
+
+    var dl = el("dl", "extract");
+    S.fields.forEach(function (f, i) {
+      var row = el("div", "extract__row");
+      row.appendChild(el("dt", "extract__key", t(f.label)));
+      var flagged = p.warnFields.indexOf(i) !== -1;
+      row.appendChild(el("dd", "extract__val" + (flagged ? " is-warn" : ""), t(p.extracted[i])));
+      dl.appendChild(row);
+    });
+    colA.appendChild(dl);
+    grid.appendChild(colA);
+
+    var colB = el("div", "sim__col");
+    colB.appendChild(el("h4", "demo__h", t(S.rulesHead)));
+    var list = el("ul", "rules");
+    S.rules.forEach(function (r, i) {
+      var st = p.rules[i];
+      var li = el("li", "rule rule--" + st);
+      var main = el("div", "rule__main");
+      var top = el("div", "rule__top");
+      top.appendChild(el("span", "rule__id mono", r.id));
+      top.appendChild(el("span", "rule__name", t(r.name)));
+      main.appendChild(top);
+      if (p.notes[i]) main.appendChild(el("span", "rule__note", t(p.notes[i])));
+      li.appendChild(main);
+      li.appendChild(tonePill(st, t(S.status[st])));
+      list.appendChild(li);
+    });
+    colB.appendChild(list);
+    grid.appendChild(colB);
+    host.appendChild(grid);
+
+    var draft = el("div", "draft draft--" + p.draft.status);
+    var dhead = el("div", "draft__head");
+    dhead.appendChild(el("h4", "demo__h", t(S.draftHead)));
+    var tone = p.draft.status === "ok" ? "pass" : p.draft.status === "fix" ? "warn" : "halt";
+    dhead.appendChild(tonePill(tone, t(S.draftStatus[p.draft.status])));
+    draft.appendChild(dhead);
+    draft.appendChild(el("p", "draft__title", t(p.draft.title)));
+    p.draft.lines.forEach(function (l) {
+      var row = el("div", "draft__row");
+      row.appendChild(el("span", "draft__k", t(l.k)));
+      row.appendChild(el("span", "draft__v", t(l.v)));
+      draft.appendChild(row);
+    });
+    if (p.draft.status === "hold") draft.appendChild(el("p", "draft__gate", t(S.gateNote)));
+    host.appendChild(draft);
+  }
+
+  function renderBoard() {
+    var host = document.getElementById("demoBody-02");
+    if (!host) return;
+    var S = SITE.demos.dashboard;
+    host.textContent = "";
+
+    var statusOf = {};
+    S.statuses.forEach(function (s) {
+      statusOf[s.id] = s;
+    });
+
+    var approve = S.campaigns.filter(function (c) {
+      return c.status === "approve";
+    }).length;
+    var soon = S.campaigns.filter(function (c) {
+      return c.dday != null && c.dday <= 3;
+    }).length;
+
+    var kpis = el("div", "kpis");
+    [
+      [String(S.campaigns.length), S.kpiTotal],
+      [String(approve), S.kpiApprove],
+      [String(soon), S.kpiSoon],
+    ].forEach(function (k) {
+      var box = el("div", "kpi");
+      box.appendChild(el("span", "kpi__val", k[0]));
+      box.appendChild(el("span", "kpi__label", t(k[1])));
+      kpis.appendChild(box);
+    });
+    host.appendChild(kpis);
+
+    var filters = el("div", "filters");
+    filters.setAttribute("role", "group");
+    filters.setAttribute("aria-label", t(S.listHead));
+
+    function filterBtn(id, label, n) {
+      var on = demoState.d2 === id;
+      var b = el("button", "filter" + (on ? " is-active" : ""));
+      b.type = "button";
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+      b.appendChild(el("span", null, label));
+      b.appendChild(el("span", "filter__n mono", String(n)));
+      b.addEventListener("click", function () {
+        demoState.d2 = id;
+        renderBoard();
+      });
+      return b;
+    }
+
+    filters.appendChild(filterBtn("all", t(S.filterAll), S.campaigns.length));
+    S.statuses.forEach(function (s) {
+      var n = S.campaigns.filter(function (c) {
+        return c.status === s.id;
+      }).length;
+      filters.appendChild(filterBtn(s.id, t(s.label), n));
+    });
+    host.appendChild(filters);
+
+    var visible = S.campaigns.filter(function (c) {
+      return demoState.d2 === "all" || c.status === demoState.d2;
+    });
+
+    var selected = null;
+    for (var i = 0; i < visible.length; i++) {
+      if (visible[i].id === demoState.d2sel) selected = visible[i];
+    }
+    if (!selected && visible.length) {
+      selected = visible[0];
+      demoState.d2sel = selected.id;
+    }
+
+    var board = el("div", "board");
+    var listCol = el("div", "board__list");
+
+    visible.forEach(function (c) {
+      var st = statusOf[c.status];
+      var on = demoState.d2sel === c.id;
+      var row = el("button", "camp" + (on ? " is-active" : ""));
+      row.type = "button";
+      row.setAttribute("aria-pressed", on ? "true" : "false");
+
+      var top = el("div", "camp__top");
+      top.appendChild(el("span", "camp__brand", c.brand));
+      top.appendChild(tonePill(st.tone, t(st.label)));
+      row.appendChild(top);
+
+      var meta = el("div", "camp__meta");
+      meta.appendChild(el("span", null, t(c.creator)));
+      meta.appendChild(el("span", "camp__dot", "·"));
+      meta.appendChild(el("span", null, t(c.amount)));
+      meta.appendChild(el("span", "camp__dot", "·"));
+      meta.appendChild(
+        el("span", "camp__due" + (c.dday != null && c.dday <= 2 ? " is-urgent" : ""),
+          c.dday == null ? t(S.dueNone) : "D-" + c.dday)
+      );
+      row.appendChild(meta);
+
+      row.appendChild(el("span", "camp__next", t(c.next)));
+
+      row.addEventListener("click", function () {
+        demoState.d2sel = c.id;
+        renderBoard();
+      });
+      listCol.appendChild(row);
+    });
+
+    board.appendChild(listCol);
+
+    var detail = el("div", "board__detail");
+    if (!selected) {
+      detail.appendChild(el("p", "board__hint", t(S.selectHint)));
+    } else {
+      var sst = statusOf[selected.status];
+      var dTop = el("div", "detail__top");
+      dTop.appendChild(el("h4", "detail__brand", selected.brand));
+      dTop.appendChild(tonePill(sst.tone, t(sst.label)));
+      detail.appendChild(dTop);
+
+      var kv = el("div", "detail__kv");
+      [
+        [S.creatorLabel, t(selected.creator)],
+        [S.amountLabel, t(selected.amount)],
+        [S.dueLabel, selected.dday == null ? t(S.dueNone) : "D-" + selected.dday],
+      ].forEach(function (r) {
+        var line = el("div", "detail__kvrow");
+        line.appendChild(el("span", "detail__k", t(r[0])));
+        line.appendChild(el("span", "detail__v", r[1]));
+        kv.appendChild(line);
+      });
+      detail.appendChild(kv);
+
+      detail.appendChild(el("p", "detail__summary", t(selected.summary)));
+
+      var next = el("div", "detail__next");
+      next.appendChild(el("span", "detail__nextlabel mono", t(S.nextLabel)));
+      next.appendChild(el("p", null, t(selected.next)));
+      detail.appendChild(next);
+
+      detail.appendChild(el("h5", "detail__h mono", t(S.historyLabel)));
+      var hist = el("ul", "detail__hist");
+      selected.history.forEach(function (h) {
+        hist.appendChild(el("li", null, t(h)));
+      });
+      detail.appendChild(hist);
+    }
+    board.appendChild(detail);
+    host.appendChild(board);
+  }
+
+  function renderOutreach() {
+    var host = document.getElementById("demoBody-03");
+    if (!host) return;
+    var S = SITE.demos.outreach;
+    host.textContent = "";
+
+    var stageIndex = {};
+    S.stages.forEach(function (s, i) {
+      stageIndex[s.id] = i;
+    });
+
+    var sent = S.partners.filter(function (p) {
+      return stageIndex[p.stage] >= 1;
+    }).length;
+    var replied = S.partners.filter(function (p) {
+      return stageIndex[p.stage] >= 3;
+    }).length;
+    var meeting = S.partners.filter(function (p) {
+      return p.stage === "meeting";
+    }).length;
+
+    var kpis = el("div", "kpis");
+    [
+      [sent + "/" + S.partners.length, S.kpiSent],
+      [replied + "/" + S.partners.length, S.kpiReplied],
+      [String(meeting), S.kpiMeeting],
+    ].forEach(function (k) {
+      var box = el("div", "kpi");
+      box.appendChild(el("span", "kpi__val", k[0]));
+      box.appendChild(el("span", "kpi__label", t(k[1])));
+      kpis.appendChild(box);
+    });
+    host.appendChild(kpis);
+
+    var layout = el("div", "outreach");
+
+    var left = el("div", "outreach__col");
+    left.appendChild(el("h4", "demo__h", t(S.partnerHead)));
+    var plist = el("div", "partners");
+    S.partners.forEach(function (p, i) {
+      var si = stageIndex[p.stage];
+      var on = demoState.d3 === i;
+      var b = el("button", "partner" + (on ? " is-active" : ""));
+      b.type = "button";
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+
+      var top = el("div", "partner__top");
+      top.appendChild(el("span", "partner__name", p.name));
+      top.appendChild(
+        tonePill(si === 0 ? "mute" : si === 1 ? "info" : si === 2 ? "warn" : "pass", t(S.stages[si].label))
+      );
+      b.appendChild(top);
+      b.appendChild(el("span", "partner__region", t(p.region)));
+
+      var prog = el("div", "prog");
+      S.stages.forEach(function (s, k) {
+        prog.appendChild(el("span", "prog__dot" + (k < si ? " is-done" : k === si ? " is-now" : "")));
+      });
+      b.appendChild(prog);
+
+      b.addEventListener("click", function () {
+        demoState.d3 = i;
+        renderOutreach();
+      });
+      plist.appendChild(b);
+    });
+    left.appendChild(plist);
+
+    var partner = S.partners[demoState.d3];
+    var pd = el("div", "pdetail");
+    pd.appendChild(el("span", "pdetail__label mono", t(S.nextLabel)));
+    pd.appendChild(el("p", "pdetail__text", t(partner.next)));
+    left.appendChild(pd);
+    layout.appendChild(left);
+
+    var right = el("div", "outreach__col");
+    right.appendChild(el("h4", "demo__h", t(S.templateHead)));
+    right.appendChild(el("p", "tpl__note", t(S.templateNote)));
+
+    var tl = demoState.d3lang || state.lang;
+    var tabs = el("div", "segsm");
+    tabs.setAttribute("role", "group");
+    tabs.setAttribute("aria-label", t(S.templateHead));
+    ["ko", "en", "zh"].forEach(function (l) {
+      var on = l === tl;
+      var b = el("button", "segsm__btn" + (on ? " is-active" : ""));
+      b.type = "button";
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+      b.textContent = l.toUpperCase();
+      b.addEventListener("click", function () {
+        demoState.d3lang = l;
+        renderOutreach();
+      });
+      tabs.appendChild(b);
+    });
+    right.appendChild(tabs);
+
+    var tpl = S.templates[tl];
+    var box = el("div", "tpl");
+    var subj = el("div", "tpl__subject");
+    subj.appendChild(el("span", "tpl__k mono", t(S.subjectLabel)));
+    subj.appendChild(el("span", "tpl__subjecttext", tpl.subject));
+    box.appendChild(subj);
+    box.appendChild(el("p", "tpl__body", tpl.body));
+    right.appendChild(box);
+
+    layout.appendChild(right);
+    host.appendChild(layout);
+  }
+
+  function renderEvidence() {
+    var host = document.getElementById("demosApp");
+    if (!host) return;
+    var E = SITE.demos.evidence;
+    var card = el("section", "evidence");
+    card.appendChild(el("h3", "evidence__title", t(E.title)));
+    card.appendChild(el("p", "evidence__lead", t(E.lead)));
+    var stats = el("div", "evidence__stats");
+    E.stats.forEach(function (s) {
+      var box = el("div", "estat");
+      box.appendChild(el("span", "estat__val", s.value));
+      box.appendChild(el("span", "estat__label", t(s.label)));
+      box.appendChild(el("span", "estat__sub", t(s.sub)));
+      stats.appendChild(box);
+    });
+    card.appendChild(stats);
+    card.appendChild(el("p", "evidence__note", t(E.note)));
+    host.appendChild(card);
+  }
+
   /* ---------------- controls ---------------- */
   function bindControls() {
     document.querySelectorAll("[data-lang]").forEach(function (btn) {
       btn.addEventListener("click", function () {
         var lang = btn.getAttribute("data-lang");
         if (LANGS.indexOf(lang) === -1) return;
+        var prev = state.lang;
         state.lang = lang;
+        if (demoState.d3lang == null || demoState.d3lang === prev) demoState.d3lang = lang;
         save(STORE.lang, lang);
         renderAll();
       });
@@ -331,6 +753,7 @@
     renderMetrics();
     renderRail();
     renderPanel();
+    renderDemos();
     renderLayers();
     renderPrinciples();
     renderStack();
