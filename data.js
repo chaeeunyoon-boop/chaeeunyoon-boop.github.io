@@ -52,7 +52,7 @@ const SITE = {
     heroCta1: { ko: "케이스 4건 보기", en: "See the four cases", zh: "查看 4 个案例" },
     heroCta2: { ko: "연락하기", en: "Get in touch", zh: "联系我" },
 
-    metricHead: { ko: "IMPACT / BEFORE → AFTER", en: "IMPACT / BEFORE → AFTER", zh: "IMPACT / 之前 → 之后" },
+    metricHead: { ko: "IMPACT · BEFORE / AFTER", en: "IMPACT · BEFORE / AFTER", zh: "IMPACT · 之前 / 之后" },
     metricBadge: { ko: "실무 적용", en: "In production", zh: "实战应用" },
     metricFoot: {
       ko: "* 모두 실제 업무에서 운영한 결과입니다.",
