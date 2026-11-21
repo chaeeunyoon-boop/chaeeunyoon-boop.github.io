@@ -665,6 +665,7 @@ const SITE = {
   /* ---------- LIVE DEMOS — 100% 가상 데이터 ---------- */
   demos: {
     fictitious: { ko: "가상 데이터", en: "Fictional data", zh: "虚构数据" },
+    focusLabel: { ko: "여기를 보세요", en: "Look here", zh: "看这里" },
     hint: {
       ko: "버튼을 눌러 직접 확인하세요. 서버 호출·저장·실제 발송은 없습니다.",
       en: "Click through it yourself. No server calls, no storage, nothing actually sent.",
@@ -672,6 +673,12 @@ const SITE = {
     },
 
     simulator: {
+      tab: { ko: "기준 확인 · 제안서", en: "Rule check · proposal", zh: "规则判定 · 提案" },
+      focus: {
+        ko: "금액이 2,000만원을 넘자 AI가 초안을 확정하지 않고 '멈춤'을 띄웁니다. 사람이 확인해야 다음 단계로 갑니다.",
+        en: "Once the amount passes ₩20M, the AI stops instead of finalizing the draft. It moves on only after a person checks it.",
+        zh: "金额一超过 2,000 万韩元，AI 就不再定稿，而是显示“卡住”。只有人工确认后才进入下一步。",
+      },
       title: {
         ko: "광고 문의 → 12가지 기준 확인 → 제안서 초안",
         en: "Unstructured request → 12 rule checks → proposal draft",
@@ -840,6 +847,12 @@ const SITE = {
     },
 
     dashboard: {
+      tab: { ko: "진행 현황판", en: "Status board", zh: "进度看板" },
+      focus: {
+        ko: "'승인 대기'인 건은 AI가 보내지 않고 사람에게 넘깁니다. 상단 숫자는 목록에서 자동으로 다시 셉니다.",
+        en: "Anything 'awaiting approval' is handed to a person instead of being sent. The counts at the top are recalculated from the list.",
+        zh: "处于“待审批”的活动，AI 不会发送，而是交给人。顶部数字会根据列表自动重新统计。",
+      },
       title: {
         ko: "광고 건별 진행 현황판",
         en: "Live advertiser-response tracking board",
@@ -964,6 +977,12 @@ const SITE = {
     },
 
     outreach: {
+      tab: { ko: "해외 제안 메일", en: "Outreach mail", zh: "海外合作邮件" },
+      focus: {
+        ko: "같은 제안 메일을 KO · EN · ZH로 바로 바꿔 볼 수 있습니다. 진행 막대는 파트너마다 어디까지 왔는지 보여 줍니다.",
+        en: "Switch the same outreach mail between KO, EN and ZH. Each progress bar shows how far that partner has come.",
+        zh: "同一封合作邮件可以直接在 KO · EN · ZH 之间切换。进度条显示每个合作方走到了哪一步。",
+      },
       title: {
         ko: "해외 협업 제안 메일 관리판",
         en: "Global partner outreach & mail automation tracker",
@@ -1057,6 +1076,7 @@ const SITE = {
         },
         {
           value: "3/3",
+          human: true,
           label: { ko: "멈춰야 할 때 멈춤", en: "Stopped when it should", zh: "该停时停下" },
           sub: { ko: "멈추지 않아도 될 때 멈춘 경우 0/1", en: "False stops 0/1", zh: "误停 0/1" },
         },

@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
-<link rel="stylesheet" href="styles.css?v=10" />
+<link rel="stylesheet" href="styles.css?v=11" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0e14'/%3E%3Ctext x='32' y='43' font-family='monospace' font-size='30' fill='%233ddc97' text-anchor='middle'%3ECY%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
@@ -51,18 +51,11 @@
 <main id="main">
   <!-- HERO -->
   <section class="hero" id="top">
-    <div class="hero__grid" aria-hidden="true"></div>
-    <div class="hero__glow" aria-hidden="true"></div>
     <div class="wrap hero__inner">
       <div class="hero__left">
-        <p class="chip chip--live">
-          <span class="dot"></span>
-          <span data-i18n="heroStatus">현재 온더룩 MCN팀에서 일하며, 그 옆에서 AI 워크플로우를 만듭니다</span>
-        </p>
-
         <h1 class="hero__title">
           <span data-i18n="heroLine1">반복되는 병목을 찾아</span>
-          <span class="hero__accent" data-i18n="heroLine2">규칙으로 바꾸고</span>
+          <span data-i18n="heroLine2">규칙으로 바꾸고</span>
           <span data-i18n="heroLine3">작동하는 워크플로우로 풉니다.</span>
         </h1>
 
@@ -75,9 +68,6 @@
           <a class="btn btn--primary" href="#cases">
             <span data-i18n="heroCta1">케이스 4건 보기</span>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
-          </a>
-          <a class="btn" href="mailto:chaeeunyoon@gmail.com">
-            <span data-i18n="heroCta2">연락하기</span>
           </a>
         </div>
       </div>
@@ -96,7 +86,7 @@
   </section>
 
   <!-- CASES -->
-  <section class="section" id="cases">
+  <section class="section section--alt" id="cases">
     <div class="wrap">
       <header class="section__head">
         <p class="eyebrow mono"><span>01</span> CASE STUDIES</p>
@@ -164,13 +154,17 @@
         <p class="eyebrow mono"><span>04</span> CAREER</p>
         <h2 data-i18n="careerTitle">현장에서 배운 것을, 다음 현장의 구조로.</h2>
         <p class="section__lead" data-i18n="careerLead">총 경력 4년 4개월 · 크리에이터 마케팅 운영 → AI 워크플로우 설계</p>
+        <p class="chip chip--live">
+          <span class="dot"></span>
+          <span data-i18n="heroStatus">현재 온더룩 MCN팀에서 일하며, 그 옆에서 AI 워크플로우를 만듭니다</span>
+        </p>
       </header>
       <ol class="timeline" id="timeline"></ol>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section class="section section--contact" id="contact">
+  <section class="section section--alt section--contact" id="contact">
     <div class="wrap">
       <div class="contact">
         <div class="contact__main">
@@ -193,7 +187,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=8"></script>
-<script src="app.js?v=8"></script>
+<script src="data.js?v=9"></script>
+<script src="app.js?v=9"></script>
 </body>
 </html>

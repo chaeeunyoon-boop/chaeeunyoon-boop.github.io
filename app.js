@@ -312,7 +312,8 @@
   }
 
   /* ---------------- live demos (100% fictional data) ---------------- */
-  var demoState = { d1: 0, d2: "all", d2sel: null, d3: 0, d3lang: null };
+  // tab: 보이는 데모, d1: 데모 1 프리셋 — 첫 화면은 사람 확인이 걸리는 장면(3번)으로 엽니다.
+  var demoState = { tab: 0, d1: 2, d2: "all", d2sel: null, d3: 0, d3lang: null };
 
   function tonePill(tone, label) {
     return el("span", "pill pill--" + tone, label);
@@ -328,20 +329,56 @@
       { key: "outreach", no: "03" },
     ];
     host.textContent = "";
-    defs.forEach(function (d) {
+
+    // 세 데모를 쌓지 않고 탭으로 하나씩 보여 줍니다.
+    var tabs = el("div", "demotabs");
+    tabs.setAttribute("role", "tablist");
+    defs.forEach(function (d, i) {
+      var on = demoState.tab === i;
+      var b = el("button", "demotab" + (on ? " is-active" : ""));
+      b.type = "button";
+      b.id = "demoTab-" + d.no;
+      b.setAttribute("role", "tab");
+      b.setAttribute("aria-selected", on ? "true" : "false");
+      b.setAttribute("aria-controls", "demo-" + d.no);
+      b.appendChild(el("span", "demotab__no mono", d.no));
+      b.appendChild(el("span", "demotab__label", t(D[d.key].tab)));
+      b.addEventListener("click", function () {
+        demoState.tab = i;
+        renderDemos();
+        document.getElementById("demoTab-" + d.no).focus();
+      });
+      b.addEventListener("keydown", function (e) {
+        var next = null;
+        if (e.key === "ArrowRight") next = (i + 1) % defs.length;
+        if (e.key === "ArrowLeft") next = (i - 1 + defs.length) % defs.length;
+        if (next == null) return;
+        e.preventDefault();
+        tabs.children[next].click();
+      });
+      tabs.appendChild(b);
+    });
+    host.appendChild(tabs);
+
+    defs.forEach(function (d, i) {
       var card = el("section", "demo");
       card.id = "demo-" + d.no;
-      card.setAttribute("aria-labelledby", "demoTitle-" + d.no);
+      card.setAttribute("role", "tabpanel");
+      card.setAttribute("aria-labelledby", "demoTab-" + d.no);
+      card.hidden = demoState.tab !== i;
 
       var head = el("header", "demo__head");
       var tags = el("div", "demo__tags");
       tags.appendChild(el("span", "demo__no", "DEMO " + d.no));
       tags.appendChild(el("span", "demo__fict", t(D.fictitious)));
       head.appendChild(tags);
-      var h3 = el("h3", "demo__title", t(D[d.key].title));
-      h3.id = "demoTitle-" + d.no;
-      head.appendChild(h3);
+      head.appendChild(el("h3", "demo__title", t(D[d.key].title)));
       head.appendChild(el("p", "demo__lead", t(D[d.key].lead)));
+      // "여기를 보세요" — 이 데모에서 한 곳만 크게 짚어 줍니다.
+      var focus = el("p", "demo__focus");
+      focus.appendChild(el("strong", null, t(D.focusLabel)));
+      focus.appendChild(el("span", null, t(D[d.key].focus)));
+      head.appendChild(focus);
       card.appendChild(head);
 
       var body = el("div", "demo__body");
@@ -749,8 +786,17 @@
     card.appendChild(el("p", "evidence__lead", t(E.lead)));
     var stats = el("div", "evidence__stats");
     E.stats.forEach(function (s) {
-      var box = el("div", "estat");
-      box.appendChild(el("span", "estat__val", s.value));
+      var box = el("div", "estat" + (s.human ? " estat--human" : ""));
+      // 분수는 분자를 크게, 분모를 작게 옆에 둡니다 (9/10 → 9 + /10).
+      var val = el("span", "estat__val");
+      var cut = s.value.indexOf("/");
+      if (cut > 0) {
+        val.appendChild(document.createTextNode(s.value.slice(0, cut)));
+        val.appendChild(el("span", "estat__den", s.value.slice(cut)));
+      } else {
+        val.textContent = s.value;
+      }
+      box.appendChild(val);
       box.appendChild(el("span", "estat__label", t(s.label)));
       box.appendChild(el("span", "estat__sub", t(s.sub)));
       stats.appendChild(box);
