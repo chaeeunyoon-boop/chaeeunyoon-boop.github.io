@@ -1032,8 +1032,8 @@ const SITE = {
           body: "Hello [Partner] team,\n\nI have spent more than four years running creator marketing, mostly turning recurring operational bottlenecks into rules and automation. Recently I built a workflow that cuts a one-hour request-to-proposal cycle into a three-to-five minute review, with the criteria written down so the process no longer lives in one person's memory.\n\nWith an overseas partner, two things seem worth aligning first:\n1. A written standard for exchanging creator-pool and campaign conditions\n2. Outreach templates and follow-up schedules in Korean, English and Chinese\n\nWould 20 minutes on a call work? Tuesday morning or Thursday afternoon next week suits me.\n\nBest regards,\nChaeeun Yun | chaeeunyoon@gmail.com",
         },
         zh: {
-          subject: "【合作提案】把创作者营销运营瓶颈写成规则的实践 — 尹彩恩",
-          body: "您好，[合作方] 的负责同事：\n\n我在创作者营销运营一线做了四年多，主要把反复出现的运营瓶颈整理成规则和自动化。最近我搭了一套工作流，把从需求接收到适配判定、提案初稿原本要一小时的工作，压缩到 3~5 分钟的审阅，并把判断标准写进文档，不再只留在某个人的记忆里。\n\n与海外合作方，我想先对齐两件事：\n1. 用文档互换创作者资源与活动条件的标准\n2. 韩语、英语、中文三语外联模板与跟进节奏的运营\n\n能否约 20 分钟通话？下周二上午或周四下午都可以。\n\n谢谢！\n尹彩恩 | chaeeunyoon@gmail.com",
+          subject: "【合作提案】把创作者营销运营瓶颈写成规则的实践 — Chaeeun Yun",
+          body: "您好，[合作方] 的负责同事：\n\n我在创作者营销运营一线做了四年多，主要把反复出现的运营瓶颈整理成规则和自动化。最近我搭了一套工作流，把从需求接收到适配判定、提案初稿原本要一小时的工作，压缩到 3~5 分钟的审阅，并把判断标准写进文档，不再只留在某个人的记忆里。\n\n与海外合作方，我想先对齐两件事：\n1. 用文档互换创作者资源与活动条件的标准\n2. 韩语、英语、中文三语外联模板与跟进节奏的运营\n\n能否约 20 分钟通话？下周二上午或周四下午都可以。\n\n谢谢！\nChaeeun Yun | chaeeunyoon@gmail.com",
         },
       },
     },
