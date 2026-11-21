@@ -828,7 +828,8 @@ html[data-theme="light"] .section--demos {
 .panel__foot, .demos__foot, .footer p, .stackblock__head p,
 .case__tag, .case__org, .case__period, .case__role,
 .stepbody h4, .demo__h, .demo__fict, .layer__ex, .draft__k,
-.reqmsg__head, .detail__nextlabel, .detail__h, .pdetail__label, .tpl__k {
+.reqmsg__head, .detail__nextlabel, .detail__h, .pdetail__label, .tpl__k,
+.brand__text em {
   font-family: var(--sans);
   letter-spacing: 0;
   text-transform: none;
