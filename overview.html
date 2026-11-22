@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>윤채은 — 한 페이지 요약 (Overview)</title>
+<meta name="description" content="윤채은의 포트폴리오를 한눈에 보는 한 페이지 요약. 중심에서 여섯 갈래로 뻗는 지도로 역할·직접 만든 것·판단의 세 층·도구·측정한 숫자·다음 목표를 봅니다." />
+<meta property="og:title" content="윤채은 — 한 페이지 요약" />
+<meta property="og:description" content="역할·직접 만든 것·판단의 세 층·도구·측정한 숫자·다음 목표를 한 화면에서." />
+<meta property="og:type" content="website" />
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<link rel="stylesheet" href="styles.css?v=11" />
+<link rel="stylesheet" href="overview.css?v=1" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0e14'/%3E%3Ctext x='32' y='43' font-family='monospace' font-size='30' fill='%233ddc97' text-anchor='middle'%3ECY%3C/text%3E%3C/svg%3E" />
+</head>
+<body class="ov-body">
+<a class="skip" href="#ovMap" data-i18n="skip">본문으로 건너뛰기</a>
+
+<header class="topbar">
+  <div class="wrap topbar__inner">
+    <a class="brand" href="./">
+      <span class="brand__mark">CY</span>
+      <span class="brand__text">
+        <strong>Chaeeun Yun</strong>
+        <em data-i18n="brandSub">ONE-PAGE OVERVIEW</em>
+      </span>
+    </a>
+
+    <div class="toggles">
+      <a class="ov-link" href="./" data-i18n="backMain">← 메인 포폴</a>
+      <a class="ov-link" href="./#demos" data-i18n="backDemos">데모</a>
+      <div class="seg" role="group" aria-label="Language">
+        <button type="button" class="seg__btn is-active" data-lang="ko" aria-pressed="true">KO</button>
+        <button type="button" class="seg__btn" data-lang="en" aria-pressed="false">EN</button>
+        <button type="button" class="seg__btn" data-lang="zh" aria-pressed="false">ZH</button>
+      </div>
+      <button type="button" id="themeToggle" class="iconbtn" aria-label="Toggle theme" title="Theme">
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="ov-main wrap">
+  <div class="ov-bar">
+    <p class="ov-bar__label mono">
+      <span class="ov-bar__pulse" aria-hidden="true"></span>
+      <span data-i18n="barLabel">HUB &amp; SPOKE · 한 페이지 요약</span>
+    </p>
+    <div class="ov-bar__tools">
+      <button type="button" id="btnAll" class="ov-tool" data-i18n="showAll">전체 보기</button>
+      <button type="button" id="btnTour" class="ov-tool ov-tool--accent" aria-pressed="false">
+        <span class="ov-tool__icon" aria-hidden="true">▷</span>
+        <span data-i18n="tour">자동 투어</span>
+      </button>
+      <p class="ov-bar__hint" id="ovHint" data-i18n="hint">노드를 눌러 자세히 보기</p>
+    </div>
+  </div>
+
+  <div class="ov-split">
+    <section class="ov-map" id="ovMap" aria-label="한 페이지 요약 지도">
+      <svg class="ov-wires" id="ovWires" aria-hidden="true" focusable="false"></svg>
+
+      <div class="ov-wing ov-wing--left" id="wingLeft"></div>
+
+      <div class="ov-hubwrap">
+        <button type="button" class="ov-hub" id="ovHub" aria-label="중심 · 윤채은 요약">
+          <span class="ov-hub__mark">CY</span>
+          <span class="ov-hub__name">윤채은</span>
+          <span class="ov-hub__role">AX Builder · Problem Solver</span>
+          <span class="ov-hub__status" id="ovHubStatus"></span>
+          <span class="ov-hub__stats" id="ovHubStats"></span>
+        </button>
+      </div>
+
+      <div class="ov-wing ov-wing--right" id="wingRight"></div>
+    </section>
+
+    <aside class="ov-insp" id="ovInsp" aria-live="polite"></aside>
+  </div>
+
+  <p class="ov-foot mono" data-i18n="foot">메인 포트폴리오의 공개 내용에서 요약했습니다 · 회사 내부 자료·비공개 데이터는 넣지 않았습니다</p>
+</main>
+
+<script src="data.js?v=10"></script>
+<script src="overview.js?v=1"></script>
+</body>
+</html>
