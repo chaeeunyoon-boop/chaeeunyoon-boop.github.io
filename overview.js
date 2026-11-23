@@ -352,7 +352,7 @@
     var top = stageWrap.getBoundingClientRect().top;
     var footH = footEl ? footEl.getBoundingClientRect().height : 0;
     var availH = window.innerHeight - top - footH - 24;
-    var s = Math.min(availW / CANVAS_W, availH > 0 ? availH / natural : 1, 1);
+    var s = Math.min(availW / CANVAS_W, availH > 0 ? availH / natural : 1, 1.2);
     if (!isFinite(s) || s <= 0) s = 1;
     s = Math.max(s, 0.12);
     mapEl.style.transform = "scale(" + s.toFixed(4) + ")";
