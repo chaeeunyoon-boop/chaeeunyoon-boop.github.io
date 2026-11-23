@@ -7,6 +7,9 @@
 
 html, body { overflow-x: clip; }
 
+/* 헤더 폭을 지도와 같은 선에 맞춥니다 */
+.topbar .wrap { max-width: 1440px; }
+
 .ov-main {
   display: flex;
   flex-direction: column;
