@@ -185,8 +185,8 @@ html, body { overflow-x: clip; }
   margin-top: 3px;
 }
 .ov-hub__pitch {
-  margin-top: 10px;
-  padding: 7px 10px;
+  margin: 12px 0 0;
+  padding: 8px 12px;
   border-radius: 9px;
   background: var(--surface-2);
   font-size: 16px;
