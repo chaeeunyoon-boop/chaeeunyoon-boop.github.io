@@ -5,6 +5,8 @@
    이 파일은 지도·허브·인스펙터만 담당합니다.
    ============================================================= */
 
+html, body { overflow-x: clip; }
+
 .ov-main {
   display: flex;
   flex-direction: column;
@@ -63,6 +65,7 @@
   background: var(--surface-2);
   color: var(--muted);
   font-size: 13px;
+  white-space: nowrap;
   transition: all 0.2s var(--ease);
 }
 .ov-tool:hover { color: var(--text); border-color: var(--line-strong); }
@@ -146,7 +149,7 @@
 .ov-hub::before {
   content: "";
   position: absolute;
-  inset: -34% -30%;
+  inset: -26% -12%;
   background: radial-gradient(50% 50% at 50% 50%, var(--accent-soft), transparent 72%);
   z-index: -1;
   pointer-events: none;
@@ -434,9 +437,10 @@
   .ov-grp.is-open .ov-grp__panel { display: block; }
   .ov-grp__panel:empty { display: none !important; }
 
-  .ov-bar { flex-wrap: wrap; gap: 10px; }
-  .ov-bar__label { width: 100%; margin-right: 0; }
-  .ov-bar__hint { width: 100%; }
+  .ov-bar { flex-wrap: wrap; gap: 8px; }
+  .ov-bar__label { flex: 0 0 100%; margin-right: 0; }
+  .ov-bar__tools { flex: 0 0 100%; }
+  .ov-bar__hint { flex: 0 0 100%; }
 }
 
 @media (max-width: 620px) {
