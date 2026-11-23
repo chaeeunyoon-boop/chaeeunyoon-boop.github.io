@@ -393,9 +393,9 @@
             zh: "现在 · Onthelook MCN 团队经理",
           },
           desc: {
-            ko: "뷰티·패션 크리에이터 최대 30팀을 맡고 있습니다.",
-            en: "I handle up to 30 beauty and fashion creator teams.",
-            zh: "负责最多 30 个美妆·时尚创作者团队。",
+            ko: "2035 여성 타깃 뷰티·패션 인플루언서 협업(지그재그·무신사·올리브영·MAC 등), 최대 30팀 운영.",
+            en: "Beauty and fashion influencer campaigns for women in their 20s–30s (Zigzag, Musinsa, Olive Young, MAC), up to 30 creator teams.",
+            zh: "面向 20~30 岁女性的美妆·时尚网红合作（Zigzag、Musinsa、Olive Young、MAC），最多运营 30 个团队。",
           },
         },
         {
