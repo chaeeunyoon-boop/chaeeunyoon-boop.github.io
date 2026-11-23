@@ -338,35 +338,6 @@
             zh: "超过 2,000 万韩元、按效果付款由人审批。",
           },
         },
-        {
-          label: { ko: "기술 스택", en: "Stack", zh: "技术栈" },
-          clusters: [
-            {
-              name: { ko: "AI · LLM", en: "AI · LLM", zh: "AI · LLM" },
-              items: "Claude API · Claude Code · Kiro Crew · 프롬프트 설계",
-              itemsEn: "Claude API · Claude Code · Kiro Crew · prompt design",
-              itemsZh: "Claude API · Claude Code · Kiro Crew · 提示词设计",
-            },
-            {
-              name: { ko: "데이터 · 개발", en: "Data · build", zh: "数据 · 开发" },
-              items: "Python · YouTube Data API · HTML/CSS/JS · Git",
-              itemsEn: "Python · YouTube Data API · HTML/CSS/JS · Git",
-              itemsZh: "Python · YouTube Data API · HTML/CSS/JS · Git",
-            },
-            {
-              name: { ko: "인프라", en: "Infrastructure", zh: "基础设施" },
-              items: "AWS S3 · CloudFront · GitHub Pages",
-              itemsEn: "AWS S3 · CloudFront · GitHub Pages",
-              itemsZh: "AWS S3 · CloudFront · GitHub Pages",
-            },
-            {
-              name: { ko: "운영", en: "Ops", zh: "运营" },
-              items: "Google Workspace · 시트 자동화 · 정기 배치",
-              itemsEn: "Google Workspace · sheet automation · scheduled jobs",
-              itemsZh: "Google Workspace · 表格自动化 · 定时批处理",
-            },
-          ],
-        },
       ],
     },
     {
