@@ -1002,7 +1002,7 @@ const SITE = {
     {
       period: { ko: "2026.02 – 현재", en: "Feb 2026 – Present", zh: "2026.02 – 至今" },
       org: { ko: "온더룩", en: "Onthelook", zh: "Onthelook" },
-      role: { ko: "MCN팀 · 매니저", en: "MCN Team · Manager", zh: "MCN 团队 · 经理" },
+      role: { ko: "인플루언서 AI 에이전트 회사 · MCN팀 매니저", en: "Influencer AI agent company · MCN Team Manager", zh: "网红 AI 智能体公司 · MCN 团队经理" },
       bullets: [
         {
           ko: "뷰티·패션 크리에이터 최대 30팀 매니지먼트 · 광고 문의 대응 AI 워크플로우 구축",
@@ -1014,7 +1014,7 @@ const SITE = {
     {
       period: { ko: "2024.11 – 2026.01", en: "Nov 2024 – Jan 2026", zh: "2024.11 – 2026.01" },
       org: { ko: "아이스크리에이티브", en: "Ice Creative", zh: "Ice Creative" },
-      role: { ko: "크리에이터광고사업팀", en: "Creator Ads Team", zh: "创作者广告团队" },
+      role: { ko: "뷰티 특화 MCN · 크리에이터광고사업팀", en: "Beauty-specialist MCN · Creator Ads Team", zh: "美妆专门 MCN · 创作者广告团队" },
       bullets: [
         {
           ko: "크리에이터 광고 캠페인 기획·운영 · 크리에이터·광고주·제작사 협업 프로젝트 진행",
@@ -1026,7 +1026,7 @@ const SITE = {
     {
       period: { ko: "2024.06 – 2024.11", en: "Jun 2024 – Nov 2024", zh: "2024.06 – 2024.11" },
       org: { ko: "올투원", en: "Alltoone", zh: "Alltoone" },
-      role: { ko: "프리랜서", en: "Freelance", zh: "自由职业" },
+      role: { ko: "AI 콘텐츠 자동화 프로젝트 · 프리랜서", en: "AI content automation project · Freelance", zh: "AI 内容自动化项目 · 自由职业" },
       bullets: [
         {
           ko: "서울경제신문 AI 뉴스 영상 제작 워크플로우 구축 · 운영 기준 문서화 후 5명에게 인수인계",
@@ -1038,7 +1038,7 @@ const SITE = {
     {
       period: { ko: "2022.05 – 2024.06", en: "May 2022 – Jun 2024", zh: "2022.05 – 2024.06" },
       org: { ko: "샌드박스네트워크", en: "Sandbox Network", zh: "Sandbox Network" },
-      role: { ko: "크리에이터 매니지먼트", en: "Creator Management", zh: "创作者经纪" },
+      role: { ko: "종합 카테고리 MCN · 크리에이터 매니지먼트", en: "General-category MCN · Creator management", zh: "综合品类 MCN · 创作者经纪" },
       bullets: [
         {
           ko: "크리에이터 12팀 매니지먼트 · 캠페인 운영",

@@ -381,9 +381,9 @@
             zh: "走过的路（2022.05 –）",
           },
           desc: {
-            ko: "샌드박스네트워크 → 올투원 → 아이스크리에이티브 → 온더룩, 4년 4개월.",
-            en: "Sandbox Network → Alltoone → Ice Creative → Onthelook, four years four months.",
-            zh: "Sandbox Network → Alltoone → Ice Creative → Onthelook，4 年 4 个月。",
+            ko: "종합 카테고리 MCN 샌드박스 → AI 콘텐츠 자동화 올투원 → 뷰티 특화 MCN 아이스크리에이티브 → 인플루언서 AI 에이전트 회사 온더룩. 4년 4개월.",
+            en: "General-category MCN Sandbox → AI content automation Alltoone → beauty-specialist MCN Ice Creative → influencer AI agent company Onthelook. Four years four months.",
+            zh: "综合品类 MCN 沙盒 → AI 内容自动化 Alltoone → 美妆专门 MCN Ice Creative → 网红 AI 智能体公司 Onthelook。4 年 4 个月。",
           },
         },
         {
