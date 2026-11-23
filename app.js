@@ -186,14 +186,14 @@
     body.setAttribute("role", "tabpanel");
 
     if (state.step === 0) {
-      body.appendChild(el("p", "stepbody__lead", t(c.problem.lead)));
+      if (c.problem.lead) body.appendChild(el("p", "stepbody__lead", t(c.problem.lead)));
       var ul = el("ul", "bullets");
       c.problem.bullets.forEach(function (b) {
         ul.appendChild(el("li", null, t(b)));
       });
       body.appendChild(ul);
     } else if (state.step === 1) {
-      body.appendChild(el("p", "stepbody__lead", t(c.rules.lead)));
+      if (c.rules.lead) body.appendChild(el("p", "stepbody__lead", t(c.rules.lead)));
       // 두 줄로 균등 분할(7칸 → 4+3). 줄 끝 칸은 화살표를 숨깁니다.
       var cols = Math.ceil(c.rules.flow.length / 2);
       var flow = el("div", "flow");
@@ -213,7 +213,7 @@
       });
       body.appendChild(chips);
     } else {
-      body.appendChild(el("p", "stepbody__lead", t(c.impact.lead)));
+      if (c.impact.lead) body.appendChild(el("p", "stepbody__lead", t(c.impact.lead)));
       var tiles = el("div", "tiles");
       c.impact.metrics.forEach(function (m) {
         var tile = el("div", "tile");
@@ -226,7 +226,7 @@
         tiles.appendChild(tile);
       });
       body.appendChild(tiles);
-      body.appendChild(el("p", "case__note", t(c.impact.note)));
+      if (c.impact.note) body.appendChild(el("p", "case__note", t(c.impact.note)));
     }
 
     host.appendChild(body);

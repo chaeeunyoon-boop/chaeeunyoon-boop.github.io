@@ -78,27 +78,23 @@
       zh: "HUB & SPOKE · 一页概览",
     },
     barHint: {
-      ko: "클릭 없이 한 화면에서 · 내 문제 → 동료 → 조직 순서로 읽으면 됩니다",
-      en: "Nothing to click · read my problem → my team → the company",
-      zh: "无需点击，一屏读完 · 按 我的问题 → 同事 → 组织 的顺序看",
+      ko: "내 문제 → 동료 → 조직 순",
+      en: "my problem → team → company",
+      zh: "我的问题 → 同事 → 组织",
     },
-    zoomHint: {
-      ko: "두 손가락으로 확대하면 세부 내용을 읽을 수 있습니다",
-      en: "Pinch to zoom in and read the detail",
-      zh: "用两指放大即可阅读细节",
-    },
+    zoomHint: { ko: "두 손가락으로 확대", en: "Pinch to zoom", zh: "两指放大" },
     foot: {
-      ko: "메인 포트폴리오의 공개 내용에서 요약했습니다 · 회사 내부 자료·비공개 데이터는 넣지 않았습니다 · 데모는 모두 가상 데이터입니다",
-      en: "Summarised from the public portfolio · no company-internal or private data · all demos use fictional data",
-      zh: "摘要自公开的作品集 · 不含公司内部资料与非公开数据 · 演示均使用虚构数据",
+      ko: "공개 포트폴리오 요약 · 가상 데이터",
+      en: "Summary of the public portfolio · fictional data",
+      zh: "公开作品集摘要 · 虚构数据",
     },
     mapLabel: { ko: "한 페이지 요약 지도", en: "One-page overview map", zh: "一页概览地图" },
     hubAria: { ko: "중심 · 윤채은 요약", en: "Centre · Chaeeun Yun summary", zh: "中心 · Chaeeun Yun 概览" },
     name: { ko: "윤채은", en: "Chaeeun Yun", zh: "Chaeeun Yun" },
     role: {
-      ko: "AX 빌더 · 크리에이터 마케팅 매니저",
-      en: "AX builder · creator marketing manager",
-      zh: "AX 构建者 · 创作者营销经理",
+      ko: "AX 빌더 · 크리에이터 마케팅",
+      en: "AX builder · creator marketing",
+      zh: "AX 构建者 · 创作者营销",
     },
     subtitle: {
       ko: "Influencer Marketing Manager @ Onthelook",
@@ -106,18 +102,13 @@
       zh: "Influencer Marketing Manager @ Onthelook",
     },
     pitch: {
-      ko: "2035 여성 뷰티·패션 도메인을 깊이 알고, AI가 멈추고 사람이 승인할 지점을 설계합니다.",
-      en: "I know the 20s–30s beauty and fashion domain deeply, so I design where AI acts and where a person stops to approve.",
-      zh: "深耕 20~30 岁女性美妆·时尚领域，因此能设计 AI 做到哪里、人在哪里停下审批。",
-    },
-    scaleLine: {
-      ko: "내 문제 → 동료의 문제 → 조직의 문제",
-      en: "my problem → my team's → the company's",
-      zh: "我的问题 → 同事的 → 组织的",
+      ko: "2035 뷰티·패션 도메인 × AI 워크플로우",
+      en: "beauty & fashion domain × AI workflow",
+      zh: "美妆·时尚领域 × AI 工作流",
     },
     statCareer: { ko: "경력", en: "CAREER", zh: "经历" },
-    statProposal: { ko: "광고 제안서", en: "AD PROPOSAL", zh: "广告提案" },
-    statCreators: { ko: "전속 크리에이터", en: "CREATORS", zh: "专属网红" },
+    statProposal: { ko: "제안서", en: "PROPOSAL", zh: "提案" },
+    statCreators: { ko: "전속", en: "EXCLUSIVE", zh: "专属" },
   };
 
   /* ---------------- 허브 수치 ---------------- */
@@ -128,56 +119,28 @@
   ];
 
   /* ---------------- 지도 내용 ----------------
-     kid = { step?, label, desc?, chips? }
-     · step  : 이야기 단계 배지 (문제 / 해결 / 결과 …)
-     · label : 한 줄 제목
-     · desc  : 막힌 것 → AI로 푼 방식 → 누가 어떻게 달라졌는지
-     처음부터 전부 펼쳐져 있고, 눌러야 열리는 것은 없습니다. */
+     kid = { step?, label }
+     · step  : 짧은 라벨 (내 문제 / AS-IS / 해결 / TO-BE …)
+     · label : 굵은 핵심어 한 줄 — 서술형 문장은 쓰지 않습니다.
+     모든 노드가 처음부터 펼쳐져 있고, 눌러서 열 것은 없습니다. */
   var CONTENT = [
     {
       id: "why",
       side: "left",
       tag: "01 · WHY",
-      title: { ko: "왜 AI를 만드나", en: "Why I build this", zh: "为什么做 AI 工具" },
+      title: { ko: "왜 AI를 만드나", en: "Why I build", zh: "为什么做 AI" },
       kids: [
         {
           step: { ko: "내 문제", en: "Me", zh: "我的问题" },
-          label: {
-            ko: "같은 판단을 하루에도 몇 번씩",
-            en: "The same call, several times a day",
-            zh: "同一种判断一天要做好几次",
-          },
-          desc: {
-            ko: "광고 문의는 매번 형식이 달랐고, 기준은 머릿속에만 있었습니다.",
-            en: "Every inquiry came in a different shape; the criteria lived only in my head.",
-            zh: "广告咨询每次格式都不同，标准只在脑子里。",
-          },
+          label: { ko: "제안서 기준 머릿속에만 존재", en: "Proposal criteria only in my head", zh: "提案标准只在脑子里" },
         },
         {
           step: { ko: "동료", en: "Team", zh: "同事" },
-          label: {
-            ko: "같은 일이 팀의 확인 업무로 커짐",
-            en: "The same work grew into the team's checking",
-            zh: "同一件事变成团队的确认工作",
-          },
-          desc: {
-            ko: "응대 현황이 카톡·메일에 흩어져 매번 묻고 다시 찾았습니다.",
-            en: "Status scattered across chat and mail, so everyone asked and dug it out again.",
-            zh: "进度散落在聊天和邮件里，每次都要问一遍、再找一遍。",
-          },
+          label: { ko: "카톡·메일 분산으로 매번 확인", en: "Chat and mail scattered, checked every time", zh: "聊天·邮件分散，每次都要确认" },
         },
         {
           step: { ko: "조직", en: "Company", zh: "组织" },
-          label: {
-            ko: "회사도 같은 곳에서 반복해서 막힘",
-            en: "The company got stuck in the same places",
-            zh: "公司也在同样的地方反复卡住",
-          },
-          desc: {
-            ko: "해외 파트너 컨택처럼 되풀이되는 일도 같은 방식으로 풀렸습니다.",
-            en: "Recurring work like global partner outreach fell to the same approach.",
-            zh: "海外合作方联络这类反复的事，也用同一种方式解决。",
-          },
+          label: { ko: "해외 컨택 반복 병목", en: "Global outreach, a recurring bottleneck", zh: "海外联络反复成为瓶颈" },
         },
       ],
     },
@@ -185,46 +148,19 @@
       id: "team",
       side: "left",
       tag: "02 · TEAM",
-      title: { ko: "동료·TF팀 협업 해결", en: "The team's problem", zh: "解决同事·TF 协作问题" },
+      title: { ko: "동료·TF 협업", en: "Team & task force", zh: "同事·TF 协作" },
       kids: [
         {
-          step: { ko: "문제", en: "Problem", zh: "问题" },
-          label: {
-            ko: "현황이 카톡·메일에 흩어져 매번 확인",
-            en: "Status scattered across chat and mail",
-            zh: "进度散落在聊天和邮件里，每次都要确认",
-          },
-          desc: {
-            ko: "광고주 응대가 어디까지 갔는지 한눈에 볼 수 없었습니다.",
-            en: "Nobody could see how far each client conversation had gone.",
-            zh: "广告主的沟通进行到哪一步，没人一眼看得到。",
-          },
+          step: { ko: "AS-IS", en: "AS-IS", zh: "AS-IS" },
+          label: { ko: "카톡·메일 분산, 진행률 불투명", en: "Chat and mail scattered, progress opaque", zh: "聊天·邮件分散，进度不透明" },
         },
         {
           step: { ko: "해결", en: "Fix", zh: "解决" },
-          label: {
-            ko: "광고 건별 실시간 운영 대시보드",
-            en: "A real-time operations dashboard",
-            zh: "每个广告的实时运营看板",
-          },
-          desc: {
-            ko: "문의부터 정산까지 7단계를 한 화면에 모았습니다.",
-            en: "Seven stages from inquiry to payment on one screen.",
-            zh: "从咨询到结算七个阶段收在一屏。",
-          },
+          label: { ko: "7단계 실시간 운영 대시보드", en: "7-stage live operations dashboard", zh: "七阶段实时运营看板" },
         },
         {
-          step: { ko: "결과", en: "Result", zh: "结果" },
-          label: {
-            ko: "묻기 전에 다 보이고, 인수인계는 링크 하나",
-            en: "Visible before anyone asks; handover is one link",
-            zh: "不用问就看得见，交接只需一个链接",
-          },
-          desc: {
-            ko: "팀과 TF가 같은 화면을 보며 일합니다.",
-            en: "Team and task force work from the same screen.",
-            zh: "团队与 TF 看同一屏工作。",
-          },
+          step: { ko: "TO-BE", en: "TO-BE", zh: "TO-BE" },
+          label: { ko: "링크 1개 확인 · 인수인계", en: "One link to check, one to hand over", zh: "一个链接确认 · 交接" },
         },
       ],
     },
@@ -232,19 +168,11 @@
       id: "org",
       side: "left",
       tag: "03 · COMPANY",
-      title: { ko: "조직 단위 확장·성과", en: "At the company level", zh: "组织层面的成果" },
+      title: { ko: "조직 확장", en: "Company scale", zh: "组织扩展" },
       kids: [
         {
-          label: {
-            ko: "글로벌 파트너 아웃리치 자동화",
-            en: "Global partner outreach, automated",
-            zh: "全球合作伙伴外联自动化",
-          },
-          desc: {
-            ko: "KO·EN·ZH 전환과 발송 전 검토를 AI 워크플로우로.",
-            en: "KO · EN · ZH switching plus a check before sending, as one workflow.",
-            zh: "KO · EN · ZH 切换和发送前确认，做成一个工作流。",
-          },
+          step: { ko: "글로벌 아웃리치", en: "Global outreach", zh: "全球外联" },
+          label: { ko: "KO·EN·ZH 자동화 + 발송 전 사람 검토", en: "KO·EN·ZH automated + human check before sending", zh: "KO·EN·ZH 自动 + 发送前人工确认" },
         },
       ],
     },
@@ -252,59 +180,15 @@
       id: "work",
       side: "right",
       tag: "04 · MY WORK",
-      title: { ko: "개인·실무 병목 해결", en: "My own bottleneck", zh: "解决个人实务瓶颈" },
+      title: { ko: "개인·실무", en: "My own work", zh: "个人实务" },
       kids: [
         {
           step: { ko: "도메인", en: "Domain", zh: "领域" },
-          label: {
-            ko: "2035 뷰티·패션 · 딜 구조 · 7단계 운영",
-            en: "20s–30s beauty & fashion, deal terms, 7 stages",
-            zh: "20~30 岁美妆·时尚、交易条件、七阶段",
-          },
-          desc: {
-            ko: "지그재그·무신사·올리브영·MAC 협업, 12개 실무 기준, 전속 최대 30팀.",
-            en: "Zigzag, Musinsa, Olive Young, MAC — 12 practical criteria, up to 30 exclusive teams.",
-            zh: "Zigzag、Musinsa、Olive Young、MAC 合作，12 条实务标准，专属最多 30 团队。",
-          },
+          label: { ko: "2035 뷰티·패션(지그재그·무신사·올리브영·MAC) · 12개 기준", en: "Beauty & fashion (Zigzag, Musinsa, Olive Young, MAC) · 12 criteria", zh: "美妆·时尚（Zigzag、Musinsa、Olive Young、MAC）· 12 条标准" },
         },
         {
-          step: { ko: "문제", en: "Problem", zh: "问题" },
-          label: {
-            ko: "비정형 광고 문의, 제안서 한 건에 1시간",
-            en: "Unstructured inquiries — an hour per proposal",
-            zh: "格式各异的咨询，一份提案要 1 小时",
-          },
-          desc: {
-            ko: "문의마다 형식이 다르고, 판단 기준도 기록도 없었습니다.",
-            en: "Every inquiry was a different shape, with no criteria and no record.",
-            zh: "每条咨询格式都不同，既没有标准也没有记录。",
-          },
-        },
-        {
-          step: { ko: "해결", en: "Fix", zh: "解决" },
-          label: {
-            ko: "AS-IS/TO-BE 재설계 → 12개 규칙 → AI 초안",
-            en: "AS-IS → TO-BE redesign, 12 rules, AI draft",
-            zh: "AS-IS/TO-BE 重构 → 12 条规则 → AI 初稿",
-          },
-          desc: {
-            ko: "머릿속 기준 12개를 운영 기준으로 문서화해 LLM에 연계.",
-            en: "The twelve criteria documented as operating rules and wired to the LLM.",
-            zh: "把 12 条标准文档化为运营标准并对接 LLM。",
-          },
-        },
-        {
-          step: { ko: "결과", en: "Result", zh: "结果" },
-          label: {
-            ko: "1시간 → 3~5분, 팀 공용 표준으로",
-            en: "1 hr → 3–5 min, now a team-wide standard",
-            zh: "1 小时 → 3~5 分钟，成为团队统一标准",
-          },
-          desc: {
-            ko: "고액·예외는 사람이 승인 — 운영 기준 표준화까지.",
-            en: "A person approves high-value and exception cases; the standard is written down.",
-            zh: "大额与例外交人审批——标准写进文档。",
-          },
+          step: { ko: "제안서 AI", en: "Proposal AI", zh: "提案 AI" },
+          label: { ko: "1시간 → 3~5분 (팀 공용 표준)", en: "1 hr → 3–5 min (team-wide standard)", zh: "1 小时 → 3~5 分钟（团队共用标准）" },
         },
       ],
     },
@@ -315,28 +199,12 @@
       title: { ko: "안전장치", en: "Safeguards", zh: "安全线" },
       kids: [
         {
-          label: {
-            ko: "AI는 초안과 분류까지만",
-            en: "AI drafts and sorts — nothing more",
-            zh: "AI 只写初稿、只做分类",
-          },
-          desc: {
-            ko: "최종 판단과 발송은 사람이 합니다.",
-            en: "The final call and the send stay with a person.",
-            zh: "最终判断和发送都由人来做。",
-          },
+          step: { ko: "AI 범위", en: "AI scope", zh: "AI 范围" },
+          label: { ko: "초안 작성 · 조건 분류", en: "Drafting · sorting conditions", zh: "撰写初稿 · 条件分类" },
         },
         {
-          label: {
-            ko: "12개 규칙 검증 + 예외는 사람 승인",
-            en: "12 rules, and a human for exceptions",
-            zh: "12 条规则校验 + 例外交人审批",
-          },
-          desc: {
-            ko: "2,000만 원 초과·성과 연동 지급은 사람이 승인.",
-            en: "Deals over ₩20M or paid on performance go to a person.",
-            zh: "超过 2,000 万韩元、按效果付款由人审批。",
-          },
+          step: { ko: "사람 승인", en: "Human approval", zh: "人工审批" },
+          label: { ko: "2,000만 원+ · 성과연동 · 최종 발송", en: "₩20M+ · performance pay · final send", zh: "2,000 万韩元以上 · 按效果付款 · 最终发送" },
         },
       ],
     },
@@ -344,31 +212,15 @@
       id: "career",
       side: "right",
       tag: "06 · CAREER",
-      title: { ko: "경력 & 다음 목표", en: "Career & what's next", zh: "履历与下一步" },
+      title: { ko: "경력", en: "Career", zh: "履历" },
       kids: [
         {
-          label: {
-            ko: "지나온 길 (2022.05 –)",
-            en: "The path so far (2022.05 –)",
-            zh: "走过的路（2022.05 –）",
-          },
-          desc: {
-            ko: "종합 MCN 샌드박스 → AI 콘텐츠 자동화 올투원 → 뷰티 특화 MCN 아이스크리에이티브 → 패션 중심 AI 에이전트 회사 온더룩(MCN팀 매니저). 4년 4개월.",
-            en: "General MCN Sandbox → AI content automation Alltoone → beauty MCN Ice Creative → fashion-led AI agent company Onthelook (MCN Team Manager). Four years four months.",
-            zh: "综合 MCN 沙盒 → AI 内容自动化 Alltoone → 美妆 MCN Ice Creative → 以时尚为主的 AI 智能体公司 Onthelook（MCN 团队经理）。4 年 4 个月。",
-          },
+          step: { ko: "커리어 흐름", en: "Path", zh: "履历线" },
+          label: { ko: "샌드박스(종합 MCN) → 올투원(AI 콘텐츠) → 아이스(뷰티 MCN) → 온더룩(패션·AI 에이전트)", en: "Sandbox (general MCN) → Alltoone (AI content) → Ice (beauty MCN) → Onthelook (fashion · AI agents)", zh: "Sandbox（综合 MCN）→ Alltoone（AI 内容）→ Ice（美妆 MCN）→ Onthelook（时尚 · AI 智能体）" },
         },
         {
-          label: {
-            ko: "다음 목표 · 소통 AI 에이전트",
-            en: "Next · a communication AI agent",
-            zh: "下一步 · 沟通型 AI 智能体",
-          },
-          desc: {
-            ko: "서로 다른 맥락의 사람을 잇고, 교육·기회의 사각지대를 풀고 싶습니다.",
-            en: "Connecting people from different contexts, and closing gaps in education and opportunity.",
-            zh: "连接处在不同语境中的人，补上教育与机会的盲区。",
-          },
+          step: { ko: "다음 목표", en: "Next", zh: "下一步" },
+          label: { ko: "소통 AI 에이전트", en: "Communication AI agent", zh: "沟通型 AI 智能体" },
         },
       ],
     },

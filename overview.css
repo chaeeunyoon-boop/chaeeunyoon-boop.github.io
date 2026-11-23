@@ -61,7 +61,7 @@ html, body { overflow-x: clip; }
 }
 .ov-bar__hint {
   margin-left: auto;
-  font-size: 11.5px;
+  font-size: 12px;
   color: var(--dim);
 }
 
@@ -134,8 +134,8 @@ html, body { overflow-x: clip; }
 
 .ov-hub {
   position: relative;
-  width: 300px;
-  padding: 18px 18px 15px;
+  width: 326px;
+  padding: 22px 20px 18px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -167,48 +167,52 @@ html, body { overflow-x: clip; }
   color: var(--accent);
   margin-bottom: 5px;
 }
-.ov-hub__name { font-size: 20px; font-weight: 800; letter-spacing: -0.02em; }
+.ov-hub__name { font-size: 29px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; }
 .ov-hub__role {
   font-family: var(--mono);
-  font-size: 10.5px;
-  letter-spacing: 0.06em;
+  font-size: 12px;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--accent);
-  line-height: 1.4;
+  line-height: 1.45;
+  margin-top: 4px;
 }
 .ov-hub__title {
   font-family: var(--mono);
-  font-size: 9.5px;
+  font-size: 11px;
   letter-spacing: 0.02em;
   color: var(--dim);
-  margin-top: 1px;
+  margin-top: 3px;
 }
 .ov-hub__pitch {
-  margin-top: 8px;
-  padding-top: 8px;
-  border-top: 1px dashed var(--line);
-  font-size: 12px;
-  line-height: 1.55;
-  color: var(--muted);
+  margin-top: 10px;
+  padding: 7px 10px;
+  border-radius: 9px;
+  background: var(--surface-2);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: -0.015em;
+  color: var(--text);
   word-break: keep-all;
 }
 .ov-hub__stats {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
   width: 100%;
-  margin-top: 9px;
-  padding-top: 8px;
+  margin-top: 12px;
+  padding-top: 10px;
   border-top: 1px dashed var(--line);
 }
 .ov-hub__stat { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
 .ov-hub__stat-l {
-  font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em;
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em;
   text-transform: uppercase; color: var(--dim); white-space: nowrap;
 }
 .ov-hub__stat-v {
-  font-size: 12.5px; font-weight: 800; color: var(--text);
-  letter-spacing: -0.01em; white-space: nowrap;
+  font-size: 16px; font-weight: 800; color: var(--text);
+  letter-spacing: -0.015em; white-space: nowrap;
 }
 .ov-hub__mail {
   margin-top: 9px;
@@ -232,7 +236,7 @@ html, body { overflow-x: clip; }
 
 .ov-grp {
   position: relative;
-  padding: 15px 17px 16px;
+  padding: 19px 21px 20px;
   border: 1px solid var(--line);
   border-radius: 14px;
   background: var(--surface);
@@ -254,25 +258,25 @@ html, body { overflow-x: clip; }
 }
 .ov-grp__tag {
   font-family: var(--mono);
-  font-size: 9.5px;
+  font-size: 10.5px;
   letter-spacing: 0.1em;
   color: var(--accent);
   white-space: nowrap;
 }
-.ov-grp__title { font-size: 15.5px; font-weight: 800; letter-spacing: -0.025em; line-height: 1.25; }
+.ov-grp__title { font-size: 19px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.2; }
 
 .ov-grp__kids {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin-top: 14px;
+  gap: 15px;
+  margin-top: 15px;
 }
 
-.ov-kid { display: flex; gap: 10px; align-items: flex-start; }
+.ov-kid { display: flex; gap: 11px; align-items: flex-start; }
 .ov-kid__bullet {
   flex: 0 0 auto;
-  width: 4px; height: 4px; border-radius: 50%;
-  margin-top: 8px;
+  width: 5px; height: 5px; border-radius: 50%;
+  margin-top: 9px;
   background: var(--dim);
   transition: background-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
 }
@@ -282,21 +286,22 @@ html, body { overflow-x: clip; }
 .ov-kid__line { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px; }
 .ov-kid__step {
   font-family: var(--mono);
-  font-size: 8.5px;
-  letter-spacing: 0.06em;
+  font-size: 10px;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  padding: 1px 5px;
+  padding: 2px 7px;
   border-radius: 4px;
   border: 1px solid var(--accent-line);
   color: var(--accent);
   white-space: nowrap;
 }
 .ov-kid__label {
-  font-size: 13.4px;
+  font-size: 17px;
   font-weight: 700;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.02em;
   color: var(--text);
-  line-height: 1.4;
+  line-height: 1.42;
+  word-break: keep-all;
 }
 .ov-kid__desc {
   margin-top: 5px;
@@ -334,7 +339,7 @@ html, body { overflow-x: clip; }
 .ov-foot {
   flex: 0 0 auto;
   color: var(--dim);
-  font-size: 10.5px;
+  font-size: 11.5px;
   letter-spacing: 0.02em;
   text-transform: none;
   padding: 10px 2px 0;
