@@ -439,11 +439,12 @@ html, body { overflow-x: clip; }
 
   .ov-bar { flex-wrap: wrap; gap: 8px; }
   .ov-bar__label { flex: 0 0 100%; margin-right: 0; }
-  .ov-bar__tools { flex: 0 0 100%; }
+  .ov-bar__tools { flex: 0 0 100%; flex-wrap: wrap; gap: 8px; }
   .ov-bar__hint { flex: 0 0 100%; }
 }
 
 @media (max-width: 620px) {
+  .ov-bar__label { display: none; }
   .brand__text { display: none; }
   .topbar__inner { gap: 8px; height: 58px; }
   .ov-link { padding: 5px 7px; }
