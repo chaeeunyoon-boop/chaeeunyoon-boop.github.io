@@ -400,7 +400,7 @@ html, body { overflow-x: clip; }
   }
   .ov-wires { display: none; }
   .ov-hubwrap { order: 1; margin-bottom: 10px; }
-  .ov-wing { display: flex; gap: 10px; }
+  .ov-wing { display: flex; flex-direction: column; gap: 10px; }
   .ov-wing--left { order: 2; }
   .ov-wing--right { order: 3; }
   .ov-hub { width: 100%; max-width: none; align-items: flex-start; text-align: left; padding: 18px; }
