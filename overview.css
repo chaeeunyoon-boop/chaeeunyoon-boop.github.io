@@ -187,14 +187,13 @@ html, body { overflow-x: clip; }
 .ov-wing {
   position: relative;
   z-index: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  gap: clamp(12px, 2vh, 24px);
+  display: grid;
+  grid-auto-rows: minmax(0, 1fr);
+  gap: 8px;
   min-width: 0;
 }
 
-.ov-grp { display: flex; flex-direction: column; min-width: 0; }
+.ov-grp { display: flex; flex-direction: column; justify-content: center; min-width: 0; }
 
 .ov-grp__head {
   position: relative;
@@ -302,7 +301,7 @@ html, body { overflow-x: clip; }
 
 .ov-row {
   display: grid;
-  grid-template-columns: 84px minmax(0, 1fr);
+  grid-template-columns: 92px minmax(0, 1fr);
   gap: 10px;
   padding: 7px 0;
   border-bottom: 1px dashed var(--line);
@@ -398,7 +397,7 @@ html, body { overflow-x: clip; }
   }
   .ov-wires { display: none; }
   .ov-hubwrap { order: 1; margin-bottom: 10px; }
-  .ov-wing { gap: 10px; }
+  .ov-wing { display: flex; gap: 10px; }
   .ov-wing--left { order: 2; }
   .ov-wing--right { order: 3; }
   .ov-hub { width: 100%; max-width: none; align-items: flex-start; text-align: left; padding: 18px; }
