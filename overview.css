@@ -15,7 +15,7 @@ html, body { overflow-x: clip; }
   display: flex;
   flex-direction: column;
   max-width: 1440px;
-  min-height: calc(100dvh - 66px);
+  min-height: calc(100dvh - 67px);
   padding: 10px 24px 12px;
 }
 
@@ -364,9 +364,9 @@ html, body { overflow-x: clip; }
   .toggles { gap: 5px; }
   .ov-link { padding: 4px 6px; font-size: 10px; letter-spacing: 0; }
   .seg { padding: 2px; }
-  .seg__btn { padding: 3px 5px; font-size: 10px; min-width: 0; }
+  .seg__btn { padding: 3px 4px; font-size: 10px; min-width: 0; }
   .iconbtn { width: 26px; height: 26px; }
-  .ov-main { padding: 6px 8px 12px; min-height: calc(100dvh - 54px); }
+  .ov-main { padding: 6px 8px 12px; min-height: calc(100dvh - 55px); }
   .ov-bar { padding: 0 2px 6px; }
   .ov-bar__hint { display: none; }
   .ov-zoomhint { font-size: 10.5px; }
