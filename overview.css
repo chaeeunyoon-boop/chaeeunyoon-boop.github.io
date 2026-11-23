@@ -9,6 +9,7 @@
   display: flex;
   flex-direction: column;
   min-height: calc(100dvh - 66px);
+  max-width: 1440px;
   padding-top: 12px;
   padding-bottom: 14px;
 }
@@ -211,7 +212,7 @@
   font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em;
   color: var(--dim); white-space: nowrap;
 }
-.ov-grp__title { font-size: 15px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; }
+.ov-grp__title { font-size: 15px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .ov-grp__caret { display: none; }
 
 .ov-grp.is-active .ov-grp__head {
@@ -374,6 +375,11 @@
 }
 
 /* ---------------- 좁은 화면: 세로 아코디언 ---------------- */
+@media (max-width: 1320px) {
+  .ov-split { grid-template-columns: minmax(0, 1fr) 306px; }
+  .ov-insp { padding: 18px 16px 20px; }
+}
+
 @media (max-width: 1080px) {
   .ov-split { grid-template-columns: 1fr; }
   .ov-insp { display: none; }
@@ -398,7 +404,7 @@
   .ov-wing--left .ov-grp__head,
   .ov-wing--right .ov-grp__head { flex-direction: row; text-align: left; }
   .ov-grp__head { padding: 14px 15px; padding-right: 30px; }
-  .ov-grp__title { font-size: 15.5px; }
+  .ov-grp__title { font-size: 15.5px; white-space: normal; overflow: visible; text-overflow: clip; }
   .ov-grp__caret {
     display: block;
     position: absolute;
