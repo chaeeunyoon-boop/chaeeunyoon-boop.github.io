@@ -99,7 +99,9 @@
     names: { ko: "윤채은", en: "Chaeeun Yun", zh: "Chaeeun Yun" },
     role: { ko: "AX Builder · Problem Solver", en: "AX Builder · Problem Solver", zh: "AX 构建者 · 问题解决者" },
     hubEyebrow: { ko: "HUB · 중심", en: "HUB · centre", zh: "HUB · 中心" },
-    roleHead: { ko: "직함", en: "Title", zh: "职位" },
+    roleHead: { ko: "프로필", en: "Profile", zh: "简介" },
+    mapLabel: { ko: "한 페이지 요약 지도", en: "One-page overview map", zh: "一页概览地图" },
+    hubAria: { ko: "중심 · 윤채은 요약으로 돌아가기", en: "Centre · back to the Chaeeun Yun summary", zh: "中心 · 回到 Chaeeun Yun 概览" },
     roleValue: {
       ko: "Influencer Marketing Manager @ Onthelook",
       en: "Influencer Marketing Manager @ Onthelook",
@@ -564,6 +566,8 @@
 
   function renderMap() {
     groups = buildGroups();
+    if (mapEl) mapEl.setAttribute("aria-label", L(UI.mapLabel));
+    if (hubEl) hubEl.setAttribute("aria-label", L(UI.hubAria));
     if (wingL) wingL.innerHTML = "";
     if (wingR) wingR.innerHTML = "";
     groups.forEach(function (g) {
