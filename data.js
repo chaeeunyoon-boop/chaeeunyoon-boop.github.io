@@ -65,7 +65,7 @@ const SITE = {
       en: "I have run creator marketing for more than four years. Along the way I found the repeated bottlenecks myself, redesigned the AS-IS processes into TO-BE, and built them as AI agents and internal tools that the team uses in live work. I have run beauty and fashion influencer campaigns for women in their 20s–30s with brands such as Zigzag, Musinsa, Olive Young and MAC, and I don't stop at a proposal: the operating criteria get documented and become a team-wide standard.",
       zh: "我做创作者营销四年多，在现场亲手识别重复瓶颈，把 AS-IS 流程重构为 TO-BE，用 AI 代理与内部工具搭起来并落地业务。也与 Zigzag、Musinsa、Olive Young、MAC 等品牌合作，面向 20~30 岁女性开展美妆·时尚网红营销。不止于方案，还把运营标准写成文档，留成团队共用的标准。",
     },
-    heroCta1: { ko: "케이스 2건 보기", en: "See the two cases", zh: "查看 2 个案例" },
+    heroCta1: { ko: "케이스 3건 보기", en: "See the three cases", zh: "查看 3 个案例" },
     heroCta2: { ko: "연락하기", en: "Get in touch", zh: "联系我" },
 
     metricHead: { ko: "임팩트 · AS-IS → TO-BE", en: "IMPACT · AS-IS → TO-BE", zh: "成效 · AS-IS → TO-BE" },
@@ -78,9 +78,9 @@ const SITE = {
 
     casesTitle: { ko: "AS-IS 병목 → 재설계 → 임팩트", en: "AS-IS bottleneck → redesign → impact", zh: "AS-IS 瓶颈 → 重构 → 成效" },
     casesLead: {
-      ko: "두 건 모두 같은 순서로 읽힙니다. AS-IS에서 무엇이 막혔는지, 어떤 판단을 운영 기준으로 옮겼는지, TO-BE에서 무엇이 달라졌는지.",
-      en: "Both read in the same order: what was stuck in the AS-IS, which judgments became operating rules, and what changed in the TO-BE.",
-      zh: "两件都按同一顺序阅读：AS-IS 里卡在哪里、哪些判断被写成运营标准、TO-BE 里发生了什么变化。",
+      ko: "세 건 모두 같은 순서로 읽힙니다. AS-IS에서 무엇이 막혔는지, 어떤 판단을 운영 기준으로 옮겼는지, TO-BE에서 무엇이 달라졌는지.",
+      en: "All three read in the same order: what was stuck in the AS-IS, which judgments became operating rules, and what changed in the TO-BE.",
+      zh: "三件都按同一顺序阅读：AS-IS 里卡在哪里、哪些判断被写成运营标准、TO-BE 里发生了什么变化。",
     },
     step1: { ko: "01 · 문제 (AS-IS)", en: "01 · Problem (AS-IS)", zh: "01 · 问题（AS-IS）" },
     step2: { ko: "02 · 재설계 · 솔루션", en: "02 · Redesign & solution", zh: "02 · 重构 · 解决方案" },
@@ -103,6 +103,16 @@ const SITE = {
       zh: "真正在工作中使用的东西",
     },
 
+    domainTitle: {
+      ko: "인플루언서 마케팅에서 깊이 쌓은 도메인",
+      en: "The domain I know deeply inside influencer marketing",
+      zh: "在网红营销中深耕的领域",
+    },
+    domainNote: {
+      ko: "4년 4개월 · 뷰티·패션 버티컬",
+      en: "Four years four months · beauty & fashion vertical",
+      zh: "4 年 4 个月 · 美妆·时尚垂直领域",
+    },
     careerTitle: {
       ko: "현장에서 배운 것을, 다음 현장의 구조로.",
       en: "What I learned on the ground, turned into structure for the next one.",
@@ -140,11 +150,6 @@ const SITE = {
       label: { ko: "광고 제안서 초안 · AI 워크플로우", en: "Ad proposal draft · AI workflow", zh: "广告提案初稿 · AI 工作流" },
     },
     {
-      before: { ko: "하루 1편", en: "1 a day", zh: "一天一条" },
-      after: { ko: "30분에 1편", en: "30 min", zh: "30 分钟" },
-      label: { ko: "AI 뉴스 영상 제작 · 워크플로우 구축", en: "AI news-video production · workflow built", zh: "AI 新闻视频制作 · 搭建工作流" },
-    },
-    {
       before: { ko: "카톡·메일", en: "chat & mail", zh: "聊天·邮件" },
       after: { ko: "한 화면", en: "one screen", zh: "一屏" },
       label: { ko: "광고 운영 현황 · 실시간 운영 대시보드", en: "Campaign status · live ops dashboard", zh: "广告运营进度 · 实时看板" },
@@ -154,8 +159,266 @@ const SITE = {
   /* ---------- CASE STUDIES ---------- */
   cases: [
     {
-      id: "work-agent",
+      id: "ops-dashboard",
       no: "01",
+      tag: {
+        ko: "내부 도구 구축 · 동료·TF 협업 병목 해결",
+        en: "Internal tool built · team collaboration bottleneck solved",
+        zh: "搭建内部工具 · 解决同事·TF 协作瓶颈",
+      },
+      title: {
+        ko: "광고주 응대 현황을 한 화면에 — 광고 건별 실시간 운영 대시보드",
+        en: "Every campaign's status on one screen — a real-time operations dashboard",
+        zh: "把广告主沟通进度收进一屏 — 每个广告的实时运营看板",
+      },
+      org: { ko: "온더룩 · MCN팀", en: "Onthelook · MCN Team", zh: "Onthelook · MCN 团队" },
+      role: {
+        ko: "설계 · 구축 · 팀 적용",
+        en: "Design, build, rollout",
+        zh: "设计 · 搭建 · 团队落地",
+      },
+      period: { ko: "2026.02 – 현재", en: "Feb 2026 – Present", zh: "2026.02 – 至今" },
+      oneLiner: {
+        ko: "광고주 응대가 어디까지 갔는지 아무도 한눈에 볼 수 없어, 회의마다 확인에 시간이 들었습니다. 문의부터 정산까지 7단계를 한 화면에 모은 내부 도구를 직접 만들어, 팀과 TF가 같은 화면을 보며 일하게 했습니다.",
+        en: "Nobody could see how far each client conversation had gone, so every meeting started by asking around. I built an internal tool that puts seven stages — inquiry to payment — on one screen, so the team and the task force work from the same view.",
+        zh: "广告主的沟通进行到哪一步没人一眼看得到，每次会议都先花时间确认。我亲手做了把从咨询到结算七个阶段收进一屏的内部工具，让团队与 TF 看同一屏工作。",
+      },
+      problem: {
+        lead: {
+          ko: "카카오톡·메일·개인 메모에 응대 내역이 흩어져, 진행 상황이 담당자 한 사람의 기억에 묶여 있었습니다. 제 문제이자 팀의 협업 병목이었습니다.",
+          en: "Responses sat scattered across KakaoTalk, mail and personal notes, so progress lived in one person's memory. It was my problem and the team's collaboration bottleneck at once.",
+          zh: "回复散落在 KakaoTalk、邮件和个人备忘里，进度只绑在一个人的记忆上。既是我的问题，也是团队的协作瓶颈。",
+        },
+        bullets: [
+          {
+            ko: "카카오톡·메일·개인 메모에 응대 내역이 흩어져 담당자만 상황을 앎",
+            en: "Notes scattered across chat, mail and memos — only the owner knew the status",
+            zh: "记录散落在聊天、邮件和备忘中，只有负责人知道情况",
+          },
+          {
+            ko: "회의마다 '그 건 어디까지 갔어요?'로 시작 — 같은 확인을 반복",
+            en: "Every meeting opened with “where is that one?” — the same check, again",
+            zh: "每次会议都从“那个进行到哪了”开始 — 重复同样的确认",
+          },
+          {
+            ko: "담당자가 바뀌면 흐름이 끊겨, 인수인계마다 처음부터 다시 설명",
+            en: "When the owner changed the thread broke, and handover meant explaining from scratch",
+            zh: "负责人一换流程就断，交接都要从头再讲一遍",
+          },
+          {
+            ko: "마감·승인 대기 건이 눈에 띄지 않아 처리가 늦어짐",
+            en: "Deadlines and items awaiting approval stayed invisible, so they slipped",
+            zh: "截止与待审批的项目不明显，处理被拖延",
+          },
+        ],
+      },
+      rules: {
+        lead: {
+          ko: "새로 입력할 칸을 늘리지 않고, 이미 오가는 카카오톡·메일에서 상태를 읽어 7단계로 고정했습니다. 단계 기준을 문서로 정해 누가 봐도 같은 상태로 읽게 했습니다.",
+          en: "I added no new fields to fill in: the status is read from the chat and mail already flowing, then fixed into seven stages. The stage criteria are written down, so everyone reads the same state.",
+          zh: "没有增加新的填写栏：从本来就在往来的聊天与邮件中读取状态，固定为七个阶段。阶段标准写成文档，谁看都是同一个状态。",
+        },
+        flow: [
+          {
+            label: { ko: "신규 문의", en: "New inquiry", zh: "新咨询" },
+            sub: { ko: "접수 시점 기록", en: "Logged on arrival", zh: "接收时记录" },
+          },
+          {
+            label: { ko: "금액 협의", en: "Amount talks", zh: "金额协商" },
+            sub: { ko: "예산·조건 조율", en: "Budget, terms", zh: "预算 · 条件" },
+          },
+          {
+            label: { ko: "적합성 검토", en: "Fit check", zh: "匹配审核" },
+            sub: { ko: "12개 기준 확인", en: "12 criteria checked", zh: "12 条标准确认" },
+          },
+          {
+            label: { ko: "사람 승인", en: "Human approval", zh: "人工审批" },
+            sub: { ko: "고액·예외만", en: "High value, exceptions", zh: "仅大额与例外" },
+            gate: true,
+          },
+          {
+            label: { ko: "계약 진행", en: "Contracting", zh: "签约中" },
+            sub: { ko: "일정·권리 확정", en: "Dates, rights", zh: "排期 · 权利" },
+          },
+          {
+            label: { ko: "대금 지급 대기", en: "Awaiting payment", zh: "待付款" },
+            sub: { ko: "정산 확인", en: "Settlement check", zh: "结算确认" },
+          },
+          {
+            label: { ko: "완료", en: "Closed", zh: "已完成" },
+            sub: { ko: "결과 보고서 보관", en: "Report archived", zh: "归档结果报告" },
+          },
+        ],
+        notes: [
+          { ko: "상단 숫자 자동 집계", en: "Counts recalculated from the list", zh: "顶部数字自动统计" },
+          { ko: "마감·승인 대기 자동 표시", en: "Deadlines and approvals surfaced", zh: "自动标出截止与待审批" },
+          { ko: "담당자 변경 시 링크 하나로 인수인계", en: "Handover is one link", zh: "换负责人时一个链接交接" },
+          { ko: "새 입력 칸 없음", en: "No new fields to fill", zh: "不新增填写栏" },
+        ],
+      },
+      impact: {
+        lead: {
+          ko: "묻기 전에 다 보이고, 담당자가 바뀌어도 흐름이 끊기지 않습니다. 7단계 기준과 표시 규칙을 문서로 남겨 팀과 TF가 같은 화면을 봅니다.",
+          en: "Everything is visible before anyone asks, and the thread holds when the owner changes. The seven-stage criteria and display rules are documented, so the team and the task force read the same screen.",
+          zh: "不用问就看得见，负责人换了流程也不断。七个阶段的标准与显示规则写成文档，团队与 TF 看同一屏。",
+        },
+        metrics: [
+          {
+            before: { ko: "카카오톡·메일", en: "Chat & mail", zh: "聊天·邮件" },
+            after: { ko: "한 화면", en: "One screen", zh: "一屏" },
+            label: { ko: "응대 현황", en: "Campaign status", zh: "沟通进度" },
+          },
+          {
+            before: { ko: "회의마다 확인", en: "Checked every meeting", zh: "每次会议都确认" },
+            after: { ko: "보고 바로 판단", en: "Decided on sight", zh: "看到就判断" },
+            label: { ko: "진행 판단", en: "Status checks", zh: "进度判断" },
+          },
+          {
+            before: { ko: "구두 인수인계", en: "Verbal handover", zh: "口头交接" },
+            after: { ko: "링크 하나", en: "One link", zh: "一个链接" },
+            label: { ko: "담당자 변경", en: "Owner change", zh: "换负责人" },
+          },
+        ],
+        note: {
+          ko: "마감·승인 대기 건은 상단 숫자에 자동으로 다시 세어 표시합니다.",
+          en: "Due dates and items awaiting approval are recounted automatically at the top.",
+          zh: "截止与待审批的项目会在顶部数字中自动重新统计。",
+        },
+      },
+    },
+
+    {
+      id: "global-outreach",
+      no: "02",
+      tag: {
+        ko: "글로벌 확장 · 아웃리치 자동화",
+        en: "Global expansion · outreach automated",
+        zh: "海外拓展 · 外联自动化",
+      },
+      title: {
+        ko: "글로벌 파트너 아웃리치 자동화 — 한·영·중 전환과 발송 전 검토",
+        en: "Global partner outreach automated — KO/EN/ZH switching with a check before sending",
+        zh: "全球合作伙伴外联自动化 — 韩·英·中切换与发送前确认",
+      },
+      org: { ko: "온더룩 · MCN팀", en: "Onthelook · MCN Team", zh: "Onthelook · MCN 团队" },
+      role: {
+        ko: "설계 · 구축 · 운영",
+        en: "Design, build, run",
+        zh: "设计 · 搭建 · 运营",
+      },
+      period: { ko: "2026.02 – 현재", en: "Feb 2026 – Present", zh: "2026.02 – 至今" },
+      oneLiner: {
+        ko: "해외 파트너에게 보내는 제안 메일을 언어마다 새로 쓰고, 보낸 뒤 회신과 팔로업을 따로 챙겨야 했습니다. 같은 메일을 KO·EN·ZH로 바꾸고 발송 전 검토를 거치는 워크플로우로 옮겨, 컨택과 팔로업이 손이 아니라 흐름으로 돌아가게 했습니다.",
+        en: "Every overseas partnership mail had to be rewritten per language, and replies and follow-ups were tracked by memory. I moved it to a workflow that switches the same mail between KO, EN and ZH with a review before sending, so outreach and follow-up run as a process rather than by hand.",
+        zh: "给海外合作方的合作邮件每种语言都要重写，发出后的回复与跟进还得单独记着。我把它搬进一套工作流：同一封邮件可在 KO·EN·ZH 之间切换，发送前先经确认，联络与跟进靠流程运转，不再靠手工。",
+      },
+      problem: {
+        lead: {
+          ko: "해외 컨택은 언어·검토·팔로업이 한꺼번에 걸린 일이었습니다. AS-IS에는 템플릿도, 발송 전 검토 단계도, 파트너별 상태도 없었습니다.",
+          en: "Overseas outreach hung on three things at once: language, review and follow-up. The AS-IS had no template, no review step and no per-partner status.",
+          zh: "海外联络同时卡在语言、确认和跟进三件事上。AS-IS 里既没有模板，也没有发送前确认和合作方状态。",
+        },
+        bullets: [
+          {
+            ko: "언어마다 메일을 새로 써야 해 시간이 들고 표현·톤이 매번 달라짐",
+            en: "Mails rewritten per language — slow, and the tone drifted each time",
+            zh: "每种语言都要重写邮件 — 费时，表达与语气每次都不一样",
+          },
+          {
+            ko: "회신·후속 메일을 사람이 기억해야 해 누락이 생김",
+            en: "Replies and follow-ups depended on memory, so some were missed",
+            zh: "回复与跟进靠人记，容易出现遗漏",
+          },
+          {
+            ko: "검토 없이 바로 나가면 조건·톤 실수가 그대로 전달됨",
+            en: "Without a review, terms and tone mistakes went out as they were",
+            zh: "未经确认直接发出，条件与语气的失误原样传达",
+          },
+          {
+            ko: "파트너별 진행 단계가 보이지 않아 다음 할 일을 매번 새로 판단",
+            en: "No per-partner stage, so the next step was re-judged from scratch",
+            zh: "看不到各合作方的阶段，下一步每次都要重新判断",
+          },
+        ],
+      },
+      rules: {
+        lead: {
+          ko: "언어를 바꾸는 일과 보내는 일을 분리하고, 발송 전 검토를 단계로 고정했습니다. AS-IS의 손 작업을 그대로 옮기지 않고, 파트너별 상태와 다음 할 일이 남는 TO-BE로 재설계했습니다.",
+          en: "I separated switching the language from sending, and fixed a review step before anything goes out. Rather than copying the manual AS-IS, I redesigned it as a TO-BE that keeps each partner's stage and next step.",
+          zh: "把切换语言和发送分开，并把发送前确认固定成一步。没有照搬手工的 AS-IS，而是重构成保留每位合作方阶段与下一步的 TO-BE。",
+        },
+        flow: [
+          {
+            label: { ko: "파트너 목록", en: "Partner list", zh: "合作方名单" },
+            sub: { ko: "지역·담당자 확인", en: "Region, contact", zh: "地区 · 对接人" },
+          },
+          {
+            label: { ko: "KO·EN·ZH 템플릿", en: "KO · EN · ZH template", zh: "KO·EN·ZH 模板" },
+            sub: { ko: "같은 메일 한 벌", en: "One mail, three languages", zh: "同一封邮件三种语言" },
+          },
+          {
+            label: { ko: "발송 전 검토", en: "Review before sending", zh: "发送前确认" },
+            sub: { ko: "조건·톤 확인", en: "Terms and tone", zh: "条件 · 语气" },
+            gate: true,
+          },
+          {
+            label: { ko: "첫 메일 발송", en: "First mail sent", zh: "发出首封邮件" },
+            sub: { ko: "언어별 발송", en: "Sent per language", zh: "按语言发送" },
+          },
+          {
+            label: { ko: "후속 메일", en: "Follow-up", zh: "跟进邮件" },
+            sub: { ko: "일정대로 재발송", en: "Scheduled resendre", zh: "按计划再次发送" },
+          },
+          {
+            label: { ko: "회신 수신", en: "Reply received", zh: "收到回复" },
+            sub: { ko: "조건 회신", en: "Terms answered", zh: "条件回复" },
+          },
+          {
+            label: { ko: "미팅 조율", en: "Meeting set", zh: "约会议" },
+            sub: { ko: "다음 단계 연결", en: "Next step linked", zh: "接上下一步" },
+          },
+        ],
+        notes: [
+          { ko: "3개 언어 템플릿 한 벌", en: "One template in three languages", zh: "三种语言一套模板" },
+          { ko: "발송 전 검토 단계", en: "Review step before sending", zh: "发送前确认环节" },
+          { ko: "후속 메일 일정 관리", en: "Follow-up schedule", zh: "跟进日程管理" },
+          { ko: "파트너별 다음 할 일", en: "Next step per partner", zh: "各合作方下一步" },
+        ],
+      },
+      impact: {
+        lead: {
+          ko: "해외 컨택이 개인 기억이 아니라 워크플로우로 돌아갑니다. 파트너 응답 단계와 다음 할 일이 한 화면에 남습니다.",
+          en: "Outreach now runs as a workflow, not from memory. Each partner's stage and next step stay visible on one screen.",
+          zh: "海外联络靠工作流运转，不再靠个人记忆。各合作方的阶段与下一步留在一屏里。",
+        },
+        metrics: [
+          {
+            before: { ko: "3개 언어 손작업", en: "Three languages by hand", zh: "三种语言手工处理" },
+            after: { ko: "한 벌의 템플릿", en: "One template set", zh: "一套模板" },
+            label: { ko: "메일 작성", en: "Writing the mail", zh: "撰写邮件" },
+          },
+          {
+            before: { ko: "바로 발송", en: "Sent straight away", zh: "直接发送" },
+            after: { ko: "검토 후 발송", en: "Reviewed, then sent", zh: "确认后发送" },
+            label: { ko: "발송", en: "Sending", zh: "发送" },
+          },
+          {
+            before: { ko: "기억에 의존", en: "Left to memory", zh: "靠记忆" },
+            after: { ko: "단계별 다음 할 일", en: "Next step per stage", zh: "按阶段看下一步" },
+            label: { ko: "팔로업", en: "Follow-up", zh: "跟进" },
+          },
+        ],
+        note: {
+          ko: "언어 선택과 발송 전 검토가 한 흐름에 있어, 메일이 손이 아니라 워크플로우로 나갑니다.",
+          en: "Language choice and pre-send review sit in one flow, so mails leave as a workflow rather than by hand.",
+          zh: "语言选择与发送前确认在同一条流程里，邮件靠工作流发出，不再靠手工。",
+        },
+      },
+    },
+
+    {
+      id: "work-agent",
+      no: "03",
       tag: {
         ko: "반복 병목 발굴 · AI 워크플로우 구축",
         en: "Bottleneck discovery · AI workflow built",
@@ -284,131 +547,6 @@ const SITE = {
           ko: "아직 도입 초기라, 사람이 만든 결과와 계속 비교하며 얼마나 정확한지 확인하고 있습니다.",
           en: "It's still early, so I keep comparing it with human-made results to see how accurate it is.",
           zh: "目前仍处于导入初期，正持续与人工结果对比，确认它有多准确。",
-        },
-      },
-    },
-
-    {
-      id: "news-video",
-      no: "02",
-      tag: { ko: "워크플로우 구축 · 운영 기준 문서화 · 인수인계", en: "Workflow built · operating standards documented · handed over", zh: "搭建工作流 · 文档化运营标准 · 交接" },
-      title: {
-        ko: "서울경제신문 AI 뉴스 영상 제작 자동화 & 5명에게 인수인계",
-        en: "Automating AI news-video production for Seoul Economic Daily & handing it over to five people",
-        zh: "首尔经济新闻 AI 新闻视频制作自动化与交接给 5 人",
-      },
-      org: { ko: "올투원 · 프리랜서", en: "Alltoone · Freelance", zh: "Alltoone · 自由职业" },
-      role: {
-        ko: "제작 방식 구축 · 운영 인수인계",
-        en: "Built the production method · handed over operations",
-        zh: "搭建制作方法 · 移交运营",
-      },
-      period: { ko: "2024.06 – 2024.11", en: "Jun 2024 – Nov 2024", zh: "2024.06 – 2024.11" },
-      oneLiner: {
-        ko: "기사 한 건을 영상으로 만드는 과정을 AS-IS에서 단계별로 다시 나눠 템플릿과 체크리스트로 문서화하고, 하루 1편이던 제작을 30분에 1편으로 바꿔 그 운영 기준을 5명이 이어받게 했습니다.",
-        en: "I re-cut the article-to-video process step by step from the AS-IS and documented it as templates and checklists — production went from one video a day to one every 30 minutes, and five people took the operating standard over.",
-        zh: "我把“一篇报道做成一条视频”的过程从 AS-IS 重新拆成步骤，整理成模板与清单：一天一条变成 30 分钟一条，这套运营标准由 5 个人接手。",
-      },
-      problem: {
-        lead: {
-          ko: "매번 사람이 처음부터 만들어야 하는 방식으로는 양을 늘릴 수 없었습니다.",
-          en: "As long as a person had to build every video from scratch, volume couldn't grow.",
-          zh: "只要每条视频都得由人从头制作，产量就无法提升。",
-        },
-        bullets: [
-          {
-            ko: "기사 1건 → 영상 1건에 하루 — 하루 한 건이 한계",
-            en: "One article to one video took a day — one a day was the ceiling",
-            zh: "一篇报道 → 一条视频要一整天——一天一条就是上限",
-          },
-          {
-            ko: "일주일에 1편 정도만 올라가고, 월 조회수는 1~3만에 머묾",
-            en: "Only about one video a week went up, and monthly views stayed at 10–30K",
-            zh: "一周只能发一条左右，月播放量停在 1~3 万",
-          },
-          {
-            ko: "제작자가 바뀌면 품질과 소요 시간이 매번 달라짐",
-            en: "Change the producer and both quality and duration changed",
-            zh: "换个人做，质量和耗时每次都不同",
-          },
-          {
-            ko: "AI 이미지·음성을 쓰면서 저작권 기준이 없었음",
-            en: "AI images and voice were in use with no rights guideline",
-            zh: "用了 AI 图像和语音，却没有版权标准",
-          },
-        ],
-      },
-      rules: {
-        lead: {
-          ko: "기사를 받아 영상을 올리기까지의 단계를 나누고, 단계마다 무엇을 만들어야 하고 어떻게 되면 통과인지 운영 기준으로 문서화했습니다. 사람마다 다르던 AS-IS를 누구나 같은 결과를 내는 TO-BE로 바꾼 것입니다.",
-          en: "I split the path from receiving an article to uploading the video into steps and documented, step by step, what each must produce and what counts as passing. The AS-IS depended on who was doing it; the TO-BE gives anyone the same result.",
-          zh: "我把从拿到报道到上传视频的过程拆成步骤，并把每一步要产出什么、怎样才算通过，写成运营标准。AS-IS 因人而异，TO-BE 让任何人都得到同样的结果。",
-        },
-        flow: [
-          {
-            label: { ko: "기사 고르기", en: "Pick the article", zh: "挑选报道" },
-            sub: { ko: "주제 · 사실 확인", en: "Topic, facts", zh: "选题 · 事实核对" },
-          },
-          {
-            label: { ko: "대본", en: "Script", zh: "脚本" },
-            sub: { ko: "AI 지시문(프롬프트) 양식", en: "AI instruction (prompt) template", zh: "AI 指令（提示词）模板" },
-          },
-          {
-            label: { ko: "장면 구성", en: "Scene plan", zh: "分镜" },
-            sub: { ko: "이미지 · 자막 규칙", en: "Image, caption rules", zh: "图像 · 字幕规则" },
-          },
-          {
-            label: { ko: "음성 · 영상 합치기", en: "Voice & video assembly", zh: "配音 · 合成视频" },
-            sub: { ko: "AI 음성 · 편집", en: "AI voice, editing", zh: "AI 配音 · 剪辑" },
-          },
-          {
-            label: { ko: "저작권 확인", en: "Rights check", zh: "版权确认" },
-            sub: { ko: "사용 기준표", en: "Usage standards", zh: "使用标准表" },
-            gate: true,
-          },
-          {
-            label: { ko: "최종 확인 · 업로드", en: "Final check & upload", zh: "最终确认 · 上传" },
-            sub: { ko: "체크리스트", en: "Checklist", zh: "清单" },
-          },
-          {
-            label: { ko: "5명에게 인수인계", en: "Handover to 5 people", zh: "交接给 5 人" },
-            sub: { ko: "교육 · 문서", en: "Training, docs", zh: "培训 · 文档" },
-          },
-        ],
-        notes: [
-          { ko: "AI 지시문 · 장면 양식", en: "AI instruction and scene templates", zh: "AI 指令 · 分镜模板" },
-          { ko: "저작권 기준 마련", en: "Set copyright standards", zh: "制定版权标准" },
-          { ko: "최종 확인 체크리스트", en: "Final-check checklist", zh: "最终确认清单" },
-          { ko: "5명 교육 · 인수인계 문서", en: "Training and handover docs for 5", zh: "5 人培训与交接文档" },
-        ],
-      },
-      impact: {
-        lead: {
-          ko: "제가 손을 떼도 같은 품질이 나오도록 운영 기준을 문서로 남기고 팀에 넘겼습니다. 한 사람의 작업이 팀의 표준으로 바뀐 지점입니다.",
-          en: "I left the operating standard in writing and handed it to the team, so the output held without me. What had been one person's workflow became the team's standard.",
-          zh: "把运营标准留在文档里交给团队，我抽手之后产出质量依然稳定。一个人的工作方式由此变成团队标准。",
-        },
-        metrics: [
-          {
-            before: { ko: "하루 1편", en: "1 per day", zh: "一天一条" },
-            after: { ko: "30분에 1편", en: "1 per 30 min", zh: "30 分钟一条" },
-            label: { ko: "제작 시간", en: "Production time", zh: "制作时间" },
-          },
-          {
-            before: { ko: "주 1편", en: "1 per week", zh: "一周一条" },
-            after: { ko: "하루 5편", en: "5 per day", zh: "一天五条" },
-            label: { ko: "올리는 양", en: "Videos published", zh: "发布量" },
-          },
-          {
-            before: { ko: "월 1~3만", en: "10–30K", zh: "月 1~3 万" },
-            after: { ko: "월 10만", en: "100K", zh: "月 10 万" },
-            label: { ko: "월 조회수", en: "Monthly views", zh: "月播放量" },
-          },
-        ],
-        note: {
-          ko: "인수인계 뒤에도 같은 기준으로 운영되도록 저작권 기준과 체크리스트를 운영 문서로 함께 넘겼습니다.",
-          en: "The copyright standards and checklist went across as operating documents so operations kept the same standard.",
-          zh: "交接时一并交付了版权标准与检查清单，作为运营文档让流程维持同一标准。",
         },
       },
     },
@@ -997,6 +1135,42 @@ const SITE = {
     },
   ],
 
+  /* ---------- DOMAIN EXPERTISE ---------- */
+  domain: [
+    {
+      tag: "01 · VERTICAL",
+      title: { ko: "2035 여성 타깃 뷰티·패션 버티컬", en: "Beauty & fashion vertical for women in their 20s–30s", zh: "面向 20~30 岁女性的美妆·时尚垂直领域" },
+      desc: {
+        ko: "지그재그 · 무신사 · 올리브영 · MAC 등 브랜드와 인플루언서 협업을 다수 진행했습니다.",
+        en: "Many influencer campaigns with brands such as Zigzag, Musinsa, Olive Young and MAC.",
+        zh: "与 Zigzag、Musinsa、Olive Young、MAC 等品牌开展过多起网红合作。",
+      },
+    },
+    {
+      tag: "02 · DEAL",
+      title: { ko: "광고 딜 구조 · 조건 · 권리 판단", en: "Ad deal structure, terms and rights", zh: "广告交易结构 · 条件 · 权利判断" },
+      desc: {
+        ko: "예산·타깃·2차 활용 권리·성과 연동까지, 12개 실무 기준으로 판단합니다.",
+        en: "Budget, target, secondary-usage rights and performance-linked pay — judged on 12 practical criteria.",
+        zh: "预算、受众、二次使用权利、按效果付款 — 用 12 条实务标准判断。",
+      },
+    },
+    {
+      tag: "03 · OPERATION",
+      title: { ko: "캠페인 E2E 7단계 · 전속 크리에이터 관리", en: "7-stage campaign E2E · exclusive creator management", zh: "活动 E2E 七阶段 · 专属网红管理" },
+      desc: {
+        ko: "문의·제안·계약·제작·정산까지, 최대 30팀을 동시에 운영했습니다.",
+        en: "From inquiry and proposal to contract, production and settlement — up to 30 teams at once.",
+        zh: "从咨询、提案、签约、制作到结算 — 最多同时运营 30 个团队。",
+      },
+    },
+  ],
+  domainLink: {
+    ko: "딜 조건과 리스크, 병목을 현장에서 겪어 알기에 — AI에게 어디까지 맡기고 어디서 사람이 멈춰 승인할지 정확히 설계합니다.",
+    en: "Because I know the deal terms, the risks and the bottlenecks from the field, I can design exactly where AI takes over and where a person stops and approves.",
+    zh: "因为亲身经历过交易条件、风险与瓶颈 — 我能准确设计 AI 负责到哪里、人在哪里停下审批。",
+  },
+
   /* ---------- CAREER ---------- */
   timeline: [
     {
@@ -1034,9 +1208,9 @@ const SITE = {
       role: { ko: "AI 콘텐츠 자동화 프로젝트 · 프리랜서", en: "AI content automation project · Freelance", zh: "AI 内容自动化项目 · 自由职业" },
       bullets: [
         {
-          ko: "서울경제신문 AI 뉴스 영상 제작 워크플로우 구축 · 운영 기준 문서화 후 5명에게 인수인계",
-          en: "Built the AI news-video production workflow for Seoul Economic Daily · documented it and handed it to five people",
-          zh: "为首尔经济新闻搭建 AI 新闻视频制作工作流 · 文档化后交接给 5 人",
+          ko: "AI 콘텐츠 제작 자동화 프로젝트 수행",
+          en: "Ran AI content-production automation projects",
+          zh: "执行 AI 内容制作自动化项目",
         },
       ],
     },

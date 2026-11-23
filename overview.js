@@ -106,9 +106,9 @@
       zh: "Influencer Marketing Manager @ Onthelook",
     },
     pitch: {
-      ko: "반복 병목을 발굴해 AI 워크플로우로 바꾸고, 팀이 이어받도록 문서로 남깁니다.",
-      en: "I find repeated bottlenecks, turn them into AI workflows, and document them so the team can take over.",
-      zh: "识别重复瓶颈并改造成 AI 工作流，留下文档让团队接手。",
+      ko: "2035 여성 뷰티·패션 도메인을 깊이 알고, AI가 멈추고 사람이 승인할 지점을 설계합니다.",
+      en: "I know the 20s–30s beauty and fashion domain deeply, so I design where AI acts and where a person stops to approve.",
+      zh: "深耕 20~30 岁女性美妆·时尚领域，因此能设计 AI 做到哪里、人在哪里停下审批。",
     },
     scaleLine: {
       ko: "내 문제 → 동료의 문제 → 조직의 문제",
@@ -117,14 +117,14 @@
     },
     statCareer: { ko: "경력", en: "CAREER", zh: "经历" },
     statProposal: { ko: "광고 제안서", en: "AD PROPOSAL", zh: "广告提案" },
-    statContent: { ko: "콘텐츠 제작", en: "CONTENT", zh: "内容制作" },
+    statCreators: { ko: "전속 크리에이터", en: "CREATORS", zh: "专属网红" },
   };
 
   /* ---------------- 허브 수치 ---------------- */
   var STATS = [
     { l: UI.statCareer, v: { ko: "4년 4개월", en: "4 yr 4 mo", zh: "4 年 4 个月" } },
     { l: UI.statProposal, v: { ko: "1시간 → 3~5분", en: "1 hr → 3–5 min", zh: "1 小时 → 3~5 分钟" } },
-    { l: UI.statContent, v: { ko: "하루 1편 → 30분에 1편", en: "1 a day → 30 min", zh: "一天一条 → 30 分钟" } },
+    { l: UI.statCreators, v: { ko: "최대 30팀", en: "up to 30", zh: "最多 30 团队" } },
   ];
 
   /* ---------------- 지도 내용 ----------------
@@ -174,56 +174,9 @@
             zh: "公司也在同样的地方反复卡住",
           },
           desc: {
-            ko: "해외 파트너 컨택·콘텐츠 제작처럼 되풀이되는 일도 같은 방식으로 풀렸습니다.",
-            en: "Global partner outreach and content production — recurring work solved the same way.",
-            zh: "海外合作方联络、内容制作这类反复的事，也用同一种方式解决。",
-          },
-        },
-      ],
-    },
-    {
-      id: "work",
-      side: "left",
-      tag: "02 · MY WORK",
-      title: { ko: "개인·실무 병목 해결", en: "My own bottleneck", zh: "解决个人实务瓶颈" },
-      kids: [
-        {
-          step: { ko: "문제", en: "Problem", zh: "问题" },
-          label: {
-            ko: "비정형 광고 문의, 제안서 한 건에 1시간",
-            en: "Unstructured inquiries — an hour per proposal",
-            zh: "格式各异的咨询，一份提案要 1 小时",
-          },
-          desc: {
-            ko: "문의마다 형식이 다르고, 판단 기준도 기록도 없었습니다.",
-            en: "Every inquiry was a different shape, with no criteria and no record.",
-            zh: "每条咨询格式都不同，既没有标准也没有记录。",
-          },
-        },
-        {
-          step: { ko: "해결", en: "Fix", zh: "解决" },
-          label: {
-            ko: "AS-IS/TO-BE 재설계 → 12개 규칙 → AI 초안",
-            en: "AS-IS → TO-BE redesign, 12 rules, AI draft",
-            zh: "AS-IS/TO-BE 重构 → 12 条规则 → AI 初稿",
-          },
-          desc: {
-            ko: "머릿속 기준 12개를 운영 기준으로 문서화해 LLM에 연계.",
-            en: "The twelve criteria documented as operating rules and wired to the LLM.",
-            zh: "把 12 条标准文档化为运营标准并对接 LLM。",
-          },
-        },
-        {
-          step: { ko: "결과", en: "Result", zh: "结果" },
-          label: {
-            ko: "1시간 → 3~5분, 팀 공용 표준으로",
-            en: "1 hr → 3–5 min, now a team-wide standard",
-            zh: "1 小时 → 3~5 分钟，成为团队统一标准",
-          },
-          desc: {
-            ko: "고액·예외는 사람이 승인 — 운영 기준 표준화까지.",
-            en: "A person approves high-value and exception cases; the standard is written down.",
-            zh: "大额与例外交人审批——标准写进文档。",
+            ko: "해외 파트너 컨택처럼 되풀이되는 일도 같은 방식으로 풀렸습니다.",
+            en: "Recurring work like global partner outreach fell to the same approach.",
+            zh: "海外合作方联络这类反复的事，也用同一种方式解决。",
           },
         },
       ],
@@ -231,7 +184,7 @@
     {
       id: "team",
       side: "left",
-      tag: "03 · TEAM",
+      tag: "02 · TEAM",
       title: { ko: "동료·TF팀 협업 해결", en: "The team's problem", zh: "解决同事·TF 协作问题" },
       kids: [
         {
@@ -277,8 +230,8 @@
     },
     {
       id: "org",
-      side: "right",
-      tag: "04 · COMPANY",
+      side: "left",
+      tag: "03 · COMPANY",
       title: { ko: "조직 단위 확장·성과", en: "At the company level", zh: "组织层面的成果" },
       kids: [
         {
@@ -293,16 +246,64 @@
             zh: "KO · EN · ZH 切换和发送前确认，做成一个工作流。",
           },
         },
+      ],
+    },
+    {
+      id: "work",
+      side: "right",
+      tag: "04 · MY WORK",
+      title: { ko: "개인·실무 병목 해결", en: "My own bottleneck", zh: "解决个人实务瓶颈" },
+      kids: [
         {
+          step: { ko: "도메인", en: "Domain", zh: "领域" },
           label: {
-            ko: "콘텐츠 제작 하루 1편 → 30분에 1편",
-            en: "Content: 1 a day → 1 every 30 min",
-            zh: "内容制作：一天 1 条 → 30 分钟 1 条",
+            ko: "2035 뷰티·패션 · 딜 구조 · 7단계 운영",
+            en: "20s–30s beauty & fashion, deal terms, 7 stages",
+            zh: "20~30 岁美妆·时尚、交易条件、七阶段",
           },
           desc: {
-            ko: "서울경제신문 AI 뉴스 영상, 운영 기준을 문서화해 5명에게 인수인계. (올투원)",
-            en: "AI news videos for Seoul Economic Daily, handed to five people with the standard written down. (Alltoone)",
-            zh: "首尔经济新闻 AI 新闻视频，标准文档化后交接给 5 人。（Alltoone）",
+            ko: "지그재그·무신사·올리브영·MAC 협업, 12개 실무 기준, 전속 최대 30팀.",
+            en: "Zigzag, Musinsa, Olive Young, MAC — 12 practical criteria, up to 30 exclusive teams.",
+            zh: "Zigzag、Musinsa、Olive Young、MAC 合作，12 条实务标准，专属最多 30 团队。",
+          },
+        },
+        {
+          step: { ko: "문제", en: "Problem", zh: "问题" },
+          label: {
+            ko: "비정형 광고 문의, 제안서 한 건에 1시간",
+            en: "Unstructured inquiries — an hour per proposal",
+            zh: "格式各异的咨询，一份提案要 1 小时",
+          },
+          desc: {
+            ko: "문의마다 형식이 다르고, 판단 기준도 기록도 없었습니다.",
+            en: "Every inquiry was a different shape, with no criteria and no record.",
+            zh: "每条咨询格式都不同，既没有标准也没有记录。",
+          },
+        },
+        {
+          step: { ko: "해결", en: "Fix", zh: "解决" },
+          label: {
+            ko: "AS-IS/TO-BE 재설계 → 12개 규칙 → AI 초안",
+            en: "AS-IS → TO-BE redesign, 12 rules, AI draft",
+            zh: "AS-IS/TO-BE 重构 → 12 条规则 → AI 初稿",
+          },
+          desc: {
+            ko: "머릿속 기준 12개를 운영 기준으로 문서화해 LLM에 연계.",
+            en: "The twelve criteria documented as operating rules and wired to the LLM.",
+            zh: "把 12 条标准文档化为运营标准并对接 LLM。",
+          },
+        },
+        {
+          step: { ko: "결과", en: "Result", zh: "结果" },
+          label: {
+            ko: "1시간 → 3~5분, 팀 공용 표준으로",
+            en: "1 hr → 3–5 min, now a team-wide standard",
+            zh: "1 小时 → 3~5 分钟，成为团队统一标准",
+          },
+          desc: {
+            ko: "고액·예외는 사람이 승인 — 운영 기준 표준화까지.",
+            en: "A person approves high-value and exception cases; the standard is written down.",
+            zh: "大额与例外交人审批——标准写进文档。",
           },
         },
       ],
@@ -393,9 +394,9 @@
             zh: "现在 · Onthelook MCN 团队经理",
           },
           desc: {
-            ko: "2035 여성 타깃 뷰티·패션 인플루언서 협업(지그재그·무신사·올리브영·MAC 등), 최대 30팀 운영.",
-            en: "Beauty and fashion influencer campaigns for women in their 20s–30s (Zigzag, Musinsa, Olive Young, MAC), up to 30 creator teams.",
-            zh: "面向 20~30 岁女性的美妆·时尚网红合作（Zigzag、Musinsa、Olive Young、MAC），最多运营 30 个团队。",
+            ko: "2035 여성 타깃 뷰티·패션 인플루언서 협업, 최대 30팀 운영.",
+            en: "Beauty and fashion influencer campaigns for women in their 20s–30s, up to 30 teams.",
+            zh: "面向 20~30 岁女性的美妆·时尚网红合作，最多运营 30 个团队。",
           },
         },
         {

@@ -292,6 +292,22 @@
     });
   }
 
+  function renderDomain() {
+    var host = document.getElementById("domain");
+    if (host) {
+      host.textContent = "";
+      (SITE.domain || []).forEach(function (d) {
+        var card = el("article", "domain__card");
+        card.appendChild(el("span", "domain__tag mono", d.tag));
+        card.appendChild(el("h4", "domain__title", t(d.title)));
+        card.appendChild(el("p", "domain__desc", t(d.desc)));
+        host.appendChild(card);
+      });
+    }
+    var link = document.getElementById("domainLink");
+    if (link) link.textContent = t(SITE.domainLink);
+  }
+
   function renderContact() {
     var host = document.getElementById("contactLinks");
     host.textContent = "";
@@ -837,6 +853,7 @@
     renderLayers();
     renderPrinciples();
     renderStack();
+    renderDomain();
     renderTimeline();
     renderContact();
   }
