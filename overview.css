@@ -331,6 +331,15 @@ html, body { overflow-x: clip; }
 }
 
 /* ---------------- 바닥글 ---------------- */
+.ov-zoomhint {
+  display: none;
+  flex: 0 0 auto;
+  padding: 8px 2px 0;
+  text-align: center;
+  font-size: 11px;
+  color: var(--dim);
+}
+
 .ov-foot {
   flex: 0 0 auto;
   color: var(--dim);
@@ -344,18 +353,24 @@ html, body { overflow-x: clip; }
 @media (max-width: 1080px) {
   .ov-main { justify-content: center; padding-bottom: 20px; }
   .ov-bar__hint { font-size: 11px; }
+  .ov-zoomhint { display: block; }
 }
 
 @media (max-width: 620px) {
   .brand__text { display: none; }
-  .topbar__inner { gap: 8px; height: 58px; }
-  .ov-link { padding: 5px 7px; font-size: 11px; }
+  .topbar__inner { gap: 6px; height: 54px; }
+  .topbar .wrap { padding: 0 12px; }
+  .brand__mark { width: 28px; height: 28px; border-radius: 8px; font-size: 12px; }
+  .toggles { gap: 5px; }
+  .ov-link { padding: 4px 6px; font-size: 10px; letter-spacing: 0; }
   .seg { padding: 2px; }
-  .seg__btn { padding: 3px 6px; font-size: 11.5px; }
-  .iconbtn { width: 30px; height: 30px; }
-  .ov-main { padding: 8px 14px 14px; min-height: calc(100dvh - 58px); }
+  .seg__btn { padding: 3px 5px; font-size: 10px; min-width: 0; }
+  .iconbtn { width: 26px; height: 26px; }
+  .ov-main { padding: 6px 8px 12px; min-height: calc(100dvh - 54px); }
+  .ov-bar { padding: 0 2px 6px; }
   .ov-bar__hint { display: none; }
-  .ov-foot { font-size: 9.5px; line-height: 1.5; text-align: center; }
+  .ov-zoomhint { font-size: 10.5px; }
+  .ov-foot { font-size: 9px; line-height: 1.5; text-align: center; padding-top: 6px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

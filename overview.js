@@ -82,6 +82,11 @@
       en: "Nothing to click · read 01 my problem → 02 my team → 03 the company",
       zh: "无需点击，一屏读完 · 按 01 我的问题 → 02 同事 → 03 组织 的顺序看",
     },
+    zoomHint: {
+      ko: "두 손가락으로 확대하면 세부 내용을 읽을 수 있습니다",
+      en: "Pinch to zoom in and read the detail",
+      zh: "用两指放大即可阅读细节",
+    },
     foot: {
       ko: "메인 포트폴리오의 공개 내용에서 요약했습니다 · 회사 내부 자료·비공개 데이터는 넣지 않았습니다 · 데모는 모두 가상 데이터입니다",
       en: "Summarised from the public portfolio · no company-internal or private data · all demos use fictional data",
@@ -562,7 +567,7 @@
     var availW = stageWrap.clientWidth;
     var top = stageWrap.getBoundingClientRect().top;
     var footH = footEl ? footEl.getBoundingClientRect().height : 0;
-    var availH = window.innerHeight - top - footH - 14;
+    var availH = window.innerHeight - top - footH - 24;
     var s = Math.min(availW / CANVAS_W, availH > 0 ? availH / natural : 1, 1);
     if (!isFinite(s) || s <= 0) s = 1;
     s = Math.max(s, 0.12);
