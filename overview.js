@@ -117,14 +117,14 @@
     },
     statCareer: { ko: "경력", en: "CAREER", zh: "经历" },
     statProposal: { ko: "광고 제안서", en: "AD PROPOSAL", zh: "广告提案" },
-    statAnalysis: { ko: "채널 성장 분석", en: "CHANNEL ANALYSIS", zh: "频道增长分析" },
+    statContent: { ko: "콘텐츠 제작", en: "CONTENT", zh: "内容制作" },
   };
 
   /* ---------------- 허브 수치 ---------------- */
   var STATS = [
     { l: UI.statCareer, v: { ko: "4년 4개월", en: "4 yr 4 mo", zh: "4 年 4 个月" } },
     { l: UI.statProposal, v: { ko: "1시간 → 3~5분", en: "1 hr → 3–5 min", zh: "1 小时 → 3~5 分钟" } },
-    { l: UI.statAnalysis, v: { ko: "2주 → 2일", en: "2 wks → 2 days", zh: "2 周 → 2 天" } },
+    { l: UI.statContent, v: { ko: "하루 1편 → 30분에 1편", en: "1 a day → 30 min", zh: "一天一条 → 30 分钟" } },
   ];
 
   /* ---------------- 지도 내용 ----------------
@@ -148,9 +148,9 @@
             zh: "同一种判断一天要做好几次",
           },
           desc: {
-            ko: "광고 문의는 매번 형식이 다르고 기준은 머릿속에만 — 제가 처음 발굴한 반복 병목입니다.",
-            en: "Every inquiry came in a different shape, criteria only in my head — the first repeated bottleneck I found.",
-            zh: "广告咨询每次格式都不同，标准只在脑子里——这是我最早识别出的重复瓶颈。",
+            ko: "광고 문의는 매번 형식이 달랐고, 기준은 머릿속에만 있었습니다.",
+            en: "Every inquiry came in a different shape; the criteria lived only in my head.",
+            zh: "广告咨询每次格式都不同，标准只在脑子里。",
           },
         },
         {
@@ -161,9 +161,9 @@
             zh: "同一件事变成团队的确认工作",
           },
           desc: {
-            ko: "응대 현황이 카톡·메일에 흩어져, 동료들이 매번 물어보고 다시 찾아야 했습니다.",
-            en: "Status sat scattered across chat and mail, so teammates had to ask and dig it out every time.",
-            zh: "进度散落在聊天和邮件里，同事每次都要问一遍、再找一遍。",
+            ko: "응대 현황이 카톡·메일에 흩어져 매번 묻고 다시 찾았습니다.",
+            en: "Status scattered across chat and mail, so everyone asked and dug it out again.",
+            zh: "进度散落在聊天和邮件里，每次都要问一遍、再找一遍。",
           },
         },
         {
@@ -174,17 +174,12 @@
             zh: "公司也在同样的地方反复卡住",
           },
           desc: {
-            ko: "채널 성장 분석·해외 진출처럼 조직이 되풀이해 시간을 쓰는 일도 같은 방식으로 풀 수 있었습니다.",
-            en: "Channel growth analysis and going overseas burned the same hours over and over — the same approach could fix those too.",
-            zh: "频道增长分析、海外拓展这类组织反复耗时间的事，也能用同一种方式解决。",
+            ko: "해외 파트너 컨택·콘텐츠 제작처럼 되풀이되는 일도 같은 방식으로 풀렸습니다.",
+            en: "Global partner outreach and content production — recurring work solved the same way.",
+            zh: "海外合作方联络、内容制作这类反复的事，也用同一种方式解决。",
           },
         },
       ],
-      note: {
-        ko: "한 사람의 병목을 AI 워크플로우로 바꾸면, 팀과 회사의 실행 속도가 함께 올라갑니다.",
-        en: "Turn one person's bottleneck into an AI workflow, and the team's and the company's speed rise together.",
-        zh: "把一个人的瓶颈变成 AI 工作流，团队和公司的执行速度就会一起提升。",
-      },
     },
     {
       id: "work",
@@ -200,22 +195,22 @@
             zh: "格式各异的咨询，一份提案要 1 小时",
           },
           desc: {
-            ko: "문의마다 형식이 다르고 매번 처음부터 판단 — AS-IS에는 기준도 기록도 없었습니다.",
-            en: "Every inquiry came in a different shape, judged from scratch each time — the AS-IS had no criteria and no record.",
-            zh: "每条咨询格式都不同，每次都要从头判断——AS-IS 流程既没有标准也没有记录。",
+            ko: "문의마다 형식이 다르고, 판단 기준도 기록도 없었습니다.",
+            en: "Every inquiry was a different shape, with no criteria and no record.",
+            zh: "每条咨询格式都不同，既没有标准也没有记录。",
           },
         },
         {
           step: { ko: "해결", en: "Fix", zh: "解决" },
           label: {
-            ko: "AS-IS 재설계 → 12개 규칙 → AI 초안",
-            en: "AS-IS redesigned → 12 rules → AI draft",
-            zh: "重构 AS-IS → 12 条规则 → AI 初稿",
+            ko: "AS-IS/TO-BE 재설계 → 12개 규칙 → AI 초안",
+            en: "AS-IS → TO-BE redesign, 12 rules, AI draft",
+            zh: "AS-IS/TO-BE 重构 → 12 条规则 → AI 初稿",
           },
           desc: {
-            ko: "머릿속 기준 12개를 운영 기준으로 문서화해 LLM에 연계 — TO-BE는 'AI 판정 + 사람 확인'입니다.",
-            en: "The twelve criteria became documented operating rules wired to the LLM; the TO-BE is 'AI judges, a person checks'.",
-            zh: "把 12 条标准文档化为运营标准并对接 LLM——TO-BE 是“AI 判断 + 人工确认”。",
+            ko: "머릿속 기준 12개를 운영 기준으로 문서화해 LLM에 연계.",
+            en: "The twelve criteria documented as operating rules and wired to the LLM.",
+            zh: "把 12 条标准文档化为运营标准并对接 LLM。",
           },
         },
         {
@@ -226,17 +221,12 @@
             zh: "1 小时 → 3~5 分钟，成为团队统一标准",
           },
           desc: {
-            ko: "고액·예외는 사람이 승인하는 멈춤 조건을 고정해, 팀 공용 운영 기준으로 표준화했습니다.",
-            en: "Stop conditions — a person approves high-value and exception cases — are fixed, so it is team-wide documented practice.",
-            zh: "把大额与例外交人审批的停机条件固定下来，成为团队共用的运营标准。",
+            ko: "고액·예외는 사람이 승인 — 운영 기준 표준화까지.",
+            en: "A person approves high-value and exception cases; the standard is written down.",
+            zh: "大额与例外交人审批——标准写进文档。",
           },
         },
       ],
-      note: {
-        ko: "이 도구는 가상 데이터 데모로 직접 확인할 수 있습니다.",
-        en: "This tool can be tried in a demo built on fictional data.",
-        zh: "这个工具有虚构数据的演示，可以直接体验。",
-      },
     },
     {
       id: "team",
@@ -252,22 +242,22 @@
             zh: "进度散落在聊天和邮件里，每次都要确认",
           },
           desc: {
-            ko: "광고주 응대가 어디까지 갔는지 아무도 한눈에 못 봐, 회의마다 확인에 시간이 들었습니다.",
-            en: "Nobody could see how far each client conversation had gone, so every meeting started with asking around.",
-            zh: "广告主的沟通进行到哪一步没人一眼看得到，每次会议都先花时间确认。",
+            ko: "광고주 응대가 어디까지 갔는지 한눈에 볼 수 없었습니다.",
+            en: "Nobody could see how far each client conversation had gone.",
+            zh: "广告主的沟通进行到哪一步，没人一眼看得到。",
           },
         },
         {
           step: { ko: "해결", en: "Fix", zh: "解决" },
           label: {
-            ko: "광고 건별 실시간 운영 대시보드 제작",
-            en: "A real-time operations dashboard, built in-house",
-            zh: "亲手做每个广告的实时运营看板",
+            ko: "광고 건별 실시간 운영 대시보드",
+            en: "A real-time operations dashboard",
+            zh: "每个广告的实时运营看板",
           },
           desc: {
-            ko: "문의부터 정산까지 7단계를 한 화면에 — 내부 도구 프로토타입을 현업에 바로 적용했습니다.",
-            en: "Seven stages from inquiry to payment on one screen — an internal tool prototype the team adopted right away.",
-            zh: "从咨询到结算七个阶段收在一屏——内部工具原型直接在业务中落地。",
+            ko: "문의부터 정산까지 7단계를 한 화면에 모았습니다.",
+            en: "Seven stages from inquiry to payment on one screen.",
+            zh: "从咨询到结算七个阶段收在一屏。",
           },
         },
         {
@@ -278,9 +268,9 @@
             zh: "不用问就看得见，交接只需一个链接",
           },
           desc: {
-            ko: "팀과 TF가 같은 화면을 보며 일해, 담당자가 바뀌어도 흐름이 끊기지 않습니다.",
-            en: "Team and task force work from the same screen, so nothing breaks when the owner changes.",
-            zh: "团队与 TF 看同一屏工作，负责人换了流程也不断。",
+            ko: "팀과 TF가 같은 화면을 보며 일합니다.",
+            en: "Team and task force work from the same screen.",
+            zh: "团队与 TF 看同一屏工作。",
           },
         },
       ],
@@ -293,50 +283,26 @@
       kids: [
         {
           label: {
-            ko: "채널 성장 분석 2주 → 2일",
-            en: "Channel growth analysis: 2 wks → 2 days",
-            zh: "频道增长分析：2 周 → 2 天",
-          },
-          desc: {
-            ko: "수작업 유튜브 데이터 수집·해석을 API·LLM 파이프라인으로 연계해, 기획이 2주를 기다리지 않게 했습니다. (아이스크리에이티브)",
-            en: "YouTube data collection and analysis wired into an API + LLM pipeline, so planning no longer waits two weeks. (Ice Creative)",
-            zh: "把人工收集的 YouTube 数据采集与解读接入 API · LLM 流水线，策划不必再等两周。（Ice Creative）",
-          },
-        },
-        {
-          label: {
-            ko: "AI 더빙 해외 채널 개설 4주 → 2일",
-            en: "AI-dubbed overseas channel: 4 wks → 2 days",
-            zh: "AI 配音海外频道开设：4 周 → 2 天",
-          },
-          desc: {
-            ko: "3사가 얽힌 개설 절차를 AS-IS/TO-BE로 재설계해 하나의 워크플로우로 — @haenibeautyEN을 이틀 만에 열었습니다.",
-            en: "A three-company launch redesigned AS-IS / TO-BE into one workflow; @haenibeautyEN opened in two days.",
-            zh: "把三家公司交错的开设流程按 AS-IS / TO-BE 重构为一个工作流，@haenibeautyEN 两天上线。",
-          },
-        },
-        {
-          label: {
             ko: "글로벌 파트너 아웃리치 자동화",
             en: "Global partner outreach, automated",
             zh: "全球合作伙伴外联自动化",
           },
           desc: {
-            ko: "KO·EN·ZH 전환과 발송 전 검토를 붙여, 해외 컨택이 손이 아니라 워크플로우로 돌아갑니다.",
-            en: "KO · EN · ZH switching plus a check before sending, so outreach runs as a workflow, not by hand.",
-            zh: "接上 KO · EN · ZH 切换和发送前确认，海外联络靠工作流运行，不再靠手工。",
+            ko: "KO·EN·ZH 전환과 발송 전 검토를 AI 워크플로우로.",
+            en: "KO · EN · ZH switching plus a check before sending, as one workflow.",
+            zh: "KO · EN · ZH 切换和发送前确认，做成一个工作流。",
           },
         },
         {
           label: {
             ko: "콘텐츠 제작 하루 1편 → 30분에 1편",
             en: "Content: 1 a day → 1 every 30 min",
-            zh: "内容制作：每天 1 条 → 30 分钟 1 条",
+            zh: "内容制作：一天 1 条 → 30 分钟 1 条",
           },
           desc: {
-            ko: "서울경제신문 AI 뉴스 영상 제작을 자동화하고 5명에게 이관해, 제가 없어도 돌아가게 했습니다. (올투원)",
-            en: "AI news-video production for Seoul Economic Daily automated and handed to five people — it runs without me. (Alltoone)",
-            zh: "首尔经济新闻 AI 新闻视频制作自动化并交接给 5 人，没有我也能运转。（Alltoone）",
+            ko: "서울경제신문 AI 뉴스 영상, 운영 기준을 문서화해 5명에게 인수인계. (올투원)",
+            en: "AI news videos for Seoul Economic Daily, handed to five people with the standard written down. (Alltoone)",
+            zh: "首尔经济新闻 AI 新闻视频，标准文档化后交接给 5 人。（Alltoone）",
           },
         },
       ],
@@ -354,9 +320,9 @@
             zh: "AI 只写初稿、只做分类",
           },
           desc: {
-            ko: "최종 판단과 발송은 사람이 합니다. AI가 고객에게 바로 나가는 경로는 두지 않았습니다.",
-            en: "The final call and the send stay with a person; there is no path from AI straight to a client.",
-            zh: "最终判断和发送都由人来做，没有 AI 直接发给客户的路径。",
+            ko: "최종 판단과 발송은 사람이 합니다.",
+            en: "The final call and the send stay with a person.",
+            zh: "最终判断和发送都由人来做。",
           },
         },
         {
@@ -366,9 +332,9 @@
             zh: "12 条规则校验 + 例外交人审批",
           },
           desc: {
-            ko: "카테고리·예산·타깃·권리 등 12개 기준을 문서화해 자동 검증하고, 2,000만 원 초과·성과 연동 지급은 사람이 승인합니다.",
-            en: "Category, budget, target and rights documented as 12 rules and checked automatically; deals over ₩20M or paid on performance go to a person.",
-            zh: "把品类、预算、对象、权利等 12 项标准文档化并自动校验；超过 2,000 万韩元、按效果付款由人审批。",
+            ko: "2,000만 원 초과·성과 연동 지급은 사람이 승인.",
+            en: "Deals over ₩20M or paid on performance go to a person.",
+            zh: "超过 2,000 万韩元、按效果付款由人审批。",
           },
         },
         {
@@ -427,9 +393,9 @@
             zh: "现在 · Onthelook MCN 团队经理",
           },
           desc: {
-            ko: "뷰티·패션 크리에이터 최대 30팀과, 팀의 반복 병목을 AI 워크플로우로 바꾸는 일을 맡고 있습니다.",
-            en: "Up to 30 beauty and fashion creator teams — and turning the team's repeated bottlenecks into AI workflows.",
-            zh: "最多 30 个美妆·时尚创作者团队，以及把团队的重复瓶颈改造成 AI 工作流。",
+            ko: "뷰티·패션 크리에이터 최대 30팀을 맡고 있습니다.",
+            en: "I handle up to 30 beauty and fashion creator teams.",
+            zh: "负责最多 30 个美妆·时尚创作者团队。",
           },
         },
         {
@@ -439,7 +405,7 @@
             zh: "下一步 · 沟通型 AI 智能体",
           },
           desc: {
-            ko: "서로 다른 맥락의 사람을 잇고, 교육·기회의 사각지대를 푸는 일을 하려 합니다.",
+            ko: "서로 다른 맥락의 사람을 잇고, 교육·기회의 사각지대를 풀고 싶습니다.",
             en: "Connecting people from different contexts, and closing gaps in education and opportunity.",
             zh: "连接处在不同语境中的人，补上教育与机会的盲区。",
           },
@@ -544,11 +510,6 @@
     g.kids.forEach(function (k) { kids.appendChild(kidRow(k)); });
     root.appendChild(kids);
 
-    if (g.note) {
-      var note = elx("p", "ov-grp__note");
-      note.appendChild(elx("span", null, L(g.note)));
-      root.appendChild(note);
-    }
     return root;
   }
 

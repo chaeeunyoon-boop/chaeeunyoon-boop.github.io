@@ -65,7 +65,7 @@ const SITE = {
       en: "I have run creator marketing for more than four years. Along the way I found the repeated bottlenecks myself, redesigned the AS-IS processes into TO-BE, and built them as AI agents and internal tools that the team uses in live work. I don't stop at a proposal: the operating criteria get documented and become a team-wide standard.",
       zh: "我做创作者营销四年多，在现场亲手识别重复瓶颈，把 AS-IS 流程重构为 TO-BE，用 AI 代理与内部工具搭起来并落地业务。不止于方案，还把运营标准写成文档，留成团队共用的标准。",
     },
-    heroCta1: { ko: "케이스 4건 보기", en: "See the four cases", zh: "查看 4 个案例" },
+    heroCta1: { ko: "케이스 2건 보기", en: "See the two cases", zh: "查看 2 个案例" },
     heroCta2: { ko: "연락하기", en: "Get in touch", zh: "联系我" },
 
     metricHead: { ko: "임팩트 · AS-IS → TO-BE", en: "IMPACT · AS-IS → TO-BE", zh: "成效 · AS-IS → TO-BE" },
@@ -78,9 +78,9 @@ const SITE = {
 
     casesTitle: { ko: "AS-IS 병목 → 재설계 → 임팩트", en: "AS-IS bottleneck → redesign → impact", zh: "AS-IS 瓶颈 → 重构 → 成效" },
     casesLead: {
-      ko: "네 건 모두 같은 순서로 읽힙니다. AS-IS에서 무엇이 막혔는지, 어떤 판단을 운영 기준으로 옮겼는지, TO-BE에서 무엇이 달라졌는지.",
-      en: "All four read in the same order: what was stuck in the AS-IS, which judgments became operating rules, and what changed in the TO-BE.",
-      zh: "四件都按同一顺序阅读：AS-IS 里卡在哪里、哪些判断被写成运营标准、TO-BE 里发生了什么变化。",
+      ko: "두 건 모두 같은 순서로 읽힙니다. AS-IS에서 무엇이 막혔는지, 어떤 판단을 운영 기준으로 옮겼는지, TO-BE에서 무엇이 달라졌는지.",
+      en: "Both read in the same order: what was stuck in the AS-IS, which judgments became operating rules, and what changed in the TO-BE.",
+      zh: "两件都按同一顺序阅读：AS-IS 里卡在哪里、哪些判断被写成运营标准、TO-BE 里发生了什么变化。",
     },
     step1: { ko: "01 · 문제 (AS-IS)", en: "01 · Problem (AS-IS)", zh: "01 · 问题（AS-IS）" },
     step2: { ko: "02 · 재설계 · 솔루션", en: "02 · Redesign & solution", zh: "02 · 重构 · 解决方案" },
@@ -140,14 +140,14 @@ const SITE = {
       label: { ko: "광고 제안서 초안 · AI 워크플로우", en: "Ad proposal draft · AI workflow", zh: "广告提案初稿 · AI 工作流" },
     },
     {
-      before: { ko: "2주", en: "2 weeks", zh: "2 周" },
-      after: { ko: "2일", en: "2 days", zh: "2 天" },
-      label: { ko: "채널 성장 분석 · API·LLM 파이프라인", en: "Channel growth analysis · API + LLM pipeline", zh: "频道增长分析 · API·LLM 流水线" },
+      before: { ko: "하루 1편", en: "1 a day", zh: "一天一条" },
+      after: { ko: "30분에 1편", en: "30 min", zh: "30 分钟" },
+      label: { ko: "AI 뉴스 영상 제작 · 워크플로우 구축", en: "AI news-video production · workflow built", zh: "AI 新闻视频制作 · 搭建工作流" },
     },
     {
-      before: { ko: "4주", en: "4 weeks", zh: "4 周" },
-      after: { ko: "2일", en: "2 days", zh: "2 天" },
-      label: { ko: "해외 채널 개설 · 3사 프로세스 재설계", en: "Overseas channel · 3-company redesign", zh: "海外频道开设 · 三方流程重构" },
+      before: { ko: "카톡·메일", en: "chat & mail", zh: "聊天·邮件" },
+      after: { ko: "한 화면", en: "one screen", zh: "一屏" },
+      label: { ko: "광고 운영 현황 · 실시간 운영 대시보드", en: "Campaign status · live ops dashboard", zh: "广告运营进度 · 实时看板" },
     },
   ],
 
@@ -289,256 +289,8 @@ const SITE = {
     },
 
     {
-      id: "channel-pipeline",
-      no: "02",
-      tag: { ko: "API · LLM 파이프라인 연계", en: "API + LLM pipeline", zh: "API · LLM 流水线对接" },
-      title: {
-        ko: "유튜브 채널 성장 분석 자동화 — YouTube API · LLM 파이프라인",
-        en: "Automating YouTube channel growth analysis — YouTube API + LLM pipeline",
-        zh: "YouTube 频道增长分析自动化 — YouTube API · LLM 流水线",
-      },
-      org: {
-        ko: "아이스크리에이티브 · 크리에이터광고사업팀",
-        en: "Ice Creative · Creator Ads Team",
-        zh: "Ice Creative · 创作者广告团队",
-      },
-      role: { ko: "기획 · 구축", en: "Design & build", zh: "规划 · 搭建" },
-      period: { ko: "2024.11 – 2026.01", en: "Nov 2024 – Jan 2026", zh: "2024.11 – 2026.01" },
-      oneLiner: {
-        ko: "영상별 조회수 같은 숫자를 손으로 모아 해석하느라 2주 걸리던 채널 분석을, YouTube API 자동 수집과 LLM 해석을 한 파이프라인으로 연계해 2일로 줄였습니다. 구독자 70만 규모 채널의 성장 전략에 쓰였습니다.",
-        en: "Channel analysis took two weeks of gathering and reading numbers like per-video views by hand. I wired automatic collection through the YouTube API and interpretation by an LLM into one pipeline, cutting it to two days. It fed the growth strategy for a channel with around 700K subscribers.",
-        zh: "频道分析原本要两周手工收集、解读每条视频的播放量等数字。我把 YouTube API 自动采集与 LLM 解读串成一条流水线，缩短到两天。这套结果用于一个约 70 万订阅频道的增长策略。",
-      },
-      problem: {
-        lead: {
-          ko: "채널 분석이 너무 느려서 결정에 제때 쓰이지 못했습니다. AS-IS를 뜯어보니 손 작업이 두 군데(수집·해석)에 몰려 있었습니다.",
-          en: "Channel analysis was so slow it couldn't be used for decisions in time. Taking the AS-IS apart showed the manual work piled up in two places: collection and interpretation.",
-          zh: "频道分析太慢，没能及时用于决策。拆解 AS-IS 后发现，手工活集中在两处：采集与解读。",
-        },
-        bullets: [
-          {
-            ko: "영상마다 조회수·노출 수·시청 시간을 손으로 옮겨 적는 데만 2주",
-            en: "Two weeks just copying each video's views, impressions and watch time by hand",
-            zh: "仅是手工抄录每条视频的播放量、曝光量和观看时长就要两周",
-          },
-          {
-            ko: "분석이 끝날 때면 이미 다음 기획이 진행된 뒤 — 인사이트가 늦게 도착",
-            en: "By the time it finished, the next plan was already in motion — insight arrived late",
-            zh: "分析结束时下一个企划已经在推进——洞察来晚了",
-          },
-          {
-            ko: "해석이 사람마다 달라 같은 지표에서 다른 결론",
-            en: "Interpretation varied by person, so the same numbers produced different conclusions",
-            zh: "不同人解读不同，同一组数字得出不同结论",
-          },
-          {
-            ko: "어떤 영상이 왜 잘됐는지(주제·첫 장면·길이)가 숫자로 남지 않음",
-            en: "Why a video did well — topic, opening, length — was never recorded as numbers",
-            zh: "哪条视频为什么表现好（主题、开头、时长）没有留下数字",
-          },
-        ],
-      },
-      rules: {
-        lead: {
-          ko: "데이터 수집은 YouTube API에, 해석은 LLM에, 판단 기준은 미리 정한 분류 규칙에 맡겼습니다. AS-IS의 손 작업을 그대로 옮기지 않고 단계를 다시 나눠 TO-BE로 재설계했습니다.",
-          en: "Collection went to the YouTube API, interpretation to the LLM, and the criteria to classification rules set in advance. Rather than copying the manual AS-IS, I re-cut the steps and redesigned it as a TO-BE.",
-          zh: "采集交给 YouTube API，解读交给 LLM，判断标准交给事先定好的分类规则。没有照搬手工的 AS-IS，而是重新拆分步骤，重构成 TO-BE。",
-        },
-        flow: [
-          {
-            label: { ko: "YouTube 데이터 자동 수집", en: "Automatic YouTube data collection", zh: "YouTube 数据自动采集" },
-            sub: { ko: "공식 API로 채널·영상 숫자", en: "Channel and video numbers via the official API", zh: "通过官方 API 获取频道 · 视频数字" },
-          },
-          {
-            label: { ko: "숫자 정리", en: "Tidy the numbers", zh: "整理数字" },
-            sub: { ko: "서로 비교할 수 있게", en: "So they can be compared", zh: "便于相互比较" },
-          },
-          {
-            label: { ko: "LLM 해석", en: "LLM interpretation", zh: "LLM 解读" },
-            sub: { ko: "주제 · 첫 장면 · 길이별 성과", en: "Results by topic, opening, length", zh: "按主题 · 开头 · 时长看表现" },
-          },
-          {
-            label: { ko: "성장 전략 리포트", en: "Growth report", zh: "增长策略报告" },
-            sub: { ko: "다음 기획안으로 연결", en: "Into the next plan", zh: "接到下一个企划" },
-          },
-          {
-            label: { ko: "다음 영상에 반영", en: "Apply to the next video", zh: "用到下一条视频" },
-            sub: { ko: "다음 콘텐츠 기획", en: "Next content plan", zh: "下一个内容企划" },
-          },
-        ],
-        notes: [
-          { ko: "YouTube 공식 API로 자동 수집", en: "Automatic collection via the official YouTube API", zh: "通过 YouTube 官方 API 自动采集" },
-          { ko: "숫자를 맞춰 정리하는 스크립트", en: "Script that tidies the numbers into one format", zh: "把数字整理成统一格式的脚本" },
-          {
-            ko: "영상 유형 분류 기준 통일 · 팀 공용",
-            en: "One shared, team-wide way to classify video types",
-            zh: "统一视频类型分类标准 · 团队共用",
-          },
-          { ko: "리포트 양식 통일", en: "One shared report format", zh: "统一报告格式" },
-        ],
-      },
-      impact: {
-        lead: {
-          ko: "분석이 빨라진 것보다 더 큰 변화는, 팀 전체가 같은 숫자를 같은 기준으로 읽게 된 것이었습니다.",
-          en: "The bigger change was less speed than this: the team now reads the same metrics with the same criteria.",
-          zh: "比速度更大的变化是：团队现在用同一套标准读同一组指标。",
-        },
-        metrics: [
-          {
-            before: { ko: "2주", en: "2 weeks", zh: "2 周" },
-            after: { ko: "2일", en: "2 days", zh: "2 天" },
-            label: { ko: "분석 한 번", en: "One analysis", zh: "一次分析" },
-          },
-          {
-            before: { ko: "손으로 정리", en: "By hand", zh: "手工整理" },
-            after: { ko: "자동 수집", en: "Automatic collection", zh: "自动采集" },
-            label: { ko: "데이터 모으기", en: "Gathering data", zh: "收集数据" },
-          },
-          {
-            before: { ko: "감", en: "Gut feel", zh: "凭感觉" },
-            after: { ko: "숫자 근거", en: "Numbers as evidence", zh: "以数字为依据" },
-            label: { ko: "기획 판단", en: "Planning decision", zh: "企划判断" },
-          },
-        ],
-        note: {
-          ko: "이 리포트는 구독자 70만 규모 채널의 성장 전략을 세우는 데 쓰였습니다.",
-          en: "These reports were used to set the growth strategy for a channel with around 700K subscribers.",
-          zh: "这些报告被用于制定约 70 万订阅频道的增长策略。",
-        },
-      },
-    },
-
-    {
-      id: "lipsync-launch",
-      no: "03",
-      tag: { ko: "AS-IS/TO-BE 재설계 · 3사 프로젝트 리드", en: "AS-IS/TO-BE redesign · 3-company project lead", zh: "AS-IS/TO-BE 重构 · 三方项目主导" },
-      title: {
-        ko: "AI 더빙 영어 채널 개설 — 3개 회사 프로세스 재설계 총괄(PM)",
-        en: "Opening an AI-dubbed English channel — leading a three-company process redesign (PM)",
-        zh: "开设 AI 配音英文频道 — 统筹三家公司流程重构（PM）",
-      },
-      org: {
-        ko: "아이스크리에이티브 · 크리에이터광고사업팀",
-        en: "Ice Creative · Creator Ads Team",
-        zh: "Ice Creative · 创作者广告团队",
-      },
-      role: {
-        ko: "PM · 크리에이터 · 광고주 · AI 기술 회사 사이 조율",
-        en: "PM · coordinating creator, advertiser and AI tech company",
-        zh: "PM · 协调创作者、广告主与 AI 技术公司",
-      },
-      period: { ko: "2025.10", en: "Oct 2025", zh: "2025.10" },
-      oneLiner: {
-        ko: "크리에이터, 광고주, AI 기술 회사 세 곳이 함께 만드는 AI 더빙 영상(입 모양까지 맞춘 다국어 버전)을, '무엇을 합격으로 볼지'를 먼저 정하는 TO-BE로 재설계해 4주에서 2일로 줄였습니다.",
-        en: "AI-dubbed videos (multilingual versions with matched lip movement) made jointly by a creator, an advertiser and an AI tech company — I redesigned the process into a TO-BE that fixes what counts as a pass first, cutting four weeks to two days.",
-        zh: "由创作者、广告主和 AI 技术公司三方共同制作的 AI 配音视频（连口型都对上的多语种版本），我把它重构成先确定“什么算合格”的 TO-BE，从四周缩短到两天。",
-      },
-      problem: {
-        lead: {
-          ko: "세 회사가 각자 다른 기준으로 움직이면 일정은 매번 처음부터 다시 잡아야 합니다. AS-IS에는 합격 기준도, 역할 정의도 구두 말고는 없었습니다.",
-          en: "When three companies move on three different standards, the schedule restarts from scratch every time. In the AS-IS there was no pass criteria and no role definition beyond what was said out loud.",
-          zh: "三家公司各按各的标准走，进度每次都得从头再排。AS-IS 里除了口头说法，既没有合格标准，也没有角色定义。",
-        },
-        bullets: [
-          {
-            ko: "다국어 더빙과 입 모양 맞추기는 보통 4주 — 합격 기준이 없어 수정이 반복",
-            en: "Multilingual dubbing and lip matching usually take four weeks — with no pass criteria, revisions repeat",
-            zh: "多语种配音和口型匹配通常要四周——没有合格标准，修改反复",
-          },
-          {
-            ko: "입 모양이 잘 맞는지를 '느낌'으로 판단해 사람마다 결론이 다름",
-            en: "Whether the lips matched was judged by feel, so every reviewer reached a different conclusion",
-            zh: "口型是否对上靠“感觉”判断，每个人结论都不同",
-          },
-          {
-            ko: "역할·산출물·마감이 구두로만 오가 일정이 흔들림",
-            en: "Roles, deliverables and dates moved verbally, so the schedule moved too",
-            zh: "角色、交付物、截止时间只在口头流转，日程一直晃",
-          },
-          {
-            ko: "해외 채널은 첫인상이 중요해 기준 없이 많이 찍어낼 수 없음",
-            en: "An overseas channel lives on first impressions, so videos couldn't be churned out without a standard",
-            zh: "海外频道很看重第一印象，没有标准就不能大量制作",
-          },
-        ],
-      },
-      rules: {
-        lead: {
-          ko: "만들기 전에 '무엇을 합격으로 볼지'를 세 회사가 같은 문장으로 합의했습니다. 말로 오가던 AS-IS를 문서 기준의 TO-BE로 바꾼 것이 핵심이었습니다.",
-          en: "Before making anything, all three companies agreed in the same words on what counts as a pass. The key was turning a verbal AS-IS into a documented TO-BE.",
-          zh: "在开始制作之前，三家公司用同一句话确认了“什么算合格”。关键在于把口头流转的 AS-IS 变成有书面标准的 TO-BE。",
-        },
-        flow: [
-          {
-            label: { ko: "세 회사 역할 정하기", en: "Set the three roles", zh: "确定三方角色" },
-            sub: { ko: "크리에이터 · 광고주 · AI 기술 회사", en: "Creator, advertiser, AI tech company", zh: "创作者 · 广告主 · AI 技术公司" },
-          },
-          {
-            label: { ko: "합격 기준 정하기", en: "Set pass criteria", zh: "确定合格标准" },
-            sub: { ko: "입 모양 · 표정 · 자막 말투", en: "Lips, expression, subtitle tone", zh: "口型 · 表情 · 字幕语气" },
-          },
-          {
-            label: { ko: "샘플 먼저 확인", en: "Check a sample first", zh: "先确认样片" },
-            sub: { ko: "1편으로 기준 맞추기", en: "Align on one clip", zh: "用一条片子对齐标准" },
-          },
-          {
-            label: { ko: "본 제작", en: "Full production", zh: "正式制作" },
-            sub: { ko: "같은 기준으로 반복", en: "Repeat on one standard", zh: "按同一标准重复" },
-          },
-          {
-            label: { ko: "품질 확인 · 승인", en: "Quality check & approval", zh: "质量检查 · 审批" },
-            sub: { ko: "기준과 비교", en: "Compare to criteria", zh: "对照标准" },
-          },
-          {
-            label: { ko: "해외 채널 업로드", en: "Upload to the overseas channel", zh: "上传到海外频道" },
-            sub: { ko: "@haenibeautyEN", en: "@haenibeautyEN", zh: "@haenibeautyEN" },
-          },
-        ],
-        notes: [
-          { ko: "역할 · 결과물 · 마감일을 문서로", en: "Roles, deliverables, deadlines in writing", zh: "角色 · 交付物 · 截止日期写成文档" },
-          {
-            ko: "입 모양 · 자막 · 말투 확인 체크리스트",
-            en: "Checklist for lips, subtitles, tone",
-            zh: "口型 · 字幕 · 语气检查清单",
-          },
-          { ko: "샘플 확인 후 본 제작", en: "Check a sample, then full production", zh: "先确认样片再正式制作" },
-          { ko: "공개일부터 거꾸로 세 회사 마감일 확정", en: "Deadlines for all three set backwards from the release date", zh: "从上线日倒推，确定三方截止日期" },
-        ],
-      },
-      impact: {
-        lead: {
-          ko: "2025년 10월, 영어 버전 채널 @haenibeautyEN을 열고 첫 시즌을 시작했습니다.",
-          en: "In October 2025 the English channel @haenibeautyEN opened and its first season began.",
-          zh: "2025 年 10 月，英文版频道 @haenibeautyEN 开通，第一季正式开始。",
-        },
-        metrics: [
-          {
-            before: { ko: "4주", en: "4 weeks", zh: "4 周" },
-            after: { ko: "2일", en: "2 days", zh: "2 天" },
-            label: { ko: "제작부터 공개까지", en: "From production to release", zh: "从制作到上线" },
-          },
-          {
-            before: { ko: "말로 조율", en: "Agreed verbally", zh: "口头协调" },
-            after: { ko: "문서로 된 기준", en: "Written criteria", zh: "书面标准" },
-            label: { ko: "세 회사 소통", en: "Communication across three companies", zh: "三方沟通" },
-          },
-          {
-            before: { ko: "국내 채널", en: "Domestic", zh: "国内频道" },
-            after: { ko: "영어 채널 추가", en: "Added an English channel", zh: "新增英文频道" },
-            label: { ko: "채널 확장", en: "Channel footprint", zh: "频道拓展" },
-          },
-        ],
-        note: {
-          ko: "기준을 먼저 정하는 방식은 이후 다른 협업 프로젝트에도 같은 순서(AS-IS → 합격 기준 → TO-BE)로 적용했습니다.",
-          en: "The criteria-first order — AS-IS, then pass criteria, then TO-BE — became the default for later collaborations too.",
-          zh: "先定标准的做法之后也按同一顺序（AS-IS → 合格标准 → TO-BE）用到了其他协作项目。",
-        },
-      },
-    },
-
-    {
       id: "news-video",
-      no: "04",
+      no: "02",
       tag: { ko: "워크플로우 구축 · 운영 기준 문서화 · 인수인계", en: "Workflow built · operating standards documented · handed over", zh: "搭建工作流 · 文档化运营标准 · 交接" },
       title: {
         ko: "서울경제신문 AI 뉴스 영상 제작 자동화 & 5명에게 인수인계",
@@ -1253,14 +1005,9 @@ const SITE = {
       role: { ko: "MCN팀 · 매니저", en: "MCN Team · Manager", zh: "MCN 团队 · 经理" },
       bullets: [
         {
-          ko: "뷰티·패션 크리에이터 최대 30팀 운영",
-          en: "Running up to 30 beauty and fashion creator teams",
-          zh: "独自运营最多 30 个美妆、时尚创作者团队",
-        },
-        {
-          ko: "제각각인 광고 문의를 처리하는 AI 업무 에이전트 설계·구축·현업 적용 — 판단 기준 12개를 운영 기준으로 문서화해 팀 공용 표준화",
-          en: "Designed, built and rolled out an AI work agent for ad inquiries in every shape — 12 criteria documented as operating rules and standardized for the team",
-          zh: "设计、搭建并落地处理各种广告咨询的 AI 工作代理——把 12 条判断标准文档化为运营规则，做成团队共用标准",
+          ko: "뷰티·패션 크리에이터 최대 30팀 매니지먼트 · 광고 문의 대응 AI 워크플로우 구축",
+          en: "Managing up to 30 beauty and fashion creator teams · built the AI workflow for ad inquiries",
+          zh: "管理最多 30 个美妆、时尚创作者团队 · 搭建广告咨询 AI 工作流",
         },
       ],
     },
@@ -1270,14 +1017,9 @@ const SITE = {
       role: { ko: "크리에이터광고사업팀", en: "Creator Ads Team", zh: "创作者广告团队" },
       bullets: [
         {
-          ko: "YouTube API · LLM 파이프라인으로 채널 성장 분석 자동화 (2주 → 2일)",
-          en: "Automated channel growth analysis with a YouTube API + LLM pipeline (2 weeks to 2 days)",
-          zh: "用 YouTube API · LLM 流水线实现频道增长分析自动化（两周 → 两天）",
-        },
-        {
-          ko: "3개 회사 프로세스 AS-IS/TO-BE 재설계로 AI 더빙 영어 채널 @haenibeautyEN 개설 총괄 (4주 → 2일)",
-          en: "Led the launch of the AI-dubbed English channel @haenibeautyEN by redesigning the three-company process AS-IS/TO-BE (4 weeks to 2 days)",
-          zh: "以三家公司流程的 AS-IS/TO-BE 重构，统筹开设 AI 配音英文频道 @haenibeautyEN（四周 → 两天）",
+          ko: "크리에이터 광고 캠페인 기획·운영 · 크리에이터·광고주·제작사 협업 프로젝트 진행",
+          en: "Planned and ran creator ad campaigns · led projects across creators, advertisers and production partners",
+          zh: "企划并运营创作者广告活动 · 推进创作者、广告主与制作方的协作项目",
         },
       ],
     },
@@ -1287,14 +1029,9 @@ const SITE = {
       role: { ko: "프리랜서", en: "Freelance", zh: "自由职业" },
       bullets: [
         {
-          ko: "서울경제신문 AI 뉴스 영상 제작 워크플로우 구축 — 하루 1편 → 30분에 1편, 운영 기준 문서화 후 5명에게 인수인계",
-          en: "Built an AI news-video production workflow for Seoul Economic Daily — 1 a day to 1 every 30 min, documented and handed over to 5 people",
-          zh: "为首尔经济新闻搭建 AI 新闻视频制作工作流——一天一条 → 30 分钟一条，运营标准文档化后交接给 5 人",
-        },
-        {
-          ko: "저작권 기준과 최종 확인 체크리스트를 운영 기준으로 문서화",
-          en: "Documented copyright standards and a final-check checklist as operating rules",
-          zh: "把版权标准与最终确认清单整理成运营标准",
+          ko: "서울경제신문 AI 뉴스 영상 제작 워크플로우 구축 · 운영 기준 문서화 후 5명에게 인수인계",
+          en: "Built the AI news-video production workflow for Seoul Economic Daily · documented it and handed it to five people",
+          zh: "为首尔经济新闻搭建 AI 新闻视频制作工作流 · 文档化后交接给 5 人",
         },
       ],
     },
@@ -1307,11 +1044,6 @@ const SITE = {
           ko: "크리에이터 12팀 매니지먼트 · 캠페인 운영",
           en: "Managed 12 creator teams and their campaigns",
           zh: "负责 12 个创作者团队与广告活动的运营",
-        },
-        {
-          ko: "현장에서 반복해서 막히는 일을 처음으로 숫자로 보기 시작한 시기",
-          en: "Where I first started looking at the work that kept getting stuck in numbers",
-          zh: "第一次开始用数字去看现场反复卡住的工作——我的起点",
         },
       ],
     },

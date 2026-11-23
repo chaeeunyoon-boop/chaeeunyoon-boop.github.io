@@ -226,13 +226,13 @@ html, body { overflow-x: clip; }
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 10px;
+  gap: 18px;
   min-width: 0;
 }
 
 .ov-grp {
   position: relative;
-  padding: 11px 14px 12px;
+  padding: 15px 17px 16px;
   border: 1px solid var(--line);
   border-radius: 14px;
   background: var(--surface);
@@ -248,8 +248,8 @@ html, body { overflow-x: clip; }
 .ov-grp__head {
   display: flex;
   align-items: baseline;
-  gap: 9px;
-  padding-bottom: 7px;
+  gap: 10px;
+  padding-bottom: 11px;
   border-bottom: 1px solid var(--line);
 }
 .ov-grp__tag {
@@ -259,20 +259,20 @@ html, body { overflow-x: clip; }
   color: var(--accent);
   white-space: nowrap;
 }
-.ov-grp__title { font-size: 14.5px; font-weight: 800; letter-spacing: -0.025em; line-height: 1.25; }
+.ov-grp__title { font-size: 15.5px; font-weight: 800; letter-spacing: -0.025em; line-height: 1.25; }
 
 .ov-grp__kids {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-top: 9px;
+  gap: 16px;
+  margin-top: 14px;
 }
 
-.ov-kid { display: flex; gap: 8px; align-items: flex-start; }
+.ov-kid { display: flex; gap: 10px; align-items: flex-start; }
 .ov-kid__bullet {
   flex: 0 0 auto;
   width: 4px; height: 4px; border-radius: 50%;
-  margin-top: 7px;
+  margin-top: 8px;
   background: var(--dim);
   transition: background-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
 }
@@ -292,21 +292,21 @@ html, body { overflow-x: clip; }
   white-space: nowrap;
 }
 .ov-kid__label {
-  font-size: 12.8px;
+  font-size: 13.4px;
   font-weight: 700;
   letter-spacing: -0.015em;
   color: var(--text);
   line-height: 1.4;
 }
 .ov-kid__desc {
-  margin-top: 2px;
-  font-size: 11.5px;
-  line-height: 1.55;
+  margin-top: 5px;
+  font-size: 11.8px;
+  line-height: 1.5;
   color: var(--muted);
   word-break: keep-all;
 }
 
-.ov-clusters { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px; }
+.ov-clusters { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
 .ov-cluster {
   display: inline-flex;
   align-items: baseline;
@@ -320,15 +320,6 @@ html, body { overflow-x: clip; }
   line-height: 1.5;
 }
 .ov-cluster b { color: var(--accent); font-weight: 700; font-size: 9.5px; letter-spacing: 0.03em; }
-
-.ov-grp__note {
-  margin-top: 9px;
-  padding-top: 8px;
-  border-top: 1px dashed var(--line);
-  font-size: 11px;
-  line-height: 1.5;
-  color: var(--dim);
-}
 
 /* ---------------- 바닥글 ---------------- */
 .ov-zoomhint {
