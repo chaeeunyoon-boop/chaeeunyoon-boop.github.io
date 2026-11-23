@@ -80,10 +80,12 @@ html, body { overflow-x: clip; }
 
 /* ---------------- 전체 배치 ---------------- */
 .ov-split {
-  flex: 1;
-  min-height: 0;
+  flex: 1 1 0;
+  height: 0;
+  min-height: 620px;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 348px;
+  grid-template-rows: minmax(0, 1fr);
   gap: 20px;
   align-items: stretch;
 }
@@ -384,7 +386,7 @@ html, body { overflow-x: clip; }
 }
 
 @media (max-width: 1080px) {
-  .ov-split { grid-template-columns: 1fr; }
+  .ov-split { grid-template-columns: 1fr; height: auto; min-height: 0; grid-template-rows: auto; }
   .ov-insp { display: none; }
 
   .ov-main { min-height: 0; padding-bottom: 26px; }
