@@ -299,7 +299,7 @@ html[data-theme="light"] .iconbtn .i-sun { display: none; }
 .cases__panel {
   border: 1px solid var(--line); border-radius: var(--radius);
   background: var(--surface); padding: 30px 32px 32px; box-shadow: var(--shadow);
-  min-height: 520px;
+  min-height: 430px;
 }
 
 .case__meta {

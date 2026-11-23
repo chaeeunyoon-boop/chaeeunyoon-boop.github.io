@@ -414,7 +414,7 @@
         var offset = n > 1 ? (i - (n - 1) / 2) * spread : 0;
         var x1 = side === "left" ? hub.l - 2 : hub.r + 2;
         var y1 = hub.cy + offset;
-        var x2 = side === "left" ? head.r + 2 : head.l - 2;
+        var x2 = side === "left" ? head.r + 12 : head.l - 12;
         var y2 = head.cy;
         var dx = Math.abs(x2 - x1) * 0.55;
         var d =
