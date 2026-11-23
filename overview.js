@@ -382,21 +382,9 @@
             zh: "走过的路（2022.05 –）",
           },
           desc: {
-            ko: "종합 카테고리 MCN 샌드박스 → AI 콘텐츠 자동화 올투원 → 뷰티 특화 MCN 아이스크리에이티브 → 패션 중심 인플루언서 AI 에이전트 회사 온더룩. 4년 4개월.",
-            en: "General-category MCN Sandbox → AI content automation Alltoone → beauty-specialist MCN Ice Creative → fashion-led influencer AI agent company Onthelook. Four years four months.",
-            zh: "综合品类 MCN 沙盒 → AI 内容自动化 Alltoone → 美妆专门 MCN Ice Creative → 以时尚为主的网红 AI 智能体公司 Onthelook。4 年 4 个月。",
-          },
-        },
-        {
-          label: {
-            ko: "현재 · 온더룩 MCN팀 매니저",
-            en: "Now · MCN Team Manager at Onthelook",
-            zh: "现在 · Onthelook MCN 团队经理",
-          },
-          desc: {
-            ko: "2035 여성 타깃 뷰티·패션 인플루언서 협업, 최대 30팀 운영.",
-            en: "Beauty and fashion influencer campaigns for women in their 20s–30s, up to 30 teams.",
-            zh: "面向 20~30 岁女性的美妆·时尚网红合作，最多运营 30 个团队。",
+            ko: "종합 MCN 샌드박스 → AI 콘텐츠 자동화 올투원 → 뷰티 특화 MCN 아이스크리에이티브 → 패션 중심 AI 에이전트 회사 온더룩(MCN팀 매니저). 4년 4개월.",
+            en: "General MCN Sandbox → AI content automation Alltoone → beauty MCN Ice Creative → fashion-led AI agent company Onthelook (MCN Team Manager). Four years four months.",
+            zh: "综合 MCN 沙盒 → AI 内容自动化 Alltoone → 美妆 MCN Ice Creative → 以时尚为主的 AI 智能体公司 Onthelook（MCN 团队经理）。4 年 4 个月。",
           },
         },
         {
