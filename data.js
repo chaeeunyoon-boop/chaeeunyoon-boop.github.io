@@ -1002,7 +1002,7 @@ const SITE = {
     {
       period: { ko: "2026.02 – 현재", en: "Feb 2026 – Present", zh: "2026.02 – 至今" },
       org: { ko: "온더룩", en: "Onthelook", zh: "Onthelook" },
-      role: { ko: "인플루언서 AI 에이전트 회사 · MCN팀 매니저", en: "Influencer AI agent company · MCN Team Manager", zh: "网红 AI 智能体公司 · MCN 团队经理" },
+      role: { ko: "패션 중심 인플루언서 AI 에이전트 회사 · MCN팀 매니저", en: "Fashion-led influencer AI agent company · MCN Team Manager", zh: "以时尚为主的网红 AI 智能体公司 · MCN 团队经理" },
       bullets: [
         {
           ko: "뷰티·패션 크리에이터 최대 30팀 매니지먼트 · 광고 문의 대응 AI 워크플로우 구축",
