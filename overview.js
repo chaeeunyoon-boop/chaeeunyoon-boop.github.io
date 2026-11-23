@@ -232,6 +232,11 @@
           },
         },
       ],
+      note: {
+        ko: "이 도구는 가상 데이터 데모로 직접 확인할 수 있습니다.",
+        en: "This tool can be tried in a demo built on fictional data.",
+        zh: "这个工具有虚构数据的演示，可以直接体验。",
+      },
     },
     {
       id: "team",
