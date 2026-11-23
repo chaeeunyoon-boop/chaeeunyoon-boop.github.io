@@ -16,17 +16,17 @@ const SITE = {
   /* ---------- UI LABELS (헤더·섹션 제목·버튼) ---------- */
   ui: {
     title: {
-      ko: "윤채은 — AI 업무 개선(AX) 포트폴리오",
-      en: "Chaeeun Yun — AI work improvement (AX) portfolio",
-      zh: "Chaeeun Yun — AI 工作改进（AX）作品集",
+      ko: "윤채은 — AX · AI Transformation 빌더 포트폴리오",
+      en: "Chaeeun Yun — AX / AI Transformation Builder portfolio",
+      zh: "Chaeeun Yun — AX · AI Transformation 构建者作品集",
     },
     desc: {
-      ko: "반복해서 막히는 일을 찾아 판단 기준을 규칙으로 정리하고, 실제로 돌아가는 AI 업무 방식으로 바꿔 온 윤채은의 포트폴리오.",
-      en: "Chaeeun Yun's portfolio: finding the work that keeps getting stuck, writing the judgment behind it into rules, and turning it into AI-assisted work that actually runs.",
-      zh: "Chaeeun Yun 的作品集：找出反复卡住的工作，把判断标准写成规则，再变成真正能运行的 AI 辅助工作方式。",
+      ko: "현업의 반복 병목을 발굴해 AS-IS 프로세스를 TO-BE로 재설계하고, AI 에이전트·내부 도구로 구축해 현업에 적용한 뒤 운영 기준으로 문서화해 온 윤채은의 포트폴리오.",
+      en: "Chaeeun Yun's portfolio: finding repeated bottlenecks in live operations, redesigning AS-IS processes into TO-BE, building them as AI agents and internal tools, applying them in the field, then documenting the operating standards.",
+      zh: "Chaeeun Yun 的作品集：识别现场重复瓶颈，把 AS-IS 流程重构为 TO-BE，用 AI 代理与内部工具搭起来并落地业务，最后整理成运营标准。",
     },
     skip: { ko: "본문으로 건너뛰기", en: "Skip to content", zh: "跳到正文" },
-    brandRole: { ko: "AI 업무 개선 · 문제 해결", en: "AI work improvement · Problem solving", zh: "AI 工作改进 · 问题解决" },
+    brandRole: { ko: "AX · 빌더형 문제해결사", en: "AX · Builder-minded problem solver", zh: "AX · 构建型问题解决者" },
     navCases: { ko: "케이스", en: "Cases", zh: "案例" },
     navDemos: { ko: "라이브 데모", en: "Live demos", zh: "实时演示" },
     demosTitle: {
@@ -49,52 +49,52 @@ const SITE = {
     navContact: { ko: "연락", en: "Contact", zh: "联系" },
 
     heroStatus: {
-      ko: "지금은 온더룩 MCN팀(크리에이터 매니지먼트)에서 일하며, 그 업무를 돕는 AI 도구를 직접 만듭니다",
-      en: "Currently on the MCN (creator management) team at Onthelook, building AI tools that help with that work",
-      zh: "目前在 Onthelook 的 MCN 团队（创作者经纪）工作，并亲手打造辅助这份工作的 AI 工具",
+      ko: "지금은 온더룩 MCN팀(크리에이터 매니지먼트)에서 일하며, 그 업무의 반복 병목을 AI 워크플로우·내부 도구로 바꿉니다",
+      en: "Currently on the MCN (creator management) team at Onthelook, turning that team's repeated bottlenecks into AI workflows and internal tools",
+      zh: "目前在 Onthelook 的 MCN 团队（创作者经纪）工作，把这份工作中的重复瓶颈改造成 AI 工作流与内部工具",
     },
-    heroLine1: { ko: "매번 막히는 일을 찾아", en: "Find the work that keeps getting stuck.", zh: "找出总是卡住的工作" },
-    heroLine2: { ko: "판단 기준을 규칙으로 만들고", en: "Write the judgment behind it into rules.", zh: "把判断标准写成规则" },
+    heroLine1: { ko: "반복 병목을 발굴해", en: "Find the repeated bottlenecks.", zh: "识别重复出现的瓶颈" },
+    heroLine2: { ko: "AS-IS를 TO-BE로 재설계하고", en: "Redesign AS-IS into TO-BE.", zh: "把 AS-IS 重构为 TO-BE" },
     heroLine3: {
-      ko: "AI와 함께 돌아가는 업무로 바꿉니다.",
-      en: "Turn it into work that runs with AI.",
-      zh: "变成与 AI 一起运转的工作方式。",
+      ko: "작동하는 AI 워크플로우로 만듭니다.",
+      en: "Build it into AI workflows that actually run.",
+      zh: "做成真正运行的 AI 工作流。",
     },
     heroSub: {
-      ko: "4년 넘게 크리에이터 마케팅 실무를 했고, 그 과정에서 반복해서 막히던 일을 직접 AI 도구로 만들어 풀어 왔습니다. 아이디어나 기획서에서 멈추지 않고, 실제로 매일 쓰이고 다른 사람이 이어받을 수 있는 상태까지 만듭니다.",
-      en: "I spent over four years doing hands-on creator marketing, and along the way built my own AI tools for the work that kept getting stuck. I don't stop at an idea or a proposal — I take it to the point where it's used every day and someone else can take it over.",
-      zh: "我做了四年多的创作者营销实务，过程中亲手用 AI 工具解决那些反复卡住的工作。不停在想法或方案上，而是做到每天真正在用、别人也能接手的程度。",
+      ko: "크리에이터 마케팅을 4년 넘게 운영하며, 그 현장의 반복 병목을 직접 발굴해 AS-IS 프로세스를 TO-BE로 재설계하고 AI 에이전트·내부 도구로 구축해 현업에 적용해 왔습니다. 기획서에서 멈추지 않고, 운영 기준을 문서화해 팀 공용 표준으로 남기는 데까지 갑니다.",
+      en: "I have run creator marketing for more than four years. Along the way I found the repeated bottlenecks myself, redesigned the AS-IS processes into TO-BE, and built them as AI agents and internal tools that the team uses in live work. I don't stop at a proposal: the operating criteria get documented and become a team-wide standard.",
+      zh: "我做创作者营销四年多，在现场亲手识别重复瓶颈，把 AS-IS 流程重构为 TO-BE，用 AI 代理与内部工具搭起来并落地业务。不止于方案，还把运营标准写成文档，留成团队共用的标准。",
     },
     heroCta1: { ko: "케이스 4건 보기", en: "See the four cases", zh: "查看 4 个案例" },
     heroCta2: { ko: "연락하기", en: "Get in touch", zh: "联系我" },
 
-    metricHead: { ko: "성과 · 바꾸기 전 → 후", en: "Results · before → after", zh: "成果 · 之前 → 之后" },
-    metricBadge: { ko: "실제 업무 결과", en: "Real work results", zh: "真实工作成果" },
+    metricHead: { ko: "임팩트 · AS-IS → TO-BE", en: "IMPACT · AS-IS → TO-BE", zh: "成效 · AS-IS → TO-BE" },
+    metricBadge: { ko: "현업 적용 결과", en: "Applied in live work", zh: "业务落地成果" },
     metricFoot: {
       ko: "* 모두 실제 업무에서 운영한 결과입니다.",
       en: "* Every figure comes from work actually run in production.",
       zh: "* 全部来自实际工作中的运营结果。",
     },
 
-    casesTitle: { ko: "문제 → 해결 방법 → 결과", en: "Problem → Solution → Result", zh: "问题 → 解决方法 → 结果" },
+    casesTitle: { ko: "AS-IS 병목 → 재설계 → 임팩트", en: "AS-IS bottleneck → redesign → impact", zh: "AS-IS 瓶颈 → 重构 → 成效" },
     casesLead: {
-      ko: "모든 케이스를 같은 순서로 정리했습니다. 무엇이 막혀 있었는지, 어떻게 풀었는지, 그래서 무엇이 달라졌는지.",
-      en: "Every case follows the same order: what was stuck, how it was solved, and what changed as a result.",
-      zh: "所有案例都按同一顺序整理：哪里卡住了、怎么解决的、结果有什么变化。",
+      ko: "네 건 모두 같은 순서로 읽힙니다. AS-IS에서 무엇이 막혔는지, 어떤 판단을 운영 기준으로 옮겼는지, TO-BE에서 무엇이 달라졌는지.",
+      en: "All four read in the same order: what was stuck in the AS-IS, which judgments became operating rules, and what changed in the TO-BE.",
+      zh: "四件都按同一顺序阅读：AS-IS 里卡在哪里、哪些判断被写成运营标准、TO-BE 里发生了什么变化。",
     },
-    step1: { ko: "01 · 문제 (바꾸기 전)", en: "01 · Problem (before)", zh: "01 · 问题（之前）" },
-    step2: { ko: "02 · 해결 방법", en: "02 · Solution", zh: "02 · 解决方法" },
-    step3: { ko: "03 · 결과 (바꾼 후)", en: "03 · Result (after)", zh: "03 · 结果（之后）" },
+    step1: { ko: "01 · 문제 (AS-IS)", en: "01 · Problem (AS-IS)", zh: "01 · 问题（AS-IS）" },
+    step2: { ko: "02 · 재설계 · 솔루션", en: "02 · Redesign & solution", zh: "02 · 重构 · 解决方案" },
+    step3: { ko: "03 · 결과 (TO-BE)", en: "03 · Result (TO-BE)", zh: "03 · 结果（TO-BE）" },
 
     principlesTitle: {
-      ko: "AI에게 맡길 것과 맡기지 않을 것을 먼저 나눕니다.",
-      en: "First, I decide what AI should not be trusted with.",
-      zh: "先把哪些交给 AI、哪些不交，分清楚。",
+      ko: "자동화할 일과 사람이 승인할 일을 먼저 나눕니다.",
+      en: "First, I separate what gets automated from what a person approves.",
+      zh: "先把要自动化的事与要由人审批的事分开。",
     },
     principlesLead: {
-      ko: "AI가 할 일, 규칙으로 정해 둘 일, 사람이 직접 확인할 일. 이 셋을 나누는 데서 모든 작업을 시작합니다.",
-      en: "What AI does, what gets fixed as a rule, what a person checks directly. Every piece of my work starts by separating these three.",
-      zh: "AI 做什么、哪些定成规则、哪些由人直接确认。我的所有工作都从分清这三者开始。",
+      ko: "AI 에이전트가 판단할 일, 규칙으로 고정할 일, 사람이 승인할 일. AS-IS를 뜯어볼 때도 이 셋을 먼저 나눕니다.",
+      en: "What an AI agent judges, what a rule fixes, what a person approves — every AS-IS review starts by splitting these three.",
+      zh: "AI 代理判断的、用规则固化的、由人审批的；拆解 AS-IS 时也先分清这三者。",
     },
     stackTitle: { ko: "Stack", en: "Stack", zh: "Stack" },
     stackNote: {
@@ -109,9 +109,9 @@ const SITE = {
       zh: "把现场学到的东西，变成下一个现场的结构。",
     },
     careerLead: {
-      ko: "총 경력 4년 4개월 · 크리에이터 마케팅 실무에서 출발해 AI 업무 설계로",
-      en: "4 years 4 months · from hands-on creator marketing to designing AI-assisted work",
-      zh: "总经历 4 年 4 个月 · 从创作者营销实务出发，走向 AI 工作设计",
+      ko: "총 경력 4년 4개월 · 크리에이터 마케팅 운영 → AS-IS 재설계 · AI 워크플로우 구축",
+      en: "4 years 4 months · from creator marketing operations to AS-IS redesign and AI workflow building",
+      zh: "总经历 4 年 4 个月 · 从创作者营销运营到 AS-IS 重构与 AI 工作流搭建",
     },
 
     contactTitle: {
@@ -120,9 +120,9 @@ const SITE = {
       zh: "如果你有卡住的地方，我想先听那段故事。",
     },
     contactLead: {
-      ko: "반복되는 일은 규칙과 AI에 맡기고, 사람이 꼭 확인해야 할 순간은 남겨 두는 일. 이런 업무 방식을 함께 만들 팀을 찾고 있습니다.",
-      en: "Leaving repeated work to rules and AI, while keeping the moments a person must check. I'm looking for a team to build this way of working with.",
-      zh: "把重复的工作交给规则和 AI，同时保留必须由人确认的时刻。我在寻找愿意一起打造这种工作方式的团队。",
+      ko: "반복 병목을 찾아 AS-IS를 뜯고 TO-BE로 다시 설계하는 일, AI 워크플로우와 내부 도구로 붙이고 운영 기준으로 남기는 일. 그 구조를 함께 만들 팀을 찾고 있습니다.",
+      en: "Finding the repeated bottleneck, taking the AS-IS apart and redesigning it as a TO-BE, then building it as an AI workflow or internal tool and leaving operating standards behind — I'm looking for a team to build that with.",
+      zh: "找出重复瓶颈，拆解 AS-IS 并重构成 TO-BE，用 AI 工作流与内部工具搭起来，再留下运营标准——我在找一起做这件事的团队。",
     },
     footerNote: { ko: "정적 HTML/CSS/JS · 빌드 없음", en: "Static HTML/CSS/JS · no build step", zh: "静态 HTML/CSS/JS · 无需构建" },
     footerMeta: {
@@ -137,17 +137,17 @@ const SITE = {
     {
       before: { ko: "1시간", en: "1 hr", zh: "1 小时" },
       after: { ko: "3~5분", en: "3–5 min", zh: "3~5 分钟" },
-      label: { ko: "광고 제안서 초안", en: "Ad proposal draft", zh: "广告提案初稿" },
+      label: { ko: "광고 제안서 초안 · AI 워크플로우", en: "Ad proposal draft · AI workflow", zh: "广告提案初稿 · AI 工作流" },
     },
     {
       before: { ko: "2주", en: "2 weeks", zh: "2 周" },
       after: { ko: "2일", en: "2 days", zh: "2 天" },
-      label: { ko: "유튜브 채널 성장 분석", en: "YouTube channel growth analysis", zh: "YouTube 频道增长分析" },
+      label: { ko: "채널 성장 분석 · API·LLM 파이프라인", en: "Channel growth analysis · API + LLM pipeline", zh: "频道增长分析 · API·LLM 流水线" },
     },
     {
       before: { ko: "4주", en: "4 weeks", zh: "4 周" },
       after: { ko: "2일", en: "2 days", zh: "2 天" },
-      label: { ko: "AI 더빙 · 해외 채널 개설", en: "AI dubbing · new overseas channel", zh: "AI 配音 · 开设海外频道" },
+      label: { ko: "해외 채널 개설 · 3사 프로세스 재설계", en: "Overseas channel · 3-company redesign", zh: "海外频道开设 · 三方流程重构" },
     },
   ],
 
@@ -157,34 +157,34 @@ const SITE = {
       id: "work-agent",
       no: "01",
       tag: {
-        ko: "업무 자동화 · 사람이 최종 확인",
-        en: "Work automation · a person makes the final check",
-        zh: "工作自动化 · 由人最终确认",
+        ko: "반복 병목 발굴 · AI 워크플로우 구축",
+        en: "Bottleneck discovery · AI workflow built",
+        zh: "识别重复瓶颈 · 搭建 AI 工作流",
       },
       title: {
-        ko: "제각각인 광고 문의를 정리해 주는 AI 업무 도우미",
-        en: "An AI work assistant that sorts out ad inquiries in every shape",
-        zh: "整理各种形式广告咨询的 AI 工作助手",
+        ko: "제각각인 광고 문의를 처리하는 AI 업무 에이전트 (AS-IS → TO-BE)",
+        en: "An AI work agent that handles ad inquiries in every shape (AS-IS → TO-BE)",
+        zh: "处理各种形式广告咨询的 AI 工作代理（AS-IS → TO-BE）",
       },
       org: { ko: "온더룩 · MCN팀", en: "Onthelook · MCN Team", zh: "Onthelook · MCN 团队" },
       role: { ko: "설계 · 구축 · 검증 (단독)", en: "Design, build, validation (solo)", zh: "设计 · 搭建 · 验证（独立完成）" },
       period: { ko: "2026.02 – 현재", en: "Feb 2026 – Present", zh: "2026.02 – 至今" },
       oneLiner: {
-        ko: "광고 문의를 받아 제안서 초안을 쓰는 데 1건에 1시간이 걸렸습니다. 제 머릿속에만 있던 판단 기준 12가지를 규칙으로 적어 AI에 맡기고, 저는 3~5분 동안 확인만 하도록 바꿨습니다.",
-        en: "Drafting a proposal for each ad inquiry took an hour. I wrote the twelve judgment criteria that lived only in my head into rules and handed them to AI, so now I spend three to five minutes just checking.",
-        zh: "每收到一条广告咨询，写提案初稿要 1 小时。我把只存在于脑中的 12 条判断标准写成规则交给 AI，现在我只需花 3~5 分钟检查。",
+        ko: "광고 문의를 받아 제안서 초안을 쓰는 데 1건에 1시간이 걸렸습니다. AS-IS에는 판단 기준도 기록도 머릿속에만 있었습니다. 12가지 기준을 운영 규칙으로 문서화해 LLM에 연계하고, AI가 판정과 초안을 맡는 TO-BE로 재설계해 제 일은 3~5분 확인으로 줄었습니다.",
+        en: "Drafting a proposal for one ad inquiry took an hour — in the AS-IS, the criteria and the record existed only in my head. I documented the twelve criteria as operating rules and wired them to the LLM, redesigning the process into a TO-BE where AI judges and drafts; my part is now a three-to-five minute check.",
+        zh: "写一份广告提案初稿要 1 小时——AS-IS 的判断标准和记录都只在脑子里。我把 12 条标准整理成运营规则并对接 LLM，重构成由 AI 判定与起草的 TO-BE，我只需 3~5 分钟审阅。",
       },
       problem: {
         lead: {
-          ko: "뷰티·패션 크리에이터(유튜버·인플루언서) 최대 30팀을 혼자 맡고 있었습니다. 광고 문의는 매번 형식이 달랐고, 어떻게 판단해야 하는지는 어디에도 적혀 있지 않았습니다.",
-          en: "I was handling up to 30 beauty and fashion creator teams (YouTubers, influencers) on my own. Ad inquiries arrived in a different format every time, and how to judge them was written down nowhere.",
-          zh: "我独自负责最多 30 个美妆、时尚创作者团队（YouTuber、网红）。广告咨询每次格式都不一样，而该如何判断，没有任何地方写下来。",
+          ko: "뷰티·패션 크리에이터(유튜버·인플루언서) 최대 30팀을 혼자 맡고 있었습니다. 광고 문의는 매번 형식이 달랐고, 어떻게 판단해야 하는지는 어디에도 적혀 있지 않았습니다. 제가 가장 먼저 발굴한 반복 병목이었습니다.",
+          en: "I was handling up to 30 beauty and fashion creator teams (YouTubers, influencers) on my own. Ad inquiries arrived in a different format every time, and how to judge them was written down nowhere. This was the first repeated bottleneck I found.",
+          zh: "我独自负责最多 30 个美妆、时尚创作者团队（YouTuber、网红）。广告咨询每次格式都不一样，而该如何判断，没有任何地方写下来——这是我最早识别出的重复瓶颈。",
         },
         bullets: [
           {
-            ko: "요청마다 처음부터 다시 고민 — 같은 판단을 하루에도 여러 번 반복",
-            en: "Every request started from zero — the same judgment repeated several times a day",
-            zh: "每个请求都从零开始想——同一种判断一天要重复好几次",
+            ko: "요청마다 처음부터 다시 판단 — 같은 판단을 하루에도 여러 번 반복 (AS-IS에는 기준도 기록도 없음)",
+            en: "Every request judged from zero — the same call repeated several times a day (no criteria, no record in the AS-IS)",
+            zh: "每个请求都从零开始判断——同一种判断一天重复好几次（AS-IS 既无标准也无记录）",
           },
           {
             ko: "광고 제안서 한 건의 초안을 쓰는 데 1시간, 그 뒤 고치는 데 또 한 번",
@@ -192,22 +192,22 @@ const SITE = {
             zh: "写一份广告提案初稿要 1 小时，之后还要再改一遍",
           },
           {
-            ko: "AI에 그냥 맡기면 늘 같은 곳에서 틀림 — 판단 기준을 알려 준 적이 없었기 때문",
-            en: "Left to AI as-is, it failed at the same spots — because no one had ever told it the criteria",
-            zh: "直接交给 AI，总在同样的地方出错——因为从没告诉过它判断标准",
+            ko: "AI에 그냥 맡기면 늘 같은 곳에서 틀림 — 판단 기준을 프롬프트·규칙으로 넘긴 적이 없었기 때문",
+            en: "Left to AI as-is, it failed at the same spots — the criteria had never been handed over as prompts or rules",
+            zh: "直接交给 AI，总在同样的地方出错——因为从没把判断标准以提示词与规则的形式交给它",
           },
           {
-            ko: "일이 한 사람의 기억에 묶여 있어 다른 팀원이 대신하기 어려움",
-            en: "The work lived in one person's memory, so no teammate could pick it up",
-            zh: "工作绑在一个人的记忆里，其他同事很难接手",
+            ko: "판단이 한 사람의 기억에 묶여 있어 동료가 대신하기 어려움 — 제 문제가 곧 팀의 협업 병목이 됨",
+            en: "The judgment lived in one person's memory, so no teammate could take over — my problem had become the team's collaboration bottleneck",
+            zh: "判断绑在一个人的记忆里，同事很难接手——我的问题变成了团队的协作瓶颈",
           },
         ],
       },
       rules: {
         lead: {
-          ko: "들어오는 요청을 8가지 업무로 나누고, 판단을 'AI가 할 일 · 규칙으로 정할 일 · 사람이 확인할 일' 세 가지로 나눴습니다.",
-          en: "I sorted incoming requests into eight kinds of work, then split judgment three ways: what AI does, what a rule decides, and what a person checks.",
-          zh: "我把收到的请求分成 8 类工作，再把判断分成三部分：AI 做的、规则决定的、人来确认的。",
+          ko: "들어오는 요청을 8가지 업무로 나누고, 판단을 'AI가 할 일 · 규칙으로 정할 일 · 사람이 확인할 일' 세 가지로 나눴습니다. AS-IS를 단계별로 뜯어 다시 그린 TO-BE입니다.",
+          en: "I sorted incoming requests into eight kinds of work, then split judgment three ways: what AI does, what a rule decides, and what a person checks. It is the TO-BE I redrew after taking the AS-IS apart step by step.",
+          zh: "我把收到的请求分成 8 类工作，再把判断分成三部分：AI 做的、规则决定的、由人确认的。这是拆解 AS-IS 后重画出的 TO-BE。",
         },
         flow: [
           {
@@ -219,19 +219,19 @@ const SITE = {
             sub: { ko: "제안서 · 대금 정산 · 섭외 · 리포트", en: "Proposal, payments, casting, report", zh: "提案 · 款项结算 · 邀约 · 报告" },
           },
           {
-            label: { ko: "판단 규칙 12개", en: "12 rules", zh: "12 条判断规则" },
-            sub: { ko: "문서와 코드로 정리", en: "Written in docs and code", zh: "写进文档和代码" },
+            label: { ko: "운영 기준 12개", en: "12 operating rules", zh: "12 条运营规则" },
+            sub: { ko: "문서·프롬프트·코드로 고정", en: "Fixed in docs, prompts and code", zh: "固化到文档 · 提示词 · 代码" },
           },
           {
             label: { ko: "자동 실행 5개", en: "5 automatic runs", zh: "5 个自动任务" },
             sub: { ko: "정해진 시간마다 반복", en: "Repeat at fixed times", zh: "按固定时间反复执行" },
           },
           {
-            label: { ko: "AI가 초안 작성", en: "AI writes the draft", zh: "AI 撰写初稿" },
-            sub: { ko: "AI 판단", en: "AI judgment", zh: "AI 判断" },
+            label: { ko: "AI 에이전트 판정 · 초안", en: "AI agent judges & drafts", zh: "AI 代理判定 · 起草" },
+            sub: { ko: "LLM 연계", en: "Wired to the LLM", zh: "对接 LLM" },
           },
           {
-            label: { ko: "사람 최종 확인", en: "Final human check", zh: "人工最终确认" },
+            label: { ko: "사람 최종 승인", en: "Final human approval", zh: "人工最终审批" },
             sub: { ko: "돈 · 외부 발송은 꼭", en: "Always for money and outbound", zh: "金额 · 对外发送必经" },
             gate: true,
           },
@@ -242,7 +242,7 @@ const SITE = {
         ],
         notes: [
           { ko: "업무를 8가지로 나눔", en: "Work split into 8 kinds", zh: "工作分成 8 类" },
-          { ko: "판단 기준 12개를 문서로 정리", en: "12 judgment criteria written down", zh: "12 条判断标准写成文档" },
+          { ko: "판단 기준 12개를 운영 기준으로 문서화", en: "12 criteria documented as operating rules", zh: "12 条判断标准写成运营规则" },
           { ko: "5개 작업을 정해진 시간에 자동 실행", en: "5 tasks run automatically on schedule", zh: "5 个任务按时自动执行" },
           {
             ko: "AI 판단 / 고정 규칙 / 사람 확인 세 단계로 분리",
@@ -250,18 +250,18 @@ const SITE = {
             zh: "分成 AI 判断 / 固定规则 / 人工确认三步",
           },
           {
-            ko: "돈이 걸린 일은 사람이 확인하는 단계를 제안·설계",
-            en: "Proposed and designed a human check for anything involving money",
-            zh: "提出并设计：涉及金额的事必须由人确认",
+            ko: "돈이 걸린 일은 사람이 승인하는 게이트를 제안·설계",
+            en: "Proposed and designed an approval gate for anything involving money",
+            zh: "提出并设计：涉及金额的事必须经人工审批关卡",
           },
           { ko: "제가 직접 쓴 최종본과 4번 비교 검증", en: "Compared against my own final drafts 4 times", zh: "与我亲手写的最终版对比验证 4 次" },
         ],
       },
       impact: {
         lead: {
-          ko: "세 번째로 만든 초안은 고치지 않고 그대로 실제 광고주에게 보냈습니다. 지금은 팀 전체가 쓰는 방식이 되어, 다른 담당자도 같은 기준으로 일합니다.",
-          en: "The third draft went to a real advertiser as-is, with no edits. It is now how the whole team works, so other owners follow the same criteria.",
-          zh: "第三版初稿未经修改，直接发给了真实广告主。现在它已成为整个团队的工作方式，其他负责人也按同一标准工作。",
+          ko: "세 번째로 만든 초안은 고치지 않고 그대로 실제 광고주에게 보냈습니다. 지금은 운영 기준이 문서로 남아 팀 공용 표준이 되었고, 다른 담당자도 같은 기준으로 일합니다.",
+          en: "The third draft went to a real advertiser as-is, with no edits. The operating rules are now written down as a team-wide standard, and other owners work from the same criteria.",
+          zh: "第三版初稿未经修改，直接发给了真实广告主。运营标准现已写成文档，成为团队共用标准，其他负责人也按同一套标准工作。",
         },
         metrics: [
           {
@@ -270,13 +270,13 @@ const SITE = {
             label: { ko: "제안서 초안 1건", en: "One proposal draft", zh: "一份提案初稿" },
           },
           {
-            before: { ko: "개인 업무", en: "Personal", zh: "个人工作" },
-            after: { ko: "팀 공용", en: "Team-wide", zh: "团队共用" },
+            before: { ko: "제 업무", en: "My own work", zh: "我的工作" },
+            after: { ko: "팀 공용 표준", en: "Team-wide standard", zh: "团队共用标准" },
             label: { ko: "누가 쓰는가", en: "Who uses it", zh: "谁在用" },
           },
           {
             before: { ko: "한 사람의 기억", en: "One person's memory", zh: "一个人的记忆" },
-            after: { ko: "문서 · 규칙", en: "Documented rules", zh: "文档 · 规则" },
+            after: { ko: "문서화된 운영 기준", en: "Documented operating rules", zh: "写进文档的运营标准" },
             label: { ko: "판단 기준은 어디에", en: "Where the criteria live", zh: "判断标准在哪里" },
           },
         ],
@@ -291,11 +291,11 @@ const SITE = {
     {
       id: "channel-pipeline",
       no: "02",
-      tag: { ko: "데이터 자동 수집 · AI 분석", en: "Automatic data collection · AI analysis", zh: "数据自动采集 · AI 分析" },
+      tag: { ko: "API · LLM 파이프라인 연계", en: "API + LLM pipeline", zh: "API · LLM 流水线对接" },
       title: {
-        ko: "유튜브 채널 성장 분석 자동화 (YouTube 데이터 + AI)",
-        en: "Automating YouTube channel growth analysis (YouTube data + AI)",
-        zh: "YouTube 频道增长分析自动化（YouTube 数据 + AI）",
+        ko: "유튜브 채널 성장 분석 자동화 — YouTube API · LLM 파이프라인",
+        en: "Automating YouTube channel growth analysis — YouTube API + LLM pipeline",
+        zh: "YouTube 频道增长分析自动化 — YouTube API · LLM 流水线",
       },
       org: {
         ko: "아이스크리에이티브 · 크리에이터광고사업팀",
@@ -305,15 +305,15 @@ const SITE = {
       role: { ko: "기획 · 구축", en: "Design & build", zh: "规划 · 搭建" },
       period: { ko: "2024.11 – 2026.01", en: "Nov 2024 – Jan 2026", zh: "2024.11 – 2026.01" },
       oneLiner: {
-        ko: "영상별 조회수 같은 숫자를 손으로 모아 해석하느라 2주 걸리던 채널 분석을, 데이터 자동 수집과 AI 해석을 연결해 2일로 줄였습니다. 구독자 70만 규모 채널의 성장 전략에 쓰였습니다.",
-        en: "Channel analysis took two weeks of gathering and reading numbers like per-video views by hand. Linking automatic data collection with AI interpretation cut it to two days. It was used for the growth strategy of a channel with around 700K subscribers.",
-        zh: "频道分析原本要花两周手工收集、解读每条视频的播放量等数字。把数据自动采集和 AI 解读连起来后，缩短到两天。这套结果用于一个约 70 万订阅频道的增长策略。",
+        ko: "영상별 조회수 같은 숫자를 손으로 모아 해석하느라 2주 걸리던 채널 분석을, YouTube API 자동 수집과 LLM 해석을 한 파이프라인으로 연계해 2일로 줄였습니다. 구독자 70만 규모 채널의 성장 전략에 쓰였습니다.",
+        en: "Channel analysis took two weeks of gathering and reading numbers like per-video views by hand. I wired automatic collection through the YouTube API and interpretation by an LLM into one pipeline, cutting it to two days. It fed the growth strategy for a channel with around 700K subscribers.",
+        zh: "频道分析原本要两周手工收集、解读每条视频的播放量等数字。我把 YouTube API 自动采集与 LLM 解读串成一条流水线，缩短到两天。这套结果用于一个约 70 万订阅频道的增长策略。",
       },
       problem: {
         lead: {
-          ko: "채널 분석이 너무 느려서 결정에 제때 쓰이지 못했습니다.",
-          en: "Channel analysis was so slow it couldn't be used for decisions in time.",
-          zh: "频道分析太慢，没法及时用于决策。",
+          ko: "채널 분석이 너무 느려서 결정에 제때 쓰이지 못했습니다. AS-IS를 뜯어보니 손 작업이 두 군데(수집·해석)에 몰려 있었습니다.",
+          en: "Channel analysis was so slow it couldn't be used for decisions in time. Taking the AS-IS apart showed the manual work piled up in two places: collection and interpretation.",
+          zh: "频道分析太慢，没能及时用于决策。拆解 AS-IS 后发现，手工活集中在两处：采集与解读。",
         },
         bullets: [
           {
@@ -340,9 +340,9 @@ const SITE = {
       },
       rules: {
         lead: {
-          ko: "데이터 모으기는 자동 수집 도구(API)에, 해석은 AI에, 판단 기준은 미리 정한 분류 규칙에 맡겼습니다.",
-          en: "Collecting data went to an automatic tool (API), interpretation to AI, and the criteria to classification rules set in advance.",
-          zh: "数据采集交给自动工具（API），解读交给 AI，判断标准交给事先定好的分类规则。",
+          ko: "데이터 수집은 YouTube API에, 해석은 LLM에, 판단 기준은 미리 정한 분류 규칙에 맡겼습니다. AS-IS의 손 작업을 그대로 옮기지 않고 단계를 다시 나눠 TO-BE로 재설계했습니다.",
+          en: "Collection went to the YouTube API, interpretation to the LLM, and the criteria to classification rules set in advance. Rather than copying the manual AS-IS, I re-cut the steps and redesigned it as a TO-BE.",
+          zh: "采集交给 YouTube API，解读交给 LLM，判断标准交给事先定好的分类规则。没有照搬手工的 AS-IS，而是重新拆分步骤，重构成 TO-BE。",
         },
         flow: [
           {
@@ -354,7 +354,7 @@ const SITE = {
             sub: { ko: "서로 비교할 수 있게", en: "So they can be compared", zh: "便于相互比较" },
           },
           {
-            label: { ko: "AI 해석", en: "AI interpretation", zh: "AI 解读" },
+            label: { ko: "LLM 해석", en: "LLM interpretation", zh: "LLM 解读" },
             sub: { ko: "주제 · 첫 장면 · 길이별 성과", en: "Results by topic, opening, length", zh: "按主题 · 开头 · 时长看表现" },
           },
           {
@@ -370,9 +370,9 @@ const SITE = {
           { ko: "YouTube 공식 API로 자동 수집", en: "Automatic collection via the official YouTube API", zh: "通过 YouTube 官方 API 自动采集" },
           { ko: "숫자를 맞춰 정리하는 스크립트", en: "Script that tidies the numbers into one format", zh: "把数字整理成统一格式的脚本" },
           {
-            ko: "영상 유형 분류 기준 통일",
-            en: "One shared way to classify video types",
-            zh: "统一视频类型分类标准",
+            ko: "영상 유형 분류 기준 통일 · 팀 공용",
+            en: "One shared, team-wide way to classify video types",
+            zh: "统一视频类型分类标准 · 团队共用",
           },
           { ko: "리포트 양식 통일", en: "One shared report format", zh: "统一报告格式" },
         ],
@@ -411,11 +411,11 @@ const SITE = {
     {
       id: "lipsync-launch",
       no: "03",
-      tag: { ko: "프로젝트 총괄 · 해외 채널 개설", en: "Project lead · new overseas channel", zh: "项目统筹 · 开设海外频道" },
+      tag: { ko: "AS-IS/TO-BE 재설계 · 3사 프로젝트 리드", en: "AS-IS/TO-BE redesign · 3-company project lead", zh: "AS-IS/TO-BE 重构 · 三方项目主导" },
       title: {
-        ko: "AI 더빙 영어 채널 개설 — 3개 회사 협업 총괄(PM)",
-        en: "Opening an AI-dubbed English channel — leading a three-company collaboration (PM)",
-        zh: "开设 AI 配音英文频道 — 统筹三家公司协作（PM）",
+        ko: "AI 더빙 영어 채널 개설 — 3개 회사 프로세스 재설계 총괄(PM)",
+        en: "Opening an AI-dubbed English channel — leading a three-company process redesign (PM)",
+        zh: "开设 AI 配音英文频道 — 统筹三家公司流程重构（PM）",
       },
       org: {
         ko: "아이스크리에이티브 · 크리에이터광고사업팀",
@@ -429,15 +429,15 @@ const SITE = {
       },
       period: { ko: "2025.10", en: "Oct 2025", zh: "2025.10" },
       oneLiner: {
-        ko: "크리에이터, 광고주, AI 기술 회사 세 곳이 함께 만드는 AI 더빙 영상(입 모양까지 맞춘 다국어 버전)을, '무엇을 합격으로 볼지' 먼저 정하는 방식으로 4주에서 2일로 줄였습니다.",
-        en: "AI-dubbed videos (multilingual versions with matched lip movement) made jointly by a creator, an advertiser and an AI tech company — cut from four weeks to two days by first agreeing on what counts as a pass.",
-        zh: "由创作者、广告主和 AI 技术公司三方共同制作的 AI 配音视频（连口型都对上的多语种版本），通过先确定“什么算合格”，从四周缩短到两天。",
+        ko: "크리에이터, 광고주, AI 기술 회사 세 곳이 함께 만드는 AI 더빙 영상(입 모양까지 맞춘 다국어 버전)을, '무엇을 합격으로 볼지'를 먼저 정하는 TO-BE로 재설계해 4주에서 2일로 줄였습니다.",
+        en: "AI-dubbed videos (multilingual versions with matched lip movement) made jointly by a creator, an advertiser and an AI tech company — I redesigned the process into a TO-BE that fixes what counts as a pass first, cutting four weeks to two days.",
+        zh: "由创作者、广告主和 AI 技术公司三方共同制作的 AI 配音视频（连口型都对上的多语种版本），我把它重构成先确定“什么算合格”的 TO-BE，从四周缩短到两天。",
       },
       problem: {
         lead: {
-          ko: "세 회사가 각자 다른 기준으로 움직이면 일정은 매번 처음부터 다시 잡아야 합니다.",
-          en: "When three companies move on three different standards, the schedule restarts from scratch every time.",
-          zh: "三家公司各按各的标准走，进度每次都得从头再排。",
+          ko: "세 회사가 각자 다른 기준으로 움직이면 일정은 매번 처음부터 다시 잡아야 합니다. AS-IS에는 합격 기준도, 역할 정의도 구두 말고는 없었습니다.",
+          en: "When three companies move on three different standards, the schedule restarts from scratch every time. In the AS-IS there was no pass criteria and no role definition beyond what was said out loud.",
+          zh: "三家公司各按各的标准走，进度每次都得从头再排。AS-IS 里除了口头说法，既没有合格标准，也没有角色定义。",
         },
         bullets: [
           {
@@ -464,9 +464,9 @@ const SITE = {
       },
       rules: {
         lead: {
-          ko: "만들기 전에 '무엇을 합격으로 볼지'를 세 회사가 같은 문장으로 합의했습니다.",
-          en: "Before making anything, all three companies agreed in the same words on what counts as a pass.",
-          zh: "在开始制作之前，三家公司用同一句话确认了“什么算合格”。",
+          ko: "만들기 전에 '무엇을 합격으로 볼지'를 세 회사가 같은 문장으로 합의했습니다. 말로 오가던 AS-IS를 문서 기준의 TO-BE로 바꾼 것이 핵심이었습니다.",
+          en: "Before making anything, all three companies agreed in the same words on what counts as a pass. The key was turning a verbal AS-IS into a documented TO-BE.",
+          zh: "在开始制作之前，三家公司用同一句话确认了“什么算合格”。关键在于把口头流转的 AS-IS 变成有书面标准的 TO-BE。",
         },
         flow: [
           {
@@ -529,9 +529,9 @@ const SITE = {
           },
         ],
         note: {
-          ko: "기준을 먼저 정하는 방식은 이후 다른 협업 프로젝트에도 같은 순서로 적용했습니다.",
-          en: "The criteria-first order became the default for later collaborations too.",
-          zh: "先定标准的做法之后也被按同样顺序用到了其他协作项目上。",
+          ko: "기준을 먼저 정하는 방식은 이후 다른 협업 프로젝트에도 같은 순서(AS-IS → 합격 기준 → TO-BE)로 적용했습니다.",
+          en: "The criteria-first order — AS-IS, then pass criteria, then TO-BE — became the default for later collaborations too.",
+          zh: "先定标准的做法之后也按同一顺序（AS-IS → 合格标准 → TO-BE）用到了其他协作项目。",
         },
       },
     },
@@ -539,7 +539,7 @@ const SITE = {
     {
       id: "news-video",
       no: "04",
-      tag: { ko: "영상 제작 자동화 · 팀 교육", en: "Video production automation · team training", zh: "视频制作自动化 · 团队培训" },
+      tag: { ko: "워크플로우 구축 · 운영 기준 문서화 · 인수인계", en: "Workflow built · operating standards documented · handed over", zh: "搭建工作流 · 文档化运营标准 · 交接" },
       title: {
         ko: "서울경제신문 AI 뉴스 영상 제작 자동화 & 5명에게 인수인계",
         en: "Automating AI news-video production for Seoul Economic Daily & handing it over to five people",
@@ -553,9 +553,9 @@ const SITE = {
       },
       period: { ko: "2024.06 – 2024.11", en: "Jun 2024 – Nov 2024", zh: "2024.06 – 2024.11" },
       oneLiner: {
-        ko: "기사 한 건을 영상으로 만드는 과정을 템플릿과 체크리스트로 정리해, 하루 1편이던 제작을 30분에 1편으로 바꾸고 그 방식을 5명이 이어받게 했습니다.",
-        en: "I organized the article-to-video process into templates and checklists — production went from one video a day to one every 30 minutes, and five people took the method over.",
-        zh: "我把“一篇报道做成一条视频”的过程整理成模板和清单，让一天一条变成 30 分钟一条，并由 5 个人接手了这套方法。",
+        ko: "기사 한 건을 영상으로 만드는 과정을 AS-IS에서 단계별로 다시 나눠 템플릿과 체크리스트로 문서화하고, 하루 1편이던 제작을 30분에 1편으로 바꿔 그 운영 기준을 5명이 이어받게 했습니다.",
+        en: "I re-cut the article-to-video process step by step from the AS-IS and documented it as templates and checklists — production went from one video a day to one every 30 minutes, and five people took the operating standard over.",
+        zh: "我把“一篇报道做成一条视频”的过程从 AS-IS 重新拆成步骤，整理成模板与清单：一天一条变成 30 分钟一条，这套运营标准由 5 个人接手。",
       },
       problem: {
         lead: {
@@ -588,9 +588,9 @@ const SITE = {
       },
       rules: {
         lead: {
-          ko: "기사를 받아 영상을 올리기까지의 단계를 나누고, 단계마다 무엇을 만들어야 하고 어떻게 되면 통과인지 문서로 남겼습니다.",
-          en: "I split the path from receiving an article to uploading the video into steps, and wrote down what each step must produce and what counts as passing.",
-          zh: "我把从拿到报道到上传视频的过程拆成步骤，并写下每一步要产出什么、怎样才算通过。",
+          ko: "기사를 받아 영상을 올리기까지의 단계를 나누고, 단계마다 무엇을 만들어야 하고 어떻게 되면 통과인지 운영 기준으로 문서화했습니다. 사람마다 다르던 AS-IS를 누구나 같은 결과를 내는 TO-BE로 바꾼 것입니다.",
+          en: "I split the path from receiving an article to uploading the video into steps and documented, step by step, what each must produce and what counts as passing. The AS-IS depended on who was doing it; the TO-BE gives anyone the same result.",
+          zh: "我把从拿到报道到上传视频的过程拆成步骤，并把每一步要产出什么、怎样才算通过，写成运营标准。AS-IS 因人而异，TO-BE 让任何人都得到同样的结果。",
         },
         flow: [
           {
@@ -632,9 +632,9 @@ const SITE = {
       },
       impact: {
         lead: {
-          ko: "제가 손을 떼도 같은 품질이 나오도록 기준을 문서로 남기고 팀에 넘겼습니다.",
-          en: "I left the standard in writing and handed it to the team, so the output held without me.",
-          zh: "把标准留在文档里交给团队，我抽手之后产出质量依然稳定。",
+          ko: "제가 손을 떼도 같은 품질이 나오도록 운영 기준을 문서로 남기고 팀에 넘겼습니다. 한 사람의 작업이 팀의 표준으로 바뀐 지점입니다.",
+          en: "I left the operating standard in writing and handed it to the team, so the output held without me. What had been one person's workflow became the team's standard.",
+          zh: "把运营标准留在文档里交给团队，我抽手之后产出质量依然稳定。一个人的工作方式由此变成团队标准。",
         },
         metrics: [
           {
@@ -654,9 +654,9 @@ const SITE = {
           },
         ],
         note: {
-          ko: "인수인계 뒤에도 같은 기준으로 운영되도록 저작권 기준과 체크리스트를 함께 넘겼습니다.",
-          en: "The copyright standards and checklist went with the handover so operations kept the same standard.",
-          zh: "交接时一并交付了版权标准和检查清单，让运营维持同一标准。",
+          ko: "인수인계 뒤에도 같은 기준으로 운영되도록 저작권 기준과 체크리스트를 운영 문서로 함께 넘겼습니다.",
+          en: "The copyright standards and checklist went across as operating documents so operations kept the same standard.",
+          zh: "交接时一并交付了版权标准与检查清单，作为运营文档让流程维持同一标准。",
         },
       },
     },
@@ -680,9 +680,9 @@ const SITE = {
         zh: "金额一超过 2,000 万韩元，AI 就不再定稿，而是显示“暂停”。只有人工确认后才进入下一步。",
       },
       title: {
-        ko: "광고 문의 → 12가지 기준 확인 → 제안서 초안",
-        en: "Ad inquiry → 12 criteria checks → proposal draft",
-        zh: "广告咨询 → 12 项标准检查 → 提案初稿",
+        ko: "광고 문의 → 12가지 운영 기준 자동 검증 → 제안서 초안",
+        en: "Ad inquiry → 12 operating rules checked → proposal draft",
+        zh: "广告咨询 → 12 项运营规则自动校验 → 提案初稿",
       },
       lead: {
         ko: "광고주가 보낸 문의에서 조건을 뽑아 12가지 기준으로 확인하고, 제안서 초안까지 만듭니다. 큰 금액이 걸리면 자동으로 진행하지 않고 사람에게 넘깁니다. 아래 예시 3개를 눌러 보세요.",
@@ -847,21 +847,21 @@ const SITE = {
     },
 
     dashboard: {
-      tab: { ko: "진행 현황판", en: "Status board", zh: "进度看板" },
+      tab: { ko: "운영 대시보드", en: "Ops dashboard", zh: "运营看板" },
       focus: {
         ko: "'승인 대기'인 건은 AI가 보내지 않고 사람에게 넘깁니다. 상단 숫자는 목록에서 자동으로 다시 셉니다.",
         en: "Anything 'awaiting approval' is handed to a person instead of being sent. The counts at the top are recalculated from the list.",
         zh: "处于“待审批”的活动，AI 不会发送，而是交给人。顶部数字会根据列表自动重新统计。",
       },
       title: {
-        ko: "광고 건별 진행 현황판",
-        en: "Per-campaign status board",
-        zh: "各广告进度看板",
+        ko: "광고 건별 실시간 운영 대시보드",
+        en: "Per-campaign real-time operations dashboard",
+        zh: "各广告实时运营看板",
       },
       lead: {
-        ko: "광고 7건이 지금 어느 단계인지 한눈에 봅니다. 단계 버튼으로 걸러 보고, 건을 누르면 요약과 다음 할 일이 열립니다.",
-        en: "See at a glance where each of the seven campaigns stands. Filter with the stage buttons; click a campaign to open its summary and next step.",
-        zh: "一眼看清 7 个广告各自走到哪一步。用阶段按钮筛选，点一个广告就能打开摘要和下一步。",
+        ko: "광고 7건이 지금 어느 단계인지 한 화면에서 봅니다. 단계 버튼으로 걸러 보고, 건을 누르면 요약과 다음 할 일이 열립니다. 상단 숫자는 목록이 바뀌면 바로 다시 계산됩니다.",
+        en: "See where each of the seven campaigns stands on one screen. Filter with the stage buttons; click a campaign to open its summary and next step. The counts at the top recalculate as the list changes.",
+        zh: "一屏看清 7 个广告各自走到哪一步。用阶段按钮筛选，点一个广告就能打开摘要和下一步。列表一变，顶部数字立刻重算。",
       },
       filterAll: { ko: "전체", en: "All", zh: "全部" },
       kpiTotal: { ko: "전체 캠페인", en: "Campaigns", zh: "全部活动" },
@@ -977,21 +977,21 @@ const SITE = {
     },
 
     outreach: {
-      tab: { ko: "해외 제안 메일", en: "Outreach mail", zh: "海外合作邮件" },
+      tab: { ko: "글로벌 아웃리치", en: "Global outreach", zh: "全球外联" },
       focus: {
         ko: "같은 제안 메일을 KO · EN · ZH로 바로 바꿔 볼 수 있습니다. 진행 막대는 파트너마다 어디까지 왔는지 보여 줍니다.",
         en: "Switch the same outreach mail between KO, EN and ZH. Each progress bar shows how far that partner has come.",
         zh: "同一封合作邮件可以直接在 KO · EN · ZH 之间切换。进度条显示每个合作方走到了哪一步。",
       },
       title: {
-        ko: "해외 협업 제안 메일 관리판",
-        en: "Overseas partnership mail board",
-        zh: "海外合作提案邮件看板",
+        ko: "글로벌 파트너 아웃리치 관리판",
+        en: "Global partner outreach board",
+        zh: "全球合作伙伴外联看板",
       },
       lead: {
-        ko: "해외 파트너 5곳에 보낸 협업 제안 메일이 각각 어디까지 왔는지 보고, 같은 메일이 한국어·영어·중국어로 어떻게 나가는지 바꿔 볼 수 있습니다.",
-        en: "See how far the partnership mail to each of five overseas partners has come, and switch the same mail between Korean, English and Chinese.",
-        zh: "查看发给 5 家海外合作方的合作提案邮件各自走到哪一步，并可在韩语、英语、中文之间切换同一封邮件。",
+        ko: "해외 파트너 5곳에 보낸 협업 제안 메일이 각각 어디까지 왔는지 보고, 같은 메일이 한국어·영어·중국어로 어떻게 나가는지 바꿔 볼 수 있습니다. 발송과 팔로업이 손이 아니라 워크플로우로 돌아가는 구조입니다.",
+        en: "See how far the partnership mail to each of five overseas partners has come, and switch the same mail between Korean, English and Chinese. Sending and follow-up run as a workflow, not by hand.",
+        zh: "查看发给 5 家海外合作方的合作提案邮件各自走到哪一步，并可在韩语、英语、中文之间切换同一封邮件。发送与跟进靠工作流运转，不靠手工。",
       },
       partnerHead: { ko: "파트너별 진행 상황", en: "Progress by partner", zh: "各合作方进度" },
       templateHead: { ko: "제안 메일 미리보기", en: "Partnership mail preview", zh: "合作提案邮件预览" },
@@ -1098,11 +1098,11 @@ const SITE = {
   layers: [
     {
       tag: "01 · MODEL",
-      title: { ko: "AI가 판단", en: "AI judges", zh: "AI 判断" },
+      title: { ko: "AI 에이전트가 판단", en: "An AI agent judges", zh: "AI 代理判断" },
       desc: {
-        ko: "규칙으로 다 적을 수 없는 일. 형식이 제각각인 글을 읽고, 초안을 쓰고, 애매한 것을 분류합니다.",
-        en: "The work rules can't fully capture: reading text in every format, writing drafts, sorting out what's ambiguous.",
-        zh: "规则无法完全写下的工作：读懂格式各异的文字、写初稿、给模糊的内容分类。",
+        ko: "규칙으로 다 적을 수 없는 일. 형식이 제각각인 글을 읽고, 초안을 쓰고, 애매한 것을 분류합니다. 프롬프트와 도구로 업무 흐름 안에 붙여 둡니다.",
+        en: "The work rules can't fully capture: reading text in every format, writing drafts, sorting out what's ambiguous — wired into the workflow through prompts and tools.",
+        zh: "规则无法完全写下的工作：读懂格式各异的文字、写初稿、给模糊内容分类——再用提示词与工具接进业务流程。",
       },
       example: {
         ko: "문의 의도 파악 · 초안 작성 · 숫자 해석",
@@ -1112,16 +1112,16 @@ const SITE = {
     },
     {
       tag: "02 · RULES",
-      title: { ko: "규칙으로 고정", en: "Rules hold it", zh: "用规则固化" },
+      title: { ko: "운영 기준으로 고정", en: "Operating rules hold it", zh: "用运营规则固化" },
       desc: {
-        ko: "같은 판단을 두 번 하지 않도록 문서와 코드에 박아 둡니다. 사람이 기억하지 않아도 되게 만드는 일입니다.",
-        en: "Judgments I should never make twice get fixed in documents and code, so no one has to remember them.",
-        zh: "同一种判断不做第二次，把它写进文档和代码，让人不必靠记忆。",
+        ko: "같은 판단을 두 번 하지 않도록 운영 기준을 문서와 코드에 박아 둡니다. 사람이 기억하지 않아도 되고, 팀 공용 표준이 되는 지점입니다.",
+        en: "Judgments I should never make twice get fixed in documents and code as operating rules — no one has to remember them, and they become the team-wide standard.",
+        zh: "同一种判断不做第二次，把运营标准写进文档与代码，让人不必靠记忆，也成为团队共用标准。",
       },
       example: {
-        ko: "판단 기준 12개 · 확인 체크리스트 · 금지 사항 자동 검사",
-        en: "12 criteria · checklists · automatic checks for what's off-limits",
-        zh: "12 条判断标准 · 确认清单 · 禁止事项自动检查",
+        ko: "판단 기준 12개 · 운영 체크리스트 · 금지 사항 자동 검사",
+        en: "12 criteria · operating checklists · automatic checks for what's off-limits",
+        zh: "12 条判断标准 · 运营清单 · 禁止事项自动检查",
       },
     },
     {
@@ -1146,9 +1146,9 @@ const SITE = {
       no: "P1",
       title: { ko: "판단을 세 층으로 나눈다", en: "Split judgment into three layers", zh: "把判断分成三层" },
       body: {
-        ko: "AI가 할 일, 규칙으로 정해 둘 일, 사람이 승인할 일을 처음부터 나눠 둡니다. 그래야 틀렸을 때 어디를 고쳐야 하는지 분명합니다.",
-        en: "What AI does, what becomes a rule and what a person approves are separated from the start, so when something goes wrong it's clear where to fix it.",
-        zh: "AI 要做的、定成规则的、由人审批的，从一开始就分开。这样出错时，改哪里一清二楚。",
+        ko: "AI 에이전트가 할 일, 운영 기준으로 정해 둘 일, 사람이 승인할 일을 처음부터 나눠 둡니다. AS-IS를 뜯을 때 이 셋으로 분해해야 TO-BE가 어디서 달라지는지 분명해집니다.",
+        en: "What an AI agent does, what becomes an operating rule and what a person approves are separated from the start. Taking the AS-IS apart into these three is what makes the TO-BE change clear.",
+        zh: "AI 代理要做的、定成运营标准的、由人审批的，从一开始就分开。拆解 AS-IS 时按这三层分解，TO-BE 到底改在哪里才清楚。",
       },
     },
     {
@@ -1181,9 +1181,9 @@ const SITE = {
         zh: "让人不必靠记忆",
       },
       body: {
-        ko: "하면 안 되는 것과 예외는 문서와 자동 검사로 옮깁니다. 담당자가 바뀌어도 기준은 그대로 남습니다.",
-        en: "What's off-limits and the exceptions move into documents and automatic checks, so the standard stays when the owner changes.",
-        zh: "禁止事项和例外写进文档和自动检查。换了负责人，标准依然留在原地。",
+        ko: "하면 안 되는 것과 예외는 운영 기준 문서와 자동 검사로 옮깁니다. 담당자가 바뀌어도 기준은 그대로 남고, 팀 공용 표준으로 이어집니다.",
+        en: "What's off-limits and the exceptions move into operating documents and automatic checks, so the standard stays when the owner changes and carries on as a team-wide standard.",
+        zh: "禁止事项和例外写进运营文档与自动检查。换了负责人，标准依然留在原地，并延续为团队共用标准。",
       },
     },
     {
@@ -1193,6 +1193,19 @@ const SITE = {
         ko: "AI 결과는 제가 낸 실제 결과물과 반복해서 대조한 뒤에 신뢰합니다. 그 전까지는 후보일 뿐입니다.",
         en: "AI output is trusted only after repeated comparison with the real deliverables I produced. Until then it is a candidate.",
         zh: "AI 的结果要和我实际产出的东西反复对照之后才信任。在那之前它只是候选。",
+      },
+    },
+    {
+      no: "P6",
+      title: {
+        ko: "내 문제에서 끝내지 않는다",
+        en: "Never stop at my own problem",
+        zh: "不止解决自己的问题",
+      },
+      body: {
+        ko: "제 병목을 푼 도구는 동료에게 넘기고, 운영 기준으로 문서화해 조직 단위 실행 속도로 확장합니다. 혼자 쓰는 도구는 성과로 치지 않습니다.",
+        en: "A tool that solved my bottleneck gets handed to the team and documented as an operating standard, so it scales into the organization's execution speed. A tool only I use doesn't count as a result.",
+        zh: "解决我瓶颈的工具交给同事，并整理成运营标准，扩展到组织层面的执行速度。只有我一个人用的工具不算成果。",
       },
     },
   ],
@@ -1206,6 +1219,7 @@ const SITE = {
         "Claude Code",
         "Kiro Crew",
         "Prompt Design",
+        { ko: "LLM 파이프라인 설계", en: "LLM pipeline design", zh: "LLM 流水线设计" },
         { ko: "Eval · 대조 검증", en: "Eval · comparison", zh: "Eval · 对照验证" },
       ],
     },
@@ -1244,9 +1258,9 @@ const SITE = {
           zh: "独自运营最多 30 个美妆、时尚创作者团队",
         },
         {
-          ko: "제각각인 광고 문의를 처리하는 AI 업무 도우미 설계·운영, 판단 기준 12개 문서화, 팀 전체로 확대",
-          en: "Designed and ran an AI work assistant for ad inquiries in every shape; 12 criteria documented and rolled out to the whole team",
-          zh: "设计并运营处理各种广告咨询的 AI 工作助手，12 条判断标准文档化并推广到整个团队",
+          ko: "제각각인 광고 문의를 처리하는 AI 업무 에이전트 설계·구축·현업 적용 — 판단 기준 12개를 운영 기준으로 문서화해 팀 공용 표준화",
+          en: "Designed, built and rolled out an AI work agent for ad inquiries in every shape — 12 criteria documented as operating rules and standardized for the team",
+          zh: "设计、搭建并落地处理各种广告咨询的 AI 工作代理——把 12 条判断标准文档化为运营规则，做成团队共用标准",
         },
       ],
     },
@@ -1256,14 +1270,14 @@ const SITE = {
       role: { ko: "크리에이터광고사업팀", en: "Creator Ads Team", zh: "创作者广告团队" },
       bullets: [
         {
-          ko: "유튜브 데이터 자동 수집 + AI 해석으로 채널 성장 분석 자동화 (2주 → 2일)",
-          en: "Automated channel growth analysis with automatic YouTube data collection + AI interpretation (2 weeks to 2 days)",
-          zh: "用 YouTube 数据自动采集 + AI 解读实现频道增长分析自动化（两周 → 两天）",
+          ko: "YouTube API · LLM 파이프라인으로 채널 성장 분석 자동화 (2주 → 2일)",
+          en: "Automated channel growth analysis with a YouTube API + LLM pipeline (2 weeks to 2 days)",
+          zh: "用 YouTube API · LLM 流水线实现频道增长分析自动化（两周 → 两天）",
         },
         {
-          ko: "3개 회사 협업으로 AI 더빙 영어 채널 @haenibeautyEN 개설 총괄 (4주 → 2일)",
-          en: "Led the three-company launch of the AI-dubbed English channel @haenibeautyEN (4 weeks to 2 days)",
-          zh: "统筹三家公司协作，开设 AI 配音英文频道 @haenibeautyEN（四周 → 两天）",
+          ko: "3개 회사 프로세스 AS-IS/TO-BE 재설계로 AI 더빙 영어 채널 @haenibeautyEN 개설 총괄 (4주 → 2일)",
+          en: "Led the launch of the AI-dubbed English channel @haenibeautyEN by redesigning the three-company process AS-IS/TO-BE (4 weeks to 2 days)",
+          zh: "以三家公司流程的 AS-IS/TO-BE 重构，统筹开设 AI 配音英文频道 @haenibeautyEN（四周 → 两天）",
         },
       ],
     },
@@ -1273,14 +1287,14 @@ const SITE = {
       role: { ko: "프리랜서", en: "Freelance", zh: "自由职业" },
       bullets: [
         {
-          ko: "서울경제신문 AI 뉴스 영상 제작 자동화 — 하루 1편 → 30분에 1편, 5명에게 인수인계",
-          en: "AI news-video production automation for Seoul Economic Daily — 1 a day to 1 every 30 min, handed over to 5 people",
-          zh: "首尔经济新闻 AI 新闻视频制作自动化——一天一条 → 30 分钟一条，交接给 5 人",
+          ko: "서울경제신문 AI 뉴스 영상 제작 워크플로우 구축 — 하루 1편 → 30분에 1편, 운영 기준 문서화 후 5명에게 인수인계",
+          en: "Built an AI news-video production workflow for Seoul Economic Daily — 1 a day to 1 every 30 min, documented and handed over to 5 people",
+          zh: "为首尔经济新闻搭建 AI 新闻视频制作工作流——一天一条 → 30 分钟一条，运营标准文档化后交接给 5 人",
         },
         {
-          ko: "저작권 기준과 최종 확인 체크리스트 마련",
-          en: "Set copyright standards and a final-check checklist",
-          zh: "制定版权标准与最终确认清单",
+          ko: "저작권 기준과 최종 확인 체크리스트를 운영 기준으로 문서화",
+          en: "Documented copyright standards and a final-check checklist as operating rules",
+          zh: "把版权标准与最终确认清单整理成运营标准",
         },
       ],
     },
