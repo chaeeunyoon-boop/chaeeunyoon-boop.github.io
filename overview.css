@@ -10,7 +10,7 @@ html, body { overflow-x: clip; }
 .ov-main {
   display: flex;
   flex-direction: column;
-  min-height: calc(100dvh - 66px);
+  min-height: calc(100dvh - 67px);
   max-width: 1440px;
   padding-top: 12px;
   padding-bottom: 14px;
@@ -195,7 +195,7 @@ html, body { overflow-x: clip; }
   min-width: 0;
 }
 
-.ov-grp { display: flex; flex-direction: column; justify-content: center; min-width: 0; }
+.ov-grp { display: flex; flex-direction: column; justify-content: flex-start; min-width: 0; }
 
 .ov-grp__head {
   position: relative;
