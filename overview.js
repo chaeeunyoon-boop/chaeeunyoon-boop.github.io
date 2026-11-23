@@ -787,7 +787,7 @@
   function chipBox(list, accent) {
     var box = elx("div", "ov-chips");
     list.forEach(function (c) {
-      var s = elx("span", accent ? "is-accent" : null, c);
+      var s = elx("span", accent ? "is-accent" : null, L(c));
       box.appendChild(s);
     });
     return box;
