@@ -1,12 +1,13 @@
 /* =============================================================
    overview.js — 한 페이지 요약 지도(overview.html)
-   · 중심(허브) → 6개 갈래 → 세부 노드로 이어지는 지도를 그리고,
-     SVG 연결선 위로 빛이 흐르게 합니다.
-   · 노드를 누르면 오른쪽 인스펙터(모바일에선 카드 안)에 상세가 열립니다.
-   · KO / EN / ZH, 라이트·다크 전환은 기존 포폴(data.js/app.js)과
-     같은 저장 키(ax.lang, ax.theme)를 씁니다.
-   · 숫자·경력·스택·데모 문구는 data.js의 SITE에서 그대로 읽어 옵니다.
-     (data.js를 고치면 이 페이지도 같이 바뀝니다.)
+   · 중심(윤채은)에서 6개 갈래로 뻗는 지도를 그리고, 세부 항목까지
+     처음부터 전부 펼쳐 보여 줍니다. 눌러서 열 것이 없습니다.
+   · 이야기 구조: 왜 만들었나(내 문제 → 동료 → 조직) →
+     개인 병목 → 동료·TF 협업 → 조직 성과 → 안전장치·스택 → 경력·다음.
+   · SVG 연결선 위로 빛 점이 흐르고, 마우스를 올린 갈래만 은은하게
+     강조됩니다. (클릭·아코디언·자동 투어 없음)
+   · KO / EN / ZH, 라이트·다크 전환은 기존 포폴과 같은 저장 키
+     (ax.lang, ax.theme)를 씁니다.
    ============================================================= */
 
 (function () {
@@ -16,18 +17,12 @@
   var LANG_ATTR = { ko: "ko", en: "en", zh: "zh-Hans" };
   var STORE = { lang: "ax.lang", theme: "ax.theme" };
   var NS = "http://www.w3.org/2000/svg";
-  var S = typeof SITE !== "undefined" ? SITE : null;
   var reduceMotion =
     window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  var state = {
-    lang: pickLang(),
-    theme: pickTheme(),
-    sel: null,      // null | { kind:"group", g } | { kind:"child", g, i }
-    tourId: null,
-  };
-  var hover = null;
-  var wires = [];   // { path, circle, len, off }
+  var state = { lang: pickLang(), theme: pickTheme() };
+  var hover = null;      // 호버 중인 갈래 id
+  var wires = [];        // { path, len, off, dot }
 
   /* ---------------- 저장값 / 언어 ---------------- */
   function pickLang() {
@@ -66,15 +61,6 @@
     return fallback || "";
   }
 
-  function get(fn, fallback) {
-    try {
-      var v = fn();
-      return v == null ? fallback : v;
-    } catch (e) {
-      return fallback;
-    }
-  }
-
   /* ---------------- UI 문구 ---------------- */
   var UI = {
     docTitle: {
@@ -85,381 +71,394 @@
     skip: { ko: "본문으로 건너뛰기", en: "Skip to content", zh: "跳到正文" },
     brandSub: { ko: "한 페이지 요약", en: "ONE-PAGE OVERVIEW", zh: "一页概览" },
     backMain: { ko: "← 메인 포폴", en: "← Main portfolio", zh: "← 主页作品集" },
-    backDemos: { ko: "데모", en: "Demos", zh: "演示" },
-    barLabel: { ko: "HUB & SPOKE · 한 페이지 요약", en: "HUB & SPOKE · one-page overview", zh: "HUB & SPOKE · 一页概览" },
-    showAll: { ko: "전체 보기", en: "Show all", zh: "查看全部" },
-    tour: { ko: "자동 투어", en: "Auto tour", zh: "自动巡览" },
-    pause: { ko: "일시정지", en: "Pause", zh: "暂停" },
-    hint: { ko: "노드를 눌러 자세히 보기", en: "Click a node for detail", zh: "点节点看详情" },
-    foot: {
-      ko: "메인 포트폴리오의 공개 내용에서 요약했습니다 · 회사 내부 자료·비공개 데이터는 넣지 않았습니다",
-      en: "Summarised from the public portfolio · no company-internal or private data",
-      zh: "内容摘自公开的作品集主页 · 不含公司内部资料与非公开数据",
+    backDemos: { ko: "라이브 데모", en: "Live demos", zh: "实时演示" },
+    barLabel: {
+      ko: "HUB & SPOKE · 한 페이지 요약",
+      en: "HUB & SPOKE · one-page overview",
+      zh: "HUB & SPOKE · 一页概览",
     },
-    names: { ko: "윤채은", en: "Chaeeun Yun", zh: "Chaeeun Yun" },
-    role: { ko: "AX Builder · Problem Solver", en: "AX Builder · Problem Solver", zh: "AX 构建者 · 问题解决者" },
-    hubEyebrow: { ko: "HUB · 중심", en: "HUB · centre", zh: "HUB · 中心" },
-    roleHead: { ko: "프로필", en: "Profile", zh: "简介" },
+    barHint: {
+      ko: "클릭 없이 한 화면에서 · 01 내 문제 → 02 동료 → 03 조직 순서로 읽으면 됩니다",
+      en: "Nothing to click · read 01 my problem → 02 my team → 03 the company",
+      zh: "无需点击，一屏读完 · 按 01 我的问题 → 02 同事 → 03 组织 的顺序看",
+    },
+    foot: {
+      ko: "메인 포트폴리오의 공개 내용에서 요약했습니다 · 회사 내부 자료·비공개 데이터는 넣지 않았습니다 · 데모는 모두 가상 데이터입니다",
+      en: "Summarised from the public portfolio · no company-internal or private data · all demos use fictional data",
+      zh: "摘要自公开的作品集 · 不含公司内部资料与非公开数据 · 演示均使用虚构数据",
+    },
     mapLabel: { ko: "한 페이지 요약 지도", en: "One-page overview map", zh: "一页概览地图" },
-    hubAria: { ko: "중심 · 윤채은 요약으로 돌아가기", en: "Centre · back to the Chaeeun Yun summary", zh: "中心 · 回到 Chaeeun Yun 概览" },
-    roleValue: {
+    hubAria: { ko: "중심 · 윤채은 요약", en: "Centre · Chaeeun Yun summary", zh: "中心 · Chaeeun Yun 概览" },
+    name: { ko: "윤채은", en: "Chaeeun Yun", zh: "Chaeeun Yun" },
+    role: {
+      ko: "AX 빌더 · 크리에이터 마케팅 매니저",
+      en: "AX builder · creator marketing manager",
+      zh: "AX 构建者 · 创作者营销经理",
+    },
+    subtitle: {
       ko: "Influencer Marketing Manager @ Onthelook",
       en: "Influencer Marketing Manager @ Onthelook",
       zh: "Influencer Marketing Manager @ Onthelook",
     },
-    quickHead: { ko: "바꾸기 전 → 후", en: "Before → after", zh: "之前 → 之后" },
-    contactHead: { ko: "연락", en: "Contact", zh: "联系" },
-    hubNote: {
-      ko: "지도에서 갈래나 노드를 누르면 그 자리에서 자세히 볼 수 있습니다. 가운데 카드를 누르면 이 화면으로 돌아옵니다.",
-      en: "Click a branch or a node to read the detail in place. The centre card brings you back here.",
-      zh: "点一个分支或节点，就能在这里看到细节。点中间的卡片回到这一页。",
+    pitch: {
+      ko: "반복 업무를 AI 도구로 자동화해 팀 시간을 아끼고, 누구나 이어받을 수 있게 만듭니다.",
+      en: "I automate repetitive work with AI tools, save the team hours, and leave behind something anyone can pick up.",
+      zh: "用 AI 工具自动化重复工作，为团队省下时间，并留下任何人都能接手的东西。",
     },
-    inThisHead: { ko: "이 안에", en: "Inside", zh: "包含" },
-    keyHead: { ko: "핵심", en: "Key", zh: "要点" },
-    backAll: { ko: "← 전체 보기", en: "← Show all", zh: "← 查看全部" },
-    backGroup: { ko: "← 갈래로", en: "← Back to branch", zh: "← 回到分支" },
-    openInSite: { ko: "메인 포폴에서 보기", en: "Open on the main site", zh: "在主页中查看" },
-    fictional: { ko: "가상 데이터", en: "Fictional data", zh: "虚构数据" },
+    scaleLine: {
+      ko: "내 문제 → 동료의 문제 → 조직의 문제",
+      en: "my problem → my team's → the company's",
+      zh: "我的问题 → 同事的 → 组织的",
+    },
     statCareer: { ko: "경력", en: "CAREER", zh: "经历" },
-    statCases: { ko: "케이스", en: "CASES", zh: "案例" },
-    statDemos: { ko: "데모", en: "DEMOS", zh: "演示" },
+    statProposal: { ko: "광고 제안서", en: "AD PROPOSAL", zh: "广告提案" },
+    statAnalysis: { ko: "채널 성장 분석", en: "CHANNEL ANALYSIS", zh: "频道增长分析" },
   };
 
+  /* ---------------- 허브 수치 ---------------- */
+  var STATS = [
+    { l: UI.statCareer, v: { ko: "4년 4개월", en: "4 yr 4 mo", zh: "4 年 4 个月" } },
+    { l: UI.statProposal, v: { ko: "1시간 → 3~5분", en: "1 hr → 3–5 min", zh: "1 小时 → 3~5 分钟" } },
+    { l: UI.statAnalysis, v: { ko: "2주 → 2일", en: "2 wks → 2 days", zh: "2 周 → 2 天" } },
+  ];
+
   /* ---------------- 지도 내용 ----------------
-     group = { id, side, tag, title, lead, link{label,href}, bullets[], chips[],
-               children[{ label, lead, bullets[{k,v}], chips[], href, tag }] }
-     숫자·문구의 출처는 data.js(SITE). 연출용 짧은 라벨만 여기서 씁니다. */
-  function buildGroups() {
-    return [gRoles(), gBuilds(), gOps(), gStack(), gImpact(), gNext()];
-  }
-
-  function caseOf(i) {
-    return get(function () { return S.cases[i]; }, null);
-  }
-  function firstMetric(c) {
-    return get(function () { return c.impact.metrics[0]; }, null);
-  }
-  function metricPair(c) {
-    var m = firstMetric(c);
-    if (!m) return { label: L(c && c.title), pair: "", sub: "" };
-    return {
-      pair: L(m.before) + " → " + L(m.after),
-      sub: L(m.label),
-      label: L(m.before) + " → " + L(m.after),
-    };
-  }
-
-  /* 01 · 지금 하는 일 */
-  function gRoles() {
-    return {
-      id: "roles",
+     kid = { step?, label, desc?, chips? }
+     · step  : 이야기 단계 배지 (문제 / 해결 / 결과 …)
+     · label : 한 줄 제목
+     · desc  : 막힌 것 → AI로 푼 방식 → 누가 어떻게 달라졌는지
+     처음부터 전부 펼쳐져 있고, 눌러야 열리는 것은 없습니다. */
+  var CONTENT = [
+    {
+      id: "why",
       side: "left",
-      tag: "01 · ROLES",
-      title: { ko: "지금 하는 일", en: "What I do now", zh: "现在做的事" },
-      lead: {
-        ko: "온더룩 MCN팀에서 크리에이터를 맡으면서, 그 업무 옆에서 AI 도구를 만듭니다.",
-        en: "I look after creators on the MCN team at Onthelook, and build AI tools alongside that work.",
-        zh: "在 Onthelook 的 MCN 团队负责创作者，同时在这份工作旁边做 AI 工具。",
+      tag: "01 · WHY",
+      title: { ko: "왜 AI를 만드나", en: "Why I build this", zh: "为什么做 AI 工具" },
+      kids: [
+        {
+          step: { ko: "내 문제", en: "Me", zh: "我的问题" },
+          label: {
+            ko: "같은 판단을 하루에도 몇 번씩",
+            en: "The same call, several times a day",
+            zh: "同一种判断一天要做好几次",
+          },
+          desc: {
+            ko: "광고 문의는 매번 형식이 다르고 기준은 머릿속에만 있어, 같은 판단을 반복하며 시간을 썼습니다.",
+            en: "Every ad inquiry came in a different shape and the criteria lived only in my head, so I re-decided the same thing again and again.",
+            zh: "广告咨询每次格式都不同，标准只在我脑子里，同一种判断要反复做，时间就这样耗掉。",
+          },
+        },
+        {
+          step: { ko: "동료", en: "Team", zh: "同事" },
+          label: {
+            ko: "같은 일이 팀의 확인 업무로 커짐",
+            en: "The same work grew into the team's checking",
+            zh: "同一件事变成团队的确认工作",
+          },
+          desc: {
+            ko: "응대 현황이 카톡·메일에 흩어져, 동료들이 매번 물어보고 다시 찾아야 했습니다.",
+            en: "Status sat scattered across chat and mail, so teammates had to ask and dig it out every time.",
+            zh: "进度散落在聊天和邮件里，同事每次都要问一遍、再找一遍。",
+          },
+        },
+        {
+          step: { ko: "조직", en: "Company", zh: "组织" },
+          label: {
+            ko: "회사도 같은 곳에서 반복해서 막힘",
+            en: "The company got stuck in the same places",
+            zh: "公司也在同样的地方反复卡住",
+          },
+          desc: {
+            ko: "채널 성장 분석·해외 진출처럼 조직이 되풀이해 시간을 쓰는 일도 같은 방식으로 풀 수 있었습니다.",
+            en: "Channel growth analysis and going overseas burned the same hours over and over — the same approach could fix those too.",
+            zh: "频道增长分析、海外拓展这类组织反复耗时间的事，也能用同一种方式解决。",
+          },
+        },
+      ],
+      note: {
+        ko: "한 사람의 병목을 도구로 바꾸면, 팀과 회사의 실행 속도가 함께 올라갑니다.",
+        en: "Turn one person's bottleneck into a tool, and the team's and the company's speed rise together.",
+        zh: "把一个人的瓶颈变成工具，团队和公司的执行速度就会一起提升。",
       },
-      link: { href: "./#career", label: { ko: "경력 타임라인", en: "Career timeline", zh: "完整履历" } },
-      bullets: [
-        { k: { ko: "경력", en: "Experience", zh: "经历" }, v: { ko: "4년 4개월", en: "4 yr 4 mo", zh: "4 年 4 个月" } },
-        { k: { ko: "현재", en: "Now", zh: "现在" }, v: { ko: "온더룩 MCN팀 매니저 · 2026.02 –", en: "MCN Team Manager, Onthelook · 2026.02 –", zh: "Onthelook MCN 团队经理 · 2026.02 –" } },
-        { k: { ko: "담당", en: "Scope", zh: "负责范围" }, v: { ko: "뷰티·패션 크리에이터 최대 30팀", en: "Up to 30 beauty & fashion creator teams", zh: "最多 30 个美妆·时尚创作者团队" } },
-      ],
-      children: [
-        {
-          label: { ko: "크리에이터 마케팅 4년 4개월", en: "4 yr 4 mo in creator marketing", zh: "4 年 4 个月的创作者营销" },
-          lead: {
-            ko: "샌드박스네트워크에서 크리에이터 12팀 매니지먼트로 시작해, 올투원, 아이스크리에이티브를 거쳐 지금 온더룩 MCN팀까지 크리에이터 마케팅 실무를 이어 왔습니다.",
-            en: "It started with managing 12 creator teams at Sandbox Network, then Alltoone and Ice Creative, and now the MCN team at Onthelook.",
-            zh: "从 Sandbox Network 管理 12 个创作者团队开始，经过 Alltoone、Ice Creative，到现在 Onthelook 的 MCN 团队，一直在做创作者营销实务。",
-          },
-          bullets: [
-            { k: { ko: "총 경력", en: "Total", zh: "总经历" }, v: { ko: "4년 4개월", en: "4 years 4 months", zh: "4 年 4 个月" } },
-            { k: { ko: "지나온 곳", en: "Where", zh: "走过的地方" }, v: { ko: "샌드박스네트워크 → 올투원 → 아이스크리에이티브 → 온더룩", en: "Sandbox Network → Alltoone → Ice Creative → Onthelook", zh: "Sandbox Network → Alltoone → Ice Creative → Onthelook" } },
-          ],
-          chips: [
-            { ko: "크리에이터 매니지먼트", en: "Creator management", zh: "创作者经纪" },
-            { ko: "캠페인 운영", en: "Campaign ops", zh: "活动运营" },
-            { ko: "섭외 · 정산", en: "Casting · payments", zh: "邀约 · 结算" },
-          ],
-          href: "./#career",
-        },
-        {
-          label: { ko: "뷰티·패션 크리에이터 최대 30팀", en: "Up to 30 beauty & fashion creators", zh: "最多 30 个美妆·时尚创作者" },
-          lead: {
-            ko: "유튜버·인플루언서 최대 30팀을 단독으로 운영합니다. 광고 문의, 섭외, 정산, 리포트가 한 사람에게 모이는 구조라 반복되는 일이 생기기 쉬운 자리입니다.",
-            en: "I run up to 30 YouTuber and influencer teams on my own. Inquiries, casting, payments and reports all land on one person — the kind of seat where repeated work piles up.",
-            zh: "独自运营最多 30 个 YouTuber 和网红团队。广告咨询、邀约、结算、报告都集中在一个人身上，这种位置很容易长出重复的工作。",
-          },
-          bullets: [
-            { k: { ko: "형태", en: "Shape", zh: "形态" }, v: { ko: "유튜버 · 인플루언서 팀 단위 운영", en: "YouTuber and influencer teams", zh: "以 YouTuber、网红团队为单位" } },
-          ],
-          chips: [
-            { ko: "콘텐츠 검수", en: "Content review", zh: "内容审核" },
-            { ko: "대금 정산", en: "Payments", zh: "款项结算" },
-            { ko: "리포트", en: "Reporting", zh: "报告" },
-          ],
-        },
-        {
-          label: { ko: "AI 업무 도우미를 직접 만든다", en: "I build the AI tools myself", zh: "亲手做 AI 工作工具" },
-          lead: {
-            ko: "반복해서 막히는 일을 판단 기준으로 옮기고, 매일 쓰이는 도구로 만듭니다. 기획서로 끝내지 않고 실제로 돌아가고 다른 사람이 이어받을 수 있는 형태까지 갑니다.",
-            en: "I turn the work that keeps getting stuck into criteria, then into a tool that gets used every day — not a proposal, but something that runs and that someone else can take over.",
-            zh: "把反复卡住的工作变成判断标准，再做成每天在用的工具。不停在方案上，而是一直做到真正能运行、别人也能接手。",
-          },
-          bullets: [
-            { k: { ko: "결과", en: "Result", zh: "结果" }, v: { ko: "제안서 초안 1시간 → 3~5분", en: "Proposal draft: 1 hr → 3–5 min", zh: "提案初稿：1 小时 → 3~5 分钟" } },
-            { k: { ko: "형태", en: "Shape", zh: "形态" }, v: { ko: "판단 기준 12개 문서화", en: "12 criteria written down", zh: "12 条判断标准写成文档" } },
-          ],
-          chips: [
-            { ko: "규칙 설계", en: "Rule design", zh: "规则设计" },
-            { ko: "사람 확인 지점", en: "Human checkpoints", zh: "人工确认点" },
-          ],
-          href: "./#cases",
-        },
-      ],
-    };
-  }
-
-  /* 02 · 직접 만든 것 (라이브 데모 3종) */
-  function gBuilds() {
-    var sim = get(function () { return S.demos.simulator; }, {});
-    var dash = get(function () { return S.demos.dashboard; }, {});
-    var out = get(function () { return S.demos.outreach; }, {});
-    var fic = L(UI.fictional);
-
-    return {
-      id: "builds",
+    },
+    {
+      id: "work",
       side: "left",
-      tag: "02 · BUILDS",
-      title: { ko: "직접 만든 것", en: "What I built", zh: "亲手做的东西" },
-      lead: {
-        ko: "실제 업무에서 만든 방식을 100% 가상 데이터로 옮겨 사이트에 올렸습니다. 아래 데모에서 직접 눌러 볼 수 있습니다.",
-        en: "The approach built at work, moved onto this site with 100% fictional data. You can click through all three below.",
-        zh: "把工作中做出来的方式，用 100% 虚构数据搬到了网站上。下面三个都能亲手点。",
-      },
-      link: { href: "./#demos", label: { ko: "라이브 데모 3종", en: "The three live demos", zh: "三个实时演示" } },
-      bullets: [
-        { k: { ko: "데이터", en: "Data", zh: "数据" }, v: { ko: "모두 가상 · 서버 호출·저장 없음", en: "All fictional · no server calls, no storage", zh: "全部虚构 · 不调用服务器、不保存" } },
-        { k: { ko: "지키는 선", en: "The line", zh: "守住的线" }, v: { ko: "금액과 외부 발송은 사람이 확인", en: "Money and outbound sends get a human check", zh: "金额和对外发送必须由人确认" } },
-      ],
-      chips: [{ ko: "가상 데이터", en: "Fictional data", zh: "虚构数据" }],
-      children: [
+      tag: "02 · MY WORK",
+      title: { ko: "개인·실무 병목 해결", en: "My own bottleneck", zh: "解决个人实务瓶颈" },
+      kids: [
         {
-          label: { ko: "문의 → 12개 기준 → 제안서 초안", en: "Inquiry → 12 checks → proposal draft", zh: "咨询 → 12 项检查 → 提案初稿" },
-          lead: L(get(function () { return sim.lead; }, null), ""),
-          bullets: [
-            { k: { ko: "기준", en: "Checks", zh: "标准" }, v: { ko: "12개 (카테고리·예산·타깃·권리 등)", en: "12 (category, budget, target, rights and more)", zh: "12 项（品类、预算、目标、权利等）" } },
-            { k: { ko: "멈추는 곳", en: "Stops at", zh: "停下的地方" }, v: { ko: "2,000만원 초과 금액 · 성과 연동 지급", en: "Amounts over ₩20M · performance-based payment", zh: "超过 2,000 万韩元的金额 · 按效果付款" } },
-          ],
-          chips: [{ ko: "12개 기준", en: "12 criteria", zh: "12 项标准" }, { ko: "사람 승인", en: "Human approval", zh: "人工审批" }, { ko: fic }],
-          href: "./#demos",
-          tag: "DEMO 01",
+          step: { ko: "문제", en: "Problem", zh: "问题" },
+          label: {
+            ko: "비정형 광고 문의, 제안서 한 건에 1시간",
+            en: "Unstructured inquiries — an hour per proposal",
+            zh: "格式各异的咨询，一份提案要 1 小时",
+          },
+          desc: {
+            ko: "문의마다 형식이 달라 매번 처음부터 판단하고, 초안을 쓰고 다시 고치는 데 1시간이 들었습니다.",
+            en: "Each inquiry meant judging from scratch, drafting, then fixing again — an hour for every proposal.",
+            zh: "每条咨询格式都不同，每次都要从头判断、写初稿再修改，一份要 1 小时。",
+          },
         },
         {
-          label: { ko: "광고 건별 진행 현황판", en: "Per-campaign status board", zh: "各广告进度看板" },
-          lead: L(get(function () { return dash.lead; }, null), ""),
-          bullets: [
-            { k: { ko: "단계", en: "Stages", zh: "阶段" }, v: { ko: "신규 문의 → 금액 협의 → 검토 → 승인 대기 → 계약 → 지급 → 완료", en: "New inquiry → amount talks → fit check → awaiting approval → contracting → payment → closed", zh: "新咨询 → 金额协商 → 确认 → 待审批 → 签约 → 付款 → 完成" } },
-            { k: { ko: "원칙", en: "Rule", zh: "规则" }, v: { ko: "'승인 대기'는 AI가 보내지 않고 사람에게 넘깁니다", en: "'Awaiting approval' is handed to a person, never sent by AI", zh: "“待审批”不会由 AI 发出，而是交给人" } },
-          ],
-          chips: [{ ko: "상태 칸반", en: "Status kanban", zh: "状态看板" }, { ko: "숫자 자동 재계산", en: "Auto-recounted KPIs", zh: "数字自动重算" }, { ko: fic }],
-          href: "./#demos",
-          tag: "DEMO 02",
+          step: { ko: "해결", en: "Fix", zh: "解决" },
+          label: {
+            ko: "12개 기준으로 먼저 판정, 초안은 AI가",
+            en: "12 criteria judge first; AI writes the draft",
+            zh: "先用 12 项标准判断，初稿交给 AI",
+          },
+          desc: {
+            ko: "머릿속 기준 12개를 규칙으로 적어 AI에 맡기고, 저는 초안을 확인하는 일만 남겼습니다.",
+            en: "I wrote the twelve criteria in my head into rules and handed them to AI; my part became reviewing the draft.",
+            zh: "我把脑子里的 12 条标准写成规则交给 AI，自己只负责确认初稿。",
+          },
         },
         {
-          label: { ko: "해외 협업 제안 메일 관리판", en: "Overseas outreach mail board", zh: "海外合作邮件看板" },
-          lead: L(get(function () { return out.lead; }, null), ""),
-          bullets: [
-            { k: { ko: "범위", en: "Scope", zh: "范围" }, v: { ko: "해외 파트너 5곳의 진행 단계", en: "Progress across five overseas partners", zh: "5 家海外合作方的进度" } },
-            { k: { ko: "언어", en: "Language", zh: "语言" }, v: { ko: "같은 메일을 KO · EN · ZH로 전환", en: "One mail, switched across KO · EN · ZH", zh: "同一封邮件在 KO · EN · ZH 之间切换" } },
-          ],
-          chips: [{ ko: "3개 언어 템플릿", en: "Templates in 3 languages", zh: "三语模板" }, { ko: "발송 전 검토", en: "Review before sending", zh: "发送前审阅" }, { ko: fic }],
-          href: "./#demos",
-          tag: "DEMO 03",
+          step: { ko: "결과", en: "Result", zh: "结果" },
+          label: {
+            ko: "1시간 → 3~5분, 팀 누구나 같은 품질",
+            en: "1 hr → 3–5 min, same quality for anyone",
+            zh: "1 小时 → 3~5 分钟，谁用都是同一水准",
+          },
+          desc: {
+            ko: "고액·예외 건은 사람이 승인하도록 멈춤 조건을 고정해, 팀원 누구나 같은 기준으로 씁니다.",
+            en: "Stop conditions are fixed — high-value and exception cases go to a person — so every teammate gets the same result.",
+            zh: "把停下来的条件固定住——大额与例外由人审批——团队任何人用都得到同一水准的结果。",
+          },
         },
       ],
-    };
-  }
-
-  /* 03 · 판단의 세 층 */
-  function gOps() {
-    var layers = get(function () { return S.layers; }, []);
-    var principles = get(function () { return S.principles; }, []);
-    var kids = layers.map(function (ly) {
-      return {
-        label: L(ly.title),
-        lead: L(ly.desc),
-        tag: ly.tag,
-        bullets: [{ k: { ko: "예", en: "Example", zh: "例子" }, v: L(ly.example) }],
-        chips: [],
-      };
-    });
-
-    return {
-      id: "ops",
+    },
+    {
+      id: "team",
       side: "left",
-      tag: "03 · JUDGMENT",
-      title: { ko: "판단의 세 층", en: "Three layers of judgment", zh: "判断的三层" },
-      lead: L(get(function () { return S.ui.principlesLead; }, null), ""),
-      link: { href: "./#principles", label: { ko: "원칙 5개", en: "The five principles", zh: "五条原则" } },
-      bullets: [],
-      chips: principles.map(function (p) { return L(p.title); }),
-      children: kids,
-    };
-  }
-
-  /* 04 · 쓰는 도구 */
-  function gStack() {
-    var stack = get(function () { return S.stack; }, []);
-    var leads = [
-      { ko: "판단과 초안은 모델에 맡기고, 결과는 제가 낸 최종본과 대조해 검증합니다.", en: "Judgment and drafts go to the model; results are checked against the final drafts I wrote.", zh: "判断和初稿交给模型，结果与我写的最终版对照验证。" },
-      { ko: "데이터 수집과 정리는 스크립트가 맡고, 무엇을 볼지는 규칙으로 정해 둡니다.", en: "Scripts collect and tidy the data; what to look at is fixed as a rule.", zh: "数据的采集和整理交给脚本，看什么由规则定。" },
-      { ko: "정적 결과물을 S3 · CloudFront와 GitHub Pages로 배포합니다.", en: "Static output is deployed on S3 · CloudFront and GitHub Pages.", zh: "静态成果通过 S3 · CloudFront 和 GitHub Pages 部署。" },
-      { ko: "사람이 이미 쓰는 메일·메신저·시트에서 읽어 오고, 새 입력 칸을 만들지 않습니다.", en: "It reads from the mail, messenger and sheets people already use, and never adds new fields.", zh: "从大家本来就在用的邮件、聊天和表格里读取，不新增填写栏位。" },
-    ];
-    var kids = stack.map(function (row, i) {
-      return {
-        label: L(row.group),
-        lead: leads[i] || "",
-        bullets: [],
-        chips: (row.items || []).map(function (it) { return L(it); }),
-      };
-    });
-
-    return {
-      id: "stack",
-      side: "right",
-      tag: "04 · STACK",
-      title: { ko: "쓰는 도구", en: "The stack", zh: "在用的工具" },
-      lead: L(get(function () { return S.ui.stackNote; }, null), ""),
-      bullets: [],
-      chips: [],
-      children: kids,
-    };
-  }
-
-  /* 05 · 측정한 숫자 */
-  function gImpact() {
-    var cases = get(function () { return S.cases; }, []);
-    var ev = get(function () { return S.demos.evidence; }, null);
-    var kids = cases.map(function (c) {
-      var m = firstMetric(c);
-      return {
-        label: m ? L(m.before) + " → " + L(m.after) : L(c.title),
-        lead: L(c.title),
-        tag: c.no,
-        bullets: [
-          { k: { ko: "무엇", en: "What", zh: "对象" }, v: m ? L(m.label) : "" },
-          { k: { ko: "소속 · 기간", en: "Where · when", zh: "单位 · 期间" }, v: L(c.org) + " · " + L(c.period) },
-        ],
-        chips: [],
-        href: "./#cases",
-      };
-    });
-
-    return {
-      id: "impact",
-      side: "right",
-      tag: "05 · IMPACT",
-      title: { ko: "측정한 숫자", en: "Measured numbers", zh: "测出来的数字" },
-      lead: {
-        ko: "실제 업무에서 측정한 값만 넣었습니다. 재보지 않은 값은 채우지 않았습니다.",
-        en: "Only what was measured at work. Numbers never measured are left out.",
-        zh: "只放工作中实际测量过的数字。没测过的就不填。",
-      },
-      link: { href: "./#cases", label: { ko: "케이스 4건", en: "The four cases", zh: "四个案例" } },
-      bullets: [],
-      chips: get(function () {
-        return ev.stats.map(function (st) { return st.value + " · " + L(st.label); });
-      }, []),
-      note: get(function () { return L(ev.note); }, ""),
-      children: kids,
-    };
-  }
-
-  /* 06 · 경력과 다음 */
-  function gNext() {
-    var tl = get(function () { return S.timeline; }, []);
-    var path = tl.map(function (row) {
-      return { k: L(row.period), v: L(row.org) + " · " + L(row.role) };
-    });
-
-    return {
-      id: "next",
-      side: "right",
-      tag: "06 · NEXT",
-      title: { ko: "경력과 다음", en: "Career & what's next", zh: "履历与下一步" },
-      lead: {
-        ko: "현장에서 배운 것을 다음 현장의 구조로 옮기는 일을 하고 싶습니다.",
-        en: "I want to carry what I learned on the ground into the structure of the next one.",
-        zh: "我想把现场学到的东西，变成下一个现场的结构。",
-      },
-      link: { href: "./#contact", label: { ko: "연락하기", en: "Get in touch", zh: "联系我" } },
-      bullets: [
-        { k: { ko: "지향", en: "Direction", zh: "方向" }, v: { ko: "AX · 빌더형 문제해결사", en: "AX · a builder-style problem solver", zh: "AX · 构建型问题解决者" } },
-      ],
-      chips: [],
-      children: [
+      tag: "03 · TEAM",
+      title: { ko: "동료·TF팀 협업 해결", en: "The team's problem", zh: "解决同事·TF 协作问题" },
+      kids: [
         {
-          label: { ko: "지나온 길", en: "The path so far", zh: "走过的路" },
-          lead: {
-            ko: "크리에이터 매니지먼트에서 시작해, 반복해서 막히는 일을 숫자로 보고 구조로 옮기는 쪽으로 옮겨 왔습니다.",
-            en: "From creator management, I moved toward seeing the work that kept getting stuck in numbers and turning it into structure.",
-            zh: "从创作者经纪开始，逐渐转向把反复卡住的工作看成数字、再变成结构。",
+          step: { ko: "문제", en: "Problem", zh: "问题" },
+          label: {
+            ko: "현황이 카톡·메일에 흩어져 매번 확인",
+            en: "Status scattered across chat and mail",
+            zh: "进度散落在聊天和邮件里，每次都要确认",
           },
-          bullets: path,
-          chips: [],
+          desc: {
+            ko: "광고주 응대가 어디까지 갔는지 아무도 한눈에 못 봐, 회의마다 확인에 시간이 들었습니다.",
+            en: "Nobody could see how far each client conversation had gone, so every meeting started with asking around.",
+            zh: "广告主的沟通进行到哪一步没人一眼看得到，每次会议都先花时间确认。",
+          },
         },
         {
-          label: { ko: "지금", en: "Now", zh: "现在" },
-          lead: {
-            ko: "실무에서 반복되는 판단을 규칙과 자동화로 옮기고, 그 결과를 숫자로 확인하는 일을 하고 있습니다.",
-            en: "I move repeated judgment at work into rules and automation, then check the result in numbers.",
-            zh: "把工作中重复的判断变成规则和自动化，再用数字确认结果。",
+          step: { ko: "해결", en: "Fix", zh: "解决" },
+          label: {
+            ko: "광고 건별 실시간 현황판을 직접 제작",
+            en: "A live status board for every deal",
+            zh: "亲手做每个广告的实时看板",
           },
-          bullets: [],
-          chips: [
-            { ko: "규칙화", en: "Rule-making", zh: "规则化" },
-            { ko: "자동화", en: "Automation", zh: "自动化" },
-            { ko: "측정", en: "Measurement", zh: "测量" },
-          ],
+          desc: {
+            ko: "문의부터 정산까지 7단계를 한 화면에 모으고, 상태가 바뀌면 숫자까지 다시 계산됩니다.",
+            en: "Seven stages from inquiry to payment on one screen; the numbers recalculate as statuses change.",
+            zh: "从咨询到结算七个阶段收在一屏，状态一变，数字也自动重算。",
+          },
         },
         {
-          label: { ko: "다음 목표 · 소통 AI 에이전트", en: "Next · a communication AI agent", zh: "下一步 · 沟通型 AI 智能体" },
-          lead: {
-            ko: "서로 다른 맥락의 사람과 사람을 잇고, 교육·기회의 사각지대를 푸는 '소통' AI 에이전트를 만들고 싶습니다. 지금 하는 일이 그 출발점입니다.",
-            en: "I want to build a 'communication' AI agent that connects people from different contexts and closes the blind spots in education and opportunity. The work I do now is where that starts.",
-            zh: "我想做一个“沟通型”AI 智能体，把处在不同语境中的人连接起来，补上教育和机会上的盲区。现在做的事就是起点。",
+          step: { ko: "결과", en: "Result", zh: "结果" },
+          label: {
+            ko: "묻기 전에 다 보이고, 인수인계는 링크 하나",
+            en: "Visible before anyone asks; handover is one link",
+            zh: "不用问就看得见，交接只需一个链接",
           },
-          bullets: [],
-          chips: [
-            { ko: "소통 AI 에이전트", en: "Communication AI agent", zh: "沟通型 AI 智能体" },
-            { ko: "교육 · 기회", en: "Education · opportunity", zh: "教育 · 机会" },
-          ],
-          href: "./#contact",
+          desc: {
+            ko: "팀과 TF가 같은 화면을 보며 일해, 담당자가 바뀌어도 흐름이 끊기지 않습니다.",
+            en: "Team and task force work from the same screen, so nothing breaks when the owner changes.",
+            zh: "团队与 TF 看同一屏工作，负责人换了流程也不断。",
+          },
         },
       ],
-    };
-  }
+    },
+    {
+      id: "org",
+      side: "right",
+      tag: "04 · COMPANY",
+      title: { ko: "조직 단위 확장·성과", en: "At the company level", zh: "组织层面的成果" },
+      kids: [
+        {
+          label: {
+            ko: "채널 성장 분석 2주 → 2일",
+            en: "Channel growth analysis: 2 wks → 2 days",
+            zh: "频道增长分析：2 周 → 2 天",
+          },
+          desc: {
+            ko: "손으로 모으던 유튜브 데이터 수집·해석을 자동화해, 기획이 2주를 기다리지 않게 했습니다. (아이스크리에이티브)",
+            en: "YouTube data collection and interpretation automated, so planning no longer waits two weeks. (Ice Creative)",
+            zh: "把人工收集的 YouTube 数据采集与解读自动化，策划不必再等两周。（Ice Creative）",
+          },
+        },
+        {
+          label: {
+            ko: "AI 더빙 해외 채널 개설 4주 → 2일",
+            en: "AI-dubbed overseas channel: 4 wks → 2 days",
+            zh: "AI 配音海外频道开设：4 周 → 2 天",
+          },
+          desc: {
+            ko: "3사가 얽힌 개설 절차를 하나의 워크플로로 정리해, 영어 채널 @haenibeautyEN을 이틀 만에 열었습니다.",
+            en: "The three-company launch steps became one workflow; the English channel @haenibeautyEN opened in two days.",
+            zh: "把三家公司交错的开设流程整理成一个工作流，英文频道 @haenibeautyEN 两天就上线。",
+          },
+        },
+        {
+          label: {
+            ko: "해외 파트너 메일, 반복 업무에서 제외",
+            en: "Overseas partner mail off the repeat list",
+            zh: "海外伙伴邮件，不再靠手工重复",
+          },
+          desc: {
+            ko: "KO·EN·ZH 전환과 발송 전 검토를 붙여, 해외 컨택이 손이 아니라 규칙으로 돌아갑니다.",
+            en: "KO · EN · ZH switching plus a check before sending, so outreach runs on rules, not on hands.",
+            zh: "接上 KO · EN · ZH 切换和发送前确认，海外联络靠规则运行，不再靠手工。",
+          },
+        },
+        {
+          label: {
+            ko: "콘텐츠 제작 하루 1편 → 30분에 1편",
+            en: "Content: 1 a day → 1 every 30 min",
+            zh: "内容制作：每天 1 条 → 30 分钟 1 条",
+          },
+          desc: {
+            ko: "서울경제신문 AI 뉴스 영상 제작을 자동화하고 5명에게 넘겨, 제가 없어도 돌아가게 했습니다. (올투원)",
+            en: "AI news-video production for Seoul Economic Daily automated and handed to five people, so it runs without me. (Alltoone)",
+            zh: "首尔经济新闻 AI 新闻视频制作自动化并交给 5 人，没有我也能运转。（Alltoone）",
+          },
+        },
+      ],
+    },
+    {
+      id: "safety",
+      side: "right",
+      tag: "05 · SAFETY",
+      title: { ko: "안전장치 · 기술 스택", en: "Safeguards & stack", zh: "安全线与技术栈" },
+      kids: [
+        {
+          label: {
+            ko: "AI는 초안과 분류까지만",
+            en: "AI drafts and sorts — nothing more",
+            zh: "AI 只写初稿、只做分类",
+          },
+          desc: {
+            ko: "최종 판단과 발송은 사람이 합니다. AI가 고객에게 바로 나가는 경로는 두지 않았습니다.",
+            en: "The final call and the send stay with a person; there is no path from AI straight to a client.",
+            zh: "最终判断和发送都由人来做，没有 AI 直接发给客户的路径。",
+          },
+        },
+        {
+          label: {
+            ko: "12개 규칙 검증 + 예외는 사람 승인",
+            en: "12 rules, and a human for exceptions",
+            zh: "12 条规则校验 + 例外交人审批",
+          },
+          desc: {
+            ko: "카테고리·예산·타깃·권리 등 12개를 통과해야 다음 단계로. 2,000만 원 초과·성과 연동 지급은 자동으로 넘어가지 않습니다.",
+            en: "Category, budget, target, rights and more must pass first. Deals over ₩20M or paid on performance never auto-approve.",
+            zh: "品类、预算、对象、权利等 12 项通过才进下一步；超过 2,000 万韩元、按效果付款不会自动放行。",
+          },
+        },
+        {
+          label: { ko: "기술 스택", en: "Stack", zh: "技术栈" },
+          clusters: [
+            {
+              name: { ko: "AI · LLM", en: "AI · LLM", zh: "AI · LLM" },
+              items: "Claude API · Claude Code · Kiro Crew · 프롬프트 설계",
+              itemsEn: "Claude API · Claude Code · Kiro Crew · prompt design",
+              itemsZh: "Claude API · Claude Code · Kiro Crew · 提示词设计",
+            },
+            {
+              name: { ko: "데이터 · 개발", en: "Data · build", zh: "数据 · 开发" },
+              items: "Python · YouTube Data API · HTML/CSS/JS · Git",
+              itemsEn: "Python · YouTube Data API · HTML/CSS/JS · Git",
+              itemsZh: "Python · YouTube Data API · HTML/CSS/JS · Git",
+            },
+            {
+              name: { ko: "인프라", en: "Infrastructure", zh: "基础设施" },
+              items: "AWS S3 · CloudFront · GitHub Pages",
+              itemsEn: "AWS S3 · CloudFront · GitHub Pages",
+              itemsZh: "AWS S3 · CloudFront · GitHub Pages",
+            },
+            {
+              name: { ko: "운영", en: "Ops", zh: "运营" },
+              items: "Google Workspace · 시트 자동화 · 정기 배치",
+              itemsEn: "Google Workspace · sheet automation · scheduled jobs",
+              itemsZh: "Google Workspace · 表格自动化 · 定时批处理",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: "career",
+      side: "right",
+      tag: "06 · CAREER",
+      title: { ko: "경력 & 다음 목표", en: "Career & what's next", zh: "履历与下一步" },
+      kids: [
+        {
+          label: {
+            ko: "지나온 길 (2022.05 –)",
+            en: "The path so far (2022.05 –)",
+            zh: "走过的路（2022.05 –）",
+          },
+          desc: {
+            ko: "샌드박스네트워크 → 올투원 → 아이스크리에이티브 → 온더룩, 4년 4개월.",
+            en: "Sandbox Network → Alltoone → Ice Creative → Onthelook, four years four months.",
+            zh: "Sandbox Network → Alltoone → Ice Creative → Onthelook，4 年 4 个月。",
+          },
+        },
+        {
+          label: {
+            ko: "현재 · 온더룩 MCN팀 매니저",
+            en: "Now · MCN Team Manager at Onthelook",
+            zh: "现在 · Onthelook MCN 团队经理",
+          },
+          desc: {
+            ko: "뷰티·패션 크리에이터 최대 30팀과, 팀의 반복 업무를 함께 맡고 있습니다.",
+            en: "Up to 30 beauty and fashion creator teams, plus the team's repeated work.",
+            zh: "最多 30 个美妆·时尚创作者团队，以及团队的重复工作。",
+          },
+        },
+        {
+          label: {
+            ko: "다음 목표 · 소통 AI 에이전트",
+            en: "Next · a communication AI agent",
+            zh: "下一步 · 沟通型 AI 智能体",
+          },
+          desc: {
+            ko: "서로 다른 맥락의 사람을 잇고, 교육·기회의 사각지대를 푸는 일을 하려 합니다.",
+            en: "Connecting people from different contexts, and closing gaps in education and opportunity.",
+            zh: "连接处在不同语境中的人，补上教育与机会的盲区。",
+          },
+        },
+      ],
+    },
+  ];
 
   /* ---------------- DOM ---------------- */
+  var CANVAS_W = 1360;
+  var stageWrap = document.getElementById("ovStageWrap");
+  var footEl = document.querySelector(".ov-foot");
   var mapEl = document.getElementById("ovMap");
   var wiresEl = document.getElementById("ovWires");
   var wingL = document.getElementById("wingLeft");
   var wingR = document.getElementById("wingRight");
   var hubEl = document.getElementById("ovHub");
-  var hubStatus = document.getElementById("ovHubStatus");
+  var hubName = document.getElementById("ovHubName");
+  var hubRole = document.getElementById("ovHubRole");
+  var hubTitle = document.getElementById("ovHubTitle");
+  var hubPitch = document.getElementById("ovHubPitch");
   var hubStats = document.getElementById("ovHubStats");
-  var inspEl = document.getElementById("ovInsp");
-  var barHint = document.getElementById("ovHint");
-  var btnAll = document.getElementById("btnAll");
-  var btnTour = document.getElementById("btnTour");
-  var tourLabel = btnTour ? btnTour.querySelector("[data-i18n='tour']") : null;
 
-  var groups = [];
+  function elx(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
 
   /* ---------------- 렌더 ---------------- */
   function applyStatic() {
@@ -469,130 +468,123 @@
     });
     document.title = L(UI.docTitle);
     document.documentElement.lang = LANG_ATTR[state.lang];
-    document.documentElement.setAttribute("data-theme", state.theme);
     document.querySelectorAll(".seg__btn").forEach(function (b) {
       var on = b.getAttribute("data-lang") === state.lang;
       b.classList.toggle("is-active", on);
       b.setAttribute("aria-pressed", on ? "true" : "false");
     });
-    if (barHint) barHint.textContent = L(UI.hint);
-    if (tourLabel) tourLabel.textContent = L(state.tourId ? UI.pause : UI.tour);
   }
 
   function renderHub() {
     if (!hubEl) return;
-    hubEl.querySelector(".ov-hub__name").textContent = L(UI.names);
-    hubEl.querySelector(".ov-hub__role").textContent = L(UI.role);
-    hubStatus.textContent = L(get(function () { return S.ui.heroStatus; }, null), "");
+    hubName.textContent = L(UI.name);
+    hubRole.textContent = L(UI.role);
+    hubTitle.textContent = L(UI.subtitle);
+    hubPitch.textContent = L(UI.pitch);
+    hubEl.setAttribute("aria-label", L(UI.hubAria));
 
     hubStats.innerHTML = "";
-    var cases = get(function () { return S.cases.length; }, 4);
-    var demos = 3;
-    [
-      { v: L({ ko: "4년 4개월", en: "4y 4mo", zh: "4 年 4 个月" }), l: L(UI.statCareer) },
-      { v: String(cases), l: L(UI.statCases) },
-      { v: String(demos), l: L(UI.statDemos) },
-    ].forEach(function (st) {
-      var box = document.createElement("span");
-      box.className = "ov-hub__stat";
-      var b = document.createElement("b");
-      b.textContent = st.v;
-      var s = document.createElement("span");
-      s.textContent = st.l;
-      box.appendChild(b);
-      box.appendChild(s);
-      hubStats.appendChild(box);
+    STATS.forEach(function (st) {
+      var row = elx("span", "ov-hub__stat");
+      row.appendChild(elx("span", "ov-hub__stat-l", L(st.l)));
+      row.appendChild(elx("b", "ov-hub__stat-v", L(st.v)));
+      hubStats.appendChild(row);
     });
   }
 
-  function groupNode(g) {
-    var root = document.createElement("div");
-    root.className = "ov-grp";
+  function kidRow(k) {
+    var row = elx("div", "ov-kid");
+    row.appendChild(elx("span", "ov-kid__bullet"));
+
+    var body = elx("div", "ov-kid__body");
+    var line = elx("div", "ov-kid__line");
+    if (k.step) line.appendChild(elx("span", "ov-kid__step", L(k.step)));
+    line.appendChild(elx("span", "ov-kid__label", L(k.label)));
+    body.appendChild(line);
+
+    if (k.desc) body.appendChild(elx("p", "ov-kid__desc", L(k.desc)));
+
+    if (k.clusters) {
+      var box = elx("div", "ov-clusters");
+      k.clusters.forEach(function (c) {
+        var item = elx("span", "ov-cluster");
+        item.appendChild(elx("b", null, L(c.name)));
+        item.appendChild(
+          elx("span", null, state.lang === "zh" ? c.itemsZh : state.lang === "en" ? c.itemsEn : c.items)
+        );
+        box.appendChild(item);
+      });
+      body.appendChild(box);
+    }
+
+    row.appendChild(body);
+    return row;
+  }
+
+  function groupCard(g) {
+    var root = elx("article", "ov-grp");
     root.dataset.group = g.id;
 
-    var head = document.createElement("button");
-    head.type = "button";
-    head.className = "ov-grp__head";
-    head.dataset.group = g.id;
-    head.setAttribute("aria-expanded", "false");
-
-    var tag = document.createElement("span");
-    tag.className = "ov-grp__tag";
-    tag.textContent = g.tag;
-
-    var title = document.createElement("span");
-    title.className = "ov-grp__title";
-    title.textContent = L(g.title);
-
-    var caret = document.createElement("span");
-    caret.className = "ov-grp__caret";
-    caret.setAttribute("aria-hidden", "true");
-    caret.textContent = "›";
-
-    head.appendChild(tag);
-    head.appendChild(title);
-    head.appendChild(caret);
+    var head = elx("div", "ov-grp__head");
+    head.appendChild(elx("span", "ov-grp__tag", g.tag));
+    head.appendChild(elx("span", "ov-grp__title", L(g.title)));
     root.appendChild(head);
 
-    var kids = document.createElement("div");
-    kids.className = "ov-grp__kids";
-    g.children.forEach(function (c, i) {
-      var b = document.createElement("button");
-      b.type = "button";
-      b.className = "ov-kid";
-      b.dataset.group = g.id;
-      b.dataset.idx = String(i);
-
-      var dot = document.createElement("span");
-      dot.className = "ov-kid__bullet";
-      dot.setAttribute("aria-hidden", "true");
-
-      var lab = document.createElement("span");
-      lab.className = "ov-kid__label";
-      lab.textContent = L(c.label);
-
-      b.appendChild(dot);
-      b.appendChild(lab);
-      kids.appendChild(b);
-    });
+    var kids = elx("div", "ov-grp__kids");
+    g.kids.forEach(function (k) { kids.appendChild(kidRow(k)); });
     root.appendChild(kids);
 
-    var panel = document.createElement("div");
-    panel.className = "ov-grp__panel";
-    root.appendChild(panel);
-
+    if (g.note) {
+      var note = elx("p", "ov-grp__note");
+      note.appendChild(elx("span", null, L(g.note)));
+      root.appendChild(note);
+    }
     return root;
   }
 
   function renderMap() {
-    groups = buildGroups();
     if (mapEl) mapEl.setAttribute("aria-label", L(UI.mapLabel));
-    if (hubEl) hubEl.setAttribute("aria-label", L(UI.hubAria));
     if (wingL) wingL.innerHTML = "";
     if (wingR) wingR.innerHTML = "";
-    groups.forEach(function (g) {
-      var node = groupNode(g);
-      (g.side === "left" ? wingL : wingR).appendChild(node);
+    CONTENT.forEach(function (g) {
+      (g.side === "left" ? wingL : wingR).appendChild(groupCard(g));
     });
     renderHub();
   }
 
+  /* ---------------- 캔버스 맞춤 ----------------
+     PC와 모바일이 같은 1360px 캔버스를 보고, 화면 폭·높이에 맞춰
+     통째로 비율 축소합니다. 컨테이너 높이도 같은 비율로 줄여
+     아래에 빈 여백이 남지 않게 합니다. */
+  function fit() {
+    if (!mapEl || !stageWrap) return 1;
+    var natural = mapEl.offsetHeight || 760;
+    var availW = stageWrap.clientWidth;
+    var top = stageWrap.getBoundingClientRect().top;
+    var footH = footEl ? footEl.getBoundingClientRect().height : 0;
+    var availH = window.innerHeight - top - footH - 14;
+    var s = Math.min(availW / CANVAS_W, availH > 0 ? availH / natural : 1, 1);
+    if (!isFinite(s) || s <= 0) s = 1;
+    s = Math.max(s, 0.12);
+    mapEl.style.transform = "scale(" + s.toFixed(4) + ")";
+    stageWrap.style.height = Math.round(natural * s) + "px";
+    return s;
+  }
+
   /* ---------------- 연결선 ---------------- */
-  function rectOf(el) {
-    var m = mapEl.getBoundingClientRect();
+  function relRect(el, s, m) {
     var r = el.getBoundingClientRect();
     return {
-      l: r.left - m.left,
-      r: r.right - m.left,
-      t: r.top - m.top,
-      b: r.bottom - m.top,
-      cx: r.left - m.left + r.width / 2,
-      cy: r.top - m.top + r.height / 2,
-      h: r.height,
+      l: (r.left - m.left) / s,
+      r: (r.right - m.left) / s,
+      t: (r.top - m.top) / s,
+      b: (r.bottom - m.top) / s,
+      cy: (r.top - m.top + r.height / 2) / s,
+      h: r.height / s,
     };
   }
 
-  function mkPath(d, cls, key) {
+  function mkPath(d, cls) {
     var p = document.createElementNS(NS, "path");
     p.setAttribute("d", d);
     p.setAttribute("class", cls);
@@ -600,426 +592,145 @@
   }
 
   function drawWires() {
-    if (!mapEl || !wiresEl) return;
+    if (!mapEl || !wiresEl || !hubEl) return;
     var m = mapEl.getBoundingClientRect();
+    var w = mapEl.offsetWidth;
+    var h = mapEl.offsetHeight;
+    var s = w ? m.width / w : 1;
+    if (!s) s = 1;
     wires.length = 0;
     while (wiresEl.firstChild) wiresEl.removeChild(wiresEl.firstChild);
-    if (m.width < 40 || !hubEl) return;
+    if (w < 40) return;
 
-    wiresEl.setAttribute("viewBox", "0 0 " + m.width + " " + m.height);
+    wiresEl.setAttribute("viewBox", "0 0 " + w + " " + h);
 
-    var hub = rectOf(hubEl);
-    var sides = { left: [], right: [] };
-    groups.forEach(function (g) {
-      var root = mapEl.querySelector('.ov-grp[data-group="' + g.id + '"]');
-      if (!root) return;
-      sides[g.side].push({
-        g: g,
-        head: root.querySelector(".ov-grp__head"),
-        kids: Array.prototype.slice.call(root.querySelectorAll(".ov-kid")),
-      });
+    var hub = relRect(hubEl, s, m);
+    var bySide = { left: [], right: [] };
+    CONTENT.forEach(function (g) {
+      var card = mapEl.querySelector('.ov-grp[data-group="' + g.id + '"]');
+      if (card) bySide[g.side].push(card);
     });
 
     ["left", "right"].forEach(function (side) {
-      var list = sides[side];
-      var n = list.length;
-      list.forEach(function (item, i) {
-        var head = rectOf(item.head);
-        var spread = Math.min(30, hub.h * 0.16);
+      var cards = bySide[side];
+      var n = cards.length;
+      cards.forEach(function (card, i) {
+        var head = relRect(card.querySelector(".ov-grp__head"), s, m);
+        var spread = Math.min(38, hub.h * 0.22);
         var offset = n > 1 ? (i - (n - 1) / 2) * spread : 0;
         var x1 = side === "left" ? hub.l - 2 : hub.r + 2;
         var y1 = hub.cy + offset;
         var x2 = side === "left" ? head.r + 2 : head.l - 2;
         var y2 = head.cy;
-        var dx = (x2 - x1) * 0.55;
-        var d = "M" + x1 + "," + y1 + " C" + (x1 + dx) + "," + y1 + " " + (x2 - dx) + "," + y2 + " " + x2 + "," + y2;
+        var dx = Math.abs(x2 - x1) * 0.55;
+        var d =
+          "M" + x1 + "," + y1 +
+          " C" + (x1 + (side === "left" ? -dx : dx)) + "," + y1 + " " +
+          (x2 + (side === "left" ? dx : -dx)) + "," + y2 + " " +
+          x2 + "," + y2;
 
-        var key = "g:" + item.g.id;
         var grp = document.createElementNS(NS, "g");
         grp.setAttribute("class", "ov-wire");
-        grp.dataset.wire = key;
+        grp.dataset.wire = "g:" + card.dataset.group;
         grp.appendChild(mkPath(d, "ov-wire__base"));
-        grp.appendChild(mkPath(d, "ov-wire__flow"));
-
+        var flow = mkPath(d, "ov-wire__flow");
+        grp.appendChild(flow);
         var dot = document.createElementNS(NS, "circle");
         dot.setAttribute("r", "2.6");
         dot.setAttribute("class", "ov-wire__dot");
         grp.appendChild(dot);
         wiresEl.appendChild(grp);
+        wires.push({ path: flow, dot: dot, len: 0, off: (i * 0.27 + (side === "right" ? 0.45 : 0)) % 1 });
 
-        var flowPath = grp.querySelector(".ov-wire__flow");
-        wires.push({
-          path: flowPath,
-          circle: dot,
-          len: 0,
-          off: (i * 0.29 + (side === "right" ? 0.5 : 0)) % 1,
-        });
-
-        /* 갈래 → 세부 노드: 줄기에서 각 칩으로 짧게 갈라집니다 */
-        var trunkX = side === "left" ? head.r : head.l;
+        /* 카드 안쪽 가장자리를 따라 세부 항목으로 갈라지는 짧은 가지 */
+        var cardBox = relRect(card, s, m);
+        var inner = side === "left" ? cardBox.r : cardBox.l;
         var sgn = side === "left" ? -1 : 1;
-        item.kids.forEach(function (kid, ki) {
-          var kr = rectOf(kid);
-          var edge = side === "left" ? kr.r : kr.l;
-          var y = kr.cy;
-          var r = Math.min(7, Math.abs(edge - trunkX) / 2);
-          var top = Math.min(head.b, y);
-          var d2 =
-            "M" + trunkX + "," + head.b +
-            " V" + (y - r) +
-            " Q" + trunkX + "," + y + " " + (trunkX + sgn * r) + "," + y +
-            " H" + edge;
-          if (top > y - r) d2 = "M" + trunkX + "," + head.b + " L" + edge + "," + y;
+        var railX = inner + sgn * 6;
+        var kidEls = Array.prototype.slice.call(card.querySelectorAll(".ov-kid"));
+        if (!kidEls.length) return;
+        var first = relRect(kidEls[0], s, m);
+        var last = relRect(kidEls[kidEls.length - 1], s, m);
 
-          var key2 = "c:" + item.g.id + ":" + ki;
-          var grp2 = document.createElementNS(NS, "g");
-          grp2.setAttribute("class", "ov-wire ov-wire--kid");
-          grp2.dataset.wire = key2;
-          grp2.appendChild(mkPath(d2, "ov-wire__base"));
-          grp2.appendChild(mkPath(d2, "ov-wire__flow"));
-          wiresEl.appendChild(grp2);
+        var g2 = document.createElementNS(NS, "g");
+        g2.setAttribute("class", "ov-wire ov-wire--kid");
+        g2.dataset.wire = "c:" + card.dataset.group;
+        g2.appendChild(mkPath("M" + railX + "," + first.cy + " V" + last.cy, "ov-wire__rail"));
+        kidEls.forEach(function (kid) {
+          var kr = relRect(kid, s, m);
+          g2.appendChild(mkPath("M" + railX + "," + kr.cy + " H" + (inner + sgn * 0.5), "ov-wire__tick"));
         });
+        wiresEl.appendChild(g2);
       });
     });
 
     wires.forEach(function (w) {
       try { w.len = w.path.getTotalLength(); } catch (e) { w.len = 0; }
     });
-    paint();
+    paintWires();
+    placeDots();
   }
 
   var rafId = null;
   function loop(ts) {
     if (!reduceMotion) {
       wires.forEach(function (w) {
-        if (!w.len) return;
+        if (!w.len || !w.dot) return;
         var t = ((ts / 6400 + w.off) % 1) * w.len;
         try {
           var p = w.path.getPointAtLength(t);
-          w.circle.setAttribute("cx", p.x.toFixed(1));
-          w.circle.setAttribute("cy", p.y.toFixed(1));
+          w.dot.setAttribute("cx", p.x.toFixed(1));
+          w.dot.setAttribute("cy", p.y.toFixed(1));
         } catch (e) {}
       });
     }
     rafId = requestAnimationFrame(loop);
   }
 
-  /* ---------------- 선택 / 강조 ---------------- */
-  function paint() {
-    var focus = hover || state.sel;
-    document.querySelectorAll(".ov-grp").forEach(function (el) {
-      el.classList.toggle("is-active", !!state.sel && state.sel.g === el.dataset.group);
-    });
-    document.querySelectorAll(".ov-kid").forEach(function (el) {
-      el.classList.toggle(
-        "is-active",
-        !!state.sel && state.sel.kind === "child" && state.sel.g === el.dataset.group && Number(el.dataset.idx) === state.sel.i
-      );
-    });
-    if (hubEl) hubEl.classList.toggle("is-active", !state.sel);
+  function placeDots() {
+    if (reduceMotion) {
+      wires.forEach(function (w) {
+        if (!w.len || !w.dot) return;
+        try {
+          var p = w.path.getPointAtLength(w.len * w.off);
+          w.dot.setAttribute("cx", p.x.toFixed(1));
+          w.dot.setAttribute("cy", p.y.toFixed(1));
+        } catch (e) {}
+      });
+    }
+  }
 
+  function paintWires() {
+    if (!wiresEl) return;
     wiresEl.querySelectorAll(".ov-wire").forEach(function (w) {
-      var key = w.dataset.wire || "";
-      var parts = key.split(":");
-      var hot = false;
-      if (focus) {
-        if (parts[0] === "g") hot = parts[1] === focus.g;
-        else hot = parts[1] === focus.g && (focus.i == null || Number(parts[2]) === focus.i);
-      }
-      w.classList.toggle("is-hot", !!hot);
-      w.classList.toggle("is-dim", !!focus && !hot);
+      var gid = (w.dataset.wire || "").split(":")[1];
+      var hot = !!hover && gid === hover;
+      w.classList.toggle("is-hot", hot);
+      w.classList.toggle("is-dim", !!hover && !hot);
     });
+    if (hubEl) hubEl.classList.toggle("is-focus", !!hover);
   }
 
-  function isMobile() {
-    return window.matchMedia("(max-width: 1080px)").matches;
-  }
-
-  function openGroup(id) {
-    document.querySelectorAll(".ov-grp").forEach(function (el) {
-      var on = el.dataset.group === id;
-      el.classList.toggle("is-open", on);
-      var h = el.querySelector(".ov-grp__head");
-      if (h) h.setAttribute("aria-expanded", on ? "true" : "false");
-      if (!on) {
-        var p = el.querySelector(".ov-grp__panel");
-        if (p) p.innerHTML = "";
-      }
-    });
-  }
-
-  function select(sel, fromTour) {
-    if (!fromTour) stopTour();
-    state.sel = sel;
-    if (isMobile()) {
-      if (sel) openGroup(sel.g);
-      else document.querySelectorAll(".ov-grp").forEach(function (el) { el.classList.remove("is-open"); });
-    }
-    paint();
-    renderInspector();
-    if (isMobile()) fillPanels();
-  }
-
-  /* ---------------- 인스펙터 내용 ---------------- */
-  function elx(tag, cls, text) {
-    var n = document.createElement(tag);
-    if (cls) n.className = cls;
-    if (text != null) n.textContent = text;
-    return n;
-  }
-
-  function eyebrow(tag, extra) {
-    var e = elx("p", "ov-insp__eyebrow");
-    var t = elx("span", null, tag);
-    e.appendChild(t);
-    if (extra) e.appendChild(elx("span", null, "·"));
-    if (extra) e.appendChild(elx("span", null, extra));
-    return e;
-  }
-
-  function rows(list) {
-    var box = elx("div");
-    list.forEach(function (r) {
-      var row = elx("div", "ov-row");
-      row.appendChild(elx("span", "ov-row__k", r.k));
-      row.appendChild(elx("span", "ov-row__v", r.v));
-      box.appendChild(row);
-    });
-    return box;
-  }
-
-  function chipBox(list, accent) {
-    var box = elx("div", "ov-chips");
-    list.forEach(function (c) {
-      var s = elx("span", accent ? "is-accent" : null, L(c));
-      box.appendChild(s);
-    });
-    return box;
-  }
-
-  function block(headText, node) {
-    var b = elx("div", "ov-insp__block");
-    if (headText) b.appendChild(elx("p", "ov-insp__blockhead", headText));
-    b.appendChild(node);
-    return b;
-  }
-
-  function linkNode(href, text) {
-    var a = elx("a", "ov-insp__link", text);
-    a.href = href;
-    if (/^https?:/.test(href)) {
-      a.target = "_blank";
-      a.rel = "noopener";
-    }
-    var arrow = elx("span", null, "→");
-    a.appendChild(arrow);
-    return a;
-  }
-
-  function detailNodes(compact) {
-    var out = [];
-    var sel = state.sel;
-    var g = null;
-    if (sel) {
-      g = groups.filter(function (x) { return x.id === sel.g; })[0] || null;
-    }
-
-    if (!sel) {
-      /* 허브 요약 */
-      out.push(eyebrow(L(UI.hubEyebrow)));
-      var t = elx("h2", "ov-insp__title", L(UI.names));
-      out.push(t);
-      out.push(elx("p", "ov-insp__lead", L(get(function () { return S.ui.heroSub; }, null), "")));
-      out.push(block(L(UI.roleHead), rows([
-        { k: "TITLE", v: L(UI.roleValue) },
-        { k: L(UI.statCareer), v: L({ ko: "4년 4개월 · 2022.05 –", en: "4 yr 4 mo · 2022.05 –", zh: "4 年 4 个月 · 2022.05 –" }) },
-      ])));
-
-      var metrics = get(function () { return S.metrics; }, []);
-      if (metrics.length) {
-        out.push(block(L(UI.quickHead), rows(metrics.map(function (m) {
-          return { k: L(m.label), v: L(m.before) + " → " + L(m.after) };
-        }))));
-      }
-
-      var contact = get(function () { return S.contact; }, []);
-      if (contact.length) {
-        var box = elx("div");
-        contact.forEach(function (c) {
-          var a = elx("a", "ov-row");
-          a.href = c.href;
-          if (/^https?:/.test(c.href)) { a.target = "_blank"; a.rel = "noopener"; }
-          a.appendChild(elx("span", "ov-row__k", c.key));
-          a.appendChild(elx("span", "ov-row__v", c.value));
-          a.style.textDecoration = "none";
-          box.appendChild(a);
-        });
-        out.push(block(L(UI.contactHead), box));
-      }
-      out.push(elx("p", "ov-insp__note", L(UI.hubNote)));
-      return out;
-    }
-
-    if (!g) return out;
-
-    if (sel.kind === "group") {
-      if (!compact) {
-        var back = elx("button", "ov-insp__back", L(UI.backAll));
-        back.type = "button";
-        back.addEventListener("click", function () { select(null); });
-        out.push(back);
-      }
-      out.push(eyebrow(g.tag));
-      out.push(elx("h2", "ov-insp__title", L(g.title)));
-      out.push(elx("p", "ov-insp__lead", L(g.lead)));
-
-      if (g.bullets && g.bullets.length) {
-        out.push(block(L(UI.keyHead), rows(g.bullets.map(function (b) {
-          return { k: L(b.k), v: L(b.v) };
-        }))));
-      }
-
-      var jump = elx("div");
-      g.children.forEach(function (c, i) {
-        var b = elx("button", "ov-jump", L(c.label));
-        b.type = "button";
-        b.addEventListener("click", function () {
-          select({ kind: "child", g: g.id, i: i });
-        });
-        jump.appendChild(b);
-      });
-      out.push(block(L(UI.inThisHead), jump));
-
-      if (g.chips && g.chips.length) out.push(block(null, chipBox(g.chips, true)));
-      if (g.note) out.push(elx("p", "ov-insp__note", g.note));
-      if (g.link) out.push(linkNode(g.link.href, L(g.link.label)));
-      return out;
-    }
-
-    /* 세부 노드 */
-    var c = g.children[sel.i];
-    if (!c) return out;
-    if (!compact) {
-      var backG = elx("button", "ov-insp__back", L(UI.backGroup));
-      backG.type = "button";
-      backG.addEventListener("click", function () {
-        select({ kind: "group", g: g.id });
-      });
-      out.push(backG);
-    }
-    out.push(eyebrow(g.tag, L(g.title)));
-    out.push(elx("h2", "ov-insp__title", L(c.label)));
-    if (c.lead) out.push(elx("p", "ov-insp__lead", L(c.lead)));
-    if (c.bullets && c.bullets.length) {
-      out.push(block(null, rows(c.bullets.map(function (b) {
-        return { k: L(b.k), v: L(b.v) };
-      }))));
-    }
-    if (c.chips && c.chips.length) out.push(block(null, chipBox(c.chips, true)));
-    if (c.href) out.push(linkNode(c.href, L(UI.openInSite)));
-    return out;
-  }
-
-  function renderInspector() {
-    if (!inspEl) return;
-    var wrap = elx("div", "ov-insp__inner");
-    detailNodes(false).forEach(function (n) { wrap.appendChild(n); });
-    inspEl.innerHTML = "";
-    inspEl.appendChild(wrap);
-    inspEl.scrollTop = 0;
-  }
-
-  function fillPanels() {
-    if (!isMobile()) return;
-    document.querySelectorAll(".ov-grp").forEach(function (root) {
-      var panel = root.querySelector(".ov-grp__panel");
-      if (!panel) return;
-      var open = root.classList.contains("is-open");
-      panel.innerHTML = "";
-      if (!open || !state.sel || state.sel.g !== root.dataset.group) return;
-      detailNodes(true).forEach(function (n) { panel.appendChild(n); });
-    });
-  }
-
-  /* ---------------- 자동 투어 ---------------- */
-  function stopTour() {
-    if (state.tourId) {
-      clearInterval(state.tourId);
-      state.tourId = null;
-    }
-    if (btnTour) {
-      btnTour.classList.remove("is-on");
-      btnTour.setAttribute("aria-pressed", "false");
-    }
-    if (tourLabel) tourLabel.textContent = L(UI.tour);
-  }
-
-  function startTour() {
-    stopTour();
-    var ids = groups.map(function (g) { return g.id; });
-    if (!ids.length) return;
-    var i = 0;
-    state.tourId = setInterval(function () {
-      select({ kind: "group", g: ids[i % ids.length] }, true);
-      i++;
-    }, 4200);
-    if (btnTour) {
-      btnTour.classList.add("is-on");
-      btnTour.setAttribute("aria-pressed", "true");
-    }
-    if (tourLabel) tourLabel.textContent = L(UI.pause);
-    select({ kind: "group", g: ids[0] }, true);
-    i = 1;
-  }
-
-  /* ---------------- 이벤트 ---------------- */
+  /* ---------------- 호버 강조 ---------------- */
   function bind() {
-    document.addEventListener("click", function (e) {
-      var t = e.target;
-      var kid = t.closest && t.closest(".ov-kid");
-      if (kid) {
-        select({ kind: "child", g: kid.dataset.group, i: Number(kid.dataset.idx) });
-        return;
-      }
-      var head = t.closest && t.closest(".ov-grp__head");
-      if (head) {
-        var id = head.dataset.group;
-        var root = head.closest(".ov-grp");
-        if (isMobile() && root.classList.contains("is-open")) {
-          select(null);
-          return;
-        }
-        select({ kind: "group", g: id });
-        return;
-      }
-      if (t.closest && t.closest("#ovHub")) {
-        select(null);
-        return;
-      }
-    });
+    if (!mapEl) return;
 
     mapEl.addEventListener("pointerover", function (e) {
-      var el = e.target.closest && e.target.closest(".ov-kid, .ov-grp__head");
-      if (!el) return;
-      hover = el.classList.contains("ov-kid")
-        ? { g: el.dataset.group, i: Number(el.dataset.idx) }
-        : { g: el.dataset.group };
-      paint();
-    });
-    mapEl.addEventListener("pointerout", function (e) {
-      if (!e.relatedTarget || !mapEl.contains(e.relatedTarget)) {
-        hover = null;
-        paint();
-      }
+      var card = e.target.closest && e.target.closest(".ov-grp");
+      var next = card ? card.dataset.group : null;
+      if (next === hover) return;
+      hover = next;
+      document.querySelectorAll(".ov-grp").forEach(function (el) {
+        el.classList.toggle("is-hot", el.dataset.group === hover);
+      });
+      paintWires();
     });
 
-    if (btnAll) btnAll.addEventListener("click", function () { select(null); });
-    if (btnTour) {
-      btnTour.addEventListener("click", function () {
-        if (state.tourId) stopTour();
-        else startTour();
-      });
-    }
+    mapEl.addEventListener("pointerleave", function () {
+      hover = null;
+      document.querySelectorAll(".ov-grp").forEach(function (el) { el.classList.remove("is-hot"); });
+      paintWires();
+    });
 
     document.querySelectorAll(".seg__btn").forEach(function (b) {
       b.addEventListener("click", function () {
@@ -1027,7 +738,6 @@
         if (lang === state.lang) return;
         state.lang = lang;
         save(STORE.lang, lang);
-        stopTour();
         renderAll();
       });
     });
@@ -1041,44 +751,33 @@
       });
     }
 
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") select(null);
-    });
-
     var t = null;
-    window.addEventListener("resize", function () {
+    function relayout() {
       clearTimeout(t);
-      t = setTimeout(function () { drawWires(); fillPanels(); }, 140);
-    });
-    if (window.ResizeObserver) {
-      var ro = new ResizeObserver(function () {
-        clearTimeout(t);
-        t = setTimeout(drawWires, 140);
-      });
-      ro.observe(mapEl);
+      t = setTimeout(function () { fit(); drawWires(); }, 140);
     }
+    window.addEventListener("resize", relayout);
+    window.addEventListener("orientationchange", relayout);
+    if (window.ResizeObserver) new ResizeObserver(relayout).observe(mapEl);
     if (document.fonts && document.fonts.ready) {
-      document.fonts.ready.then(function () { drawWires(); });
+      document.fonts.ready.then(function () { fit(); drawWires(); });
     }
   }
 
   function renderAll() {
     applyStatic();
     renderMap();
-    if (state.sel && !groups.some(function (g) { return g.id === state.sel.g; })) state.sel = null;
-    paint();
-    renderInspector();
+    fit();
     drawWires();
-    fillPanels();
   }
 
   /* ---------------- 시작 ---------------- */
   document.documentElement.setAttribute("data-theme", state.theme);
   renderAll();
   bind();
-  rafId = requestAnimationFrame(loop);
-  setTimeout(drawWires, 260);
-  setTimeout(drawWires, 900);
+  if (!reduceMotion) rafId = requestAnimationFrame(loop);
+  setTimeout(function () { fit(); drawWires(); }, 260);
+  setTimeout(function () { fit(); drawWires(); }, 900);
   window.addEventListener("beforeunload", function () {
     if (rafId) cancelAnimationFrame(rafId);
   });
