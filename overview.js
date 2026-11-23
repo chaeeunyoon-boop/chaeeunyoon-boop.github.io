@@ -227,7 +227,7 @@
   ];
 
   /* ---------------- DOM ---------------- */
-  var CANVAS_W = 1360;
+  var CANVAS_W = 1240;
   var stageWrap = document.getElementById("ovStageWrap");
   var footEl = document.querySelector(".ov-foot");
   var mapEl = document.getElementById("ovMap");
@@ -341,6 +341,12 @@
      아래에 빈 여백이 남지 않게 합니다. */
   function fit() {
     if (!mapEl || !stageWrap) return 1;
+    /* 좁은 화면은 세로 스택(CSS) — 캔버스 축소를 쓰지 않습니다. */
+    if (window.innerWidth <= 900) {
+      mapEl.style.transform = "";
+      stageWrap.style.height = "";
+      return 1;
+    }
     var natural = mapEl.offsetHeight || 760;
     var availW = stageWrap.clientWidth;
     var top = stageWrap.getBoundingClientRect().top;
@@ -376,6 +382,11 @@
 
   function drawWires() {
     if (!mapEl || !wiresEl || !hubEl) return;
+    if (window.innerWidth <= 900) {
+      wires.length = 0;
+      while (wiresEl.firstChild) wiresEl.removeChild(wiresEl.firstChild);
+      return;
+    }
     var m = mapEl.getBoundingClientRect();
     var w = mapEl.offsetWidth;
     var h = mapEl.offsetHeight;

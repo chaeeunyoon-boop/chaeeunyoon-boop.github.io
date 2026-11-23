@@ -1,6 +1,6 @@
 /* =============================================================
    overview.css — 한 페이지 요약(overview.html) 전용
-   · PC와 모바일이 완전히 같은 한 장의 지도(1360px 기준 캔버스)를
+   · PC와 모바일이 완전히 같은 한 장의 지도(1240px 기준 캔버스)를
      봅니다. 작은 화면에서는 캔버스 전체를 비율대로 줄여(scale)
      한 화면에 담고, 컨테이너 높이도 그 비율에 맞춰 줄입니다.
    · styles.css의 색 토큰과 헤더(.topbar/.brand/.seg/.iconbtn)를
@@ -71,18 +71,19 @@ html, body { overflow-x: clip; }
   width: 100%;
   flex: 0 0 auto;
   overflow: hidden;
+  margin: auto 0;
 }
 
 .ov-map {
   position: absolute;
   top: 0;
   left: 50%;
-  margin-left: -680px;       /* 캔버스 1360px의 절반 */
-  width: 1360px;
+  margin-left: -620px;       /* 캔버스 1240px의 절반 */
+  width: 1240px;
   transform-origin: top center;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-  column-gap: 74px;
+  column-gap: 80px;
   align-items: center;
   padding: 4px 6px;
 }
@@ -167,7 +168,7 @@ html, body { overflow-x: clip; }
   color: var(--accent);
   margin-bottom: 5px;
 }
-.ov-hub__name { font-size: 29px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; }
+.ov-hub__name { font-size: 30px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; }
 .ov-hub__role {
   font-family: var(--mono);
   font-size: 12px;
@@ -189,7 +190,7 @@ html, body { overflow-x: clip; }
   padding: 7px 10px;
   border-radius: 9px;
   background: var(--surface-2);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
   line-height: 1.45;
   letter-spacing: -0.015em;
@@ -211,7 +212,7 @@ html, body { overflow-x: clip; }
   text-transform: uppercase; color: var(--dim); white-space: nowrap;
 }
 .ov-hub__stat-v {
-  font-size: 16px; font-weight: 800; color: var(--text);
+  font-size: 17px; font-weight: 800; color: var(--text);
   letter-spacing: -0.015em; white-space: nowrap;
 }
 .ov-hub__mail {
@@ -263,7 +264,7 @@ html, body { overflow-x: clip; }
   color: var(--accent);
   white-space: nowrap;
 }
-.ov-grp__title { font-size: 19px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.2; }
+.ov-grp__title { font-size: 20px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.2; }
 
 .ov-grp__kids {
   display: flex;
@@ -296,7 +297,7 @@ html, body { overflow-x: clip; }
   white-space: nowrap;
 }
 .ov-kid__label {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--text);
@@ -367,6 +368,38 @@ html, body { overflow-x: clip; }
   .ov-bar__hint { display: none; }
   .ov-zoomhint { font-size: 10.5px; }
   .ov-foot { font-size: 9px; line-height: 1.5; text-align: center; padding-top: 6px; }
+}
+
+/* 휴대폰에서는 지도 전체를 축소하지 않고, 중심 → 6개 갈래를 세로로
+   쌓아 실제 글자 크기로 읽습니다. (연결선은 화면 밖으로 나가므로 숨김) */
+@media (max-width: 900px) {
+  .ov-stagewrap { margin: 0; }
+  .ov-zoomhint { display: none; }
+  .ov-main {
+    display: block;
+    min-height: 0;
+  }
+  .ov-map {
+    position: static;
+    width: auto;
+    margin-left: 0;
+    transform: none !important;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0;
+  }
+  .ov-wires { display: none; }
+  .ov-hubwrap { order: -1; }
+  .ov-hub { width: 100%; max-width: 520px; padding: 18px 16px 16px; }
+  .ov-hub__name { font-size: 26px; }
+  .ov-hub__pitch { font-size: 15px; }
+  .ov-wing { gap: 10px; }
+  .ov-grp { padding: 15px 16px 16px; border-radius: 12px; }
+  .ov-grp__title { font-size: 18px; }
+  .ov-grp__kids { gap: 12px; margin-top: 12px; }
+  .ov-kid__label { font-size: 16px; }
+  .ov-bar { padding: 0 2px 8px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
