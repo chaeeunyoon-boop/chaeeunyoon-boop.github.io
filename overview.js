@@ -78,9 +78,9 @@
       zh: "HUB & SPOKE · 一页概览",
     },
     barHint: {
-      ko: "클릭 없이 한 화면에서 · 01 내 문제 → 02 동료 → 03 조직 순서로 읽으면 됩니다",
-      en: "Nothing to click · read 01 my problem → 02 my team → 03 the company",
-      zh: "无需点击，一屏读完 · 按 01 我的问题 → 02 同事 → 03 组织 的顺序看",
+      ko: "클릭 없이 한 화면에서 · 내 문제 → 동료 → 조직 순서로 읽으면 됩니다",
+      en: "Nothing to click · read my problem → my team → the company",
+      zh: "无需点击，一屏读完 · 按 我的问题 → 同事 → 组织 的顺序看",
     },
     zoomHint: {
       ko: "두 손가락으로 확대하면 세부 내용을 읽을 수 있습니다",
