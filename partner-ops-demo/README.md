@@ -92,15 +92,17 @@ the board, the approval gate (dialog → approve → queue shrinks → badge mov
 "request changes" return path, the deep links, the 390 px drawer and horizontal overflow in every
 view, and console errors.
 
-Last run against the Clean Business build: **51 checks, 0 failed** (see `screenshots/verify-report.json`).
+Last run against the current build: **51 checks, 0 failed** (see `screenshots/verify-report.json`).
 
 ## Colour
 
-The published page uses the **Clean Business** palette: white surfaces, charcoal `#161823` ink,
-teal `#00726E` / `#009E9A` for data, and rose `#E11D48` only for what is waiting on a person
-(the approval-gate cards, the gate badges, the demo badge). The tokens live at the top of
-`scripts/base.css` (`--ink`, `--green`, `--have`, `--haveText`, `--rose*`) and the rail rules at
-the top of `scripts/demo.css`.
+The published page uses a neutral B2B SaaS palette: white surfaces, slate `#0F172A` ink, and one
+cobalt accent `#2563EB` for primary actions, bar fills and positive metrics (`#1D4ED8` where white
+numerals sit on top). Anything waiting on a person reads calm amber (`#B45309` fill, `#D97706`
+hairline); information notes are slate (`#475569` on `#F1F5F9`); a hard error or a missing contact
+route is `#B42318`. No teal/rose brand pairing is used. The tokens live at the top of the page
+stylesheet (`--ink`, `--accent`, `--have`, `--haveText`, `--warn`, `--note*`, `--danger*`, `--steel*`)
+and the rail rules follow them.
 
 ## Live
 
