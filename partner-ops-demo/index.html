@@ -786,8 +786,8 @@ body::before {
 .miniSplit i { display: block; height: 100%; }
 
 /* stage flow + rules */
-.stageFlow { display: flex; gap: 3px; margin-top: 12px; }
-.stageFlow span { flex: 1 1 0; min-width: 0; padding: 6px 8px; border-radius: 6px; font-size: 11px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.stageFlow { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 12px; }
+.stageFlow span { flex: 1 0 auto; padding: 6px 10px; border-radius: 6px; font-size: 11px; font-weight: 700; white-space: nowrap; }
 .s0 { background: #EEF2F6; color: #475569; }
 .s1 { background: #E9F0FE; color: #1D4ED8; }
 .s2 { background: var(--steelSoft); color: var(--steel); }
@@ -1201,7 +1201,6 @@ body { font-size: 13px; line-height: 1.54; letter-spacing: -.003em; }
       </a>
       <div class="sideSub">
         <a href="#beauty/overview" data-cat="beauty" data-view="overview" aria-current="false">Overview</a>
-        <a href="#beauty/workflow" data-cat="beauty" data-view="workflow" aria-current="false">Workflow &amp; rules</a>
         <a href="#beauty/gate" data-cat="beauty" data-view="gate" aria-current="false">Approval gate<span class="sideBadge" id="badgeBeautyGate"></span></a>
         <a href="#beauty/roster" data-cat="beauty" data-view="roster" aria-current="false">Brand list</a>
       </div>
@@ -1371,7 +1370,7 @@ body { font-size: 13px; line-height: 1.54; letter-spacing: -.003em; }
         </ul>
       </div>
     </div>
-    <p class="funnelNote">The same rule book runs on the advertiser side as eight numbered stage rules plus a default.</p>
+    <p class="funnelNote">The same approach runs on the advertiser side: fixed stage rules and one approval gate.</p>
   </section>
 
   </section>
@@ -1498,7 +1497,7 @@ body { font-size: 13px; line-height: 1.54; letter-spacing: -.003em; }
     </div>
     <ul class="introFacts">
       <li><b>2 pipelines</b>partner ops + advertiser GTM, one owner</li>
-      <li><b>8 rules</b>stage logic (plus a default) that replaces manual status calls</li>
+      <li><b>Fixed rules</b>stage logic that replaces manual status calls</li>
       <li><b>1 gate</b>approval before any advertiser is contacted</li>
     </ul>
   </section>
@@ -1506,6 +1505,15 @@ body { font-size: 13px; line-height: 1.54; letter-spacing: -.003em; }
   <section aria-label="Advertiser pipeline summary">
     <div class="kpiGrid" id="bKpis"></div>
     <div class="blocker" id="bBlocker"></div>
+  </section>
+
+  <section class="dash" aria-label="Stage flow">
+    <div class="dashHead">
+      <h2>Where every brand stands</h2>
+      <p class="insight" id="bStageInsight"></p>
+    </div>
+    <div class="stageFlow" id="bStageFlow"></div>
+    <p class="funnelNote">One brand, one stage, set by fixed rules rather than by hand. Sends and replies are counted once per brand, and auto-replies are logged but left out of the reply rate.</p>
   </section>
 
   <section class="dash" aria-label="Reply reading">
@@ -1525,19 +1533,6 @@ body { font-size: 13px; line-height: 1.54; letter-spacing: -.003em; }
         <p class="hint">Only a positive or a question reply moves a brand to a call; "later" stays in follow-up and is followed up later, not pitched again.</p>
       </div>
     </div>
-  </section>
-
-    </section>
-
-  <section class="view" data-view="workflow" hidden aria-label="Advertiser pipeline — stage rules">
-<section class="dash" aria-label="Stage logic">
-    <div class="dashHead">
-      <h2>Stage logic — first matching rule wins</h2>
-      <p class="insight" id="bStageInsight"></p>
-    </div>
-    <div class="rules" id="bRules"></div>
-    <div class="stageFlow" id="bStageFlow"></div>
-    <p class="funnelNote">One brand, one stage. Sends and replies are counted once per brand ID even when follow-ups add rows to the log. Auto-replies are logged and shown, but excluded from the reply rate — an out-of-office is not interest.</p>
   </section>
 
     </section>
@@ -1616,7 +1611,7 @@ body { font-size: 13px; line-height: 1.54; letter-spacing: -.003em; }
       </div>
       <button class="opsButton dialogClose" type="button" data-close-about>Close</button>
     </div>
-    <p class="lede">Two workflows used to live in my head and in a chat thread: who I had contacted, who replied, what they said about money, and what I owed them next. I built them into one operating layer so the team reads status instead of asking for it — and so nothing goes out without a person having approved it. The rule book doubles as the onboarding doc: a teammate can pick up either board without a handover call.</p>
+    <p class="lede">Two workflows used to live in my head, my inbox and messenger threads: who I had contacted, who replied, what they said about money, and what I owed them next. I built them into one operating layer so the team reads status instead of asking for it — and so nothing goes out without a person having approved it. The rule book doubles as the onboarding doc: a teammate can pick up either board without a handover call.</p>
     <div class="methodGrid">
       <div class="method">
         <b>The problem</b>
@@ -1726,7 +1721,7 @@ const setBadge = (id, n) => { const el = $(id); if (el) el.textContent = n ? Str
 function parseRoute() {
   const raw = location.hash.replace(/^#\/?/, '');
   const [a, b] = raw.split('/');
-  if (CATS[a]) return { cat: a, view: VIEW_LABEL[b] ? b : 'overview' };
+  if (CATS[a]) return { cat: a, view: (VIEW_LABEL[b] && !(a === 'beauty' && b === 'workflow')) ? b : 'overview' };
   if (VIEW_LABEL[a]) return { cat: 'partners', view: a };
   return { cat: 'partners', view: 'overview' };
 }
@@ -2234,14 +2229,6 @@ window.addEventListener('hashchange', applyRoute);
 
   /* ---------- stage rules ---------- */
   function renderRules() {
-    $('bRules').innerHTML = D.rules.map(r => `
-      <button class="rule" type="button" data-stage="${r.stage}" data-tip="Filter the board by this rule's outcome">
-        <span class="rid">${r.when === 'Anything else' ? 'Default' : r.id}</span>
-        <span class="when">${esc(r.when)}</span>
-        <span class="then">${esc(r.then)}</span>
-        <span class="n">${stageCount(r.stage)}<small>${stageCount(r.stage) === 1 ? 'brand' : 'brands'}</small></span>
-      </button>`).join('');
-
     const mix = STAGES.map(s => ({ ...s, n: stageCount(s.key) }));
     $('bStageFlow').innerHTML = mix.map((s, i) => `<span class="s${STAGES.findIndex(x => x.key === s.key)}" title="${esc(s.label)}: ${s.n}">${esc(s.label)} ${s.n}</span>`).join('');
     $('bStageInsight').innerHTML = `${brands.length} brands · <b>${stageCount('approval') + stageCount('approved')}</b> at the gate · <b>${brands.filter(isSent).length}</b> contacted · <b>${brands.filter(isReplied).length}</b> replied`;
@@ -2318,7 +2305,7 @@ window.addEventListener('hashchange', applyRoute);
       <dt>Subject</dt><dd>${esc(a.subject)}</dd>
       <dt>Recipient</dt><dd>${esc(a.recipient)}</dd>
       <dt>Owner</dt><dd>Creator Partnerships (one named approver)</dd>
-      <dt>Rule match</dt><dd>R6 — pending approval</dd>`;
+      <dt>Stage</dt><dd>Pending approval</dd>`;
     $('approvalDraft').innerHTML = a.body.map(p => `<p>${esc(p)}</p>`).join('');
     $('approvalChecks').innerHTML = a.checklist.map(c => `<li><span class="${c.ok ? 'ok' : 'bad'}">${c.ok ? '✓' : '!'}</span> ${esc(c.label)}</li>`).join('');
     dialog.showModal();

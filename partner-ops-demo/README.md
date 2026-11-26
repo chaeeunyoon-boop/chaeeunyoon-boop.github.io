@@ -18,7 +18,6 @@ Pipelines
     Partner list
   Advertiser GTM & Sales     [3]
     Overview
-    Workflow & rules
     Approval gate            [3]
     Brand list
 Demo
@@ -35,7 +34,7 @@ gate) and update when a draft is approved. Every view is addressable: `#partners
 | View | Partner pipeline | Advertiser GTM pipeline |
 |---|---|---|
 | **Overview** | Intro, outreach funnel (5 stages), partner onboarding after the first yes, region funnels (Japan·China / Southeast Asia / US), active-partner counts, contact coverage by country. | Intro, four KPIs (sends vs goal, stage mix, reply rate, conversations), blocked-now line, reply reading by brand type and reply class. |
-| **Workflow & rules** | 5-step automated/human ladder with per-step output and failure case, send guardrails, and the "does / never does" rule book. | 8 numbered stage rules (click one to filter the board), stage flow with live counts. |
+| **Workflow & rules** | 5-step automated/human ladder with per-step output and failure case, send guardrails, and the "does / never does" rule book. | (none: the stage flow sits on the Overview) |
 | **Approval gate** | Drafts waiting for a named owner (1 in the sample set) with the checklist the owner runs, plus the 10 drafts already approved and sent. | Interactive gate: 3 drafts with their checklists; *Review draft* opens the full draft, *Approve & queue* or *Request changes* moves the row. |
 | **Partner list / Brand list** | Partner roster with 7 filters, expandable draft plans, rate-card extraction. | Brand board with 5 filters grouped by stage, expandable log + AI meeting recap and next action. |
 
@@ -48,7 +47,7 @@ a state, not as a send button.
 
 At ≤980 px the sidebar becomes an off-canvas drawer (hamburger in the header, scrim, closes on
 selection or Escape). Tables and the wide rate-card panels scroll inside their own box, so the page
-never scrolls sideways: 0 px horizontal overflow at 390 px in all eight views.
+never scrolls sideways: 0 px horizontal overflow at 390 px in all seven views.
 
 ## Data policy
 
@@ -86,7 +85,7 @@ python3 scripts/build.py
 LD_LIBRARY_PATH=<chromium deps> python3 scripts/verify.py
 ```
 
-`verify.py` walks the sidebar through all eight views, checks hashes and active states, the badge
+`verify.py` walks the sidebar through all seven views, checks hashes and active states, the badge
 counts, the roster filters, the draft-plan jump from the partner gate, the rule click that filters
 the board, the approval gate (dialog → approve → queue shrinks → badge moves → stage count moves), the
 "request changes" return path, the deep links, the 390 px drawer and horizontal overflow in every
