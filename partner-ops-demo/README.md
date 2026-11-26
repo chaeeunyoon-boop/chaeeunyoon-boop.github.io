@@ -59,7 +59,7 @@ Everything on the page is **illustrative sample data**:
 - No real partner list, advertiser list, contact address, message body, rate card, revenue figure
   or campaign result is reproduced.
 - Counts (sends, replies, rate cards) come from the sample set, not from a live campaign.
-- The published page is English-only; the build fails if any non-English text survives.
+- The published page is English-only.
 
 ## Files
 
