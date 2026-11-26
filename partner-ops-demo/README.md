@@ -105,7 +105,12 @@ the top of `scripts/demo.css`.
 
 ## Live
 
-`https://chaeeunyoon-boop.github.io/partner-ops-demo/` — GitHub Pages, branch `main`, root.
+`https://chaeeunyoon-boop.github.io/partner-ops-demo/` — GitHub Pages, HTTP 200.
+
+The page is served from the `partner-ops-demo/` folder of the `chaeeunyoon-boop.github.io`
+repository (branch `main`, legacy Pages from `/`), which yields the same URL a standalone
+`partner-ops-demo` repository would. Moving it to its own repository later needs no change to the
+URL or to the page.
 
 The published tree is only what the page needs:
 
@@ -117,8 +122,9 @@ Build scripts, preview variants and verification captures stay local. To redeplo
 
 ```bash
 python3 scripts/build.py                    # rebuild index.html from the sources
-rsync -a index.html data README.md ../partner-ops-demo-dist/
-cd ../partner-ops-demo-dist && git add -A && git commit -m "update demo" && git push
+git clone https://github.com/chaeeunyoon-boop/chaeeunyoon-boop.github.io /tmp/site
+cp index.html README.md /tmp/site/partner-ops-demo/ && cp data/*.js /tmp/site/partner-ops-demo/data/
+cd /tmp/site && git add partner-ops-demo && git commit -m "update demo" && git push
 ```
 
 All asset paths are relative, so the page works from the project path without changes.
