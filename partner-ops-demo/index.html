@@ -1152,6 +1152,15 @@ body { font-size: 13px; line-height: 1.54; letter-spacing: -.003em; }
 /* Inter is a touch tighter than a book face on small copy; keep those lines plain */
 .introText, .introFacts li, .kpi .sub, .outreachNote, .funnelNote, .hint, .insight { letter-spacing: 0; }
 
+
+/* wide tables scroll inside their own box at every width */
+.tableWrap { overflow-x: auto; }
+/* sidebar still pinned but the content column is narrow: stack the wide grids */
+@media (min-width: 981px) and (max-width: 1180px) {
+  .funnelGrid { grid-template-columns: 1fr; }
+  .dashGrid.dashSub { grid-template-columns: minmax(0, 1fr); }
+  details.numbers { overflow-x: auto; }
+}
 </style>
 </head>
 <body>
