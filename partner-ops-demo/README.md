@@ -15,12 +15,12 @@ Pipelines
     Overview
     Workflow & rules
     Approval gate            [1]
-    Rosters & logs
+    Partner list
   Advertiser GTM & Sales     [3]
     Overview
     Workflow & rules
     Approval gate            [3]
-    Rosters & logs
+    Brand list
 Demo
   Why this exists
   Demo environment · local state only
@@ -34,10 +34,10 @@ gate) and update when a draft is approved. Every view is addressable: `#partners
 
 | View | Partner pipeline | Advertiser GTM pipeline |
 |---|---|---|
-| **Overview** | Intro, outreach funnel (5 stages), region funnels (Japan·China / Southeast Asia / US), active-partner counts, contact coverage by country. | Intro, four KPIs (sends vs goal, stage mix, reply rate, conversations), blocked-now line, reply reading by brand type and reply class. |
+| **Overview** | Intro, outreach funnel (5 stages), partner onboarding after the first yes, region funnels (Japan·China / Southeast Asia / US), active-partner counts, contact coverage by country. | Intro, four KPIs (sends vs goal, stage mix, reply rate, conversations), blocked-now line, reply reading by brand type and reply class. |
 | **Workflow & rules** | 5-step automated/human ladder with per-step output and failure case, send guardrails, and the "does / never does" rule book. | 8 numbered stage rules (click one to filter the board), stage flow with live counts. |
 | **Approval gate** | Drafts waiting for a named owner (1 in the sample set) with the checklist the owner runs, plus the 10 drafts already approved and sent. | Interactive gate: 3 drafts with their checklists; *Review draft* opens the full draft, *Approve & queue* or *Request changes* moves the row. |
-| **Rosters & logs** | Partner roster with 7 filters, expandable draft plans, rate-card extraction, onboarding handover. | Brand board with 5 filters grouped by stage, expandable log + AI meeting recap and next action. |
+| **Partner list / Brand list** | Partner roster with 7 filters, expandable draft plans, rate-card extraction. | Brand board with 5 filters grouped by stage, expandable log + AI meeting recap and next action. |
 
 Only the advertiser approval gate changes anything, and only in the browser: approving a draft
 moves the row from *pending approval* to *approved · queued*. No email is sent and no external

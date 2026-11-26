@@ -16,7 +16,7 @@ window.DEMO_BEAUTY = {
     },
     {
       "id": "R2",
-      "when": "Sheet progress is Excluded / Dormant, or the log round is closed",
+      "when": "Tracker status is Excluded / Dormant, or the log round is closed",
       "then": "Excluded",
       "stage": "excluded"
     },
@@ -304,7 +304,7 @@ window.DEMO_BEAUTY = {
     },
     {
       "id": "B004",
-      "name": "Seraphine",
+      "name": "Mossglow",
       "cluster": "Overseas expansion",
       "category": "Skincare",
       "trigger": "Overseas launch",
