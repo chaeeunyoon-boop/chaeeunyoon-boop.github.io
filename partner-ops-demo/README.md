@@ -3,8 +3,8 @@
 A static, English-language demo built as a small **workspace with a left sidebar**: two operating
 pipelines I built from zero, each with its own views, and the same human approval gate in both.
 
-The shell follows the layout of the internal sales dashboard (sidebar navigation, one workspace
-per pipeline, view-level switching, counts on the items), rebuilt here with sample data only.
+The shell is a sidebar workspace (sidebar navigation, one workspace per pipeline, view-level
+switching, counts on the items), built here with sample data only.
 
 ## Sidebar structure
 
@@ -59,8 +59,7 @@ Everything on the page is **illustrative sample data**:
 - No real partner list, advertiser list, contact address, message body, rate card, revenue figure
   or campaign result is reproduced.
 - Counts (sends, replies, rate cards) come from the sample set, not from a live campaign.
-- Korean design notes from the internal stylesheet are stripped at build time, and the build fails
-  if any Korean character survives: the published page is English-only.
+- The published page is English-only; the build fails if any non-English text survives.
 
 ## Files
 
@@ -68,7 +67,7 @@ Everything on the page is **illustrative sample data**:
 index.html                 single-page build (CSS inlined, no build step needed to serve)
 data/partners.js           sample dataset — overseas partner roster (window.DEMO_PARTNERS)
 data/beauty.js             sample dataset — advertiser pipeline (window.DEMO_BEAUTY)
-scripts/base.css           layout system reused from the internal roster dashboard
+scripts/base.css           layout system
 scripts/demo.css           demo components + the sidebar workspace shell
 scripts/template.html      page markup, views and the sidebar router
 scripts/gen_data.py        regenerates data/*.js (deterministic sample data)
@@ -105,7 +104,7 @@ the top of `scripts/demo.css`.
 
 ## Live
 
-`https://chaeeunyoon-boop.github.io/partner-ops-demo/` — GitHub Pages, HTTP 200.
+`https://chaeeunyun.dev/partner-ops-demo/` — GitHub Pages, HTTP 200.
 
 The page is served from the `partner-ops-demo/` folder of the `chaeeunyoon-boop.github.io`
 repository (branch `main`, legacy Pages from `/`), which yields the same URL a standalone
