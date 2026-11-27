@@ -1225,20 +1225,26 @@ body { font-size: 13px; line-height: 1.54; letter-spacing: -.003em; }
 .videoCardFoot b { color: var(--ink); }
 [data-collapsed="true"] .videoStage,
 [data-collapsed="true"] .videoCardFoot { display: none; }
+/* collapsed: the slim player bar keeps the row, the summary becomes a wide band beneath it */
+.videoHero[data-collapsed="true"] { grid-template-columns: minmax(0, 1fr); }
+.videoHero[data-collapsed="true"] .videoAside {
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 18px;
+}
 
 /* right-hand summary: the old intro band, read beside the clip */
 .videoAside {
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; align-content: start;
   min-width: 0;
   padding: 15px 17px 16px; border: 1px solid var(--line); border-radius: 14px; background: #fff;
 }
 .videoAside .introText { font-size: 12.5px; line-height: 1.62; }
-.videoAside .introFacts { margin-top: 12px; }
+.videoAside .introFacts { margin-top: 0; }
 
 @media (max-width: 1080px) {
   .videoHero { grid-template-columns: minmax(0, 1fr); }
   .videoAside { order: 2; }
   .videoAside .introText { font-size: 13px; }
-  .videoAside .introFacts { margin-top: 12px; }
+  .videoHero[data-collapsed="true"] .videoAside { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 620px) {
   .videoCardHead { padding: 10px 11px 11px; gap: 7px 10px; }
@@ -1327,8 +1333,8 @@ body { font-size: 13px; line-height: 1.54; letter-spacing: -.003em; }
 <!-- ============================== PARTNER PIPELINE ============================== -->
 <div class="content" id="view-partners">
   <section class="view" data-view="overview" aria-label="Overseas partner pipeline — overview">
-<section class="videoHero" aria-label="30-second walkthrough of the AI workflow">
-    <div class="videoCard" id="videoCard" data-collapsed="false">
+<section class="videoHero" id="videoHero" data-collapsed="false" aria-label="30-second walkthrough of the AI workflow">
+    <div class="videoCard" id="videoCard">
       <div class="videoCardHead">
         <div class="videoCardTitle">
           <p class="videoKicker">30-second walkthrough</p>
@@ -1352,8 +1358,10 @@ body { font-size: 13px; line-height: 1.54; letter-spacing: -.003em; }
       <p class="videoCardFoot" id="videoNote">Moves on its own, silently. <b>🔊 Play with AI Narration</b> restarts it from the top with the English voice-over.</p>
     </div>
     <div class="videoAside">
-      <p class="introKicker">What this view is</p>
-      <p class="introText">I run creator campaigns at a Korean creator agency. This demo shows two workflows I designed: overseas partner sourcing and advertiser outreach. This one is the cross-border partner program I built from zero: <b>screen the market, record the evidence, draft in the partner's language, and let one named owner approve</b> before anything is sent. Calls, rate cards and the relationship after the first yes live on the same row, so nobody has to re-ask for status in a meeting.</p>
+      <div class="videoAsideMain">
+        <p class="introKicker">What this view is</p>
+        <p class="introText">I run creator campaigns at a Korean creator agency. This demo shows two workflows I designed: overseas partner sourcing and advertiser outreach. This one is the cross-border partner program I built from zero: <b>screen the market, record the evidence, draft in the partner's language, and let one named owner approve</b> before anything is sent. Calls, rate cards and the relationship after the first yes live on the same row, so nobody has to re-ask for status in a meeting.</p>
+      </div>
       <ul class="introFacts">
         <li><b>0 → 1</b>new program, one month in</li>
         <li><b>KO · EN · ZH · JA</b>AI-drafted outreach in four languages</li>
@@ -2628,7 +2636,7 @@ window.addEventListener('hashchange', applyRoute);
   const btn = document.getElementById('narrationBtn');
   const label = document.getElementById('narrationLabel');
   const toggle = document.getElementById('videoToggle');
-  const card = document.getElementById('videoCard');
+  const hero = document.getElementById('videoHero');
   if (!video || !btn || !label) return;
 
   const QUIET = 'Play with AI Narration';
@@ -2679,10 +2687,10 @@ window.addEventListener('hashchange', applyRoute);
   document.addEventListener('pointerdown', kick, { once: true });
 
   /* keep it small when the reader wants the dashboard instead */
-  if (toggle && card) {
+  if (toggle && hero) {
     toggle.addEventListener('click', () => {
-      const collapsed = card.getAttribute('data-collapsed') === 'true';
-      card.setAttribute('data-collapsed', collapsed ? 'false' : 'true');
+      const collapsed = hero.getAttribute('data-collapsed') === 'true';
+      hero.setAttribute('data-collapsed', collapsed ? 'false' : 'true');
       toggle.setAttribute('aria-expanded', collapsed ? 'true' : 'false');
       toggle.textContent = collapsed ? 'Hide video' : 'Show video';
       if (collapsed) play(); else video.pause();
