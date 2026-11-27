@@ -278,13 +278,11 @@ h1 {
     if (!narrating) return;
     setIdle();
     try { video.currentTime = 0; } catch (e) {}
-    video.play().catch(function () {});
-  });
-
-  // If the viewer pauses or seeks, the clip keeps its own controls; the button
-  // returns to its idle look once a narrated pass is over.
-  video.addEventListener('pause', function () {
-    if (narrating && video.ended) setIdle();
+    // Restart on the next tick, after the element has left its ended state.
+    setTimeout(function () {
+      var p = video.play();
+      if (p && typeof p.catch === 'function') p.catch(function () {});
+    }, 40);
   });
 })();
 </script>
