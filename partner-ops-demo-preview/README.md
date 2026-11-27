@@ -1,10 +1,19 @@
 # Cross-Border Partner Operations — portfolio demo (EN)
 
-> **Preview variant (`partner-ops-demo-preview/`).** A copy of the live demo with one addition: a
-> **`▶ Watch 30s AI Workflow`** button in the top banner that opens a modal playing the 30-second
-> narrated AI-workflow clip (`media/ai-workflow-visual-30s.mp4`, poster
-> `media/ai-workflow-poster.jpg`). The video element uses `controls autoplay playsinline
-> preload="metadata"`; closing by ×, `ESC` or a backdrop click pauses playback and rewinds to 0.
+> **Preview variant (`partner-ops-demo-preview/`).** A copy of the live demo with one addition: the
+> 30-second AI-workflow clip (`media/ai-workflow-visual-30s.mp4`, poster
+> `media/ai-workflow-poster.jpg`) sits **inline at the top of the partner Overview first screen**, in
+> a two-column hero — 16:9 player on the left, the `What this view is` summary on the right. There is
+> no modal and no click needed before it moves: the element is
+> `controls autoplay muted loop playsinline preload="metadata" poster=…`, so it plays silently on a
+> loop from the moment the page loads (desktop and iOS Safari).
+>
+> - **`🔊 Play with AI Narration`** in the player header restarts it at 0 s with `muted = false` and
+>   `loop = false`, plays once through with the English voice-over, and reads `Narration On` while the
+>   sound is on; tapping it again returns to the silent loop. The native control bar's mute button
+>   keeps the label in step.
+> - **`Hide video` / `Show video`** collapses the player to its header without hiding the summary.
+>
 > The page is `noindex, nofollow`. Everything else — the sidebar workspace, the sample data, the
 > approval gate — is identical to `partner-ops-demo/`, which this folder never modifies.
 
@@ -41,7 +50,7 @@ gate) and update when a draft is approved. Every view is addressable: `#partners
 
 | View | Partner pipeline | Advertiser GTM pipeline |
 |---|---|---|
-| **Overview** | Intro, outreach funnel (5 stages), partner onboarding after the first yes, region funnels (Japan·China / Southeast Asia / US), active-partner counts, contact coverage by country. | Intro, four KPIs (sends vs goal, stage mix, reply rate, conversations), blocked-now line, reply reading by brand type and reply class. |
+| **Overview** | Inline 30 s workflow video beside the intro (preview variant), outreach funnel (5 stages), partner onboarding after the first yes, region funnels (Japan·China / Southeast Asia / US), active-partner counts, contact coverage by country. | Intro, four KPIs (sends vs goal, stage mix, reply rate, conversations), blocked-now line, reply reading by brand type and reply class. |
 | **Workflow & rules** | 5-step automated/human ladder with per-step output and failure case, send guardrails, and the "does / never does" rule book. | (none: the stage flow sits on the Overview) |
 | **Approval gate** | Drafts waiting for a named owner (1 in the sample set) with the checklist the owner runs, plus the 10 drafts already approved and sent. | Interactive gate: 3 drafts with their checklists; *Review draft* opens the full draft, *Approve & queue* or *Request changes* moves the row. |
 | **Partner list / Brand list** | Partner roster with 7 filters, expandable draft plans, rate-card extraction. | Brand board with 5 filters grouped by stage, expandable log + AI meeting recap and next action. |
@@ -114,9 +123,9 @@ and the rail rules follow them.
 ## Live
 
 `https://chaeeunyun.dev/partner-ops-demo-preview/` — this preview page.
-`https://chaeeunyun.dev/partner-ops-demo/` — the live demo without the video button.
+`https://chaeeunyun.dev/partner-ops-demo/` — the live demo, which has no video and stays untouched.
 
-The page is served from the `partner-ops-demo/` folder of the `chaeeunyoon-boop.github.io`
+The page is served from the `partner-ops-demo-preview/` folder of the `chaeeunyoon-boop.github.io`
 repository (branch `main`, legacy Pages from `/`), which yields the same URL a standalone
 `partner-ops-demo` repository would. Moving it to its own repository later needs no change to the
 URL or to the page.
@@ -131,10 +140,9 @@ media/ai-workflow-poster.jpg  README.md
 Build scripts, preview variants and verification captures stay local. To redeploy:
 
 ```bash
-python3 scripts/build.py                    # rebuild index.html from the sources
 git clone https://github.com/chaeeunyoon-boop/chaeeunyoon-boop.github.io /tmp/site
-cp index.html README.md /tmp/site/partner-ops-demo/ && cp data/*.js /tmp/site/partner-ops-demo/data/
-cd /tmp/site && git add partner-ops-demo && git commit -m "update demo" && git push
+cp -r partner-ops-demo-preview/* /tmp/site/partner-ops-demo-preview/
+cd /tmp/site && git add partner-ops-demo-preview && git commit -m "update preview" && git push
 ```
 
 All asset paths are relative, so the page works from the project path without changes.

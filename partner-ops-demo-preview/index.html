@@ -1163,81 +1163,90 @@ body { font-size: 13px; line-height: 1.54; letter-spacing: -.003em; }
 }
 </style>
 <style>/* ------------------------------------------------------------------
-   Preview addition: 30s workflow video (top-bar entry point + modal)
+   Preview addition: 30s AI-workflow clip, inline on the first screen
+   (autoplay muted loop; one tap restarts it with the AI narration)
    ------------------------------------------------------------------ */
-
-/* top-bar entry point */
-.watchCta {
-  display: inline-flex; align-items: center; gap: 7px; flex: 0 0 auto;
-  margin-left: 12px; padding: 7px 12px;
-  border: 1px solid rgba(255, 255, 255, .22); border-radius: 999px;
-  background: var(--accent); color: #fff;
-  font: inherit; font-size: 12px; font-weight: 700; letter-spacing: -.01em;
-  cursor: pointer; white-space: nowrap;
-  transition: background .15s ease, box-shadow .15s ease;
-}
-.watchCta:hover { background: #1D4ED8; box-shadow: 0 2px 10px rgba(37, 99, 235, .38); }
-.watchCta:focus-visible { outline: 2px solid #93C5FD; outline-offset: 2px; }
-.watchCta .watchPlay { font-size: 9px; line-height: 1; }
-.watchCta .watchHint {
-  padding: 1px 6px; border-radius: 999px; background: rgba(255, 255, 255, .18);
-  color: #DBEAFE; font-size: 10px; font-weight: 600; letter-spacing: .01em;
+.videoHero {
+  display: grid; grid-template-columns: minmax(0, 1.52fr) minmax(0, 1fr);
+  gap: 14px; align-items: start; margin-bottom: 14px;
 }
 
-/* video modal */
-.videoModal {
-  width: min(1080px, calc(100vw - 40px)); max-width: none; max-height: 92vh;
-  padding: 0; border: 1px solid var(--line); border-radius: 16px;
-  color: var(--ink); background: var(--panel);
-  box-shadow: 0 24px 70px rgba(15, 23, 42, .34); overflow: auto;
+.videoCard {
+  min-width: 0; overflow: hidden;
+  border: 1px solid var(--line); border-radius: 14px;
+  background: #fff; box-shadow: 0 1px 2px rgba(15, 23, 42, .05);
 }
-.videoModal::backdrop { background: rgba(15, 23, 42, .66); backdrop-filter: blur(3px); }
-.videoModalHead {
-  display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
-  padding: 14px 18px 12px; border-bottom: 1px solid var(--line);
+.videoCardHead {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px;
+  padding: 10px 12px 10px 14px; border-bottom: 1px solid var(--line);
 }
+.videoCardTitle { min-width: 0; margin-right: auto; }
 .videoKicker {
-  margin: 0 0 3px; color: var(--accent); font-size: 10px; font-weight: 800;
+  margin: 0 0 2px; color: var(--accent); font-size: 9.5px; font-weight: 800;
   letter-spacing: .07em; text-transform: uppercase;
 }
-.videoModalHead h2 { margin: 0; font-size: 15px; letter-spacing: -.02em; }
-.videoClose {
-  flex: 0 0 auto; display: inline-flex; align-items: center; gap: 5px;
-  padding: 7px 11px; border: 1px solid var(--line); border-radius: 8px;
-  background: #fff; color: #475569; font: inherit; font-size: 12px; font-weight: 700;
-  cursor: pointer;
-}
-.videoClose:hover { border-color: var(--accent); color: var(--accent); }
-.videoClose:focus-visible { outline: 2px solid #93C5FD; outline-offset: 2px; }
-.videoClose .x { font-size: 14px; line-height: 1; }
-.videoFrame { padding: 14px 18px 0; background: #0B1220; }
-.videoFrame video {
-  display: block; width: 100%; height: auto; aspect-ratio: 16 / 9;
-  border-radius: 10px; background: #0B1220;
-}
-.videoModalFoot {
-  display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: baseline;
-  padding: 11px 18px 14px;
-}
-.videoModalFoot p { margin: 0; color: var(--muted); font-size: 11.5px; line-height: 1.5; }
-.videoModalFoot b { color: var(--ink); }
-.videoModalFoot .esc { margin-left: auto; color: var(--faint); font-size: 11px; white-space: nowrap; }
+.videoCardTitle h2 { margin: 0; font-size: 13px; line-height: 1.25; letter-spacing: -.015em; }
+.videoCardActions { display: flex; align-items: center; gap: 8px; flex: 0 0 auto; }
 
-@media (max-width: 760px) {
-  .demoBarInner { padding: 10px 16px 11px; gap: 7px 10px; }
-  .demoNote { order: 4; flex: 1 1 100%; margin-left: 0; font-size: 11px; line-height: 1.4; }
-  .watchCta {
-    order: 3; flex: 1 1 100%; min-height: 46px; margin-left: 0; justify-content: center;
-    padding: 12px 14px; font-size: 12.5px;
-  }
-  .videoModal { width: calc(100vw - 20px); max-height: 94vh; border-radius: 12px; }
-  .videoModalHead { padding: 11px 12px 10px; gap: 10px; }
-  .videoModalHead h2 { font-size: 13.5px; line-height: 1.35; }
-  .videoClose { padding: 8px 10px; min-height: 36px; }
-  .videoFrame { padding: 8px 8px 0; }
-  .videoFrame video { border-radius: 8px; }
-  .videoModalFoot { padding: 9px 12px 12px; gap: 3px 10px; }
-  .videoModalFoot .esc { margin-left: 0; }
+.narrationBtn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 13px; border: 1px solid var(--accent); border-radius: 999px;
+  background: var(--accent); color: #fff;
+  font: inherit; font-size: 12px; font-weight: 700; letter-spacing: -.01em;
+  white-space: nowrap; cursor: pointer;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, .14);
+  transition: background .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.narrationBtn:hover { background: #1D4ED8; border-color: #1D4ED8; }
+.narrationBtn:focus-visible { outline: 2px solid #93C5FD; outline-offset: 2px; }
+.narrationBtn .narrIco { font-size: 12px; line-height: 1; }
+.narrationBtn[aria-pressed="true"] {
+  background: #0F172A; border-color: #0F172A;
+  box-shadow: 0 0 0 3px rgba(15, 23, 42, .12);
+}
+.narrationBtn[aria-pressed="true"] .narrIco { animation: narrPulse 1.6s ease-in-out infinite; }
+@keyframes narrPulse { 0%, 100% { opacity: 1; } 50% { opacity: .4; } }
+@media (prefers-reduced-motion: reduce) { .narrationBtn[aria-pressed="true"] .narrIco { animation: none; } }
+
+.videoToggle {
+  padding: 6px 9px; border: 1px solid transparent; border-radius: 8px;
+  background: transparent; color: var(--muted);
+  font: inherit; font-size: 11.5px; font-weight: 600; white-space: nowrap; cursor: pointer;
+}
+.videoToggle:hover { border-color: var(--line); background: #F8FAFC; color: var(--ink); }
+.videoToggle:focus-visible { outline: 2px solid #93C5FD; outline-offset: 2px; }
+
+.videoStage { background: #0B1220; }
+.videoStage video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #0B1220; }
+.videoCardFoot {
+  margin: 0; padding: 8px 14px 10px; border-top: 1px solid var(--line);
+  color: var(--muted); font-size: 11px; line-height: 1.45;
+}
+.videoCardFoot b { color: var(--ink); }
+[data-collapsed="true"] .videoStage,
+[data-collapsed="true"] .videoCardFoot { display: none; }
+
+/* right-hand summary: the old intro band, read beside the clip */
+.videoAside {
+  min-width: 0;
+  padding: 15px 17px 16px; border: 1px solid var(--line); border-radius: 14px; background: #fff;
+}
+.videoAside .introText { font-size: 12.5px; line-height: 1.62; }
+.videoAside .introFacts { margin-top: 12px; }
+
+@media (max-width: 1080px) {
+  .videoHero { grid-template-columns: minmax(0, 1fr); }
+  .videoAside { order: 2; }
+  .videoAside .introText { font-size: 13px; }
+  .videoAside .introFacts { margin-top: 12px; }
+}
+@media (max-width: 620px) {
+  .videoCardHead { padding: 10px 11px 11px; gap: 7px 10px; }
+  .videoCardTitle { flex: 1 1 100%; }
+  .videoCardActions { flex: 1 1 100%; justify-content: space-between; }
+  .narrationBtn { flex: 1 1 auto; justify-content: center; min-height: 42px; font-size: 12.5px; padding: 8px 12px; }
+  .videoToggle { flex: 0 0 auto; min-height: 42px; padding: 8px 10px; }
+  .videoCardFoot { padding: 8px 11px 10px; font-size: 11px; }
 }
 </style>
 </head>
@@ -1247,11 +1256,6 @@ body { font-size: 13px; line-height: 1.54; letter-spacing: -.003em; }
     <span class="demoBadge">Portfolio demo</span>
     <b>Chaeeun Yun · Partner &amp; Advertiser Operations Workspace</b>
     <span class="demoNote">Illustrative sample data · no real partners, advertisers, contacts, rates or results</span>
-    <button class="watchCta" type="button" id="watchCta" aria-haspopup="dialog" aria-controls="videoModal">
-      <span class="watchPlay" aria-hidden="true">▶</span>
-      <span>Watch 30s AI Workflow</span>
-      <span class="watchHint">Audio</span>
-    </button>
   </div>
 </div>
 
@@ -1323,16 +1327,39 @@ body { font-size: 13px; line-height: 1.54; letter-spacing: -.003em; }
 <!-- ============================== PARTNER PIPELINE ============================== -->
 <div class="content" id="view-partners">
   <section class="view" data-view="overview" aria-label="Overseas partner pipeline — overview">
-<section class="introBand">
-    <div>
+<section class="videoHero" aria-label="30-second walkthrough of the AI workflow">
+    <div class="videoCard" id="videoCard" data-collapsed="false">
+      <div class="videoCardHead">
+        <div class="videoCardTitle">
+          <p class="videoKicker">30-second walkthrough</p>
+          <h2>One inbox → one approved outbound draft</h2>
+        </div>
+        <div class="videoCardActions">
+          <button class="narrationBtn" type="button" id="narrationBtn" aria-pressed="false" aria-controls="workflowVideo">
+            <span class="narrIco" aria-hidden="true">🔊</span><span id="narrationLabel">Play with AI Narration</span>
+          </button>
+          <button class="videoToggle" type="button" id="videoToggle" aria-expanded="true" aria-controls="videoStage">Hide video</button>
+        </div>
+      </div>
+      <div class="videoStage" id="videoStage">
+        <video id="workflowVideo" controls autoplay muted loop playsinline preload="metadata"
+               poster="media/ai-workflow-poster.jpg" width="1920" height="1080"
+               aria-label="30-second narrated walkthrough: one inbox sorted into 8 request types, filtered for fit, drafted for approval, then scaled">
+          <source src="media/ai-workflow-visual-30s.mp4" type="video/mp4">
+          Your browser cannot play this clip. <a href="media/ai-workflow-visual-30s.mp4">Download the 30-second video</a>.
+        </video>
+      </div>
+      <p class="videoCardFoot" id="videoNote">Moves on its own, silently. <b>🔊 Play with AI Narration</b> restarts it from the top with the English voice-over.</p>
+    </div>
+    <div class="videoAside">
       <p class="introKicker">What this view is</p>
       <p class="introText">I run creator campaigns at a Korean creator agency. This demo shows two workflows I designed: overseas partner sourcing and advertiser outreach. This one is the cross-border partner program I built from zero: <b>screen the market, record the evidence, draft in the partner's language, and let one named owner approve</b> before anything is sent. Calls, rate cards and the relationship after the first yes live on the same row, so nobody has to re-ask for status in a meeting.</p>
+      <ul class="introFacts">
+        <li><b>0 → 1</b>new program, one month in</li>
+        <li><b>KO · EN · ZH · JA</b>AI-drafted outreach in four languages</li>
+        <li><b>1 gate</b>named-owner approval before any send</li>
+      </ul>
     </div>
-    <ul class="introFacts">
-      <li><b>0 → 1</b>new program, one month in</li>
-      <li><b>KO · EN · ZH · JA</b>AI-drafted outreach in four languages</li>
-      <li><b>1 gate</b>named-owner approval before any send</li>
-    </ul>
   </section>
 
   <section class="outreachPanel standalone" aria-label="Outreach funnel">
@@ -1738,28 +1765,6 @@ body { font-size: 13px; line-height: 1.54; letter-spacing: -.003em; }
       <button class="secondary" type="button" id="approvalChanges">Request changes</button>
       <button class="primary" type="button" id="approvalConfirm">Approve &amp; queue</button>
     </div>
-  </div>
-</dialog>
-
-<dialog id="videoModal" class="videoModal" aria-labelledby="videoModalTitle" aria-describedby="videoModalSub">
-  <div class="videoModalHead">
-    <div>
-      <p class="videoKicker">Portfolio demo · 30 seconds</p>
-      <h2 id="videoModalTitle">AI Partner-Ops Workflow · 30s Overview</h2>
-    </div>
-    <button class="videoClose" type="button" id="videoClose" aria-label="Close video"><span aria-hidden="true" class="x">×</span> Close</button>
-  </div>
-  <div class="videoFrame">
-    <video id="workflowVideo" controls autoplay playsinline preload="metadata"
-           poster="media/ai-workflow-poster.jpg" width="1920" height="1080"
-           aria-label="30-second narrated walkthrough: one inbox sorted into 8 request types, filtered for fit, drafted for approval, then scaled">
-      <source src="media/ai-workflow-visual-30s.mp4" type="video/mp4">
-      Your browser cannot play this clip. <a href="media/ai-workflow-visual-30s.mp4">Download the 30-second video</a>.
-    </video>
-  </div>
-  <div class="videoModalFoot">
-    <p id="videoModalSub"><b>Sound on.</b> English narration, 30 seconds — how one inbox becomes an approved outbound draft, with a person holding the gate.</p>
-    <span class="esc">Close: × · ESC · click outside</span>
   </div>
 </dialog>
 
@@ -2617,38 +2622,72 @@ window.addEventListener('hashchange', applyRoute);
   renderAll();
 })();
 
-/* 30s workflow video modal (preview addition) */
+/* 30s workflow video, inline on the partner overview (preview addition) */
 (() => {
-  const modal = document.getElementById('videoModal');
-  const openBtn = document.getElementById('watchCta');
-  const closeBtn = document.getElementById('videoClose');
   const video = document.getElementById('workflowVideo');
-  if (!modal || !openBtn || !video) return;
+  const btn = document.getElementById('narrationBtn');
+  const label = document.getElementById('narrationLabel');
+  const toggle = document.getElementById('videoToggle');
+  const card = document.getElementById('videoCard');
+  if (!video || !btn || !label) return;
 
-  const stop = () => {
-    try { video.pause(); } catch (e) {}
-    try { if (video.currentTime !== 0) video.currentTime = 0; } catch (e) {}
-  };
+  const QUIET = 'Play with AI Narration';
+  const ON = 'Narration On';
 
-  const open = () => {
-    if (typeof modal.showModal === 'function') modal.showModal();
-    else modal.setAttribute('open', '');
-    try { video.currentTime = 0; } catch (e) {}
+  const play = () => {
     const p = video.play();
     if (p && typeof p.catch === 'function') p.catch(() => {});
   };
 
-  openBtn.addEventListener('click', open);
-  if (closeBtn) closeBtn.addEventListener('click', () => modal.close());
+  const setOn = on => {
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    label.textContent = on ? ON : QUIET;
+    btn.setAttribute('aria-label', on ? 'Narration on — tap to mute and loop silently' : 'Play the clip from the start with the AI narration');
+  };
 
-  /* ESC / close() both land here: stop playback and rewind to the poster */
-  modal.addEventListener('close', stop);
-  modal.addEventListener('cancel', stop);
+  /* narration: unmute, restart from 0, play once through with sound */
+  const narrate = () => {
+    video.muted = false;
+    video.loop = false;
+    try { video.currentTime = 0; } catch (e) {}
+    setOn(true);
+    play();
+  };
 
-  /* click on the backdrop (the dialog box itself, not its content) */
-  modal.addEventListener('click', e => {
-    if (e.target === modal) modal.close();
+  /* back to the quiet first-screen loop */
+  const quiet = () => {
+    video.muted = true;
+    video.loop = true;
+    setOn(false);
+  };
+
+  btn.addEventListener('click', () => {
+    if (btn.getAttribute('aria-pressed') === 'true' && !video.muted) quiet();
+    else narrate();
   });
+
+  /* the native control bar's mute button keeps our label in step */
+  video.addEventListener('volumechange', () => {
+    if (video.muted) { video.loop = true; setOn(false); }
+    else setOn(true);
+  });
+  video.addEventListener('ended', () => setOn(false));
+
+  /* some browsers hold back the muted autoplay until the first interaction */
+  play();
+  const kick = () => { if (video.paused && !document.hidden) play(); };
+  document.addEventListener('pointerdown', kick, { once: true });
+
+  /* keep it small when the reader wants the dashboard instead */
+  if (toggle && card) {
+    toggle.addEventListener('click', () => {
+      const collapsed = card.getAttribute('data-collapsed') === 'true';
+      card.setAttribute('data-collapsed', collapsed ? 'false' : 'true');
+      toggle.setAttribute('aria-expanded', collapsed ? 'true' : 'false');
+      toggle.textContent = collapsed ? 'Hide video' : 'Show video';
+      if (collapsed) play(); else video.pause();
+    });
+  }
 })();
 
 /* initial route (deep link support: #beauty, #beauty/gate, #partners/roster) */
