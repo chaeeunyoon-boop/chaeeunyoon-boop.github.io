@@ -1164,7 +1164,7 @@ body { font-size: 13px; line-height: 1.54; letter-spacing: -.003em; }
 </style>
 <style>/* ------------------------------------------------------------------
    Preview addition: 30s AI-workflow clip, inline on the first screen
-   (autoplay muted loop; one tap restarts it with the AI narration)
+   (autoplay muted loop; one tap restarts it with the narration)
    ------------------------------------------------------------------ */
 .videoHero {
   display: grid; grid-template-columns: minmax(0, 1.52fr) minmax(0, 1fr);
@@ -1342,7 +1342,7 @@ body { font-size: 13px; line-height: 1.54; letter-spacing: -.003em; }
         </div>
         <div class="videoCardActions">
           <button class="narrationBtn" type="button" id="narrationBtn" aria-pressed="false" aria-controls="workflowVideo">
-            <span class="narrIco" aria-hidden="true">🔊</span><span id="narrationLabel">Play with AI Narration</span>
+            <span class="narrIco" aria-hidden="true">🔊</span><span id="narrationLabel">Play with Narration</span>
           </button>
           <button class="videoToggle" type="button" id="videoToggle" aria-expanded="true" aria-controls="videoStage">Hide video</button>
         </div>
@@ -1355,7 +1355,7 @@ body { font-size: 13px; line-height: 1.54; letter-spacing: -.003em; }
           Your browser cannot play this clip. <a href="media/ai-workflow-visual-30s.mp4">Download the 30-second video</a>.
         </video>
       </div>
-      <p class="videoCardFoot" id="videoNote">Moves on its own, silently. <b>🔊 Play with AI Narration</b> restarts it from the top with the English voice-over.</p>
+      <p class="videoCardFoot" id="videoNote">Moves on its own, silently. <b>🔊 Play with Narration</b> restarts it from the top with the English voice-over.</p>
     </div>
     <div class="videoAside">
       <div class="videoAsideMain">
@@ -2639,7 +2639,7 @@ window.addEventListener('hashchange', applyRoute);
   const hero = document.getElementById('videoHero');
   if (!video || !btn || !label) return;
 
-  const QUIET = 'Play with AI Narration';
+  const QUIET = 'Play with Narration';
   const ON = 'Narration On';
 
   const play = () => {
@@ -2650,7 +2650,7 @@ window.addEventListener('hashchange', applyRoute);
   const setOn = on => {
     btn.setAttribute('aria-pressed', on ? 'true' : 'false');
     label.textContent = on ? ON : QUIET;
-    btn.setAttribute('aria-label', on ? 'Narration on — tap to mute and loop silently' : 'Play the clip from the start with the AI narration');
+    btn.setAttribute('aria-label', on ? 'Narration on — tap to mute and loop silently' : 'Play the clip from the start with the narration');
   };
 
   /* narration: unmute, restart from 0, play once through with sound */
