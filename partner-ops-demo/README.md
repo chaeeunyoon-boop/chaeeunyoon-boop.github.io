@@ -6,6 +6,21 @@ pipelines I built from zero, each with its own views, and the same human approva
 The shell is a sidebar workspace (sidebar navigation, one workspace per pipeline, view-level
 switching, counts on the items), built here with sample data only.
 
+## The 30-second clip
+
+The partner Overview opens on the **30-second AI-workflow clip**
+(`media/ai-workflow-visual-30s.mp4`, poster `media/ai-workflow-poster.jpg`) **inline on the first
+screen**, in a two-column hero — 16:9 player on the left, the `What this view is` summary on the
+right. There is no modal and no click needed before it moves: the element is
+`controls autoplay muted loop playsinline preload="metadata" poster=…`, so it plays silently on a
+loop from the moment the page loads (desktop and iOS Safari).
+
+- **`🔊 Play with Narration`** in the player header restarts it at 0 s with `muted = false` and
+  `loop = false`, plays once through with the English voice-over, and reads `Narration On` while the
+  sound is on; tapping it again returns to the silent loop. The native control bar's mute button
+  keeps the label in step.
+- **`Hide video` / `Show video`** collapses the player to its header without hiding the summary.
+
 ## Sidebar structure
 
 ```
@@ -33,7 +48,7 @@ gate) and update when a draft is approved. Every view is addressable: `#partners
 
 | View | Partner pipeline | Advertiser GTM pipeline |
 |---|---|---|
-| **Overview** | Intro, outreach funnel (5 stages), partner onboarding after the first yes, region funnels (Japan·China / Southeast Asia / US), active-partner counts, contact coverage by country. | Intro, four KPIs (sends vs goal, stage mix, reply rate, conversations), blocked-now line, reply reading by brand type and reply class. |
+| **Overview** | Inline 30 s workflow video beside the intro, outreach funnel (5 stages), partner onboarding after the first yes, region funnels (Japan·China / Southeast Asia / US), active-partner counts, contact coverage by country. | Intro, four KPIs (sends vs goal, stage mix, reply rate, conversations), blocked-now line, reply reading by brand type and reply class. |
 | **Workflow & rules** | 5-step automated/human ladder with per-step output and failure case, send guardrails, and the "does / never does" rule book. | (none: the stage flow sits on the Overview) |
 | **Approval gate** | Drafts waiting for a named owner (1 in the sample set) with the checklist the owner runs, plus the 10 drafts already approved and sent. | Interactive gate: 3 drafts with their checklists; *Review draft* opens the full draft, *Approve & queue* or *Request changes* moves the row. |
 | **Partner list / Brand list** | Partner roster with 7 filters, expandable draft plans, rate-card extraction. | Brand board with 5 filters grouped by stage, expandable log + AI meeting recap and next action. |
@@ -66,6 +81,8 @@ Everything on the page is **illustrative sample data**:
 index.html                 single-page build (CSS inlined, no build step needed to serve)
 data/partners.js           sample dataset — overseas partner roster (window.DEMO_PARTNERS)
 data/beauty.js             sample dataset — advertiser pipeline (window.DEMO_BEAUTY)
+media/ai-workflow-visual-30s.mp4   30 s AI-workflow clip (English voice-over)
+media/ai-workflow-poster.jpg       poster frame for the clip
 scripts/base.css           layout system
 scripts/demo.css           demo components + the sidebar workspace shell
 scripts/template.html      page markup, views and the sidebar router
@@ -73,7 +90,6 @@ scripts/gen_data.py        regenerates data/*.js (deterministic sample data)
 scripts/build.py           inlines both stylesheets, strips Korean, guards the build
 scripts/verify.py          headless Chromium checks + screenshots
 scripts/shots.py           one screenshot per sidebar view
-scripts/preview.py         writes the preview images into downloads/
 screenshots/               verification and review captures
 ```
 
@@ -115,15 +131,17 @@ URL or to the page.
 The published tree is only what the page needs:
 
 ```
-index.html  data/partners.js  data/beauty.js  README.md
+index.html  data/partners.js  data/beauty.js  media/ai-workflow-visual-30s.mp4
+media/ai-workflow-poster.jpg  README.md
 ```
 
-Build scripts, preview variants and verification captures stay local. To redeploy:
+Build scripts and verification captures stay local. To redeploy:
 
 ```bash
 python3 scripts/build.py                    # rebuild index.html from the sources
 git clone https://github.com/chaeeunyoon-boop/chaeeunyoon-boop.github.io /tmp/site
 cp index.html README.md /tmp/site/partner-ops-demo/ && cp data/*.js /tmp/site/partner-ops-demo/data/
+cp media/* /tmp/site/partner-ops-demo/media/
 cd /tmp/site && git add partner-ops-demo && git commit -m "update demo" && git push
 ```
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
+<meta name="robots" content="noindex, nofollow">
 <title>Chaeeun Yun · Partner & Advertiser Operations · Portfolio Demo</title>
 <meta name="description" content="Portfolio demo: cross-border partner pipeline and advertiser GTM workflow, with a human approval gate. Illustrative sample data.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1162,6 +1162,99 @@ body { font-size: 13px; line-height: 1.54; letter-spacing: -.003em; }
   details.numbers { overflow-x: auto; }
 }
 </style>
+<style>/* ------------------------------------------------------------------
+   30s AI-workflow clip, inline on the first screen
+   (autoplay muted loop; one tap restarts it with the narration)
+   ------------------------------------------------------------------ */
+.videoHero {
+  display: grid; grid-template-columns: minmax(0, 1.52fr) minmax(0, 1fr);
+  gap: 14px; align-items: start; margin-bottom: 14px;
+}
+
+.videoCard {
+  min-width: 0; overflow: hidden;
+  border: 1px solid var(--line); border-radius: 14px;
+  background: #fff; box-shadow: 0 1px 2px rgba(15, 23, 42, .05);
+}
+.videoCardHead {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px;
+  padding: 10px 12px 10px 14px; border-bottom: 1px solid var(--line);
+}
+.videoCardTitle { min-width: 0; margin-right: auto; }
+.videoKicker {
+  margin: 0 0 2px; color: var(--accent); font-size: 9.5px; font-weight: 800;
+  letter-spacing: .07em; text-transform: uppercase;
+}
+.videoCardTitle h2 { margin: 0; font-size: 13px; line-height: 1.25; letter-spacing: -.015em; }
+.videoCardActions { display: flex; align-items: center; gap: 8px; flex: 0 0 auto; }
+
+.narrationBtn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 13px; border: 1px solid var(--accent); border-radius: 999px;
+  background: var(--accent); color: #fff;
+  font: inherit; font-size: 12px; font-weight: 700; letter-spacing: -.01em;
+  white-space: nowrap; cursor: pointer;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, .14);
+  transition: background .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.narrationBtn:hover { background: #1D4ED8; border-color: #1D4ED8; }
+.narrationBtn:focus-visible { outline: 2px solid #93C5FD; outline-offset: 2px; }
+.narrationBtn .narrIco { font-size: 12px; line-height: 1; }
+.narrationBtn[aria-pressed="true"] {
+  background: #0F172A; border-color: #0F172A;
+  box-shadow: 0 0 0 3px rgba(15, 23, 42, .12);
+}
+.narrationBtn[aria-pressed="true"] .narrIco { animation: narrPulse 1.6s ease-in-out infinite; }
+@keyframes narrPulse { 0%, 100% { opacity: 1; } 50% { opacity: .4; } }
+@media (prefers-reduced-motion: reduce) { .narrationBtn[aria-pressed="true"] .narrIco { animation: none; } }
+
+.videoToggle {
+  padding: 6px 9px; border: 1px solid transparent; border-radius: 8px;
+  background: transparent; color: var(--muted);
+  font: inherit; font-size: 11.5px; font-weight: 600; white-space: nowrap; cursor: pointer;
+}
+.videoToggle:hover { border-color: var(--line); background: #F8FAFC; color: var(--ink); }
+.videoToggle:focus-visible { outline: 2px solid #93C5FD; outline-offset: 2px; }
+
+.videoStage { background: #0B1220; }
+.videoStage video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #0B1220; }
+.videoCardFoot {
+  margin: 0; padding: 8px 14px 10px; border-top: 1px solid var(--line);
+  color: var(--muted); font-size: 11px; line-height: 1.45;
+}
+.videoCardFoot b { color: var(--ink); }
+[data-collapsed="true"] .videoStage,
+[data-collapsed="true"] .videoCardFoot { display: none; }
+/* collapsed: the slim player bar keeps the row, the summary becomes a wide band beneath it */
+.videoHero[data-collapsed="true"] { grid-template-columns: minmax(0, 1fr); }
+.videoHero[data-collapsed="true"] .videoAside {
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 18px;
+}
+
+/* right-hand summary: the old intro band, read beside the clip */
+.videoAside {
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; align-content: start;
+  min-width: 0;
+  padding: 15px 17px 16px; border: 1px solid var(--line); border-radius: 14px; background: #fff;
+}
+.videoAside .introText { font-size: 12.5px; line-height: 1.62; text-wrap: balance; }
+.videoAside .introFacts { margin-top: 0; }
+
+@media (max-width: 1080px) {
+  .videoHero { grid-template-columns: minmax(0, 1fr); }
+  .videoAside { order: 2; }
+  .videoAside .introText { font-size: 13px; }
+  .videoHero[data-collapsed="true"] .videoAside { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 620px) {
+  .videoCardHead { padding: 10px 11px 11px; gap: 7px 10px; }
+  .videoCardTitle { flex: 1 1 100%; }
+  .videoCardActions { flex: 1 1 100%; justify-content: space-between; }
+  .narrationBtn { flex: 1 1 auto; justify-content: center; min-height: 42px; font-size: 12.5px; padding: 8px 12px; }
+  .videoToggle { flex: 0 0 auto; min-height: 42px; padding: 8px 10px; }
+  .videoCardFoot { padding: 8px 11px 10px; font-size: 11px; }
+}
+</style>
 </head>
 <body>
 <div class="demoBar">
@@ -1240,16 +1333,41 @@ body { font-size: 13px; line-height: 1.54; letter-spacing: -.003em; }
 <!-- ============================== PARTNER PIPELINE ============================== -->
 <div class="content" id="view-partners">
   <section class="view" data-view="overview" aria-label="Overseas partner pipeline — overview">
-<section class="introBand">
-    <div>
-      <p class="introKicker">What this view is</p>
-      <p class="introText">I run creator campaigns at a Korean creator agency. This demo shows two workflows I designed: overseas partner sourcing and advertiser outreach. This one is the cross-border partner program I built from zero: <b>screen the market, record the evidence, draft in the partner's language, and let one named owner approve</b> before anything is sent. Calls, rate cards and the relationship after the first yes live on the same row, so nobody has to re-ask for status in a meeting.</p>
+<section class="videoHero" id="videoHero" data-collapsed="false" aria-label="30-second walkthrough of the AI workflow">
+    <div class="videoCard" id="videoCard">
+      <div class="videoCardHead">
+        <div class="videoCardTitle">
+          <p class="videoKicker">30-second walkthrough</p>
+          <h2>One inbox → one approved outbound draft</h2>
+        </div>
+        <div class="videoCardActions">
+          <button class="narrationBtn" type="button" id="narrationBtn" aria-pressed="false" aria-controls="workflowVideo">
+            <span class="narrIco" aria-hidden="true">🔊</span><span id="narrationLabel">Play with Narration</span>
+          </button>
+          <button class="videoToggle" type="button" id="videoToggle" aria-expanded="true" aria-controls="videoStage">Hide video</button>
+        </div>
+      </div>
+      <div class="videoStage" id="videoStage">
+        <video id="workflowVideo" controls autoplay muted loop playsinline preload="metadata"
+               poster="media/ai-workflow-poster.jpg" width="1920" height="1080"
+               aria-label="30-second narrated walkthrough: one inbox sorted into 8 request types, filtered for fit, drafted for approval, then scaled">
+          <source src="media/ai-workflow-visual-30s.mp4" type="video/mp4">
+          Your browser cannot play this clip. <a href="media/ai-workflow-visual-30s.mp4">Download the 30-second video</a>.
+        </video>
+      </div>
+      <p class="videoCardFoot" id="videoNote">Moves on its own, silently. <b>🔊 Play with Narration</b> restarts it from the top with the English voice-over.</p>
     </div>
-    <ul class="introFacts">
-      <li><b>0 → 1</b>new program, one month in</li>
-      <li><b>KO · EN · ZH · JA</b>AI-drafted outreach in four languages</li>
-      <li><b>1 gate</b>named-owner approval before any send</li>
-    </ul>
+    <div class="videoAside">
+      <div class="videoAsideMain">
+        <p class="introKicker">What this view is</p>
+        <p class="introText">Cross-border partner sourcing I built 0→1: <b>screen markets, draft outreach in four languages, and keep human approval before any send</b>.</p>
+      </div>
+      <ul class="introFacts">
+        <li><b>0 → 1</b>new program, one month in</li>
+        <li><b>KO · EN · ZH · JA</b>AI-drafted outreach in four languages</li>
+        <li><b>1 gate</b>named-owner approval before any send</li>
+      </ul>
+    </div>
   </section>
 
   <section class="outreachPanel standalone" aria-label="Outreach funnel">
@@ -2510,6 +2628,74 @@ window.addEventListener('hashchange', applyRoute);
   }
 
   renderAll();
+})();
+
+/* 30s workflow video, inline on the partner overview */
+(() => {
+  const video = document.getElementById('workflowVideo');
+  const btn = document.getElementById('narrationBtn');
+  const label = document.getElementById('narrationLabel');
+  const toggle = document.getElementById('videoToggle');
+  const hero = document.getElementById('videoHero');
+  if (!video || !btn || !label) return;
+
+  const QUIET = 'Play with Narration';
+  const ON = 'Narration On';
+
+  const play = () => {
+    const p = video.play();
+    if (p && typeof p.catch === 'function') p.catch(() => {});
+  };
+
+  const setOn = on => {
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    label.textContent = on ? ON : QUIET;
+    btn.setAttribute('aria-label', on ? 'Narration on — tap to mute and loop silently' : 'Play the clip from the start with the narration');
+  };
+
+  /* narration: unmute, restart from 0, play once through with sound */
+  const narrate = () => {
+    video.muted = false;
+    video.loop = false;
+    try { video.currentTime = 0; } catch (e) {}
+    setOn(true);
+    play();
+  };
+
+  /* back to the quiet first-screen loop */
+  const quiet = () => {
+    video.muted = true;
+    video.loop = true;
+    setOn(false);
+  };
+
+  btn.addEventListener('click', () => {
+    if (btn.getAttribute('aria-pressed') === 'true' && !video.muted) quiet();
+    else narrate();
+  });
+
+  /* the native control bar's mute button keeps our label in step */
+  video.addEventListener('volumechange', () => {
+    if (video.muted) { video.loop = true; setOn(false); }
+    else setOn(true);
+  });
+  video.addEventListener('ended', () => setOn(false));
+
+  /* some browsers hold back the muted autoplay until the first interaction */
+  play();
+  const kick = () => { if (video.paused && !document.hidden) play(); };
+  document.addEventListener('pointerdown', kick, { once: true });
+
+  /* keep it small when the reader wants the dashboard instead */
+  if (toggle && hero) {
+    toggle.addEventListener('click', () => {
+      const collapsed = hero.getAttribute('data-collapsed') === 'true';
+      hero.setAttribute('data-collapsed', collapsed ? 'false' : 'true');
+      toggle.setAttribute('aria-expanded', collapsed ? 'true' : 'false');
+      toggle.textContent = collapsed ? 'Hide video' : 'Show video';
+      if (collapsed) play(); else video.pause();
+    });
+  }
 })();
 
 /* initial route (deep link support: #beauty, #beauty/gate, #partners/roster) */
